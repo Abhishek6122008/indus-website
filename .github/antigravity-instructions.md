@@ -16,14 +16,12 @@ Redesign of The Indus Group of Co. website.
 
 ## Tech Stack
 
-> To be confirmed when source code arrives. Until then, assume:
-
 - **Framework:** Next.js 14+ (App Router)
-- **Language:** TypeScript
-- **Styling:** TBD — do not assume Tailwind or any CSS framework until confirmed
-- **Package manager:** TBD
+- **Language:** JavaScript (JSX — no TypeScript)
+- **Styling:** Tailwind CSS v3
+- **Package manager:** npm
 
-Do not install new dependencies or introduce a styling library without confirming the stack first.
+Do not install new dependencies without team approval. The stack is confirmed — do not introduce a different framework or CSS library.
 
 ---
 
@@ -31,18 +29,18 @@ Do not install new dependencies or introduce a styling library without confirmin
 
 | Route | File | What it contains |
 |-------|------|-----------------|
-| `/` | `src/app/page.tsx` | Hero (tagline + CTA), Who We Are snapshot, 5 business vertical cards, stats bar, testimonials, contact CTA |
-| `/about` | `src/app/about/page.tsx` | Company story, mission & vision, approach (MSME empowerment), key stats |
-| `/businesses` | `src/app/businesses/page.tsx` | Grid of all 5 business vertical cards with links |
-| `/businesses/logistics` | `src/app/businesses/logistics/page.tsx` | Logistics & Supply Chain Management detail |
-| `/businesses/enterprise-solutions` | `src/app/businesses/enterprise-solutions/page.tsx` | Enterprise Solutions detail |
-| `/businesses/skill-development` | `src/app/businesses/skill-development/page.tsx` | Skill Development Solutions detail |
-| `/businesses/real-estate` | `src/app/businesses/real-estate/page.tsx` | Real Estate & Infra Projects detail |
-| `/businesses/hbc-franchise` | `src/app/businesses/hbc-franchise/page.tsx` | HBC Brand Franchise (Food Chain) detail + franchise enquiry |
-| `/knowledge-center` | `src/app/knowledge-center/page.tsx` | Articles, guides, industry insights |
-| `/resources` | `src/app/resources/page.tsx` | Downloadable resources and documents |
-| `/tools` | `src/app/tools/page.tsx` | Interactive tools / calculators |
-| `/contact` | `src/app/contact/page.tsx` | Contact form, phone, emails, social links |
+| `/` | `src/app/page.jsx` | Hero (tagline + CTA), Who We Are snapshot, 5 business vertical cards, stats bar, testimonials, contact CTA |
+| `/about` | `src/app/about/page.jsx` | Company story, mission & vision, approach (MSME empowerment), key stats |
+| `/businesses` | `src/app/businesses/page.jsx` | Grid of all 5 business vertical cards with links |
+| `/businesses/logistics` | `src/app/businesses/logistics/page.jsx` | Logistics & Supply Chain Management detail |
+| `/businesses/enterprise-solutions` | `src/app/businesses/enterprise-solutions/page.jsx` | Enterprise Solutions detail |
+| `/businesses/skill-development` | `src/app/businesses/skill-development/page.jsx` | Skill Development Solutions detail |
+| `/businesses/real-estate` | `src/app/businesses/real-estate/page.jsx` | Real Estate & Infra Projects detail |
+| `/businesses/hbc-franchise` | `src/app/businesses/hbc-franchise/page.jsx` | HBC Brand Franchise (Food Chain) detail + franchise enquiry |
+| `/knowledge-center` | `src/app/knowledge-center/page.jsx` | Articles, guides, industry insights |
+| `/resources` | `src/app/resources/page.jsx` | Downloadable resources and documents |
+| `/tools` | `src/app/tools/page.jsx` | Interactive tools / calculators |
+| `/contact` | `src/app/contact/page.jsx` | Contact form, phone, emails, social links |
 
 ---
 
@@ -59,13 +57,11 @@ src/
     sections/                       # Page-specific sections (not shared across pages)
       home/                         # Hero, BusinessesGrid, StatsBar, Testimonials, ContactCTA
       about/                        # CompanyStory, MissionVision, OurApproach
-      businesses/                   # ServiceHero, ServiceDetails, ServiceCTA (shared by detail pages)
+      businesses/                   # ServiceHero, ServiceFeatures, ServiceCTA (shared by detail pages)
   styles/
     globals.css
   lib/
-    utils.ts
-  types/
-    index.ts                        # BusinessVertical type and other shared types
+    utils.js
 public/
   images/
     hero/
@@ -114,9 +110,9 @@ public/
 
 ## Component Conventions
 
-- Each component in its own folder: `ComponentName/index.tsx`
+- Each component in its own folder: `ComponentName/index.jsx`
 - Always name the exported function — no anonymous default exports
-- Props interface in same file: `[ComponentName]Props`
+- No TypeScript — plain JavaScript only, no type annotations
 - Split files exceeding ~150 lines
 - `ui/` = generic and reusable, no page-specific logic
 - `sections/` = page-specific, can reference page data directly
@@ -136,9 +132,9 @@ public/
 
 ## Before Generating Any Code
 
-1. Read this entire file
+1. Read this file fully
 2. Identify the exact page or component you are working on
-3. Check the corresponding `page.tsx` for existing TODO comments
+3. Check the corresponding `page.jsx` for existing TODO comments
 4. Check `src/components/ui/` for existing primitives before creating new ones
 5. Do not create files or folders outside the established structure without confirming
-6. Do not add a CSS framework or new package without confirming the tech stack
+6. Do not write TypeScript — all files are `.jsx` or `.js`, no type annotations

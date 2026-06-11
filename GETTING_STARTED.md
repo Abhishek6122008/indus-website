@@ -62,7 +62,7 @@ Every page already has real code. Open it first to understand what's there befor
 
 For example, if you are on Track 2:
 
-1. Open [`src/app/knowledge-center/page.tsx`](src/app/knowledge-center/page.tsx) — read what's there
+1. Open [`src/app/knowledge-center/page.jsx`](src/app/knowledge-center/page.jsx) — read what's there
 2. You will be **replacing** the placeholder section with new components you build
 3. Create your new component files in `src/components/sections/knowledge-center/`
 
@@ -105,12 +105,12 @@ Every section follows the same pattern. Here is an example of building a new sec
 Section components live in `src/components/sections/[page-name]/`. Create a folder for your component:
 
 ```
-src/components/sections/knowledge-center/ArticleGrid/index.tsx
+src/components/sections/knowledge-center/ArticleGrid/index.jsx
 ```
 
 **2. Write the component**
 
-```tsx
+```jsx
 import { SectionHeading } from '@/components/ui/SectionHeading'
 import { Card } from '@/components/ui/Card'
 import { Badge } from '@/components/ui/Badge'
@@ -150,8 +150,8 @@ export function ArticleGrid() {
 
 **3. Import it into your page**
 
-```tsx
-// src/app/knowledge-center/page.tsx
+```jsx
+// src/app/knowledge-center/page.jsx
 import { PageHero } from '@/components/ui/PageHero'
 import { ArticleGrid } from '@/components/sections/knowledge-center/ArticleGrid'
 
@@ -184,7 +184,7 @@ Before building anything new, check what's already in `src/components/ui/`. Thes
 
 Example usage:
 
-```tsx
+```jsx
 import { Button } from '@/components/ui/Button'
 import { Card } from '@/components/ui/Card'
 import { SectionHeading } from '@/components/ui/SectionHeading'
@@ -221,7 +221,7 @@ import { PageHero } from '@/components/ui/PageHero'
 **Commit as you go — small and focused:**
 
 ```bash
-git add src/app/knowledge-center/page.tsx src/components/sections/knowledge-center/
+git add src/app/knowledge-center/page.jsx src/components/sections/knowledge-center/
 git commit -m "feat: add ArticleGrid and CategoryFilter to Knowledge Center"
 ```
 
@@ -266,7 +266,7 @@ The site uses **Poppins** for headings (`font-heading`) and **Inter** for body t
 
 Alternate between `bg-white` and `bg-blue-50` as you stack sections:
 
-```tsx
+```jsx
 <section className="section-padding bg-white">...</section>
 <section className="section-padding bg-blue-50">...</section>
 <section className="section-padding bg-white">...</section>
@@ -278,7 +278,7 @@ For bold CTA / stats sections, use `bg-blue-600` with white text.
 
 Always use the `section-padding` utility class on every `<section>` — it applies `py-16 md:py-24` consistently:
 
-```tsx
+```jsx
 <section className="section-padding bg-white">
   <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     {/* your content */}
@@ -290,7 +290,7 @@ Always use the `section-padding` utility class on every `<section>` — it appli
 
 Every section uses this accent label above the heading:
 
-```tsx
+```jsx
 <div className="flex items-center gap-3 mb-4">
   <div className="w-6 h-[2px] bg-blue-600" />
   <span className="text-blue-600 text-xs font-semibold tracking-[0.2em] uppercase">
@@ -305,10 +305,10 @@ Or just use `SectionHeading` with the `label` prop — it handles this automatic
 
 ## If something is broken
 
-1. `npm run build` — always run this first. It catches TypeScript errors, missing imports, and broken JSX before you open a PR.
+1. `npm run build` — always run this first. It catches missing imports and broken JSX before you open a PR.
 2. Read the error message — it tells you the exact file and line number.
 3. Check import paths use `@/` — for example `@/components/ui/Button`, not `../../components/ui/Button`.
 4. If the dev server crashes, stop it (`Ctrl+C`) and run `npm run dev` again.
-5. If `npm run build` fails with a type error, read the error — usually it's a missing prop or wrong type on a component.
+5. Check that your new files use the `.jsx` extension, not `.tsx` or `.ts`.
 
 If you are genuinely stuck after trying the above, ask — but always include the full error message and the file it's in.
