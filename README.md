@@ -1,20 +1,23 @@
 <div align="center">
 
-# Indus Website Redesign
+# The Indus Group — Website Redesign
 
-**Collaborative redesign, development, and maintenance of the Indus website.**
+**Redesigning the web presence of The Indus Group of Co.**
 
 ![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen?style=flat-square)
 ![Contributions](https://img.shields.io/badge/contributions-intern%20friendly-blue?style=flat-square)
 ![Branch](https://img.shields.io/badge/main%20branch-protected-red?style=flat-square)
-![Status](https://img.shields.io/badge/status-awaiting%20source%20code-orange?style=flat-square)
+![Status](https://img.shields.io/badge/status-in%20progress-blue?style=flat-square)
 
 </div>
 
 ---
 
 > [!NOTE]
-> The original source code has not yet arrived. In the meantime, all interns should read and follow this guide carefully. This README will be expanded significantly once the codebase is received.
+> **New here?** Read these three files before doing anything else — in this order:
+> 1. [`GETTING_STARTED.md`](./GETTING_STARTED.md) — how to run the project, how to use AI, how to build and submit your work
+> 2. [`TASKS.md`](./TASKS.md) — find your track and see exactly which files you own
+> 3. This README — contribution rules and commit conventions
 
 ---
 
@@ -85,37 +88,85 @@ Request a review from at least one teammate. If you get feedback, address it or 
 
 ## Repo Structure
 
-These files are already in place and ready to use:
-
 ```
 indus-website/
-├── .gitignore                              # Keeps build output, .env, and editor junk out of git
+├── public/
+│   ├── images/
+│   │   ├── hero/                        # Homepage hero images
+│   │   ├── businesses/                  # One subfolder per vertical
+│   │   └── about/                       # About page images
+│   └── fonts/
+├── src/
+│   ├── app/                             # Next.js App Router — one folder = one route
+│   │   ├── layout.tsx                   # Root layout (Header + Footer)
+│   │   ├── page.tsx                     # Home  /
+│   │   ├── about/page.tsx               # Who We Are  /about
+│   │   ├── businesses/
+│   │   │   ├── page.tsx                 # Businesses overview  /businesses
+│   │   │   ├── logistics/page.tsx       # Logistics & Supply Chain  /businesses/logistics
+│   │   │   ├── enterprise-solutions/    # Enterprise Solutions
+│   │   │   ├── skill-development/       # Skill Development Solutions
+│   │   │   ├── real-estate/             # Real Estate & Infra Projects
+│   │   │   └── hbc-franchise/           # HBC Brand Franchise (Food Chain)
+│   │   ├── knowledge-center/page.tsx    # Knowledge Center
+│   │   ├── resources/page.tsx           # Resources
+│   │   ├── tools/page.tsx               # Tools
+│   │   └── contact/page.tsx             # Contact
+│   ├── components/
+│   │   ├── layout/
+│   │   │   ├── Header/                  # Logo, nav, +91 7011332238 CTA
+│   │   │   └── Footer/                  # Links, socials, legal, copyright
+│   │   ├── ui/                          # Reusable primitives: Button, Card, Badge, etc.
+│   │   └── sections/                    # Page-specific sections
+│   │       ├── home/
+│   │       ├── about/
+│   │       └── businesses/
+│   ├── styles/globals.css
+│   ├── lib/utils.ts
+│   └── types/index.ts
+├── CLAUDE.md                            # AI context — read before generating any code
+├── .cursorrules                         # Cursor AI rules
+├── .gitignore
 └── .github/
-    ├── pull_request_template.md            # Auto-fills every new PR — fill it out honestly
+    ├── copilot-instructions.md          # GitHub Copilot instructions
+    ├── antigravity-instructions.md      # Antigravity instructions
+    ├── pull_request_template.md
     └── ISSUE_TEMPLATE/
-        ├── bug_report.md                   # Structured bug reports with repro steps
-        └── feature_request.md             # Feature proposals with problem + solution framing
+        ├── bug_report.md
+        └── feature_request.md
 ```
+
+Each `page.tsx` has comments listing exactly what sections it needs. Open it before you start anything on that page.
 
 ---
 
 ## Using AI Tools
 
-AI coding assistants (Claude Code, Copilot, Cursor, etc.) are allowed. But there are rules.
+AI coding assistants (Claude Code, Copilot, Cursor, etc.) are welcome. But you must follow these rules — no exceptions.
 
 > [!IMPORTANT]
-> **Project-specific skills and workflows will be added once the source code arrives.** These files will contain the architecture decisions, naming conventions, design patterns, and rules that AI must follow to generate code that actually fits this codebase.
+> **This repo has dedicated AI context files that must be read before generating any code.** These files contain the project architecture, page breakdown, naming conventions, and folder rules. Without reading them, the AI will produce generic code that doesn't fit this codebase and will be rejected in review.
+
+### Which file to use per tool
+
+| Tool | File to read |
+|------|-------------|
+| Claude Code | [`CLAUDE.md`](./CLAUDE.md) — auto-loaded when you open the project |
+| Cursor | [`.cursorrules`](./.cursorrules) — auto-loaded by Cursor |
+| GitHub Copilot | [`.github/copilot-instructions.md`](./.github/copilot-instructions.md) — auto-loaded by Copilot |
+| Antigravity | [`.github/antigravity-instructions.md`](./.github/antigravity-instructions.md) |
+| Any other AI | Point it to [`CLAUDE.md`](./CLAUDE.md) — it has the most detail |
+
+### How to start a session with any AI
+
+Always begin with:
+
+```
+Read CLAUDE.md (or .cursorrules / copilot-instructions.md) before generating any code.
+```
 
 > [!WARNING]
-> **Before generating any code with an AI tool, you must tell it to read the project skills and workflows first.** Skipping this means the AI produces generic code that conflicts with project conventions — it will be rejected in review.
-
-Once those files exist, your prompt to the AI should start with something like:
-
-```
-Read the project skills and workflows before generating any code.
-```
-
-Exact instructions will be added here when the source code arrives.
+> If you skip this step and the AI generates code that ignores the project structure or conventions, the PR will be sent back. It takes 10 seconds to paste that instruction — just do it.
 
 ---
 

@@ -1,0 +1,51 @@
+# CODEOWNERS
+# Defines who must review PRs touching specific files.
+# Replace @placeholder usernames with actual GitHub usernames.
+# Docs: https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+
+# --- Track 1: Infrastructure ---
+/package.json                              @track-1
+/tsconfig.json                             @track-1
+/next.config.*                             @track-1
+/src/styles/                               @track-1
+/src/lib/                                  @track-1
+/src/types/                                @track-1
+
+# --- Track 2: Layout ---
+/src/app/layout.tsx                        @track-2
+/src/components/layout/                    @track-2
+
+# --- Track 3: Homepage ---
+/src/app/page.tsx                          @track-3
+/src/components/sections/home/             @track-3
+
+# --- Track 4: About + Contact ---
+/src/app/about/                            @track-4
+/src/app/contact/                          @track-4
+/src/components/sections/about/            @track-4
+
+# --- Track 5: Business Pages Set A ---
+/src/app/businesses/page.tsx               @track-5
+/src/app/businesses/logistics/             @track-5
+/src/app/businesses/enterprise-solutions/  @track-5
+/src/app/businesses/skill-development/     @track-5
+/src/components/sections/businesses/       @track-5
+
+# --- Track 6: Business Pages Set B ---
+/src/app/businesses/real-estate/           @track-6
+/src/app/businesses/hbc-franchise/         @track-6
+
+# --- Track 7: Content Pages ---
+/src/app/knowledge-center/                 @track-7
+/src/app/resources/                        @track-7
+/src/app/tools/                            @track-7
+
+# --- Track 8: UI Components ---
+/src/components/ui/                        @track-8
+
+# --- Repo config (everyone needs to agree) ---
+/.github/                                  @track-1 @track-2
+/CLAUDE.md                                 @track-1
+/.cursorrules                              @track-1
+/README.md                                 @track-1
+/TASKS.md                                  @track-1

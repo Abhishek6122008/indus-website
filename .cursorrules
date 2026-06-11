@@ -1,0 +1,52 @@
+# The Indus Group Website — Cursor Rules
+
+Read these rules fully before generating any code.
+
+## Project
+
+Redesign of The Indus Group of Co. website.
+Content source: theindusgroup.com | Design reference: axoncsipl.com
+Next.js 14+ App Router, TypeScript. Styling TBD — do not assume any CSS framework.
+
+## Pages
+
+| Route | Purpose |
+|-------|---------|
+| `/` | Hero (tagline), Who We Are snapshot, 5 vertical cards, stats, testimonials, contact CTA |
+| `/about` | Company story, mission/vision, MSME approach, key stats |
+| `/businesses` | Grid of all 5 verticals |
+| `/businesses/logistics` | Logistics & Supply Chain detail |
+| `/businesses/enterprise-solutions` | Enterprise Solutions detail |
+| `/businesses/skill-development` | Skill Development detail |
+| `/businesses/real-estate` | Real Estate & Infra detail |
+| `/businesses/hbc-franchise` | HBC Brand Franchise detail + enquiry |
+| `/knowledge-center` | Articles and industry insights |
+| `/resources` | Downloadable resources |
+| `/tools` | Interactive tools |
+| `/contact` | Form, phone (+91 7011332238), email, socials |
+
+## Where files go
+
+- `src/app/[route]/page.tsx` — page files, one folder per route
+- `src/components/ui/` — reusable primitives (Button, Card, etc.)
+- `src/components/sections/[page]/` — page-specific sections
+- `src/components/layout/Header/` and `Footer/` — site-wide layout
+- `src/lib/utils.ts` — shared utilities
+- `src/types/index.ts` — shared types (BusinessVertical union type is here)
+- `public/images/[category]/` — images
+
+## Key data
+
+- Company: The Indus Group of Co.
+- Tagline: "Delivering industry-leading solutions across verticals with reliability, innovation, and integrity."
+- Phone: +91 7011332238 | Email: info@theindusgroup.com
+- Stats: 14+ yrs | 1,000+ clients | 100+ team | Global network | 24/7 support
+- Socials: Instagram, LinkedIn, X, YouTube, WhatsApp
+
+## Rules
+
+- Named function exports only
+- Props interface in same file: `[Name]Props`
+- Folders: kebab-case | Components: PascalCase | Variables: camelCase
+- No new packages or CSS frameworks without confirming stack
+- Don't create files outside the structure above without asking

@@ -1,0 +1,61 @@
+import { CheckCircle } from 'lucide-react'
+import { SectionHeading } from '@/components/ui/SectionHeading'
+import { Button } from '@/components/ui/Button'
+
+const points = [
+  'Empowering MSMEs and trade support entities',
+  'Tailored strategies for sustainable progress',
+  'Community impact at the core of every solution',
+  'Trusted by 1,000+ clients across industries',
+]
+
+export function WhoWeAreSection() {
+  return (
+    <section className="section-padding bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
+          {/* Text */}
+          <div>
+            <SectionHeading
+              label="Who We Are"
+              title="Connecting Businesses to Opportunities"
+              align="left"
+            />
+            <p className="text-gray-600 leading-relaxed mb-6">
+              The Indus Group of Co. is a multi-vertical enterprise dedicated to delivering
+              industry-leading solutions with reliability, innovation, and integrity. We empower
+              MSMEs and trade support entities through tailored strategies that drive sustainable
+              growth and meaningful community impact.
+            </p>
+            <ul className="space-y-3 mb-8">
+              {points.map((point) => (
+                <li key={point} className="flex items-start gap-3">
+                  <CheckCircle className="w-5 h-5 text-blue-600 mt-0.5 shrink-0" />
+                  <span className="text-gray-700">{point}</span>
+                </li>
+              ))}
+            </ul>
+            <Button href="/about" variant="outline">
+              Learn More About Us
+            </Button>
+          </div>
+
+          {/* Visual */}
+          <div className="relative">
+            <div className="aspect-[4/3] bg-gradient-to-br from-navy-800 to-navy-900 rounded-2xl flex items-center justify-center">
+              {/* TODO: Replace with actual company image — public/images/about/ */}
+              <span className="text-white/20 text-sm">[ Company Image ]</span>
+            </div>
+            {/* Floating stat card */}
+            <div className="absolute -bottom-6 -left-6 bg-white rounded-xl shadow-xl p-5 border border-gray-100">
+              <div className="text-3xl font-bold font-heading text-navy-800">14+</div>
+              <div className="text-sm text-gray-600 mt-0.5">Years of Experience</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  )
+}
