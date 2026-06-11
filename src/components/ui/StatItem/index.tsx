@@ -13,7 +13,7 @@ export function StatItem({ value, label, light = false, className }: StatItemPro
       <div
         className={cn(
           'text-4xl md:text-5xl font-bold font-heading mb-2',
-          light ? 'text-white' : 'text-navy-800',
+          light ? 'text-white' : 'text-blue-600',
         )}
       >
         {value}
@@ -21,7 +21,7 @@ export function StatItem({ value, label, light = false, className }: StatItemPro
       <div
         className={cn(
           'text-sm md:text-base font-medium',
-          light ? 'text-gray-300' : 'text-gray-600',
+          light ? 'text-blue-100' : 'text-slate-600',
         )}
       >
         {label}

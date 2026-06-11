@@ -1,85 +1,117 @@
 import Link from 'next/link'
-import { Truck, Building2, GraduationCap, Building, UtensilsCrossed, ArrowRight } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 import { SectionHeading } from '@/components/ui/SectionHeading'
-import { Card } from '@/components/ui/Card'
 
 const businesses = [
   {
-    Icon: Truck,
-    title: 'Logistics & Supply Chain',
-    description: 'End-to-end logistics and supply chain solutions for domestic and international trade.',
+    title: 'Logistics & Supply Chain Management',
+    tagline: 'Connecting pathways for seamless trade.',
+    description:
+      'We provide comprehensive, end-to-end logistics and supply chain solutions for domestic and international trade. From freight management to last-mile delivery, our expertise ensures your goods move efficiently, reliably, and on time.',
+    exploreLabel: 'Explore Logistics',
     href: '/businesses/logistics',
-    iconClass: 'text-blue-600 bg-blue-50',
+    flip: false,
   },
   {
-    Icon: Building2,
     title: 'Enterprise Solutions',
-    description: 'B2B consulting, MSME support, market expansion strategies, and energy sector expertise.',
+    tagline: 'Strategies that drive real growth.',
+    description:
+      'Our enterprise consulting arm delivers tailored B2B strategies for MSMEs, corporates, and trade entities. We specialise in market expansion, energy sector consulting, and business development — helping clients unlock new opportunities.',
+    exploreLabel: 'Explore Solutions',
     href: '/businesses/enterprise-solutions',
-    iconClass: 'text-purple-600 bg-purple-50',
+    flip: true,
   },
   {
-    Icon: GraduationCap,
-    title: 'Skill Development',
-    description: 'Professional training programmes and workforce upskilling for a competitive edge.',
+    title: 'Skill Development Solutions',
+    tagline: 'Upskilling the workforce of tomorrow.',
+    description:
+      'We deliver professional training programmes and workforce development initiatives that equip individuals and organisations with the skills needed to stay competitive. From certifications to on-site training, we build capability at scale.',
+    exploreLabel: 'Explore Programmes',
     href: '/businesses/skill-development',
-    iconClass: 'text-green-600 bg-green-50',
+    flip: false,
   },
   {
-    Icon: Building,
-    title: 'Real Estate & Infra',
-    description: 'Property development and infrastructure projects with strong investment potential.',
+    title: 'Real Estate & Infra Projects',
+    tagline: 'Building foundations for lasting value.',
+    description:
+      'The Indus Group brings expertise in property development and infrastructure projects — identifying, developing, and delivering high-value assets. Whether residential, commercial, or industrial, we create spaces that perform.',
+    exploreLabel: 'Explore Projects',
     href: '/businesses/real-estate',
-    iconClass: 'text-orange-600 bg-orange-50',
+    flip: true,
   },
   {
-    Icon: UtensilsCrossed,
-    title: 'HBC Brand Franchise',
-    description: 'Join the HBC food chain franchise — a proven business model with full support.',
+    title: 'Franchise of HBC Brand',
+    tagline: 'A proven food chain franchise opportunity.',
+    description:
+      'The HBC Brand franchise offers a complete, ready-to-run food chain business model with full operational support. From site selection to training and supply chain, we walk with franchisees every step of the way.',
+    exploreLabel: 'Explore Franchise',
     href: '/businesses/hbc-franchise',
-    iconClass: 'text-red-600 bg-red-50',
+    flip: false,
   },
 ]
 
 export function BusinessesGrid() {
   return (
-    <section className="section-padding bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <SectionHeading
-          label="Our Businesses"
-          title="Five Verticals, One Vision"
-          subtitle="Focused excellence across five business domains, each designed to create lasting value for our clients."
-        />
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {businesses.map((b) => (
-            <Card key={b.href} hover>
-              <div className={`w-12 h-12 rounded-lg flex items-center justify-center mb-4 ${b.iconClass}`}>
-                <b.Icon className="w-6 h-6" />
-              </div>
-              <h3 className="text-lg font-semibold font-heading text-navy-800 mb-2">{b.title}</h3>
-              <p className="text-gray-600 text-sm leading-relaxed mb-5">{b.description}</p>
-              <Link
-                href={b.href}
-                className="inline-flex items-center gap-1 text-sm font-semibold text-blue-600 hover:gap-2 transition-all duration-200"
-              >
-                Explore <ArrowRight className="w-4 h-4" />
-              </Link>
-            </Card>
-          ))}
-
-          {/* View All CTA card */}
-          <Card className="bg-navy-800 border-navy-800 flex flex-col items-center justify-center text-center min-h-[200px]">
-            <h3 className="text-lg font-semibold font-heading text-white mb-2">View All Businesses</h3>
-            <p className="text-gray-300 text-sm mb-5">See the full overview of our business verticals.</p>
-            <Link
-              href="/businesses"
-              className="inline-flex items-center gap-2 text-sm font-semibold text-blue-300 hover:text-white transition-colors"
-            >
-              Explore All <ArrowRight className="w-4 h-4" />
-            </Link>
-          </Card>
+    <div>
+      {/* Section header */}
+      <div className="bg-blue-50 section-padding pb-0">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionHeading
+            label="Our Businesses"
+            title="Five Verticals, One Vision"
+            subtitle="Focused excellence across five business domains, each designed to create lasting value."
+          />
         </div>
       </div>
-    </section>
+
+      {/* Alternating service rows */}
+      {businesses.map((b, i) => (
+        <section key={b.href} className={i % 2 === 0 ? 'bg-blue-50' : 'bg-white'}>
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
+              {/* Image */}
+              <div className={b.flip ? 'lg:order-2' : 'lg:order-1'}>
+                <div className="aspect-[4/3] rounded-2xl bg-white border border-blue-100 shadow-sm flex items-center justify-center overflow-hidden">
+                  {/* TODO: Replace with actual image — public/images/businesses/ */}
+                  <span className="text-blue-300 text-sm">[ {b.title} Image ]</span>
+                </div>
+              </div>
+
+              {/* Text */}
+              <div className={b.flip ? 'lg:order-1' : 'lg:order-2'}>
+                <div className="flex items-center gap-2 mb-4">
+                  <div className="w-5 h-[2px] bg-blue-600" />
+                  <span className="text-blue-600 text-xs font-semibold tracking-[0.18em] uppercase">
+                    Business Vertical
+                  </span>
+                </div>
+                <h2 className="text-3xl md:text-4xl font-bold font-heading text-slate-900 mb-3 leading-tight">
+                  {b.title}
+                </h2>
+                <p className="text-blue-600 font-medium italic mb-5">{b.tagline}</p>
+                <p className="text-slate-600 leading-relaxed mb-8">{b.description}</p>
+                <div className="flex flex-wrap gap-4">
+                  <Link
+                    href={b.href}
+                    className="inline-flex items-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold text-sm hover:bg-blue-700 transition-colors"
+                  >
+                    {b.exploreLabel}
+                    <ArrowRight className="w-4 h-4" />
+                  </Link>
+                  <Link
+                    href="/contact"
+                    className="inline-flex items-center gap-2 border-2 border-blue-200 text-blue-700 px-6 py-3 rounded-lg font-semibold text-sm hover:bg-blue-50 transition-colors"
+                  >
+                    Know More
+                  </Link>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </section>
+      ))}
+    </div>
   )
 }

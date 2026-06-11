@@ -12,7 +12,7 @@
   }
 
   body {
-    @apply font-body text-gray-900 antialiased;
+    @apply font-body text-slate-900 antialiased bg-white;
   }
 
   h1, h2, h3, h4, h5, h6 {

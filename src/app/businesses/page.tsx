@@ -1,19 +1,22 @@
-// BUSINESSES OVERVIEW PAGE  —  /businesses
-//
-// Sections (in order):
-//   1. PageHero       — "Our Businesses" banner
-//   2. BusinessesGrid — 5 vertical cards, each linking to its detail page:
-//                         /businesses/logistics
-//                         /businesses/enterprise-solutions
-//                         /businesses/skill-development
-//                         /businesses/real-estate
-//                         /businesses/hbc-franchise
+import { PageHero } from '@/components/ui/PageHero'
+import { BusinessesGrid } from '@/components/sections/home/BusinessesGrid'
+
+export const metadata = {
+  title: 'Our Businesses | The Indus Group of Co.',
+  description:
+    'Explore the five business verticals of The Indus Group — Logistics, Enterprise Solutions, Skill Development, Real Estate, and HBC Franchise.',
+}
 
 export default function BusinessesPage() {
   return (
-    <div>
-      {/* TODO: <PageHero title="Our Businesses" /> */}
-      {/* TODO: <BusinessesGrid /> */}
-    </div>
+    <>
+      <PageHero
+        label="What We Do"
+        title="Our Businesses"
+        subtitle="Five focused verticals, each built to deliver lasting value for clients across industries."
+        breadcrumbs={[{ label: 'Businesses' }]}
+      />
+      <BusinessesGrid />
+    </>
   )
 }

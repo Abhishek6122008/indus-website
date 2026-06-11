@@ -22,7 +22,7 @@ export function WhoWeAreSection() {
               title="Connecting Businesses to Opportunities"
               align="left"
             />
-            <p className="text-gray-600 leading-relaxed mb-6">
+            <p className="text-slate-600 leading-relaxed mb-6">
               The Indus Group of Co. is a multi-vertical enterprise dedicated to delivering
               industry-leading solutions with reliability, innovation, and integrity. We empower
               MSMEs and trade support entities through tailored strategies that drive sustainable
@@ -32,25 +32,23 @@ export function WhoWeAreSection() {
               {points.map((point) => (
                 <li key={point} className="flex items-start gap-3">
                   <CheckCircle className="w-5 h-5 text-blue-600 mt-0.5 shrink-0" />
-                  <span className="text-gray-700">{point}</span>
+                  <span className="text-slate-700">{point}</span>
                 </li>
               ))}
             </ul>
-            <Button href="/about" variant="outline">
-              Learn More About Us
-            </Button>
+            <Button href="/about">Learn More About Us</Button>
           </div>
 
           {/* Visual */}
           <div className="relative">
-            <div className="aspect-[4/3] bg-gradient-to-br from-navy-800 to-navy-900 rounded-2xl flex items-center justify-center">
+            <div className="aspect-[4/3] bg-blue-50 rounded-2xl border border-blue-100 flex items-center justify-center">
               {/* TODO: Replace with actual company image — public/images/about/ */}
-              <span className="text-white/20 text-sm">[ Company Image ]</span>
+              <span className="text-blue-300 text-sm">[ Company Image ]</span>
             </div>
-            {/* Floating stat card */}
-            <div className="absolute -bottom-6 -left-6 bg-white rounded-xl shadow-xl p-5 border border-gray-100">
-              <div className="text-3xl font-bold font-heading text-navy-800">14+</div>
-              <div className="text-sm text-gray-600 mt-0.5">Years of Experience</div>
+            {/* Floating badge */}
+            <div className="absolute -bottom-5 -left-5 bg-blue-600 rounded-xl p-5 shadow-xl">
+              <div className="text-3xl font-bold font-heading text-white">14+</div>
+              <div className="text-xs font-semibold text-blue-100 mt-0.5 uppercase tracking-wide">Years Experience</div>
             </div>
           </div>
 

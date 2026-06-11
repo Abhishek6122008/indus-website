@@ -14,10 +14,10 @@ type ButtonProps = {
 }
 
 const variants = {
-  primary: 'bg-blue-600 text-white hover:bg-blue-700 border border-blue-600',
-  secondary: 'bg-navy-800 text-white hover:bg-navy-900 border border-navy-800',
-  outline: 'bg-transparent text-navy-800 hover:bg-navy-800 hover:text-white border border-navy-800',
-  ghost: 'bg-transparent text-navy-800 hover:bg-gray-100 border border-transparent',
+  primary: 'bg-blue-600 text-white hover:bg-blue-700 border border-blue-600 font-semibold',
+  secondary: 'bg-slate-900 text-white hover:bg-slate-800 border border-slate-900',
+  outline: 'bg-transparent text-blue-600 hover:bg-blue-600 hover:text-white border-2 border-blue-600',
+  ghost: 'bg-transparent text-slate-700 hover:bg-blue-50 border border-transparent',
 }
 
 const sizes = {

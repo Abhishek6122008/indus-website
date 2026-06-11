@@ -26,19 +26,22 @@ export function SectionHeading({
       )}
     >
       {label && (
-        <span
-          className={cn(
-            'text-sm font-semibold tracking-widest uppercase mb-3 block',
-            light ? 'text-blue-300' : 'text-blue-600',
-          )}
-        >
-          {label}
-        </span>
+        <div className={cn('flex items-center gap-3 mb-4', align === 'center' && 'justify-center')}>
+          <div className={cn('w-6 h-[2px]', light ? 'bg-blue-400' : 'bg-blue-600')} />
+          <span
+            className={cn(
+              'text-xs font-semibold tracking-[0.2em] uppercase',
+              light ? 'text-blue-300' : 'text-blue-600',
+            )}
+          >
+            {label}
+          </span>
+        </div>
       )}
       <h2
         className={cn(
           'text-3xl md:text-4xl font-bold font-heading mb-4',
-          light ? 'text-white' : 'text-navy-900',
+          light ? 'text-white' : 'text-slate-900',
         )}
       >
         {title}
@@ -48,7 +51,7 @@ export function SectionHeading({
           className={cn(
             'text-lg max-w-2xl leading-relaxed',
             align === 'center' ? 'mx-auto' : '',
-            light ? 'text-gray-300' : 'text-gray-600',
+            light ? 'text-blue-100' : 'text-slate-600',
           )}
         >
           {subtitle}

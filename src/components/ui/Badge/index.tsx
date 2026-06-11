@@ -2,13 +2,13 @@ import { cn } from '@/lib/utils'
 
 type BadgeProps = {
   children: React.ReactNode
-  variant?: 'default' | 'navy' | 'blue' | 'success'
+  variant?: 'default' | 'dark' | 'blue' | 'success'
   className?: string
 }
 
 const variants = {
-  default: 'bg-gray-100 text-gray-700',
-  navy: 'bg-navy-800 text-white',
+  default: 'bg-slate-100 text-slate-700',
+  dark: 'bg-slate-800 text-white',
   blue: 'bg-blue-100 text-blue-700',
   success: 'bg-green-100 text-green-700',
 }
