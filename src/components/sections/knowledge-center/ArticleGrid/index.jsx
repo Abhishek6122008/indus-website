@@ -4,42 +4,42 @@ const articles = [
     category: 'Logistics',
     description:
       'Structured logistics systems improve delivery speed, cost control, and customer satisfaction.',
-    date: 'June 11, 2026',
+    readTime: '5 min read',
   },
   {
     title: 'Digital Enterprise Solutions for Growing Companies',
     category: 'Enterprise',
     description:
       'Technology-led enterprise support helps businesses streamline operations and scale efficiently.',
-    date: 'June 10, 2026',
+    readTime: '4 min read',
   },
   {
-    title: 'Why Skill Development Matters',
+    title: 'Why Skill Development Matters for Modern Workforces',
     category: 'Skill Development',
     description:
       'Training programs improve employability, productivity, and long-term business performance.',
-    date: 'June 9, 2026',
+    readTime: '6 min read',
   },
   {
     title: 'Real Estate Infrastructure and Business Growth',
     category: 'Real Estate',
     description:
       'Planned infrastructure supports commercial expansion and long-term value creation.',
-    date: 'June 8, 2026',
+    readTime: '5 min read',
   },
   {
     title: 'Franchise Growth: Building a Scalable Food Business',
     category: 'Franchise',
     description:
       'Franchise models support brand expansion, operations, and customer reach.',
-    date: 'June 7, 2026',
+    readTime: '4 min read',
   },
   {
     title: 'Integrated Business Support Across Verticals',
     category: 'Enterprise',
     description:
       'The Indus Group supports clients across verticals with reliability, innovation, and integrity.',
-    date: 'June 6, 2026',
+    readTime: '5 min read',
   },
 ]
 
@@ -54,7 +54,8 @@ export function ArticleGrid({ activeCategory }) {
       <div className="mx-auto max-w-6xl">
         <h2 className="text-2xl font-bold text-slate-900">Latest Insights</h2>
         <p className="mt-2 text-slate-600">
-          Showing {filteredArticles.length} articles
+          Showing {filteredArticles.length} article
+          {filteredArticles.length !== 1 ? 's' : ''}
         </p>
 
         <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -63,7 +64,7 @@ export function ArticleGrid({ activeCategory }) {
               key={article.title}
               className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
             >
-              <span className="rounded-full bg-blue-50 px-3 py-1 text-xs font-semibold text-blue-700">
+              <span className="inline-block rounded-full bg-blue-50 px-3 py-1 text-xs font-semibold text-blue-700">
                 {article.category}
               </span>
 
@@ -76,7 +77,7 @@ export function ArticleGrid({ activeCategory }) {
               </p>
 
               <div className="mt-6 flex items-center justify-between text-sm">
-                <span className="text-slate-500">{article.date}</span>
+                <span className="text-slate-500">{article.readTime}</span>
                 <button className="font-semibold text-blue-600 hover:text-blue-800">
                   Read More →
                 </button>
