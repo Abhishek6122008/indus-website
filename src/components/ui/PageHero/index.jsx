@@ -2,17 +2,7 @@ import Link from 'next/link'
 import { ChevronRight } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
-type Crumb = { label: string; href?: string }
-
-type PageHeroProps = {
-  label?: string
-  title: string
-  subtitle?: string
-  breadcrumbs?: Crumb[]
-  className?: string
-}
-
-export function PageHero({ label, title, subtitle, breadcrumbs, className }: PageHeroProps) {
+export function PageHero({ label, title, subtitle, breadcrumbs, className }) {
   return (
     <section
       className={cn(

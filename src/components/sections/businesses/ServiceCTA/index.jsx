@@ -1,15 +1,10 @@
 import Link from 'next/link'
 import { ArrowRight, Phone } from 'lucide-react'
 
-type ServiceCTAProps = {
-  title?: string
-  description?: string
-}
-
 export function ServiceCTA({
   title = 'Ready to Get Started?',
   description = 'Talk to our team and find out how this service can work for your business.',
-}: ServiceCTAProps) {
+}) {
   return (
     <section className="section-padding bg-blue-600">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

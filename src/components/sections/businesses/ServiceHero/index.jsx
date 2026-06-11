@@ -1,12 +1,6 @@
 import { PageHero } from '@/components/ui/PageHero'
 
-type ServiceHeroProps = {
-  title: string
-  subtitle: string
-  slug: string
-}
-
-export function ServiceHero({ title, subtitle, slug }: ServiceHeroProps) {
+export function ServiceHero({ title, subtitle, slug }) {
   return (
     <PageHero
       label="Business Vertical"

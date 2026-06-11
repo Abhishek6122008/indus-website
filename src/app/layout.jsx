@@ -1,4 +1,3 @@
-import type { Metadata } from 'next'
 import { Poppins, Inter } from 'next/font/google'
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
@@ -17,12 +16,12 @@ const inter = Inter({
   display: 'swap',
 })
 
-export const metadata: Metadata = {
+export const metadata = {
   title: 'The Indus Group of Co.',
   description: 'Delivering industry-leading solutions across verticals with reliability, innovation, and integrity.',
 }
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${poppins.variable} ${inter.variable}`}>
       <body>
