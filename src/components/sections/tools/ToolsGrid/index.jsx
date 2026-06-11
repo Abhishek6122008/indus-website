@@ -29,14 +29,24 @@ export function ToolsGrid() {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
           {/* Card 1: Freight Estimator */}
-          <div onClick={() => selectTool('freight')} className="cursor-pointer">
+          <div
+            role="button"
+            tabIndex={0}
+            onClick={() => selectTool('freight')}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault()
+                selectTool('freight')
+              }
+            }}
+            className="cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded-xl"
+          >
             <Card
               hover={true}
-              className={`h-full flex flex-col justify-between transition-all duration-300 ${
-                activeTool === 'freight'
-                  ? 'border-blue-600 ring-2 ring-blue-100 shadow-md bg-blue-50/10'
-                  : 'border-blue-100 hover:border-blue-200'
-              }`}
+              className={`h-full flex flex-col justify-between transition-all duration-300 ${activeTool === 'freight'
+                ? 'border-blue-600 ring-2 ring-blue-100 shadow-md bg-blue-50/10'
+                : 'border-blue-100 hover:border-blue-200'
+                }`}
             >
               <div>
                 <div className="flex justify-between items-start mb-4">
@@ -60,14 +70,24 @@ export function ToolsGrid() {
           </div>
 
           {/* Card 2: Franchise ROI Planner */}
-          <div onClick={() => selectTool('franchise')} className="cursor-pointer">
+          <div
+            role="button"
+            tabIndex={0}
+            onClick={() => selectTool('franchise')}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault()
+                selectTool('franchise')
+              }
+            }}
+            className="cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded-xl"
+          >
             <Card
               hover={true}
-              className={`h-full flex flex-col justify-between transition-all duration-300 ${
-                activeTool === 'franchise'
-                  ? 'border-blue-600 ring-2 ring-blue-100 shadow-md bg-blue-50/10'
-                  : 'border-blue-100 hover:border-blue-200'
-              }`}
+              className={`h-full flex flex-col justify-between transition-all duration-300 ${activeTool === 'franchise'
+                ? 'border-blue-600 ring-2 ring-blue-100 shadow-md bg-blue-50/10'
+                : 'border-blue-100 hover:border-blue-200'
+                }`}
             >
               <div>
                 <div className="flex justify-between items-start mb-4">
