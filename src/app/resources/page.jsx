@@ -8,7 +8,7 @@ export const metadata = {
 }
 
 import { PageHero } from "@/components/ui/PageHero";
-import ResourcesClient from "./ResourcesClient";
+import ResourcesClient from "@/components/sections/ResourcesClient";
 
 export const metadata = {
   title: "Resources | The Indus Group of Co.",
@@ -24,7 +24,11 @@ export default function ResourcesPage() {
         label="Downloads"
         title="Resources"
         subtitle="Useful documents, templates, and reference materials for clients and partners."
+<<<<<<< HEAD
         breadcrumbs={[{ label: 'Resources' }]}
+=======
+        breadcrumbs={[{ label: "Resources" }]}
+>>>>>>> ad7bd46 (fix: resources page import path and client structure)
       />
 HEAD
       <section className="section-padding bg-blue-50">
