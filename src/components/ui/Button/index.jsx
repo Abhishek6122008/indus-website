@@ -1,18 +1,6 @@
 import Link from 'next/link'
 import { cn } from '@/lib/utils'
 
-type ButtonProps = {
-  variant?: 'primary' | 'secondary' | 'outline' | 'ghost'
-  size?: 'sm' | 'md' | 'lg'
-  children: React.ReactNode
-  className?: string
-  href?: string
-  external?: boolean
-  onClick?: () => void
-  type?: 'button' | 'submit' | 'reset'
-  disabled?: boolean
-}
-
 const variants = {
   primary: 'bg-blue-600 text-white hover:bg-blue-700 border border-blue-600 font-semibold',
   secondary: 'bg-slate-900 text-white hover:bg-slate-800 border border-slate-900',
@@ -36,7 +24,7 @@ export function Button({
   onClick,
   type = 'button',
   disabled,
-}: ButtonProps) {
+}) {
   const classes = cn(
     'inline-flex items-center justify-center gap-2 rounded-md font-semibold transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed',
     variants[variant],

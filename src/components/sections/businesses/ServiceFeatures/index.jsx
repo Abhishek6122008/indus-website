@@ -1,18 +1,6 @@
-import { LucideIcon } from 'lucide-react'
 import { SectionHeading } from '@/components/ui/SectionHeading'
 
-export type ServiceFeature = {
-  Icon: LucideIcon
-  title: string
-  description: string
-}
-
-type ServiceFeaturesProps = {
-  features: ServiceFeature[]
-  heading?: string
-}
-
-export function ServiceFeatures({ features, heading = 'What We Offer' }: ServiceFeaturesProps) {
+export function ServiceFeatures({ features, heading = 'What We Offer' }) {
   return (
     <section className="section-padding bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

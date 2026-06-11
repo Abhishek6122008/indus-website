@@ -1,13 +1,6 @@
 import { cn } from '@/lib/utils'
 
-type StatItemProps = {
-  value: string
-  label: string
-  light?: boolean
-  className?: string
-}
-
-export function StatItem({ value, label, light = false, className }: StatItemProps) {
+export function StatItem({ value, label, light = false, className }) {
   return (
     <div className={cn('text-center', className)}>
       <div

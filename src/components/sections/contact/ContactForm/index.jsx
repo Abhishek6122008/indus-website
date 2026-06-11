@@ -3,16 +3,8 @@
 import { useState } from 'react'
 import { ArrowRight, CheckCircle } from 'lucide-react'
 
-type FormState = {
-  name: string
-  email: string
-  phone: string
-  subject: string
-  message: string
-}
-
 export function ContactForm() {
-  const [form, setForm] = useState<FormState>({
+  const [form, setForm] = useState({
     name: '',
     email: '',
     phone: '',
@@ -21,11 +13,11 @@ export function ContactForm() {
   })
   const [submitted, setSubmitted] = useState(false)
 
-  function handleChange(e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) {
+  function handleChange(e) {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }))
   }
 
-  function handleSubmit(e: React.FormEvent) {
+  function handleSubmit(e) {
     e.preventDefault()
     // TODO: Wire up to an actual form endpoint (e.g. Formspree, Resend, or a Next.js server action)
     setSubmitted(true)

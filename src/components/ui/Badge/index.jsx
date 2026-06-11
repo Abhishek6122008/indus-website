@@ -1,11 +1,5 @@
 import { cn } from '@/lib/utils'
 
-type BadgeProps = {
-  children: React.ReactNode
-  variant?: 'default' | 'dark' | 'blue' | 'success'
-  className?: string
-}
-
 const variants = {
   default: 'bg-slate-100 text-slate-700',
   dark: 'bg-slate-800 text-white',
@@ -13,7 +7,7 @@ const variants = {
   success: 'bg-green-100 text-green-700',
 }
 
-export function Badge({ children, variant = 'default', className }: BadgeProps) {
+export function Badge({ children, variant = 'default', className }) {
   return (
     <span
       className={cn(

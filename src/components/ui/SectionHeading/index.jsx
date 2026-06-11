@@ -1,14 +1,5 @@
 import { cn } from '@/lib/utils'
 
-type SectionHeadingProps = {
-  label?: string
-  title: string
-  subtitle?: string
-  align?: 'left' | 'center'
-  light?: boolean
-  className?: string
-}
-
 export function SectionHeading({
   label,
   title,
@@ -16,7 +7,7 @@ export function SectionHeading({
   align = 'center',
   light = false,
   className,
-}: SectionHeadingProps) {
+}) {
   return (
     <div
       className={cn(

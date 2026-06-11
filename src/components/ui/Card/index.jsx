@@ -1,14 +1,6 @@
 import { cn } from '@/lib/utils'
 
-type CardProps = {
-  children: React.ReactNode
-  className?: string
-  hover?: boolean
-  padding?: boolean
-  dark?: boolean
-}
-
-export function Card({ children, className, hover = false, padding = true, dark = false }: CardProps) {
+export function Card({ children, className, hover = false, padding = true, dark = false }) {
   return (
     <div
       className={cn(
