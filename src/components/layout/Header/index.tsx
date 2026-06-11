@@ -58,16 +58,18 @@ export function Header() {
                     />
                   </button>
                   {dropdownOpen && (
-                    <div className="absolute top-full left-0 mt-1 w-60 bg-white rounded-xl shadow-lg border border-slate-100 py-2 z-50">
-                      {link.dropdown.map((item) => (
-                        <Link
-                          key={item.href}
-                          href={item.href}
-                          className="block px-4 py-2.5 text-sm text-slate-600 hover:bg-blue-50 hover:text-blue-700 transition-colors"
-                        >
-                          {item.label}
-                        </Link>
-                      ))}
+                    <div className="absolute top-full left-0 w-60 pt-1 z-50">
+                      <div className="bg-white rounded-xl shadow-lg border border-slate-100 py-2">
+                        {link.dropdown.map((item) => (
+                          <Link
+                            key={item.href}
+                            href={item.href}
+                            className="block px-4 py-2.5 text-sm text-slate-600 hover:bg-blue-50 hover:text-blue-700 transition-colors"
+                          >
+                            {item.label}
+                          </Link>
+                        ))}
+                      </div>
                     </div>
                   )}
                 </div>

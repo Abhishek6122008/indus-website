@@ -24,12 +24,12 @@ Open [http://localhost:3000](http://localhost:3000) — you should see the homep
 
 ## Step 2 — Find your track
 
-Open [`TASKS.md`](./TASKS.md) and find your assigned track. Read it fully. It tells you:
+Open [`TASKS.md`](./TASKS.md) and find your assigned track number. Read it fully. It tells you:
 
 - Which branch to create
 - Exactly which files you own
-- What to build, in what order
-- What you must NOT touch
+- Step-by-step what to build
+- A ready-to-use AI prompt for your track
 
 If you don't have a track assigned yet, ask before starting anything.
 
@@ -46,97 +46,103 @@ git checkout -b feature/your-track-name
 Use the branch name from your track in `TASKS.md`. For example:
 
 ```bash
-git checkout -b feature/about-contact
-git checkout -b feature/businesses-set-a
-git checkout -b feature/content-pages
+git checkout -b feature/images
+git checkout -b feature/knowledge-center
+git checkout -b feature/resources
+git checkout -b feature/tools
+git checkout -b feature/legal-pages
+git checkout -b feature/polish
 ```
 
 ---
 
 ## Step 4 — Open your page file before writing anything
 
-Every page already has a `page.tsx` with comments listing exactly what sections it needs. Open it first.
+Every page already has real code. Open it first to understand what's there before adding anything.
 
-For example, if you're on Track 4:
+For example, if you are on Track 2:
 
-- Open [`src/app/about/page.tsx`](src/app/about/page.tsx) — read the section list in the comments
-- Open [`src/app/contact/page.tsx`](src/app/contact/page.tsx) — same
+1. Open [`src/app/knowledge-center/page.tsx`](src/app/knowledge-center/page.tsx) — read what's there
+2. You will be **replacing** the placeholder section with new components you build
+3. Create your new component files in `src/components/sections/knowledge-center/`
 
-These comments are your brief. Build what they say, in the order they say it.
+The page file is always your entry point. Start there.
 
 ---
 
 ## Step 5 — Using AI to write code
 
-AI tools are allowed and encouraged. But you **must** give it the project context first or it will generate code that doesn't match the codebase and your PR will be rejected.
+AI tools are allowed and encouraged. But give it the project context first or it will generate code that doesn't match the codebase.
 
 ### For Claude Code (recommended)
 
-Claude Code automatically reads `CLAUDE.md` when you open the project. Just open the project folder in Claude Code and it's loaded. Then tell it what to build:
-
-```
-I'm working on Track 4 — the About page. 
-Read CLAUDE.md, then read src/app/about/page.tsx.
-Build the sections listed in the TODO comments.
-```
+Claude Code automatically reads `CLAUDE.md` when you open the project. Just open the project folder and paste the AI prompt from your track in `TASKS.md`.
 
 ### For Cursor
 
-`.cursorrules` is auto-loaded. Start your prompt with:
+`.cursorrules` is auto-loaded. Paste the AI prompt from your track and add at the start:
 
 ```
 Read .cursorrules before generating any code.
-I'm building the [page name] page. 
-The file is src/app/[route]/page.tsx — read it first.
 ```
 
 ### For GitHub Copilot
 
-`.github/copilot-instructions.md` is auto-loaded. Just tell it:
-
-```
-Read .github/copilot-instructions.md before generating.
-Build the [section name] component for the [page] page.
-```
+`.github/copilot-instructions.md` is auto-loaded. Paste the AI prompt from your track directly.
 
 ### For any other AI tool
 
-Paste the contents of `CLAUDE.md` directly into the chat, then say:
-
-```
-This is the project context. 
-Now read src/app/[your page]/page.tsx and build the sections listed there.
-```
+Paste the full contents of `CLAUDE.md` into the chat first, then paste the AI prompt from your track.
 
 ---
 
-## Step 6 — How to build a section
+## Step 6 — How to build a new section component
 
-Every section follows the same pattern. Here's an example for building a `PageHero` section:
+Every section follows the same pattern. Here is an example of building a new section called `ArticleCard`:
 
 **1. Create the file in the right folder**
 
-Your section components go in `src/components/sections/[page-name]/`. Create a new folder for each component:
+Section components live in `src/components/sections/[page-name]/`. Create a folder for your component:
 
 ```
-src/components/sections/about/PageHero/index.tsx
+src/components/sections/knowledge-center/ArticleGrid/index.tsx
 ```
 
 **2. Write the component**
 
 ```tsx
-import { cn } from '@/lib/utils'
+import { SectionHeading } from '@/components/ui/SectionHeading'
+import { Card } from '@/components/ui/Card'
+import { Badge } from '@/components/ui/Badge'
+import { Button } from '@/components/ui/Button'
 
-type PageHeroProps = {
-  title: string
-  subtitle?: string
-}
+const articles = [
+  {
+    category: 'Logistics',
+    title: 'How Supply Chain Digitisation is Changing Indian Trade',
+    description: 'A look at how Indian MSMEs are adopting digital logistics platforms.',
+    date: 'June 2025',
+    href: '#',
+  },
+  // add more...
+]
 
-export function PageHero({ title, subtitle }: PageHeroProps) {
+export function ArticleGrid() {
   return (
-    <section className="bg-navy-900 py-20 text-white text-center">
-      <h1 className="text-4xl md:text-5xl font-bold font-heading">{title}</h1>
-      {subtitle && <p className="text-gray-300 mt-4 text-lg">{subtitle}</p>}
+    <section className="section-padding bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <SectionHeading label="Insights" title="Latest Articles" />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {articles.map((article) => (
+            <Card key={article.title} hover>
+              <Badge variant="blue" className="mb-4">{article.category}</Badge>
+              <h3 className="text-slate-900 font-semibold font-heading mb-2">{article.title}</h3>
+              <p className="text-slate-600 text-sm mb-4">{article.description}</p>
+              <Button href={article.href} variant="outline" size="sm">Read More</Button>
+            </Card>
+          ))}
+        </div>
+      </div>
     </section>
   )
 }
@@ -145,34 +151,36 @@ export function PageHero({ title, subtitle }: PageHeroProps) {
 **3. Import it into your page**
 
 ```tsx
-// src/app/about/page.tsx
-import { PageHero } from '@/components/sections/about/PageHero'
+// src/app/knowledge-center/page.tsx
+import { PageHero } from '@/components/ui/PageHero'
+import { ArticleGrid } from '@/components/sections/knowledge-center/ArticleGrid'
 
-export default function AboutPage() {
+export default function KnowledgeCenterPage() {
   return (
-    <div>
-      <PageHero title="Who We Are" />
-      {/* TODO: next section */}
-    </div>
+    <>
+      <PageHero title="Knowledge Center" label="Learn & Grow" breadcrumbs={[{ label: 'Knowledge Center' }]} />
+      <ArticleGrid />
+    </>
   )
 }
 ```
 
-**4. Check it in the browser at `localhost:3000/about`**
+**4. Check it in the browser at `localhost:3000/knowledge-center`**
 
 ---
 
 ## Step 7 — Reuse existing UI components
 
-Before building anything, check what's already in `src/components/ui/`. These are ready to use:
+Before building anything new, check what's already in `src/components/ui/`. These are ready to use:
 
 | Component | Import | Use for |
 |-----------|--------|---------|
 | `Button` | `@/components/ui/Button` | Any clickable link or action |
 | `Card` | `@/components/ui/Card` | Any boxed content block |
-| `SectionHeading` | `@/components/ui/SectionHeading` | Section title + subtitle |
+| `SectionHeading` | `@/components/ui/SectionHeading` | Section title + subtitle + label |
 | `StatItem` | `@/components/ui/StatItem` | Displaying a number + label |
-| `Badge` | `@/components/ui/Badge` | Tags and labels |
+| `Badge` | `@/components/ui/Badge` | Tags, category labels |
+| `PageHero` | `@/components/ui/PageHero` | Full-width dark blue page banner with breadcrumbs |
 
 Example usage:
 
@@ -180,11 +188,30 @@ Example usage:
 import { Button } from '@/components/ui/Button'
 import { Card } from '@/components/ui/Card'
 import { SectionHeading } from '@/components/ui/SectionHeading'
+import { PageHero } from '@/components/ui/PageHero'
 
-// Inside your component:
+// Section heading with label line
 <SectionHeading label="Our Story" title="Who We Are" subtitle="A brief description here." />
+
+// Dark card (hover effect)
+<Card hover dark>Your content</Card>
+
+// Light card (default)
 <Card hover>Your content</Card>
-<Button href="/contact" variant="primary">Get in Touch</Button>
+
+// Primary blue button
+<Button href="/contact">Get in Touch</Button>
+
+// Outline button
+<Button href="/about" variant="outline">Learn More</Button>
+
+// Page hero banner
+<PageHero
+  label="Our Story"
+  title="About Us"
+  subtitle="Short description here."
+  breadcrumbs={[{ label: 'About' }]}
+/>
 ```
 
 ---
@@ -194,8 +221,8 @@ import { SectionHeading } from '@/components/ui/SectionHeading'
 **Commit as you go — small and focused:**
 
 ```bash
-git add src/app/about/page.tsx src/components/sections/about/PageHero/
-git commit -m "feat: add PageHero section to About page"
+git add src/app/knowledge-center/page.tsx src/components/sections/knowledge-center/
+git commit -m "feat: add ArticleGrid and CategoryFilter to Knowledge Center"
 ```
 
 **Commit message prefixes:**
@@ -214,7 +241,7 @@ git commit -m "feat: add PageHero section to About page"
 2. Open a PR on GitHub — the PR template will auto-fill
 3. Fill it out fully — what you built, any decisions you made
 4. Request a review from your team lead
-5. Do not merge your own PR
+5. **Do not merge your own PR**
 
 ---
 
@@ -222,32 +249,66 @@ git commit -m "feat: add PageHero section to About page"
 
 The site uses **Poppins** for headings (`font-heading`) and **Inter** for body text (`font-body`).
 
-**Colours:**
+### Colour palette
 
 | Token | Value | Use for |
 |-------|-------|---------|
-| `navy-950` | `#0a1628` | Footer background |
-| `navy-900` | `#0f2444` | Dark sections, hero gradients |
-| `navy-800` | `#1e3a5f` | Primary navy, headings, buttons |
-| `blue-600` | Tailwind default | CTAs, links, accents |
-| `gray-50` | Tailwind default | Light section backgrounds |
-| `white` | `#ffffff` | Card backgrounds, text on dark |
+| `bg-white` | `#ffffff` | Main section backgrounds |
+| `bg-blue-50` | `#eff6ff` | Alternate section backgrounds (tinted) |
+| `bg-blue-600` | `#2563eb` | Stats bars, CTA sections, primary buttons |
+| `bg-[#0b1f5c]` | Deep navy | Hero sections, footer background |
+| `text-slate-900` | Near black | All headings and primary text |
+| `text-slate-600` | Medium grey | Body text and descriptions |
+| `text-blue-600` | Corporate blue | Labels, links, icons |
+| `border-blue-100` | Light blue | Card borders |
 
-**Section spacing:** use the `section-padding` utility class on every `<section>` — it applies `py-16 md:py-24` consistently.
+### Section background pattern
+
+Alternate between `bg-white` and `bg-blue-50` as you stack sections:
+
+```tsx
+<section className="section-padding bg-white">...</section>
+<section className="section-padding bg-blue-50">...</section>
+<section className="section-padding bg-white">...</section>
+```
+
+For bold CTA / stats sections, use `bg-blue-600` with white text.
+
+### Section spacing
+
+Always use the `section-padding` utility class on every `<section>` — it applies `py-16 md:py-24` consistently:
 
 ```tsx
 <section className="section-padding bg-white">
-  ...
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    {/* your content */}
+  </div>
 </section>
 ```
+
+### Section label pattern
+
+Every section uses this accent label above the heading:
+
+```tsx
+<div className="flex items-center gap-3 mb-4">
+  <div className="w-6 h-[2px] bg-blue-600" />
+  <span className="text-blue-600 text-xs font-semibold tracking-[0.2em] uppercase">
+    Section Label
+  </span>
+</div>
+```
+
+Or just use `SectionHeading` with the `label` prop — it handles this automatically.
 
 ---
 
 ## If something is broken
 
-1. `npm run build` — check for TypeScript or lint errors before asking for help
-2. Read the error message carefully — it usually tells you exactly which file and line
-3. Check that your import paths use `@/` (e.g. `@/components/ui/Button`, not `../../components/ui/Button`)
-4. If the dev server crashes, stop it (`Ctrl+C`) and run `npm run dev` again
+1. `npm run build` — always run this first. It catches TypeScript errors, missing imports, and broken JSX before you open a PR.
+2. Read the error message — it tells you the exact file and line number.
+3. Check import paths use `@/` — for example `@/components/ui/Button`, not `../../components/ui/Button`.
+4. If the dev server crashes, stop it (`Ctrl+C`) and run `npm run dev` again.
+5. If `npm run build` fails with a type error, read the error — usually it's a missing prop or wrong type on a component.
 
-If you're genuinely stuck after trying the above, ask — but include the error message and which file it's in.
+If you are genuinely stuck after trying the above, ask — but always include the full error message and the file it's in.
