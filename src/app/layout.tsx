@@ -18,12 +18,8 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: {
-    default: 'The Indus Group of Co.',
-    template: '%s | The Indus Group',
-  },
-  description:
-    'Delivering industry-leading solutions across verticals with reliability, innovation, and integrity.',
+  title: 'The Indus Group of Co.',
+  description: 'Delivering industry-leading solutions across verticals with reliability, innovation, and integrity.',
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
