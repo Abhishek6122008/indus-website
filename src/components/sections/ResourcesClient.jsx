@@ -1,127 +1,274 @@
-"use client";
+'use client'
 
-import { useState, useMemo } from "react";
-import { FileText, Search, Download } from "lucide-react";
+import { useState } from 'react'
+import { Truck, DollarSign, Globe, Download, ExternalLink, BookOpen, FileText, Briefcase, Map, X, ChevronRight } from 'lucide-react'
 
-const RESOURCES = [
+const QUICK_LINKS = [
   {
-    title: "Company Profile",
-    desc: "Indus Group overview document with structure, mission and services.",
-    category: "PDFs",
+    title: 'Cargo Tracking',
+    desc: 'Track your shipments globally in real-time.',
+    icon: Truck,
+    bg: 'from-slate-700 to-slate-900',
+    href: '#',
   },
   {
-    title: "Logistics Guide",
-    desc: "Complete step-by-step logistics operations workflow guide.",
-    category: "Guides",
+    title: 'Currency Converter',
+    desc: 'Check the latest international exchange rates.',
+    icon: DollarSign,
+    bg: 'from-blue-800 to-blue-950',
+    href: '#',
   },
   {
-    title: "Business Brochure",
-    desc: "Official client-facing brochure for partnerships.",
-    category: "PDFs",
+    title: 'Incoterms 2020',
+    desc: 'Understand international trade terms and conditions.',
+    icon: Globe,
+    bg: 'from-indigo-700 to-indigo-950',
+    href: '#',
   },
-  {
-    title: "Service Overview",
-    desc: "Full breakdown of all services provided by Indus Group.",
-    category: "Documents",
-  },
-];
+]
 
-const CATEGORIES = ["All", "PDFs", "Guides", "Documents"];
+const GUIDES = [
+  {
+    id: 'container-types',
+    title: 'Container Types Overview',
+    desc: 'Dimensions, weight limits, and specs for all major shipping container types.',
+    icon: Briefcase,
+    category: 'Guide',
+    file: '/files/container-types.pdf',
+    summary: 'A comprehensive reference document covering 9 standard container types used in international shipping. Each type includes internal dimensions (mm and ft), door opening measurements, max gross weight, tare weight, max payload, and cubic capacity.',
+    highlights: [
+      'Standard Container — 20\', 40\', and 40\' High-Cube versions for general dry cargo',
+      'Hardtop Container — Removable steel roof for overheight cargo',
+      'Open-Top Container — Removable tarpaulin for top-loading overheight cargo',
+      'Flat Rack — 20\', 40\', and 40\' HC for heavy and overwidth loads',
+      'Platform — 20\' and 40\' for oversized and non-domestic heavy cargo',
+      'Ventilated Container — For cargo requiring airflow',
+      'Refrigerated (Reefer) — Electrically cooled/heated with own power unit',
+      'Insulated Container — Cooling supplied externally by terminal or reefer unit',
+      'Tank Container — For liquid food transport (alcohols, juices, edible oils)',
+    ],
+  },
+  {
+    id: 'world-ports',
+    title: 'World Ports (Countrywise)',
+    desc: 'A complete A–Z reference of major cargo ports across 100+ countries.',
+    icon: Map,
+    category: 'Guide',
+    file: '/files/world-ports.pdf',
+    summary: 'An extensive reference document listing major cargo and commercial ports organized alphabetically by country. Covers over 100 countries from Alaska to Zimbabwe, including key regional hubs across Asia, Europe, the Americas, Africa, and Oceania.',
+    highlights: [
+      'Asia Pacific — Singapore, Shanghai, Mumbai, Jakarta, Hong Kong, Kolkata, Chennai',
+      'Europe — Rotterdam, Hamburg, Antwerp, Le Havre, Marseilles, Genoa, Barcelona',
+      'Middle East — Dubai, Abu Dhabi, Jebel Ali, Dammam, Jeddah, Muscat',
+      'Americas — New York, Houston, Los Angeles, Santos, Buenos Aires, Vancouver',
+      'Africa — Mombasa, Dar es Salaam, Cape Town, Durban, Lagos, Dakar',
+      'India — Mumbai, Chennai, Kolkata, Haldia, Cochin, Kandla, Pipavav, Mundra',
+      'Organized A–Z by country for quick lookup during shipment planning',
+    ],
+  },
+  {
+    id: 'company-profile',
+    title: 'Company Profile',
+    desc: 'Indus Group overview with structure, mission and services.',
+    icon: Briefcase,
+    category: 'PDF',
+    file: null,
+    summary: 'An overview of The Indus Group of Co. covering the company\'s history, organizational structure, mission and vision, and the five business verticals: Logistics, Enterprise Solutions, Skill Development, Real Estate, and HBC Franchise.',
+    highlights: [
+      '14+ years of industry experience',
+      'Operations across Logistics, Enterprise Solutions, Skill Development, Real Estate, and Food Chain',
+      'Mission: Delivering industry-leading solutions with reliability, innovation, and integrity',
+      '1,000+ clients served across sectors',
+      'MSME-focused approach to business empowerment',
+    ],
+  },
+  {
+    id: 'logistics-guide',
+    title: 'Logistics Operations Guide',
+    desc: 'Complete step-by-step logistics operations workflow guide.',
+    icon: BookOpen,
+    category: 'Guide',
+    file: null,
+    summary: 'A step-by-step operational guide covering end-to-end logistics workflows managed by The Indus Group, from shipment booking and documentation to last-mile delivery and tracking.',
+    highlights: [
+      'Shipment booking and documentation process',
+      'Customs clearance and compliance checklist',
+      'Route planning and carrier selection criteria',
+      'Tracking and real-time shipment visibility',
+      'Last-mile delivery and proof-of-delivery protocols',
+    ],
+  },
+  {
+    id: 'business-brochure',
+    title: 'Business Brochure',
+    desc: 'Official client-facing brochure for partnerships.',
+    icon: FileText,
+    category: 'PDF',
+    file: null,
+    summary: 'The official Indus Group client brochure designed for partnership introductions, business meetings, and tender submissions. Covers all five verticals with key service highlights and contact information.',
+    highlights: [
+      'Professional overview of all five business verticals',
+      'Key statistics: 14+ years, 1,000+ clients, 100+ team members',
+      'Service capabilities and USPs per vertical',
+      'Contact details and social channels',
+    ],
+  },
+  {
+    id: 'service-overview',
+    title: 'Service Overview',
+    desc: 'Full breakdown of all services provided by Indus Group.',
+    icon: FileText,
+    category: 'Document',
+    file: null,
+    summary: 'A detailed breakdown of every service offered across all five Indus Group verticals, designed for clients evaluating specific solutions or comparing service tiers.',
+    highlights: [
+      'Logistics & Supply Chain — freight, customs, warehousing, last-mile',
+      'Enterprise Solutions — IT, procurement, consulting services',
+      'Skill Development — training programs under My Skills Academy',
+      'Real Estate & Infra — project facilitation and advisory',
+      'HBC Franchise — food chain franchise setup and support',
+    ],
+  },
+]
 
 export default function ResourcesClient() {
-  const [filter, setFilter] = useState("All");
-  const [search, setSearch] = useState("");
+  const [activeGuide, setActiveGuide] = useState(null)
 
-  const filtered = useMemo(() => {
-    return RESOURCES.filter((r) => {
-      const matchCategory =
-        filter === "All" || r.category === filter;
+  function toggleGuide(id) {
+    setActiveGuide((prev) => (prev === id ? null : id))
+  }
 
-      const matchSearch =
-        r.title.toLowerCase().includes(search.toLowerCase()) ||
-        r.desc.toLowerCase().includes(search.toLowerCase());
-
-      return matchCategory && matchSearch;
-    });
-  }, [filter, search]);
+  const expanded = GUIDES.find((g) => g.id === activeGuide)
 
   return (
-    <section className="relative py-20 bg-gradient-to-b from-blue-50 via-white to-white">
-      <div className="max-w-7xl mx-auto px-6">
+    <div className="bg-white">
 
-        <div className="relative max-w-2xl mx-auto mb-10">
-          <Search className="absolute left-4 top-3.5 text-gray-400 w-5 h-5" />
-
-          <input
-            type="text"
-            placeholder="Search resources..."
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-            className="w-full pl-11 pr-4 py-3 rounded-xl border shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
-          />
+      {/* Quick Links & Tools */}
+      <section className="py-16 border-b border-slate-100">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl font-bold font-heading text-slate-900 text-center mb-10">
+            Quick Links &amp; Tools
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+            {QUICK_LINKS.map((link) => {
+              const Icon = link.icon
+              return (
+                <a
+                  key={link.title}
+                  href={link.href}
+                  className={`group relative bg-gradient-to-br ${link.bg} rounded-2xl overflow-hidden p-8 flex flex-col justify-end min-h-[200px] hover:scale-[1.02] transition-transform duration-300`}
+                >
+                  <div className="absolute top-6 right-6 opacity-20 group-hover:opacity-30 transition-opacity">
+                    <Icon className="w-16 h-16 text-white" />
+                  </div>
+                  <h3 className="text-lg font-bold text-white mb-1">{link.title}</h3>
+                  <p className="text-sm text-white/70">{link.desc}</p>
+                  <div className="mt-4 flex items-center gap-1 text-xs font-semibold text-white/80 group-hover:text-white transition-colors">
+                    Open <ExternalLink className="w-3 h-3" />
+                  </div>
+                </a>
+              )
+            })}
+          </div>
         </div>
+      </section>
 
-        <div className="flex flex-wrap justify-center gap-3 mb-14">
-          {CATEGORIES.map((cat) => (
-            <button
-              key={cat}
-              onClick={() => setFilter(cat)}
-              className={`px-5 py-2 rounded-full text-sm font-medium border transition-all duration-200 ${
-                filter === cat
-                  ? "bg-blue-600 text-white shadow-md scale-105"
-                  : "bg-white hover:bg-blue-600 hover:text-white"
-              }`}
-            >
-              {cat}
-            </button>
-          ))}
-        </div>
+      {/* Downloadable Guides */}
+      <section className="py-16">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl font-bold font-heading text-slate-900 text-center mb-10">
+            Downloadable Guides
+          </h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {GUIDES.map((guide) => {
+              const Icon = guide.icon
+              const isActive = activeGuide === guide.id
+              return (
+                <button
+                  key={guide.id}
+                  onClick={() => toggleGuide(guide.id)}
+                  className={`group text-left bg-white border rounded-2xl overflow-hidden transition-all duration-300 ${
+                    isActive
+                      ? 'border-blue-500 ring-2 ring-blue-100 shadow-md'
+                      : 'border-slate-200 hover:shadow-lg hover:border-blue-200'
+                  }`}
+                >
+                  {/* Thumbnail */}
+                  <div className={`h-36 flex items-center justify-center transition-colors ${isActive ? 'bg-blue-600' : 'bg-gradient-to-br from-blue-50 to-blue-100 group-hover:from-blue-100 group-hover:to-blue-200'}`}>
+                    <Icon className={`w-10 h-10 transition-colors ${isActive ? 'text-white' : 'text-blue-400 group-hover:text-blue-600'}`} />
+                  </div>
 
-          {filtered.length === 0 ? (
-            <div className="col-span-full text-center text-gray-500 py-20">
-              No resources found.
-            </div>
-          ) : (
-            filtered.map((item) => (
-              <div
-                key={item.title}
-                className="group relative bg-white border rounded-2xl p-6 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-300"
-              >
-                <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-blue-50 mb-4 group-hover:bg-blue-100 transition">
-                  <FileText className="text-blue-600 w-5 h-5" />
-                </div>
+                  {/* Content */}
+                  <div className="p-5">
+                    <span className="text-xs font-medium text-blue-600 bg-blue-50 px-2 py-0.5 rounded-full">
+                      {guide.category}
+                    </span>
+                    <h3 className="font-semibold text-slate-900 mt-2 mb-1">{guide.title}</h3>
+                    <p className="text-sm text-slate-500 leading-relaxed">{guide.desc}</p>
+                    <div className={`mt-4 flex items-center gap-1 text-xs font-bold transition-colors ${isActive ? 'text-blue-600' : 'text-slate-400 group-hover:text-blue-500'}`}>
+                      {isActive ? 'Hide summary' : 'View summary'}
+                      <ChevronRight className={`w-3.5 h-3.5 transition-transform ${isActive ? 'rotate-90' : ''}`} />
+                    </div>
+                  </div>
+                </button>
+              )
+            })}
+          </div>
 
-                <h3 className="font-semibold text-lg text-gray-900">
-                  {item.title}
-                </h3>
-
-                <p className="text-sm text-gray-600 mt-2 leading-relaxed">
-                  {item.desc}
-                </p>
-
-                <div className="mt-5 flex items-center justify-between">
-                  <span className="text-xs px-3 py-1 rounded-full bg-gray-100 text-gray-600">
-                    {item.category}
+          {/* Expanded Summary Panel */}
+          {expanded && (
+            <div className="mt-8 border border-blue-100 rounded-2xl bg-blue-50/40 p-6 sm:p-8">
+              <div className="flex items-start justify-between gap-4 mb-4">
+                <div>
+                  <span className="text-xs font-medium text-blue-600 bg-blue-100 px-2 py-0.5 rounded-full">
+                    {expanded.category}
                   </span>
-
-                  <button
-                    disabled
-                    className="flex items-center gap-1 text-sm text-gray-400 cursor-not-allowed"
-                  >
-                    <Download className="w-4 h-4" />
-                    Coming Soon
-                  </button>
+                  <h3 className="text-xl font-bold text-slate-900 mt-2">{expanded.title}</h3>
+                  <p className="text-sm text-slate-600 mt-1">{expanded.summary}</p>
                 </div>
-
-                <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 bg-blue-50 blur-2xl -z-10 transition"></div>
+                <button
+                  onClick={() => setActiveGuide(null)}
+                  className="text-slate-400 hover:text-slate-600 shrink-0 mt-1"
+                  aria-label="Close"
+                >
+                  <X className="w-5 h-5" />
+                </button>
               </div>
-            ))
+
+              <ul className="space-y-2 mb-6">
+                {expanded.highlights.map((point) => (
+                  <li key={point} className="flex items-start gap-2 text-sm text-slate-700">
+                    <ChevronRight className="w-4 h-4 text-blue-500 shrink-0 mt-0.5" />
+                    {point}
+                  </li>
+                ))}
+              </ul>
+
+              {expanded.file ? (
+                <a
+                  href={expanded.file}
+                  download
+                  className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold px-5 py-2.5 rounded-lg transition-colors"
+                >
+                  <Download className="w-4 h-4" />
+                  Download PDF
+                </a>
+              ) : (
+                <button
+                  disabled
+                  className="inline-flex items-center gap-2 bg-slate-100 text-slate-400 text-sm font-semibold px-5 py-2.5 rounded-lg cursor-not-allowed"
+                >
+                  <Download className="w-4 h-4" />
+                  Coming Soon
+                </button>
+              )}
+            </div>
           )}
 
         </div>
-      </div>
-    </section>
-  );
+      </section>
+
+    </div>
+  )
 }
