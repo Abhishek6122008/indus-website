@@ -4,6 +4,9 @@ import { Badge } from '@/components/ui/Badge'
 import { Button } from '@/components/ui/Button'
 import { SectionHeading } from '@/components/ui/SectionHeading'
 import { Rocket, Users, Lightbulb, GraduationCap, MapPin, Mail } from 'lucide-react'
+import { WhyWorkWithUs } from '@/components/sections/careers/WhyWorkWithUs'
+import { OpenPositions } from '@/components/sections/careers/OpenPositions'
+import { CareersCTA } from '@/components/sections/careers/CareersCTA'
 
 export const metadata = {
   title: 'Careers | The Indus Group of Co.',
@@ -58,6 +61,9 @@ const openPositions = [
     type: 'Internship',
   },
 ]
+
+    'Join our team at The Indus Group of Co. Explore open positions, learn about our values, and build your career with us.',
+}
 
 export default function CareersPage() {
   return (
