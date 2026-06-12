@@ -17,7 +17,7 @@ export default function PrivacyPolicyPage() {
       />
       <section className="section-padding bg-white">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-slate-750">
+          <div className="text-slate-700">
             <p className="text-lg text-slate-600 leading-relaxed mb-8 font-medium">
               At The Indus Group of Co., we are committed to safeguarding your privacy. This Privacy Policy explains how we collect, use, disclose, and protect your information when you visit our website, use our services, or interact with us.
             </p>
@@ -88,7 +88,7 @@ export default function PrivacyPolicyPage() {
               If you have any questions or concerns regarding this Privacy Policy or our data handling practices, please contact us at:
             </p>
             <div className="bg-blue-50 border border-blue-100 rounded-xl p-6 mt-4">
-              <p className="text-slate-850 font-bold mb-1">The Indus Group of Co.</p>
+              <p className="text-slate-800 font-bold mb-1">The Indus Group of Co.</p>
               <p className="text-slate-600 text-sm mb-1">New Delhi, India</p>
               <p className="text-slate-600 text-sm mb-1">
                 Email:{' '}

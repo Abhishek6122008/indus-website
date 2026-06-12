@@ -16,7 +16,7 @@ export default function TermsPage() {
       />
       <section className="section-padding bg-white">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-slate-750">
+          <div className="text-slate-700">
             <p className="text-lg text-slate-600 leading-relaxed mb-8 font-medium">
               Welcome to the website of The Indus Group of Co. By accessing or using our website, you agree to comply with and be bound by the following Terms & Conditions. Please read them carefully.
             </p>
@@ -86,7 +86,7 @@ export default function TermsPage() {
               If you have any questions about these Terms & Conditions, please reach out to us at:
             </p>
             <div className="bg-blue-50 border border-blue-100 rounded-xl p-6 mt-4">
-              <p className="text-slate-850 font-bold mb-1">The Indus Group of Co.</p>
+              <p className="text-slate-800 font-bold mb-1">The Indus Group of Co.</p>
               <p className="text-slate-600 text-sm mb-1">New Delhi, India</p>
               <p className="text-slate-600 text-sm mb-1">
                 Email:{' '}
