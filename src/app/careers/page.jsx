@@ -62,9 +62,6 @@ const openPositions = [
   },
 ]
 
-    'Join our team at The Indus Group of Co. Explore open positions, learn about our values, and build your career with us.',
-}
-
 export default function CareersPage() {
   return (
     <>
