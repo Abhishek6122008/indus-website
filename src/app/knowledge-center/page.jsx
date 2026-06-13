@@ -1,9 +1,10 @@
 import { PageHero } from '@/components/ui/PageHero'
-import { BookOpen } from 'lucide-react'
+import { CategoryFilter } from '@/components/sections/knowledge-center/CategoryFilter'
 
 export const metadata = {
   title: 'Knowledge Center | The Indus Group of Co.',
-  description: 'Articles, guides, and industry insights from The Indus Group across logistics, enterprise, skill development, real estate, and franchising.',
+  description:
+    'Articles, guides, and industry insights from The Indus Group across logistics, enterprise, skill development, real estate, and franchise growth.',
 }
 
 export default function KnowledgeCenterPage() {
@@ -15,18 +16,8 @@ export default function KnowledgeCenterPage() {
         subtitle="Industry insights, practical guides, and expert perspectives from across The Indus Group."
         breadcrumbs={[{ label: 'Knowledge Center' }]}
       />
-      <section className="section-padding bg-blue-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="w-16 h-16 rounded-2xl bg-white border border-blue-100 flex items-center justify-center mx-auto mb-6 shadow-sm">
-            <BookOpen className="w-7 h-7 text-blue-600" />
-          </div>
-          <h2 className="text-2xl font-bold font-heading text-slate-900 mb-3">Content Coming Soon</h2>
-          <p className="text-slate-600 max-w-md mx-auto">
-            We are curating articles, case studies, and guides. Check back soon — or follow us on
-            social media for the latest updates.
-          </p>
-        </div>
-      </section>
+
+      <CategoryFilter />
     </>
   )
 }
