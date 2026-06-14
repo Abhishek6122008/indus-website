@@ -1,15 +1,15 @@
 const partners = [
-  { name: 'Air India', logo: '/images/partners/air-india.png' },
-  { name: 'Aramex', logo: '/images/partners/aramex.png' },
-  { name: 'CMA CGM', logo: '/images/partners/cma-cgm.png' },
-  { name: 'Etihad', logo: '/images/partners/etihad.png' },
-  { name: 'Hapag-Lloyd', logo: '/images/partners/hapag-lloyd.png' },
-  { name: 'Lufthansa', logo: '/images/partners/lufthansa.png' },
-  { name: 'Maersk', logo: '/images/partners/maersk.png' },
-  { name: 'MOL', logo: '/images/partners/mol.png' },
-  { name: 'Qatar Airways', logo: '/images/partners/qatar-airways.png' },
-  { name: 'Thai Airways', logo: '/images/partners/thai-airways.png' },
-  { name: 'UPS', logo: '/images/partners/ups.png' },
+  { name: 'Air India', logo: '/images/partners/Air India.png' },
+  { name: 'Aramex', logo: '/images/partners/Aramex.png' },
+  { name: 'CMA CGM', logo: '/images/partners/CMA CGM.png' },
+  { name: 'Etihad Airways', logo: '/images/partners/Etihad Airways.png' },
+  { name: 'Hapag-Lloyd', logo: '/images/partners/Hapag-Lloyd.png' },
+  { name: 'Lufthansa', logo: '/images/partners/Lufthansa.png' },
+  { name: 'Maersk', logo: '/images/partners/Maersk.png' },
+  { name: 'MOL', logo: '/images/partners/MOL (Mitsui O.S.K. Lines).png' },
+  { name: 'Qatar Airways', logo: '/images/partners/Qatar Airways.png' },
+  { name: 'Thai Airways', logo: '/images/partners/Thai Airways.png' },
+  { name: 'UPS', logo: '/images/partners/UPS.png' },
 ]
 
 export function PartnersStrip() {
@@ -18,7 +18,7 @@ export function PartnersStrip() {
   return (
     <section className="py-12 bg-white border-y border-slate-100">
       <div className="text-center mb-8">
-        <h2 className="text-xl font-bold font-heading text-[#c00] tracking-wide uppercase">
+        <h2 className="text-xl font-bold font-heading text-slate-900 tracking-wide uppercase">
           Our Valued Partners
         </h2>
       </div>
@@ -31,7 +31,7 @@ export function PartnersStrip() {
           {doubled.map((partner, i) => (
             <div
               key={`${partner.name}-${i}`}
-              className="inline-flex items-center justify-center shrink-0 h-14 px-4 grayscale hover:grayscale-0 opacity-60 hover:opacity-100 transition-all duration-300"
+              className="inline-flex items-center justify-center shrink-0 h-14 px-4 opacity-90 hover:opacity-100 transition-all duration-300"
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img

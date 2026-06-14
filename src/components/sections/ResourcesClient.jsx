@@ -33,6 +33,7 @@ const GUIDES = [
     title: 'Container Types Overview',
     desc: 'Dimensions, weight limits, and specs for all major shipping container types.',
     icon: Briefcase,
+    image: '/images/resources/container-types.png',
     category: 'Guide',
     file: '/files/container-types.pdf',
     summary: 'A comprehensive reference document covering 9 standard container types used in international shipping. Each type includes internal dimensions (mm and ft), door opening measurements, max gross weight, tare weight, max payload, and cubic capacity.',
@@ -53,6 +54,7 @@ const GUIDES = [
     title: 'World Ports (Countrywise)',
     desc: 'A complete A–Z reference of major cargo ports across 100+ countries.',
     icon: Map,
+    image: '/images/resources/world-ports.png',
     category: 'Guide',
     file: '/files/world-ports.pdf',
     summary: 'An extensive reference document listing major cargo and commercial ports organized alphabetically by country. Covers over 100 countries from Alaska to Zimbabwe, including key regional hubs across Asia, Europe, the Americas, Africa, and Oceania.',
@@ -71,9 +73,10 @@ const GUIDES = [
     title: 'Company Profile',
     desc: 'Indus Group overview with structure, mission and services.',
     icon: Briefcase,
+    image: '/images/resources/company-profile.png',
     category: 'PDF',
-    file: null,
-    summary: 'An overview of The Indus Group of Co. covering the company\'s history, organizational structure, mission and vision, and the five business verticals: Logistics, Enterprise Solutions, Skill Development, Real Estate, and HBC Franchise.',
+    file: '/files/indus-corporate-deck.pdf',
+    summary: 'An overview of The Indus Group of Co. covering the company\'s history, organizational structure, mission and vision, and the five business verticals: Logistics, Enterprise Solutions, Skill Development, Real Estate, and HBC Franchise. Includes the full company presentation deck.',
     highlights: [
       '14+ years of industry experience',
       'Operations across Logistics, Enterprise Solutions, Skill Development, Real Estate, and Food Chain',
@@ -87,6 +90,7 @@ const GUIDES = [
     title: 'Logistics Operations Guide',
     desc: 'Complete step-by-step logistics operations workflow guide.',
     icon: BookOpen,
+    image: '/images/resources/logistics-guide.png',
     category: 'Guide',
     file: null,
     summary: 'A step-by-step operational guide covering end-to-end logistics workflows managed by The Indus Group, from shipment booking and documentation to last-mile delivery and tracking.',
@@ -103,6 +107,7 @@ const GUIDES = [
     title: 'Business Brochure',
     desc: 'Official client-facing brochure for partnerships.',
     icon: FileText,
+    image: '/images/resources/business-brochure.png',
     category: 'PDF',
     file: null,
     summary: 'The official Indus Group client brochure designed for partnership introductions, business meetings, and tender submissions. Covers all five verticals with key service highlights and contact information.',
@@ -111,22 +116,6 @@ const GUIDES = [
       'Key statistics: 14+ years, 1,000+ clients, 100+ team members',
       'Service capabilities and USPs per vertical',
       'Contact details and social channels',
-    ],
-  },
-  {
-    id: 'service-overview',
-    title: 'Service Overview',
-    desc: 'Full breakdown of all services provided by Indus Group.',
-    icon: FileText,
-    category: 'Document',
-    file: null,
-    summary: 'A detailed breakdown of every service offered across all five Indus Group verticals, designed for clients evaluating specific solutions or comparing service tiers.',
-    highlights: [
-      'Logistics & Supply Chain — freight, customs, warehousing, last-mile',
-      'Enterprise Solutions — IT, procurement, consulting services',
-      'Skill Development — training programs under My Skills Academy',
-      'Real Estate & Infra — project facilitation and advisory',
-      'HBC Franchise — food chain franchise setup and support',
     ],
   },
 ]
@@ -182,7 +171,7 @@ export default function ResourcesClient() {
             Downloadable Guides
           </h2>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="flex flex-wrap justify-center gap-6">
             {GUIDES.map((guide) => {
               const Icon = guide.icon
               const isActive = activeGuide === guide.id
@@ -190,15 +179,24 @@ export default function ResourcesClient() {
                 <button
                   key={guide.id}
                   onClick={() => toggleGuide(guide.id)}
-                  className={`group text-left bg-white border rounded-2xl overflow-hidden transition-all duration-300 ${
+                  className={`group text-left bg-white border rounded-2xl overflow-hidden transition-all duration-300 w-full sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)] ${
                     isActive
                       ? 'border-blue-500 ring-2 ring-blue-100 shadow-md'
                       : 'border-slate-200 hover:shadow-lg hover:border-blue-200'
                   }`}
                 >
                   {/* Thumbnail */}
-                  <div className={`h-36 flex items-center justify-center transition-colors ${isActive ? 'bg-blue-600' : 'bg-gradient-to-br from-blue-50 to-blue-100 group-hover:from-blue-100 group-hover:to-blue-200'}`}>
-                    <Icon className={`w-10 h-10 transition-colors ${isActive ? 'text-white' : 'text-blue-400 group-hover:text-blue-600'}`} />
+                  <div className={`relative h-36 flex items-center justify-center overflow-hidden transition-colors ${isActive ? 'bg-blue-600' : 'bg-gradient-to-br from-blue-50 to-blue-100 group-hover:from-blue-100 group-hover:to-blue-200'}`}>
+                    {guide.image ? (
+                      /* eslint-disable-next-line @next/next/no-img-element */
+                      <img
+                        src={guide.image}
+                        alt=""
+                        className="absolute inset-0 w-full h-full object-cover"
+                      />
+                    ) : (
+                      <Icon className={`relative w-10 h-10 transition-colors ${isActive ? 'text-white' : 'text-blue-400 group-hover:text-blue-600'}`} />
+                    )}
                   </div>
 
                   {/* Content */}
