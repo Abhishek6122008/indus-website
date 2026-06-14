@@ -34,7 +34,7 @@ const businesses = [
 // ── SocialMenu ────────────────────────────────────────────────────────────────
 function SocialMenu() {
   return (
-    <div className="fixed bottom-6 left-6 z-50 group">
+    <div className="fixed bottom-24 left-6 z-50 group">
       <button className="flex items-center gap-2 px-5 py-3 rounded-full bg-[#0b1f5c] text-white shadow-lg hover:bg-blue-700 transition">
         SOCIAL
         <ChevronDown className="w-4 h-4" />
@@ -47,7 +47,7 @@ function SocialMenu() {
           rel="noopener noreferrer"
           className="flex items-center gap-3 px-4 py-3 text-gray-700 hover:bg-gray-100"
         >
-          <Instagram className="w-5 h-5" />
+          <Instagram className="w-5 h-5 text-[#E1306C]" />
           Instagram
         </a>
         <a
@@ -56,7 +56,7 @@ function SocialMenu() {
           rel="noopener noreferrer"
           className="flex items-center gap-3 px-4 py-3 text-gray-700 hover:bg-gray-100"
         >
-          <Linkedin className="w-5 h-5" />
+          <Linkedin className="w-5 h-5 text-[#0077B5]" />
           LinkedIn
         </a>
         <a
@@ -65,7 +65,7 @@ function SocialMenu() {
           rel="noopener noreferrer"
           className="flex items-center gap-3 px-4 py-3 text-gray-700 hover:bg-gray-100"
         >
-          <Youtube className="w-5 h-5" />
+          <Youtube className="w-5 h-5 text-[#FF0000]" />
           YouTube
         </a>
       </div>
@@ -329,10 +329,10 @@ export function Footer() {
 
         {/* Bottom bar */}
         <div className="border-t border-white/10">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex flex-col md:flex-row items-center justify-between gap-4">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 mb-20 md:mb-0 flex flex-col md:flex-row items-center justify-between gap-4">
 
             {/* Legal */}
-            <div className="flex flex-wrap items-center gap-4 text-xs text-blue-200/50">
+            <div className="flex flex-wrap items-center justify-center gap-6 text-xs text-blue-200/80">
               <Link href="/careers" className="hover:text-white transition-colors">Careers</Link>
               <Link href="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
               <Link href="/terms" className="hover:text-white transition-colors">Terms & Conditions</Link>
