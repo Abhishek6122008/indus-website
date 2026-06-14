@@ -263,7 +263,7 @@ export function Footer() {
                   alt="The Indus Group of Co."
                   width={160}
                   height={64}
-                  className="h-14 w-auto object-contain brightness-0 invert"
+                  className="h-14 w-auto object-contain"
                 />
               </div>
               <p className="text-sm leading-relaxed mb-6 max-w-sm text-blue-200/80">
