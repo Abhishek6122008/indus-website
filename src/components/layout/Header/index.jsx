@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { Menu, X, ChevronDown, Phone } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
@@ -32,13 +33,15 @@ export function Header() {
         <div className="flex items-center justify-between h-16 md:h-20">
 
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2.5 shrink-0">
-            <div className="w-9 h-9 bg-blue-600 rounded-lg flex items-center justify-center">
-              <span className="text-white text-xs font-bold">TIG</span>
-            </div>
-            <span className="text-base font-bold font-heading text-slate-900 hidden sm:block">
-              The Indus Group
-            </span>
+          <Link href="/" className="flex items-center shrink-0">
+            <Image
+              src="/images/indus-logo.png"
+              alt="The Indus Group of Co."
+              width={140}
+              height={56}
+              className="h-12 w-auto object-contain"
+              priority
+            />
           </Link>
 
           {/* Desktop Nav */}

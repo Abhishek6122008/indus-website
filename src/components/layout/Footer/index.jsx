@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { useState, useRef, useEffect } from 'react'
 import { Phone, Mail, Instagram, Linkedin, Youtube, ChevronDown, MessageCircle, X, Send, Bot, Loader2 } from 'lucide-react'
 
@@ -60,7 +61,7 @@ function SocialMenu() {
           LinkedIn
         </a>
         <a
-          href="https://youtube.com/@theindusgroupco"
+          href="https://www.youtube.com/@theindusgroupco.?si=LUxtGChKqM4L2KGU"
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center gap-3 px-4 py-3 text-gray-700 hover:bg-gray-100"
@@ -256,11 +257,14 @@ export function Footer() {
 
             {/* Brand */}
             <div className="lg:col-span-2">
-              <div className="flex items-center gap-2.5 mb-4">
-                <div className="w-9 h-9 bg-blue-600 rounded-lg flex items-center justify-center shrink-0">
-                  <span className="text-white text-xs font-bold">TIG</span>
-                </div>
-                <span className="text-white text-base font-bold font-heading">The Indus Group of Co.</span>
+              <div className="mb-4">
+                <Image
+                  src="/images/indus-logo.png"
+                  alt="The Indus Group of Co."
+                  width={160}
+                  height={64}
+                  className="h-14 w-auto object-contain brightness-0 invert"
+                />
               </div>
               <p className="text-sm leading-relaxed mb-6 max-w-sm text-blue-200/80">
                 Delivering industry-leading solutions across verticals with reliability, innovation, and integrity.
