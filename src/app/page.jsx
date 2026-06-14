@@ -1,5 +1,6 @@
 import { HeroSection } from '@/components/sections/home/HeroSection'
 import { WhoWeAreSection } from '@/components/sections/home/WhoWeAreSection'
+import { PartnersStrip } from '@/components/sections/home/PartnersStrip'
 import { BusinessesGrid } from '@/components/sections/home/BusinessesGrid'
 import { StatsBar } from '@/components/sections/home/StatsBar'
 import { Testimonials } from '@/components/sections/home/Testimonials'
@@ -10,6 +11,7 @@ export default function HomePage() {
     <>
       <HeroSection />
       <WhoWeAreSection />
+      <PartnersStrip />
       <BusinessesGrid />
       <StatsBar />
       <Testimonials />
