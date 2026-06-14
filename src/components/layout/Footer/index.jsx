@@ -34,7 +34,7 @@ const businesses = [
 // ── SocialMenu ────────────────────────────────────────────────────────────────
 function SocialMenu() {
   return (
-    <div className="fixed bottom-24 left-6 z-50 group">
+    <div className="fixed bottom-16 left-6 z-50 group">
       <button className="flex items-center gap-2 px-5 py-3 rounded-full bg-[#0b1f5c] text-white shadow-lg hover:bg-blue-700 transition">
         SOCIAL
         <ChevronDown className="w-4 h-4" />
@@ -167,7 +167,7 @@ function ChatbotWidget() {
   }
 
   return (
-    <div className="fixed bottom-24 right-6 z-50 flex flex-col items-end gap-3">
+    <div className="fixed bottom-16 right-6 z-50 flex flex-col items-end gap-3">
       {/* Chat window */}
       {open && (
         <div className="w-[360px] flex flex-col rounded-2xl shadow-2xl border border-gray-200 bg-white overflow-hidden">
