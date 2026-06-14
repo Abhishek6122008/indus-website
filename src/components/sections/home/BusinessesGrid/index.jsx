@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
 import { SectionHeading } from '@/components/ui/SectionHeading'
@@ -10,6 +11,7 @@ const businesses = [
       'We provide comprehensive, end-to-end logistics and supply chain solutions for domestic and international trade. From freight management to last-mile delivery, our expertise ensures your goods move efficiently, reliably, and on time.',
     exploreLabel: 'Explore Logistics',
     href: '/businesses/logistics',
+    image: '/images/services/logistics.jpg',
     flip: false,
   },
   {
@@ -19,6 +21,7 @@ const businesses = [
       'Our enterprise consulting arm delivers tailored B2B strategies for MSMEs, corporates, and trade entities. We specialise in market expansion, energy sector consulting, and business development — helping clients unlock new opportunities.',
     exploreLabel: 'Explore Solutions',
     href: '/businesses/enterprise-solutions',
+    image: '/images/services/enterprise-solutions.jpg',
     flip: true,
   },
   {
@@ -28,6 +31,7 @@ const businesses = [
       'We deliver professional training programmes and workforce development initiatives that equip individuals and organisations with the skills needed to stay competitive. From certifications to on-site training, we build capability at scale.',
     exploreLabel: 'Explore Programmes',
     href: '/businesses/skill-development',
+    image: '/images/services/skill-development.jpg',
     flip: false,
   },
   {
@@ -37,6 +41,7 @@ const businesses = [
       'The Indus Group brings expertise in property development and infrastructure projects — identifying, developing, and delivering high-value assets. Whether residential, commercial, or industrial, we create spaces that perform.',
     exploreLabel: 'Explore Projects',
     href: '/businesses/real-estate',
+    image: '/images/services/real-estate.jpg',
     flip: true,
   },
   {
@@ -46,6 +51,7 @@ const businesses = [
       'The HBC Brand franchise offers a complete, ready-to-run food chain business model with full operational support. From site selection to training and supply chain, we walk with franchisees every step of the way.',
     exploreLabel: 'Explore Franchise',
     href: '/businesses/hbc-franchise',
+    image: '/images/services/hbc-food-chain.jpg',
     flip: false,
   },
 ]
@@ -53,7 +59,6 @@ const businesses = [
 export function BusinessesGrid() {
   return (
     <div>
-      {/* Section header */}
       <div className="bg-blue-50 section-padding pb-0">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
@@ -64,21 +69,22 @@ export function BusinessesGrid() {
         </div>
       </div>
 
-      {/* Alternating service rows */}
       {businesses.map((b, i) => (
         <section key={b.href} className={i % 2 === 0 ? 'bg-blue-50' : 'bg-white'}>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-
-              {/* Image */}
               <div className={b.flip ? 'lg:order-2' : 'lg:order-1'}>
-                <div className="aspect-[4/3] rounded-2xl bg-white border border-blue-100 shadow-sm flex items-center justify-center overflow-hidden">
-                  {/* TODO: Replace with actual image — public/images/businesses/ */}
-                  <span className="text-blue-300 text-sm">[ {b.title} Image ]</span>
+                <div className="aspect-[4/3] rounded-2xl overflow-hidden border border-blue-100 shadow-sm">
+                  <Image
+                    src={b.image}
+                    alt={b.title}
+                    width={800}
+                    height={600}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
               </div>
 
-              {/* Text */}
               <div className={b.flip ? 'lg:order-1' : 'lg:order-2'}>
                 <div className="flex items-center gap-2 mb-4">
                   <div className="w-5 h-[2px] bg-blue-600" />
@@ -86,11 +92,14 @@ export function BusinessesGrid() {
                     Business Vertical
                   </span>
                 </div>
+
                 <h2 className="text-3xl md:text-4xl font-bold font-heading text-slate-900 mb-3 leading-tight">
                   {b.title}
                 </h2>
+
                 <p className="text-blue-600 font-medium italic mb-5">{b.tagline}</p>
                 <p className="text-slate-600 leading-relaxed mb-8">{b.description}</p>
+
                 <div className="flex flex-wrap gap-4">
                   <Link
                     href={b.href}
@@ -99,6 +108,7 @@ export function BusinessesGrid() {
                     {b.exploreLabel}
                     <ArrowRight className="w-4 h-4" />
                   </Link>
+
                   <Link
                     href="/contact"
                     className="inline-flex items-center gap-2 border-2 border-blue-200 text-blue-700 px-6 py-3 rounded-lg font-semibold text-sm hover:bg-blue-50 transition-colors"
@@ -107,7 +117,6 @@ export function BusinessesGrid() {
                   </Link>
                 </div>
               </div>
-
             </div>
           </div>
         </section>

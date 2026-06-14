@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { CheckCircle } from 'lucide-react'
 import { SectionHeading } from '@/components/ui/SectionHeading'
 import { Button } from '@/components/ui/Button'
@@ -28,6 +29,7 @@ export function WhoWeAreSection() {
               MSMEs and trade support entities through tailored strategies that drive sustainable
               growth and meaningful community impact.
             </p>
+
             <ul className="space-y-3 mb-8">
               {points.map((point) => (
                 <li key={point} className="flex items-start gap-3">
@@ -36,19 +38,27 @@ export function WhoWeAreSection() {
                 </li>
               ))}
             </ul>
+
             <Button href="/about">Learn More About Us</Button>
           </div>
 
           {/* Visual */}
           <div className="relative">
-            <div className="aspect-[4/3] bg-blue-50 rounded-2xl border border-blue-100 flex items-center justify-center">
-              {/* TODO: Replace with actual company image — public/images/about/ */}
-              <span className="text-blue-300 text-sm">[ Company Image ]</span>
+            <div className="aspect-[4/3] rounded-2xl overflow-hidden">
+              <Image
+                src="/images/about/company-team.jpg"
+                alt="The Indus Group team"
+                width={800}
+                height={600}
+                className="w-full h-full object-cover"
+              />
             </div>
-            {/* Floating badge */}
+
             <div className="absolute -bottom-5 -left-5 bg-blue-600 rounded-xl p-5 shadow-xl">
               <div className="text-3xl font-bold font-heading text-white">14+</div>
-              <div className="text-xs font-semibold text-blue-100 mt-0.5 uppercase tracking-wide">Years Experience</div>
+              <div className="text-xs font-semibold text-blue-100 mt-0.5 uppercase tracking-wide">
+                Years Experience
+              </div>
             </div>
           </div>
 

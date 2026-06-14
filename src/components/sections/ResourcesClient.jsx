@@ -9,21 +9,21 @@ const QUICK_LINKS = [
     desc: 'Track your shipments globally in real-time.',
     icon: Truck,
     bg: 'from-slate-700 to-slate-900',
-    href: '#',
+    href: 'https://www.track-trace.com/',
   },
   {
     title: 'Currency Converter',
     desc: 'Check the latest international exchange rates.',
     icon: DollarSign,
     bg: 'from-blue-800 to-blue-950',
-    href: '#',
+    href: 'https://www.xe.com/',
   },
   {
     title: 'Incoterms 2020',
     desc: 'Understand international trade terms and conditions.',
     icon: Globe,
     bg: 'from-indigo-700 to-indigo-950',
-    href: '#',
+    href: 'https://2go.iccwbo.org/incoterms-2020-practical-free-wallchart-fr.html',
   },
 ]
 
@@ -156,6 +156,8 @@ export default function ResourcesClient() {
                 <a
                   key={link.title}
                   href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className={`group relative bg-gradient-to-br ${link.bg} rounded-2xl overflow-hidden p-8 flex flex-col justify-end min-h-[200px] hover:scale-[1.02] transition-transform duration-300`}
                 >
                   <div className="absolute top-6 right-6 opacity-20 group-hover:opacity-30 transition-opacity">
