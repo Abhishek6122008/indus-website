@@ -4,9 +4,6 @@ import { Badge } from '@/components/ui/Badge'
 import { Button } from '@/components/ui/Button'
 import { SectionHeading } from '@/components/ui/SectionHeading'
 import { Rocket, Users, Lightbulb, GraduationCap, MapPin, Mail } from 'lucide-react'
-import { WhyWorkWithUs } from '@/components/sections/careers/WhyWorkWithUs'
-import { OpenPositions } from '@/components/sections/careers/OpenPositions'
-import { CareersCTA } from '@/components/sections/careers/CareersCTA'
 
 export const metadata = {
   title: 'Careers | The Indus Group of Co.',
@@ -43,23 +40,22 @@ const benefits = [
 
 const openPositions = [
   {
-    title: 'Business Development Executive',
-    department: 'Sales & Growth',
-    location: 'New Delhi, India',
-    type: 'Full-time',
+    title: 'Telecallers',
+    department: 'Sales'
   },
   {
-    title: 'Logistics Coordinator',
-    department: 'Operations',
-    location: 'Noida, India',
-    type: 'Full-time',
+    title: 'Freelancers',
+    department: 'Operations'
   },
   {
-    title: 'Digital Marketing Intern',
-    department: 'Marketing',
-    location: 'Remote',
-    type: 'Internship',
+    title: 'Sales and Marketing',
+    department: 'Marketing'
   },
+  {
+    title: 'Channel Partners',
+    department: 'Business Development',
+  }
+
 ]
 
 export default function CareersPage() {
@@ -118,11 +114,7 @@ export default function CareersPage() {
                   </h3>
                   <div className="flex flex-wrap items-center gap-2">
                     <Badge variant="blue">{position.department}</Badge>
-                    <Badge variant="default">{position.type}</Badge>
-                    <span className="flex items-center gap-1 text-sm text-slate-500">
-                      <MapPin className="w-3.5 h-3.5" />
-                      {position.location}
-                    </span>
+                    {position.type && <Badge variant="default">{position.type}</Badge>}
                   </div>
                 </div>
                 <Button
