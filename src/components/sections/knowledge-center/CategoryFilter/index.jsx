@@ -17,7 +17,7 @@ export function CategoryFilter() {
 
   return (
     <>
-      <section className="bg-white px-6 pb-8">
+      <section className="bg-white px-6 pt-10 pb-8">
         <div className="mx-auto flex max-w-6xl flex-wrap justify-center gap-4">
           {categories.map((category) => (
             <button
