@@ -259,7 +259,7 @@ export function Footer() {
             <div className="lg:col-span-2">
               <div className="mb-4">
                 <Image
-                  src="/images/indus-logo.png"
+                  src="/images/indus-logo.jpeg"
                   alt="The Indus Group of Co."
                   width={160}
                   height={64}

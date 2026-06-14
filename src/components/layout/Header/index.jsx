@@ -35,7 +35,7 @@ export function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center shrink-0">
             <Image
-              src="/images/indus-logo.png"
+              src="/images/indus-logo.jpeg"
               alt="The Indus Group of Co."
               width={140}
               height={56}
