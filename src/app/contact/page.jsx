@@ -26,11 +26,11 @@ export default function ContactPage() {
             <div className="lg:col-span-3">
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-6 h-[2px] bg-blue-600" />
-                <span className="text-blue-600 text-xs font-semibold tracking-[0.2em] uppercase">Send a Message</span>
+                <span className="text-blue-600 text-xs font-semibold tracking-[0.2em] uppercase">Request a Callback</span>
               </div>
-              <h2 className="text-2xl font-bold font-heading text-slate-900 mb-3">Drop Us a Line</h2>
+              <h2 className="text-2xl font-bold font-heading text-slate-900 mb-3">Let&apos;s Talk</h2>
               <p className="text-slate-600 mb-8 leading-relaxed">
-                Fill in the form below and a member of our team will follow up with you shortly.
+                Tell us what you need and leave your number — a member of our team will call you back shortly.
               </p>
               <ContactForm />
             </div>
