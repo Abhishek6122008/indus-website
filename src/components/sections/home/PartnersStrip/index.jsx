@@ -1,3 +1,7 @@
+'use client'
+
+import { useState } from 'react'
+
 const partners = [
   { name: 'UPS', logo: 'https://upload.wikimedia.org/wikipedia/commons/1/1b/UPS_Logo_Shield_2017.svg' },
   { name: 'Hapag-Lloyd', logo: 'https://upload.wikimedia.org/wikipedia/commons/4/43/Hapag-Lloyd_logo.svg' },
@@ -24,6 +28,28 @@ const trustedBy = [
   { name: 'Healthcaps', logo: '/images/partners/healthcaps.png' },
 ]
 
+function PartnerLogo({ item }) {
+  const [error, setError] = useState(false)
+
+  if (error || !item.logo) {
+    return (
+      <span className="text-slate-400 font-semibold tracking-wider text-sm select-none">
+        {item.name}
+      </span>
+    )
+  }
+
+  return (
+    /* eslint-disable-next-line @next/next/no-img-element */
+    <img
+      src={item.logo}
+      alt={item.name}
+      className="max-h-10 max-w-[120px] object-contain"
+      onError={() => setError(true)}
+    />
+  )
+}
+
 function MarqueeRow({ items, reverse = false }) {
   const doubled = [...items, ...items]
   return (
@@ -36,12 +62,7 @@ function MarqueeRow({ items, reverse = false }) {
             key={`${item.name}-${i}`}
             className="inline-flex items-center justify-center shrink-0 h-14 px-4 grayscale hover:grayscale-0 opacity-60 hover:opacity-100 transition-all duration-300"
           >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={item.logo}
-              alt={item.name}
-              className="max-h-10 max-w-[120px] object-contain"
-            />
+            <PartnerLogo item={item} />
           </div>
         ))}
       </div>
