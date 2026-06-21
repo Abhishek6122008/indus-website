@@ -20,7 +20,7 @@ const businesses = [
 
 const socials = [
   { Icon: Instagram, href: 'https://instagram.com/theindusgroupco', label: 'Instagram' },
-  { Icon: Linkedin, href: 'https://linkedin.com/company/theindusgroupco', label: 'LinkedIn' },
+  { Icon: Linkedin, href: 'https://www.linkedin.com/company/the-indus-group-co/', label: 'LinkedIn' },
   { Icon: Twitter, href: 'https://x.com/theindusgroupco', label: 'X (Twitter)' },
   { Icon: Youtube, href: 'https://youtube.com/@theindusgroupco', label: 'YouTube' },
   { Icon: MessageCircle, href: 'https://wa.me/917011332238', label: 'WhatsApp' },
