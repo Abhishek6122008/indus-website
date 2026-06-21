@@ -36,3 +36,5 @@ Thumbs.db
 .cache/
 .eslintcache
 .stylelintcache
+.env
+.gitignore
