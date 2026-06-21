@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { useState, useRef, useEffect } from 'react'
-import { Phone, Mail, Instagram, Linkedin, Youtube, Twitter, ChevronDown, MessageCircle, X, Send, Bot, Loader2 } from 'lucide-react'
+import { Phone, Mail, Instagram, Linkedin, Youtube, Twitter, ChevronDown, X, Send, Bot, Loader2 } from 'lucide-react'
 
 
 const API_URL = process.env.NEXT_PUBLIC_CHATBOT_URL || 'http://localhost:8000'
@@ -246,7 +246,7 @@ function ChatbotWidget() {
         className="w-14 h-14 rounded-full bg-[#0b1f5c] shadow-lg flex items-center justify-center hover:bg-blue-800 transition-all hover:scale-105 active:scale-95"
         aria-label={open ? 'Close chat' : 'Open chat'}
       >
-        {open ? <X className="w-6 h-6 text-white" /> : <MessageCircle className="w-6 h-6 text-white" />}
+        {open ? <X className="w-6 h-6 text-white" /> : <Bot className="w-6 h-6 text-white" />}
       </button>
       {/* WhatsApp button */}
       <a
@@ -333,6 +333,33 @@ export function Footer() {
                     </a>
                   </li>
                 ))}
+              </ul>
+            </div>
+
+            {/* Connect With Us */}
+            <div>
+              <h4 className="text-white font-semibold font-heading mb-5 text-xs uppercase tracking-widest">Connect With Us</h4>
+              <ul className="space-y-2.5">
+                <li>
+                  <a href="https://www.instagram.com/the_indusgroup" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-blue-200/70 hover:text-white transition-colors">
+                    <Instagram className="w-4 h-4 text-[#E1306C]" /> Instagram
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.linkedin.com/company/the-indus-group-co" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-blue-200/70 hover:text-white transition-colors">
+                    <Linkedin className="w-4 h-4 text-[#0077B5]" /> LinkedIn
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.youtube.com/@theindusgroupco." target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-blue-200/70 hover:text-white transition-colors">
+                    <Youtube className="w-4 h-4 text-[#FF0000]" /> YouTube
+                  </a>
+                </li>
+                <li>
+                  <a href="https://twitter.com/theindusgroup" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-blue-200/70 hover:text-white transition-colors">
+                    <X className="w-4 h-4 text-white" /> Twitter / X
+                  </a>
+                </li>
               </ul>
             </div>
 
