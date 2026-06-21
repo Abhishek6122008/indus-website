@@ -1,5 +1,5 @@
 import { PageHero } from '@/components/ui/PageHero'
-import { CategoryFilter } from '@/components/sections/knowledge-center/CategoryFilter'
+import KnowledgeCenterClient from '@/components/sections/knowledge-center/KnowledgeCenterClient'
 
 export const metadata = {
   title: 'Knowledge Center | The Indus Group of Co.',
@@ -17,7 +17,7 @@ export default function KnowledgeCenterPage() {
         breadcrumbs={[{ label: 'Knowledge Center' }]}
       />
 
-      <CategoryFilter />
+      <KnowledgeCenterClient />
     </>
   )
 }

@@ -1,8 +1,9 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { useState, useRef, useEffect } from 'react'
-import { Phone, Mail, Instagram, Linkedin, Youtube, ChevronDown, MessageCircle, X, Send, Bot, Loader2 } from 'lucide-react'
+import { Phone, Mail, Instagram, Linkedin, Youtube, Twitter, ChevronDown, X, Send, Bot, Loader2 } from 'lucide-react'
 
 
 const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxSw3BZISMjJewXt6BPZnjimBPb05Pr_qupObTvQBz0IdARAZ8XR8N-mYaC6OhOdz8p/exec"
@@ -17,6 +18,12 @@ const quickLinks = [
   { label: 'Contact', href: '/contact' },
 ]
 
+const resourceLinks = [
+  { label: 'Incoterms 2020 Wallchart', href: 'https://2go.iccwbo.org/incoterms-2020-practical-free-wallchart-fr.html' },
+  { label: 'XE Currency Converter', href: 'https://www.xe.com/' },
+  { label: 'Track & Trace', href: 'https://www.track-trace.com/' },
+]
+
 const businesses = [
   { label: 'Logistics & Supply Chain', href: '/businesses/logistics' },
   { label: 'Enterprise Solutions', href: '/businesses/enterprise-solutions' },
@@ -28,7 +35,7 @@ const businesses = [
 // ── SocialMenu ────────────────────────────────────────────────────────────────
 function SocialMenu() {
   return (
-    <div className="fixed bottom-6 left-6 z-50 group">
+    <div className="fixed bottom-16 left-6 z-50 group">
       <button className="flex items-center gap-2 px-5 py-3 rounded-full bg-[#0b1f5c] text-white shadow-lg hover:bg-blue-700 transition">
         SOCIAL
         <ChevronDown className="w-4 h-4" />
@@ -41,7 +48,7 @@ function SocialMenu() {
           rel="noopener noreferrer"
           className="flex items-center gap-3 px-4 py-3 text-gray-700 hover:bg-gray-100"
         >
-          <Instagram className="w-5 h-5" />
+          <Instagram className="w-5 h-5 text-[#E1306C]" />
           Instagram
         </a>
         <a
@@ -50,19 +57,18 @@ function SocialMenu() {
           rel="noopener noreferrer"
           className="flex items-center gap-3 px-4 py-3 text-gray-700 hover:bg-gray-100"
         >
-          <Linkedin className="w-5 h-5" />
+          <Linkedin className="w-5 h-5 text-[#0077B5]" />
           LinkedIn
         </a>
         <a
-          href="https://youtube.com/@theindusgroupco"
+          href="https://www.youtube.com/@theindusgroupco.?si=LUxtGChKqM4L2KGU"
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center gap-3 px-4 py-3 text-gray-700 hover:bg-gray-100"
         >
-          <Youtube className="w-5 h-5" />
+          <Youtube className="w-5 h-5 text-[#FF0000]" />
           YouTube
         </a>
-
         <a
           href="https://x.com/theindusgroup"
           target="_blank"
@@ -495,7 +501,7 @@ function ChatbotWidget() {
   }
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3">
+    <div className="fixed bottom-16 right-6 z-50 flex flex-col items-end gap-3">
       {/* Chat window */}
       {open && (
         <div className="w-[360px] flex flex-col rounded-2xl shadow-2xl border border-gray-200 bg-white overflow-hidden">
@@ -594,15 +600,18 @@ export function Footer() {
       <footer className="bg-[#0b1f5c] text-blue-200">
         {/* Main */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
 
             {/* Brand */}
             <div className="lg:col-span-2">
-              <div className="flex items-center gap-2.5 mb-4">
-                <div className="w-9 h-9 bg-blue-600 rounded-lg flex items-center justify-center shrink-0">
-                  <span className="text-white text-xs font-bold">TIG</span>
-                </div>
-                <span className="text-white text-base font-bold font-heading">The Indus Group of Co.</span>
+              <div className="mb-4">
+                <Image
+                  src="/images/indus-logo.jpeg"
+                  alt="The Indus Group of Co."
+                  width={160}
+                  height={64}
+                  className="h-14 w-auto object-contain"
+                />
               </div>
               <p className="text-sm leading-relaxed mb-6 max-w-sm text-blue-200/80">
                 Delivering industry-leading solutions across verticals with reliability, innovation, and integrity.
@@ -633,6 +642,52 @@ export function Footer() {
               </ul>
             </div>
 
+            {/* Resources & Tools */}
+            <div>
+              <h4 className="text-white font-semibold font-heading mb-5 text-xs uppercase tracking-widest">Resources & Tools</h4>
+              <ul className="space-y-2.5">
+                {resourceLinks.map((link) => (
+                  <li key={link.href}>
+                    <a
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm text-blue-200/70 hover:text-white transition-colors"
+                    >
+                      {link.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Connect With Us */}
+            <div>
+              <h4 className="text-white font-semibold font-heading mb-5 text-xs uppercase tracking-widest">Connect With Us</h4>
+              <ul className="space-y-2.5">
+                <li>
+                  <a href="https://www.instagram.com/the_indusgroup" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-blue-200/70 hover:text-white transition-colors">
+                    <Instagram className="w-4 h-4 text-[#E1306C]" /> Instagram
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.linkedin.com/company/the-indus-group-co" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-blue-200/70 hover:text-white transition-colors">
+                    <Linkedin className="w-4 h-4 text-[#0077B5]" /> LinkedIn
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.youtube.com/@theindusgroupco." target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-blue-200/70 hover:text-white transition-colors">
+                    <Youtube className="w-4 h-4 text-[#FF0000]" /> YouTube
+                  </a>
+                </li>
+                <li>
+                  <a href="https://twitter.com/theindusgroup" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-blue-200/70 hover:text-white transition-colors">
+                    <X className="w-4 h-4 text-white" /> Twitter / X
+                  </a>
+                </li>
+              </ul>
+            </div>
+
             {/* Businesses */}
             <div>
               <h4 className="text-white font-semibold font-heading mb-5 text-xs uppercase tracking-widest">Our Businesses</h4>
@@ -652,10 +707,10 @@ export function Footer() {
 
         {/* Bottom bar */}
         <div className="border-t border-white/10">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex flex-col md:flex-row items-center justify-between gap-4">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 mb-20 md:mb-0 flex flex-col md:flex-row items-center justify-between gap-4">
 
             {/* Legal */}
-            <div className="flex flex-wrap items-center gap-4 text-xs text-blue-200/50">
+            <div className="flex flex-wrap items-center justify-center gap-6 text-xs text-blue-200/80">
               <Link href="/careers" className="hover:text-white transition-colors">Careers</Link>
               <Link href="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
               <Link href="/terms" className="hover:text-white transition-colors">Terms & Conditions</Link>
