@@ -3,22 +3,22 @@ import { SectionHeading } from '@/components/ui/SectionHeading'
 
 const testimonials = [
   {
-    quote:
-      "The Indus Group's expertise in international trade has been invaluable. Their logistics solutions helped us expand to new markets seamlessly.",
-    name: 'Client, International Trade',
-    initials: 'IT',
+    quote: 'Indus Group brought exceptional innovation and leadership to our international EXIM projects.',
+    name: 'Saji Thomas',
+    role: 'C.E.O., Fidelis Etairos International',
+    initials: 'ST',
   },
   {
-    quote:
-      "Their enterprise consulting helped us navigate a complex energy project with confidence. The team's depth of knowledge and professionalism is unmatched.",
-    name: 'Client, Energy Projects',
-    initials: 'EP',
+    quote: 'A committed team with deep industry insights. Indus Group is a long-term partner for our strategic energy initiatives.',
+    name: 'Anuradha Singh',
+    role: 'M.D., AMM Pvt. Ltd',
+    initials: 'AS',
   },
   {
-    quote:
-      'When it came to market expansion, The Indus Group gave us a clear strategy and hands-on support. Our growth has been remarkable since working with them.',
-    name: 'Client, Market Expansion',
-    initials: 'ME',
+    quote: 'Their consulting services helped us unlock new markets and streamline operations. True professionals in every sense.',
+    name: 'Ashish Dabral',
+    role: 'Director, Digipro Logistics Pvt. Ltd.',
+    initials: 'AD',
   },
 ]
 
@@ -45,7 +45,10 @@ export function Testimonials() {
                 <div className="w-9 h-9 rounded-full bg-blue-600 flex items-center justify-center text-white text-xs font-bold shrink-0">
                   {t.initials}
                 </div>
-                <p className="text-sm font-semibold text-slate-900">{t.name}</p>
+                <div>
+                  <p className="text-sm font-semibold text-slate-900">{t.name}</p>
+                  <p className="text-xs text-slate-500">{t.role}</p>
+                </div>
               </div>
             </div>
           ))}

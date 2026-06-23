@@ -11,7 +11,7 @@ const businesses = [
       'We provide comprehensive, end-to-end logistics and supply chain solutions for domestic and international trade. From freight management to last-mile delivery, our expertise ensures your goods move efficiently, reliably, and on time.',
     exploreLabel: 'Explore Logistics',
     href: '/businesses/logistics',
-    image: '/images/services/logistics.jpg',
+    image: '/images/businesses/logistics/logistics-hero.png',
     flip: false,
   },
   {
@@ -21,7 +21,7 @@ const businesses = [
       'Our enterprise consulting arm delivers tailored B2B strategies for MSMEs, corporates, and trade entities. We specialise in market expansion, energy sector consulting, and business development — helping clients unlock new opportunities.',
     exploreLabel: 'Explore Solutions',
     href: '/businesses/enterprise-solutions',
-    image: '/images/services/enterprise-solutions.jpg',
+    image: '/images/businesses/enterprise/enterprise-hero.png',
     flip: true,
   },
   {
@@ -31,7 +31,7 @@ const businesses = [
       'We deliver professional training programmes and workforce development initiatives that equip individuals and organisations with the skills needed to stay competitive. From certifications to on-site training, we build capability at scale.',
     exploreLabel: 'Explore Programmes',
     href: '/businesses/skill-development',
-    image: '/images/services/skill-development.jpg',
+    image: '/images/businesses/skill-development/skill-dev-hero.png',
     flip: false,
   },
   {
@@ -41,7 +41,7 @@ const businesses = [
       'The Indus Group brings expertise in property development and infrastructure projects — identifying, developing, and delivering high-value assets. Whether residential, commercial, or industrial, we create spaces that perform.',
     exploreLabel: 'Explore Projects',
     href: '/businesses/real-estate',
-    image: '/images/services/real-estate.jpg',
+    image: '/images/businesses/real-estate/real-estate-hero.png',
     flip: true,
   },
   {
@@ -51,7 +51,7 @@ const businesses = [
       'The HBC Brand franchise offers a complete, ready-to-run food chain business model with full operational support. From site selection to training and supply chain, we walk with franchisees every step of the way.',
     exploreLabel: 'Explore Franchise',
     href: '/businesses/hbc-franchise',
-    image: '/images/services/hbc-food-chain.jpg',
+    image: '/images/businesses/hbc-franchise/hbc-hero.png',
     flip: false,
   },
 ]
