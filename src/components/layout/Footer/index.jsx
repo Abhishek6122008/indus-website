@@ -116,8 +116,7 @@ export function Footer() {
           </div>
 
           <p className="text-xs text-blue-200/50">
-            © {new Date().getFullYear()} The Indus Group of Co.
-          </p>
+            © 2026 The Indus Group. All rights reserved.            </p>
 
         </div>
       </div>
