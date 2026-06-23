@@ -57,7 +57,7 @@ export function WhoWeAreSection() {
             <div className="absolute -bottom-5 -left-5 bg-blue-600 rounded-xl p-5 shadow-xl">
               <div className="text-3xl font-bold font-heading text-white">14+</div>
               <div className="text-xs font-semibold text-blue-100 mt-0.5 uppercase tracking-wide">
-                Years Experience
+                Years Excellence
               </div>
             </div>
           </div>
