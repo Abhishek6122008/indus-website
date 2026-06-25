@@ -28,8 +28,8 @@ export function HeroSection() {
       <div className="absolute -bottom-32 -left-20 w-[500px] h-[500px] bg-blue-400 rounded-full opacity-10 blur-[120px] pointer-events-none" />
       <div className="absolute -top-16 right-0 w-80 h-80 bg-white rounded-full opacity-5 blur-3xl pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20 py-28">
-        <div className="max-w-3xl ml-auto text-right">
+      <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-4 relative z-20 py-28">
+        <div className="max-w-4xl ml-auto text-right">
 
           <div className="flex items-center justify-end gap-3 mb-7">
             <span className="text-blue-200 text-xs font-semibold tracking-[0.2em] uppercase">
