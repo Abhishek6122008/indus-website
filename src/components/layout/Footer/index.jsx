@@ -605,13 +605,9 @@ export function Footer() {
             {/* Brand */}
             <div className="lg:col-span-2">
               <div className="mb-4">
-                <Image
-                  src="/images/indus-logo.jpeg"
-                  alt="The Indus Group of Co."
-                  width={160}
-                  height={64}
-                  className="h-14 w-auto object-contain"
-                />
+                  <h3 className="text-white font-bold text-3xl font-heading">
+                    The Indus Group of Co.
+                  </h3>
               </div>
               <p className="text-sm leading-relaxed mb-6 max-w-sm text-blue-200/80">
                 Delivering industry-leading solutions across verticals with reliability, innovation, and integrity.
