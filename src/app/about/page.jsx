@@ -1,5 +1,6 @@
 import { PageHero } from '@/components/ui/PageHero'
 import { CompanyStory } from '@/components/sections/about/CompanyStory'
+import { MeetOurTeam } from '@/components/sections/about/MeetOurTeam'
 import { MissionVision } from '@/components/sections/about/MissionVision'
 import { OurApproach } from '@/components/sections/about/OurApproach'
 import { KeyStats } from '@/components/sections/about/KeyStats'
@@ -20,6 +21,7 @@ export default function AboutPage() {
         breadcrumbs={[{ label: 'Who We Are' }]}
       />
       <CompanyStory />
+      <MeetOurTeam />
       <MissionVision />
       <OurApproach />
       <KeyStats />
