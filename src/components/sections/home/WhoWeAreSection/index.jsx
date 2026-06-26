@@ -4,10 +4,10 @@ import { SectionHeading } from '@/components/ui/SectionHeading'
 import { Button } from '@/components/ui/Button'
 
 const points = [
-  'Empowering MSMEs and trade support entities',
-  'Tailored strategies for sustainable progress',
-  'Community impact at the core of every solution',
-  'Trusted by 1,000+ clients across industries',
+  'Empowering MSMEs and Trade Support Organizations',
+  'Tailored global-local solutions for dynamic markets',
+  'Passionate team driving growth and specialized expertise',
+  'Committed to sustainable progress and community impact',
 ]
 
 export function WhoWeAreSection() {
@@ -24,10 +24,12 @@ export function WhoWeAreSection() {
               align="left"
             />
             <p className="text-slate-600 leading-relaxed mb-6">
-              The Indus Group of Co. is a multi-vertical enterprise dedicated to delivering
-              industry-leading solutions with reliability, innovation, and integrity. We empower
-              MSMEs and trade support entities through tailored strategies that drive sustainable
-              growth and meaningful community impact.
+              We empower MSMEs and Trade Support Organizations with tailored global-local solutions,
+              helping them thrive in a dynamic market. Our passionate team drives growth through
+              customized strategies and specialized expertise. As a forward-thinking conglomerate,
+              we innovate in logistics, enterprise solutions, and skill development. Committed to
+              sustainable progress, we deliver real impact for businesses and communities. Together,
+              we build a brighter, more resilient future.
             </p>
 
             <ul className="space-y-3 mb-8">
