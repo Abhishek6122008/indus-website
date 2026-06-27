@@ -1,4 +1,7 @@
-import { BookOpen, Building2, Wrench, Star, Monitor, GraduationCap } from 'lucide-react'
+import {
+  Truck, ShieldCheck, Megaphone, BarChart3, UsersRound, Ship,
+  ShoppingCart, FileText, FileSpreadsheet, TrendingUp, Globe, Boxes,
+} from 'lucide-react'
 import { ServiceHero } from '@/components/sections/businesses/ServiceHero'
 import { ServiceFeatures } from '@/components/sections/businesses/ServiceFeatures'
 import { ServiceCTA } from '@/components/sections/businesses/ServiceCTA'
@@ -6,45 +9,82 @@ import { ServiceCTA } from '@/components/sections/businesses/ServiceCTA'
 export const metadata = {
   title: 'Skill Development Solutions | The Indus Group of Co.',
   description:
-    'Professional training, corporate workforce development, and placement support to build the workforce of tomorrow.',
+    'My Skills Academy — expert-designed certificate courses empowering students and professionals with future-ready skills for global leadership.',
 }
 
+// Certificate courses offered through My Skills Academy — theindusgroup.com/skills.html
 const features = [
   {
-    Icon: BookOpen,
-    title: 'Professional Training Programmes',
+    Icon: Truck,
+    title: 'Logistics & Supply Chain Management',
     description:
-      'Industry-recognised certification courses designed to upskill individuals and improve career outcomes across sectors.',
+      'Build expertise in modern logistics and supply chain operations for domestic and global trade.',
   },
   {
-    Icon: Building2,
-    title: 'Corporate Workforce Training',
+    Icon: ShieldCheck,
+    title: 'Ethical Hacking and Cyber Security',
     description:
-      "On-site training programmes for enterprises — customised to your industry, your processes, and your team's learning gaps.",
+      'Hands-on training in ethical hacking, network defence, and cyber security fundamentals.',
   },
   {
-    Icon: Wrench,
-    title: 'Vocational Education',
+    Icon: Megaphone,
+    title: 'GenAI Digital Marketing',
     description:
-      'Hands-on, practical skill development for trade and technical roles — preparing workers for real-world job requirements.',
+      'Master modern digital marketing powered by generative AI tools and strategies.',
   },
   {
-    Icon: Star,
-    title: 'Leadership Development',
+    Icon: BarChart3,
+    title: 'Data Science and Analytics',
     description:
-      'Management and leadership programmes for mid-level and senior professionals to build confident, capable teams.',
+      'Learn data analysis, visualisation, and analytics to drive data-informed decisions.',
   },
   {
-    Icon: Monitor,
-    title: 'Digital Skills Training',
+    Icon: UsersRound,
+    title: 'POSH Training',
     description:
-      'Technology literacy and digital transformation programmes to prepare individuals and organisations for the digital economy.',
+      'Prevention of Sexual Harassment training for safe, compliant, and respectful workplaces.',
   },
   {
-    Icon: GraduationCap,
-    title: 'Placement Support',
+    Icon: Ship,
+    title: 'Basic Freight Forwarding',
     description:
-      'Career guidance, resume development, and job placement assistance to connect trained talent with the right opportunities.',
+      'Foundational knowledge of freight forwarding, shipping, and cargo movement.',
+  },
+  {
+    Icon: ShoppingCart,
+    title: 'Certified E-commerce Professionals',
+    description:
+      'Become a certified e-commerce professional ready for the digital retail economy.',
+  },
+  {
+    Icon: FileText,
+    title: 'Masterclass On INCOTERMS',
+    description:
+      'In-depth masterclass on INCOTERMS and their application in international trade.',
+  },
+  {
+    Icon: FileSpreadsheet,
+    title: 'EXIM Documentations & Procedures',
+    description:
+      'Practical training on export-import documentation and trade procedures.',
+  },
+  {
+    Icon: TrendingUp,
+    title: 'Training on Sales and Marketing',
+    description:
+      'Develop core sales and marketing skills to grow businesses and careers.',
+  },
+  {
+    Icon: Globe,
+    title: 'Start-Up & Scale-Up in International Trade',
+    description:
+      'Guidance for starting and scaling ventures in the international trade space.',
+  },
+  {
+    Icon: Boxes,
+    title: 'WMS & Inventory Management',
+    description:
+      'Learn warehouse management systems and effective inventory control practices.',
   },
 ]
 
@@ -52,14 +92,14 @@ export default function SkillDevelopmentPage() {
   return (
     <>
       <ServiceHero
-        title="Skill Development Solutions"
-        subtitle="Building the workforce of tomorrow through professional training, vocational education, and career support."
+        title="Unlock Your Potential with My Skills Academy"
+        subtitle="Empowering students and professionals with future-ready skills for global leadership through expert-designed courses."
         slug="skill-development"
       />
-      <ServiceFeatures features={features} heading="Training & Development Programmes" />
+      <ServiceFeatures features={features} heading="Certificate Courses Offered" />
       <ServiceCTA
-        title="Invest in Your Workforce"
-        description="Speak to our training team about customised programmes for your organisation or career goals."
+        title="Invest in Your Future"
+        description="Speak to our team about enrolling in a course or building a custom training programme for your organisation."
       />
     </>
   )
