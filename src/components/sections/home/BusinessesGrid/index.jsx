@@ -11,7 +11,7 @@ const businesses = [
       'We provide comprehensive, end-to-end logistics and supply chain solutions for domestic and international trade. From freight management to last-mile delivery, our expertise ensures your goods move efficiently, reliably, and on time.',
     exploreLabel: 'Explore Logistics',
     href: '/businesses/logistics',
-    image: '/images/businesses/logistics/logistics-hero.png',
+    image: '/images/businesses/logistics/integrated-logistics.jpeg',
     flip: false,
   },
   {
@@ -93,7 +93,7 @@ export function BusinessesGrid() {
                 <div className="flex flex-wrap gap-4">
                   <Link
                     href={b.href}
-                    className="inline-flex items-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold text-sm hover:bg-blue-700 transition-colors"
+                    className="inline-flex items-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold text-sm hover:bg-blue-700 hover:-translate-y-0.5 transition-all"
                   >
                     {b.exploreLabel}
                     <ArrowRight className="w-4 h-4" />
@@ -101,7 +101,7 @@ export function BusinessesGrid() {
 
                   <Link
                     href="/contact"
-                    className="inline-flex items-center gap-2 border-2 border-blue-200 text-blue-700 px-6 py-3 rounded-lg font-semibold text-sm hover:bg-blue-50 transition-colors"
+                    className="inline-flex items-center gap-2 border-2 border-blue-200 text-blue-700 px-6 py-3 rounded-lg font-semibold text-sm hover:bg-blue-50 hover:-translate-y-0.5 transition-all"
                   >
                     Know More
                   </Link>

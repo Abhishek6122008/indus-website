@@ -45,8 +45,6 @@ export function Header() {
               />
             </div>
 
-            <div className="h-10 w-[1px] bg-slate-200 hidden sm:block" />
-
             <div className="relative w-12 h-12 md:w-14 md:h-14 flex items-center justify-center bg-white border border-slate-100 rounded-full overflow-hidden shadow-sm shrink-0 p-1">
               <Image
                 src="/images/iso-certified.jpeg"

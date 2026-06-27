@@ -1,6 +1,6 @@
 import { ServiceHero } from '@/components/sections/businesses/ServiceHero'
+import { EnterpriseIntro } from '@/components/sections/businesses/EnterpriseIntro'
 import { ServiceFeatures } from '@/components/sections/businesses/ServiceFeatures'
-import { ServiceCTA } from '@/components/sections/businesses/ServiceCTA'
 
 export const metadata = {
   title: 'Enterprise Solutions | The Indus Group of Co.',
@@ -14,11 +14,10 @@ const stepsData = [
 ]
 
 const teamData = [
-  { name: 'Abhishek Chaudhary', role: 'Team Lead - Growth', avatar: '👨‍💼' },
-  { name: 'Ujjwal Rawat', role: 'Team Lead-Tech', avatar: '👨‍💻' },
-  { name: 'Ananya Singh', role: 'Team Lead-Legal', avatar: '👩‍⚖️' },
-  { name: 'Ayushi Upadhyay', role: 'Full Stack Developer', avatar: '👩‍💻' },
-  { name: 'Moazzam Ahmed Siddiqui', role: 'AI Engineer', avatar: '🤖' }
+  { name: 'Abhishek Chaudhary', role: 'Team Lead - Tech', image: '/images/businesses/enterprise/team/abhishek.png' },
+  { name: 'Ujjwal Rawat', role: 'Full Stack Developer', image: '/images/businesses/enterprise/team/ujjwal.png' },
+  { name: 'Ananya Singh', role: 'Team Lead-Legal', image: '/images/businesses/enterprise/team/ananya.png' },
+  { name: 'Ayushi Upadhyay', role: 'Full Stack Developer', image: '/images/businesses/enterprise/team/ayushi.png' }
 ]
 
 const servicesTableData = [
@@ -46,24 +45,25 @@ const strategiesData = [
 ]
 
 const gridImagesData = [
-  { title: 'INCORPORATION OF STARTUP' },
-  { title: 'CORPORATE COMPLIANCES' },
-  { title: 'IT-SUPPORT AND VAS' },
-  { title: 'LEGAL ASSISTANCE AND CONSULTING' },
-  { title: 'GST/ACCOUNTING AND TAXATION CONSULTING' },
-  { title: 'FUND RAISING ASSISTANCE' }
+  { title: 'INCORPORATION OF STARTUP', image: '/images/businesses/enterprise/services/incorporation.png' },
+  { title: 'CORPORATE COMPLIANCES', image: '/images/businesses/enterprise/services/corporate-compliances.png' },
+  { title: 'IT-SUPPORT AND VAS', image: '/images/businesses/enterprise/services/it-support.png' },
+  { title: 'LEGAL ASSISTANCE AND CONSULTING', image: '/images/businesses/enterprise/services/legal-assistance.png' },
+  { title: 'GST/ACCOUNTING AND TAXATION CONSULTING', image: '/images/businesses/enterprise/services/gst-accounting.png' },
+  { title: 'FUND RAISING ASSISTANCE', image: '/images/businesses/enterprise/services/fund-raising.png' }
 ]
 
 export default function EnterpriseSolutionsPage() {
   return (
     <div className="bg-slate-50 min-h-screen text-slate-800 pb-12">
-      <ServiceHero 
+      <ServiceHero
         title="Empowering Your Business for Unprecedented Growth"
         subtitle="Comprehensive solutions from startup to scale-up, designed to fuel your success."
-        customIntro={true}
-        steps={stepsData}
-        team={teamData}
+        backgroundImage="/images/businesses/enterprise/enterprise-hero-bg.png"
+        imagePosition="object-bottom"
       />
+
+      <EnterpriseIntro steps={stepsData} team={teamData} />
 
       <ServiceFeatures 
         heading="Our Products and Services" 
@@ -73,11 +73,6 @@ export default function EnterpriseSolutionsPage() {
         audience={audienceData}
         strategies={strategiesData}
         gridImages={gridImagesData}
-      />
-
-      <ServiceCTA 
-        title="Get in Touch with The Indus Group"
-        hasForm={true}
       />
     </div>
   )

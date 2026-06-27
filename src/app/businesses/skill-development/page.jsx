@@ -93,7 +93,7 @@ export default function SkillDevelopmentPage() {
       <ServiceHero
         title="Unlock Your Potential with My Skills Academy"
         subtitle="Empowering students and professionals with future-ready skills for global leadership through expert-designed courses."
-        slug="skill-development"
+        backgroundImage="/images/businesses/skill-development/skill-dev-hero-bg.png"
       />
 
       {/* Problem Statement / Eclectic Learning-Courses banner */}

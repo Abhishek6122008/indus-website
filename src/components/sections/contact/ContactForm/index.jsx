@@ -3,63 +3,17 @@
 import { useState } from 'react'
 import { ArrowRight, CheckCircle } from 'lucide-react'
 
-// Vertical-specific options for the contact form.
-const verticals = [
-  {
-    id: 'logistics',
-    label: 'Logistics',
-    name: 'Logistics & Supply Chain',
-    pillLabel: 'Service required',
-    pills: ['Air Freight', 'Sea Freight', 'Road Transport', 'Warehousing', 'Customs Clearance'],
-    field: { name: 'shipmentDetails', label: 'Shipment / route details', placeholder: 'e.g. Delhi → Dubai, 2 containers' },
-  },
-  {
-    id: 'enterprise',
-    label: 'Enterprise',
-    name: 'Enterprise Solutions',
-    pillLabel: 'Solution area',
-    pills: ['IT Services', 'Consulting', 'Procurement', 'Facility Management'],
-    field: { name: 'companySize', label: 'Company size', placeholder: 'e.g. 50–200 employees' },
-  },
-  {
-    id: 'skill-development',
-    label: 'Skill Development',
-    name: 'Skill Development',
-    pillLabel: 'Program type',
-    pills: ['Vocational Training', 'Corporate Upskilling', 'Placement Support', 'Certification'],
-    field: { name: 'numTrainees', label: 'Number of trainees', placeholder: 'e.g. 25' },
-  },
-  {
-    id: 'real-estate',
-    label: 'Real Estate',
-    name: 'Real Estate & Infra',
-    pillLabel: 'Property type',
-    pills: ['Residential', 'Commercial', 'Land / Plot', 'Infrastructure Project'],
-    field: { name: 'budget', label: 'Budget range', placeholder: 'e.g. ₹50L – ₹1Cr' },
-  },
-]
-
 export function ContactForm() {
   const [form, setForm] = useState({
     name: '',
     email: '',
     phone: '',
+    message: '',
   })
-  const [vertical, setVertical] = useState('')
-  const [pill, setPill] = useState('')
-  const [extra, setExtra] = useState('')
   const [submitted, setSubmitted] = useState(false)
-
-  const activeVertical = verticals.find((v) => v.id === vertical)
 
   function handleChange(e) {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }))
-  }
-
-  function selectVertical(id) {
-    setVertical(id)
-    setPill('')
-    setExtra('')
   }
 
   function handleSubmit(e) {
@@ -130,75 +84,20 @@ export function ContactForm() {
         </p>
       </div>
 
-      {/* Vertical selector */}
       <div>
-        <label className="block text-xs text-slate-500 uppercase tracking-wide mb-2">
-          What can we help you with? *
+        <label className="block text-xs text-slate-500 uppercase tracking-wide mb-1.5">
+          How can we help? *
         </label>
-        <div className="flex flex-wrap gap-2">
-          {verticals.map((v) => {
-            const active = v.id === vertical
-            return (
-              <button
-                key={v.id}
-                type="button"
-                onClick={() => selectVertical(v.id)}
-                className={`px-4 py-2 rounded-full text-sm font-medium border transition-colors ${
-                  active
-                    ? 'bg-blue-600 border-blue-600 text-white'
-                    : 'bg-white border-slate-200 text-slate-600 hover:border-blue-400 hover:text-blue-600'
-                }`}
-              >
-                {v.label}
-              </button>
-            )
-          })}
-        </div>
+        <textarea
+          name="message"
+          required
+          rows={5}
+          value={form.message}
+          onChange={handleChange}
+          placeholder="Tell us a bit about what you need..."
+          className={`${inputClass} resize-y`}
+        />
       </div>
-
-      {/* Vertical-specific sub-options + field */}
-      {activeVertical && (
-        <div className="space-y-5 rounded-xl border border-slate-100 bg-slate-50/60 p-5">
-          <div>
-            <label className="block text-xs text-slate-500 uppercase tracking-wide mb-2">
-              {activeVertical.pillLabel}
-            </label>
-            <div className="flex flex-wrap gap-2">
-              {activeVertical.pills.map((p) => {
-                const active = p === pill
-                return (
-                  <button
-                    key={p}
-                    type="button"
-                    onClick={() => setPill(p)}
-                    className={`px-3.5 py-1.5 rounded-full text-sm border transition-colors ${
-                      active
-                        ? 'bg-blue-600 border-blue-600 text-white'
-                        : 'bg-white border-slate-200 text-slate-600 hover:border-blue-400 hover:text-blue-600'
-                    }`}
-                  >
-                    {p}
-                  </button>
-                )
-              })}
-            </div>
-          </div>
-
-          <div>
-            <label className="block text-xs text-slate-500 uppercase tracking-wide mb-1.5">
-              {activeVertical.field.label}
-            </label>
-            <input
-              type="text"
-              name={activeVertical.field.name}
-              value={extra}
-              onChange={(e) => setExtra(e.target.value)}
-              placeholder={activeVertical.field.placeholder}
-              className={inputClass}
-            />
-          </div>
-        </div>
-      )}
 
       <button
         type="submit"

@@ -40,7 +40,7 @@ export function ServiceFeatures({
             <div className="space-y-4">
               {advantages?.map((item) => (
                 <div key={item.id} className="flex items-stretch bg-white border border-slate-100 shadow-sm rounded-lg overflow-hidden">
-                  <div className="bg-amber-100 text-amber-800 w-16 flex items-center justify-center font-bold text-lg shrink-0">
+                  <div className="bg-blue-100 text-blue-700 w-16 flex items-center justify-center font-bold text-lg shrink-0">
                     {item.id}
                   </div>
                   <div className="p-6">
@@ -61,7 +61,7 @@ export function ServiceFeatures({
               <div className="space-y-6">
                 {audience?.map((aud, idx) => (
                   <div key={idx} className="flex gap-4 items-start">
-                    <div className="w-8 h-8 rounded-md bg-orange-50 text-orange-600 flex items-center justify-center shrink-0 font-bold text-sm mt-0.5">🎯</div>
+                    <div className="w-8 h-8 rounded-md bg-blue-50 text-blue-600 flex items-center justify-center shrink-0 font-bold text-sm mt-0.5">🎯</div>
                     <div>
                       <h3 className="text-base font-bold text-slate-900 mb-0.5 font-heading">{aud.title}</h3>
                       <p className="text-slate-600 text-xs leading-relaxed">{aud.text}</p>
@@ -69,17 +69,21 @@ export function ServiceFeatures({
                   </div>
                 ))}
               </div>
-              <div className="bg-gradient-to-br from-amber-50 to-orange-50 border border-orange-100 p-6 rounded-xl flex flex-col items-center justify-center min-h-[220px] text-center">
-                <span className="text-4xl mb-2">📊</span>
-                <h4 className="text-base font-bold text-amber-900 font-heading">TARGET MARKET</h4>
-                <p className="text-[11px] text-amber-700/80 mt-1 max-w-xs">Optimizing structures across 75% Enterprise groups and 50% Startup models.</p>
+              <div className="relative rounded-xl overflow-hidden border border-blue-100 shadow-sm aspect-square">
+                <Image
+                  src="/images/businesses/enterprise/target-market.png"
+                  alt="Target market breakdown"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                />
               </div>
             </div>
           </div>
         </section>
 
         {/* Growth Strategy Module */}
-        <section className="py-16 bg-orange-50/40 border-b border-orange-100">
+        <section className="py-16 bg-blue-50/40 border-b border-blue-100">
           <div className="max-w-4xl mx-auto px-4">
             <h2 className="text-xl font-bold text-slate-900 mb-1 font-heading">Our Growth Strategy</h2>
             <p className="text-slate-500 text-xs mb-6">Our strategic initiatives are designed to drive sustained growth.</p>
@@ -101,11 +105,16 @@ export function ServiceFeatures({
         <section className="py-16 bg-white text-center">
           <div className="max-w-4xl mx-auto px-4">
             <h2 className="text-xl font-bold text-blue-600 mb-8 font-heading">Our Services</h2>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-2xl mx-auto">
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-4xl mx-auto">
               {gridImages?.map((gridItem, idx) => (
-                <div key={idx} className="relative rounded-xl overflow-hidden h-24 flex items-center justify-center p-4 bg-gradient-to-b from-slate-800 to-slate-900 text-white border border-slate-100 shadow-sm">
-                  <div className="absolute inset-0 bg-blue-600/10 mix-blend-multiply opacity-60" />
-                  <span className="relative z-10 text-[9px] font-bold tracking-wider leading-snug">{gridItem.title}</span>
+                <div key={idx} className="relative rounded-xl overflow-hidden aspect-[5/4] border border-slate-100 shadow-sm">
+                  <Image
+                    src={gridItem.image}
+                    alt={gridItem.title}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 50vw, 33vw"
+                  />
                 </div>
               ))}
             </div>

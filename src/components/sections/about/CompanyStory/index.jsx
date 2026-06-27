@@ -9,9 +9,14 @@ export function CompanyStory() {
 
           {/* Image */}
           <div className="relative">
-            <div className="aspect-[4/3] bg-blue-50 rounded-2xl border border-blue-100 flex items-center justify-center">
-              {/* TODO: Replace with actual image — public/images/about/company-story.jpg */}
-              <span className="text-blue-300 text-sm">[ Company Story Image ]</span>
+            <div className="aspect-[4/3] rounded-2xl overflow-hidden border border-blue-100 shadow-sm relative">
+              <Image
+                src="/images/about/company-story.png"
+                alt="The Indus Group team collaborating"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
             </div>
 
             <div className="absolute -top-5 -right-5 bg-blue-600 rounded-xl p-5 shadow-xl">
