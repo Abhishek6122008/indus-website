@@ -14,10 +14,11 @@ const stepsData = [
 ]
 
 const teamData = [
-  { name: 'Kali Kapoor', role: 'Team Lead- Growth', avatar: '👩‍💼' },
+  { name: 'Abhishek Chaudhary', role: 'Team Lead - Growth', avatar: '👨‍💼' },
   { name: 'Ujjwal Rawat', role: 'Team Lead-Tech', avatar: '👨‍💻' },
   { name: 'Ananya Singh', role: 'Team Lead-Legal', avatar: '👩‍⚖️' },
-  { name: 'Ayushi Upadhyay', role: 'Full Stack Developer', avatar: '👩‍💻' }
+  { name: 'Ayushi Upadhyay', role: 'Full Stack Developer', avatar: '👩‍💻' },
+  { name: 'Moazzam Ahmed Siddiqui', role: 'AI Engineer', avatar: '🤖' }
 ]
 
 const servicesTableData = [
