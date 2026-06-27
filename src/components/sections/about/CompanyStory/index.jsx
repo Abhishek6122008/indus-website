@@ -30,18 +30,14 @@ export function CompanyStory() {
               align="left"
             />
             <p className="text-slate-600 leading-relaxed mb-5">
-              The Indus Group of Co. was founded with one clear purpose: to bridge the gap between
-              opportunity and execution for Indian businesses. Starting as a focused logistics and
-              trade support firm, we quickly recognised that our clients needed more — broader
-              expertise, deeper relationships, and a partner who understood the full journey of
-              business growth.
+              We empower MSMEs and Trade Support Organizations with tailored global-local solutions,
+              helping them thrive in a dynamic market. Our passionate team drives growth through
+              customized strategies and specialized expertise.
             </p>
             <p className="text-slate-600 leading-relaxed">
-              Today, we operate across five distinct business verticals, each serving a specific
-              need in the market. From supply chain management to skill development, from real
-              estate to food franchise — the Indus Group is where ambition meets execution. We
-              have grown with our clients, and their success is our most enduring measure of
-              achievement.
+              As a forward-thinking conglomerate, we innovate in logistics, enterprise solutions, and
+              skill development. Committed to sustainable progress, we deliver real impact for businesses
+              and communities. Together, we build a brighter, more resilient future.
             </p>
           </div>
 

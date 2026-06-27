@@ -1,6 +1,7 @@
 import { PageHero } from '@/components/ui/PageHero'
 import { CompanyStory } from '@/components/sections/about/CompanyStory'
 import { MissionVision } from '@/components/sections/about/MissionVision'
+import { OurCoreTeam } from '@/components/sections/about/OurCoreTeam'
 import { OurApproach } from '@/components/sections/about/OurApproach'
 import { KeyStats } from '@/components/sections/about/KeyStats'
 
@@ -22,6 +23,7 @@ export default function AboutPage() {
       <CompanyStory />
       <MissionVision />
       <OurApproach />
+      <OurCoreTeam />
       <KeyStats />
     </>
   )

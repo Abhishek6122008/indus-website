@@ -12,39 +12,39 @@ export const metadata = {
 const features = [
   {
     Icon: Truck,
-    title: 'Domestic Freight Management',
+    title: 'Integrated Logistics Solutions',
     description:
-      'Road, rail, and air freight solutions covering India — ensuring reliable movement of goods with full visibility at every stage.',
+      'Technology-driven logistics solutions for manufacturers and traders, providing seamless end-to-end logistics support.',
   },
   {
     Icon: Globe,
-    title: 'International Trade Logistics',
+    title: 'Global Reach',
     description:
-      'Customs clearance, import/export documentation, and international freight forwarding. We navigate global trade so you can focus on your business.',
-  },
-  {
-    Icon: Package,
-    title: 'Last-Mile Delivery',
-    description:
-      'Reliable last-mile networks that connect suppliers to end customers efficiently — reducing delays and improving satisfaction.',
-  },
-  {
-    Icon: BarChart3,
-    title: 'Supply Chain Consulting',
-    description:
-      'End-to-end supply chain analysis and optimisation. We identify bottlenecks, reduce costs, and build resilient systems for long-term efficiency.',
+      'Domestic and international logistics services designed to simplify trade and transportation across markets.',
   },
   {
     Icon: Warehouse,
-    title: 'Warehousing Solutions',
+    title: 'Industries Served',
     description:
-      'Strategically located warehousing facilities including cold chain management — built to support your distribution and storage needs.',
+      'Specialized logistics solutions supporting multiple industries through warehousing, distribution, and supply chain management.',
+  },
+  {
+    Icon: BarChart3,
+    title: 'Supply Chain Optimization',
+    description:
+      'Improving operational efficiency, reducing costs, and streamlining logistics processes through integrated solutions.',
+  },
+  {
+    Icon: Package,
+    title: 'End-to-End Logistics',
+    description:
+      'Complete logistics support from shipment origin to final delivery with visibility and reliability.',
   },
   {
     Icon: Smartphone,
-    title: 'Technology Integration',
+    title: 'Technology-Driven Services',
     description:
-      'Real-time shipment tracking and digital logistics platforms that give you full control and transparency over your supply chain.',
+      'Digital logistics tools and tracking systems that provide transparency and better control over operations.',
   },
 ]
 
@@ -52,8 +52,8 @@ export default function LogisticsPage() {
   return (
     <>
       <ServiceHero
-        title="Logistics & Supply Chain Management"
-        subtitle="End-to-end logistics solutions for domestic and international trade — reliable, traceable, and built for scale."
+        title="Integrated Logistics Solutions"
+        subtitle="Your global logistics partner for seamless supply chains. Streamlining operations with efficiency, reliability, and global reach."
         slug="logistics"
       />
       <ServiceFeatures
