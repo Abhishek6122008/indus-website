@@ -12,40 +12,40 @@ export const metadata = {
 
 const features = [
   {
-    Icon: Home,
-    title: 'Residential Development',
-    description:
-      'Quality housing projects in emerging and established markets — designed for comfort, value, and long-term appreciation.',
-  },
-  {
     Icon: Building2,
-    title: 'Commercial Properties',
+    title: 'Commercial & Industrial Leasing',
     description:
-      'Office spaces, retail complexes, and commercial hubs built for modern business needs and optimal tenant experience.',
-  },
-  {
-    Icon: Factory,
-    title: 'Industrial Infrastructure',
-    description:
-      'Warehousing, logistics parks, and industrial estates — strategically developed to support supply chain and manufacturing operations.',
+      'We specialize in securing prime industrial spaces and warehouses that fit your operational needs, handling all negotiations from start to finish.',
   },
   {
     Icon: HardHat,
     title: 'Project Management',
     description:
-      'End-to-end construction project management covering planning, procurement, contractor coordination, and delivery oversight.',
+      'Our team provides full-service project management for residential and industrial properties, ensuring quality, timelines, and budgets are met.',
   },
   {
     Icon: BarChart3,
-    title: 'Property Consulting',
+    title: 'Investment Advisory',
     description:
-      'Market valuation, investment advisory, and due diligence services for buyers, sellers, and developers making informed decisions.',
+      'Leverage our market insights for opportunities in affordable/luxury housing and the booming industrial warehouse sector.',
+  },
+  {
+    Icon: Home,
+    title: 'Land Acquisition',
+    description:
+      'We assist in identifying and acquiring suitable land parcels for affordable, luxury, and industrial development, managing all due diligence.',
   },
   {
     Icon: Layers,
-    title: 'Infrastructure Projects',
+    title: 'Valuation Services',
     description:
-      'Roads, utilities, and civic infrastructure development in partnership with government and private sector stakeholders.',
+      'Get accurate and reliable property valuations for transaction, financing, or compliance purposes, conducted by our certified professionals.',
+  },
+  {
+    Icon: Factory,
+    title: 'Legal & Documentation',
+    description:
+      'Our experts ensure a smooth and secure transaction process by handling all legal paperwork, title verification, and contract drafting with precision.',
   },
 ]
 
@@ -61,7 +61,7 @@ export default function RealEstatePage() {
         heading="Your Partner in Property Growth"
         description="At The Indus Group, we focus on key growth sectors within the real estate market. We specialize in developing and managing a diverse portfolio of affordable and luxury residential projects, alongside state-of-the-art industrial warehouses. Our expert team helps clients navigate opportunities in these high-demand segments, from initial investment to final delivery, ensuring every project meets our standards of quality and value."
       />
-      <ServiceFeatures features={features} heading="Real Estate & Infrastructure Services" />
+      <ServiceFeatures features={features} heading="Our Core Real Estate Services" />
       <ServiceCTA
         title="Explore a Real Estate Opportunity"
         description="Connect with our real estate team to discuss development projects, investment, or property advisory."
