@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { ServiceHero } from '@/components/sections/businesses/ServiceHero'
 import { ServiceFeatures } from '@/components/sections/businesses/ServiceFeatures'
 import { ServiceCTA } from '@/components/sections/businesses/ServiceCTA'
@@ -94,6 +95,22 @@ export default function SkillDevelopmentPage() {
         subtitle="Empowering students and professionals with future-ready skills for global leadership through expert-designed courses."
         slug="skill-development"
       />
+
+      {/* Problem Statement / Eclectic Learning-Courses banner */}
+      <section className="section-padding bg-slate-50">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="rounded-xl overflow-hidden shadow-sm border border-slate-100">
+            <Image
+              src="/images/businesses/skill-development/s.intro2.jpeg"
+              alt="My Skills Academy — Eclectic Learning Courses"
+              width={1000}
+              height={560}
+              className="w-full h-auto"
+            />
+          </div>
+        </div>
+      </section>
+
       <ServiceFeatures features={features} heading="Certificate Courses Offered" />
       <ServiceCTA
         title="Invest in Your Future"
