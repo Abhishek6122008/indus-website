@@ -5,32 +5,32 @@ const team = [
   {
     name: 'O.P. Singh',
     role: 'Emeritus Chairman',
-    image: '/images/about/op1.jpeg',
+    image: '/images/about/O.P. Singh.jpg',
   },
   {
     name: 'Dr. P.K. Singh',
     role: 'Group C.E.O.',
-    image: '/images/about/coreteamno.2.jpeg',
+    image: '/images/about/Dr. P.K. Singh.jpg',
   },
   {
     name: 'Adv. Gaurav Bhardwaj',
     role: 'Board Advisor, Legal – Indus Group (Adv. Supreme Court of India)',
-    image: '/images/about/coreteamno.3.jpeg',
+    image: '/images/about/Adv. Gaurav Bhardwaj.jpg',
   },
   {
     name: 'Debdutta Ghosh',
     role: 'Group CHRO',
-    image: '/images/about/dd.jpeg',
+    image: '/images/about/Debdutta Ghosh.jpg',
   },
   {
     name: 'Dr. Vijay Prakash Sharma',
     role: 'Group Advisor- Business Strategy',
-    image: '/images/about/vijayprakash.jpeg',
+    image: '/images/about/Dr. Vijay Prakash Sharma.jpg',
   },
   {
     name: 'Shruti Singh',
     role: 'Board Advisor - LSCM',
-    image: '/images/about/coreteamno.5.jpeg',
+    image: '/images/about/Shruti Singh.jpg',
   },
 ]
 
@@ -57,7 +57,7 @@ export function OurCoreTeam() {
                   alt={member.name}
                   fill
                   className="object-cover object-top"
-                  sizes="(max-w-768px) 100vw, 350px"
+                  sizes="(max-width: 768px) 100vw, 350px"
                 />
               </div>
               
