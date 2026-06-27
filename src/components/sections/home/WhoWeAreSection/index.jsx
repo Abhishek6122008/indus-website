@@ -48,8 +48,8 @@ export function WhoWeAreSection() {
           <div className="relative">
             <div className="aspect-[4/3] rounded-2xl overflow-hidden border border-blue-100 shadow-sm relative">
               <Image
-                src="/images/about/company-team-new.jpg"
-                alt="The Indus Group team"
+                src="/images/about/who-we-are.png"
+                alt="The Indus Group — delivering solutions across logistics, infrastructure, and enterprise"
                 fill
                 className="object-cover"
                 sizes="(max-width: 768px) 100vw, 50vw"
