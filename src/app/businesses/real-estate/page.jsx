@@ -58,6 +58,7 @@ export default function RealEstatePage() {
         title="Real Estate Solutions"
         subtitle="Specializing in Affordable Housing, Luxury Properties, and Industrial Warehouses"
         slug="real-estate"
+        backgroundImage="/images/businesses/real-estate/real-estate-hero.png"
       />
       <ServiceIntro
         heading="Your Partner in Property Growth"
