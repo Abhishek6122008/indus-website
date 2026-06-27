@@ -40,9 +40,9 @@ export function EnterpriseIntro({ steps, team }) {
         <section className="py-16 bg-slate-50 text-center">
           <div className="max-w-6xl mx-auto px-4">
             <h2 className="text-2xl font-bold text-blue-600 mb-10 font-heading">The Enterprise Team</h2>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div className="flex flex-wrap justify-center gap-6 max-w-3xl mx-auto">
               {team.map((member, idx) => (
-                <Card key={idx} className="bg-white border border-slate-100 shadow-sm p-4 rounded-lg">
+                <Card key={idx} className="bg-white border border-slate-100 shadow-sm p-4 rounded-lg w-[calc(50%-0.75rem)] md:w-[calc(33.333%-1rem)]">
                   <div className="w-full aspect-[3/4] mb-3 rounded-md overflow-hidden relative bg-slate-100">
                     <Image
                       src={member.image}
