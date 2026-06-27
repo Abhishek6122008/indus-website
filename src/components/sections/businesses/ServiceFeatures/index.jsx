@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { SectionHeading } from '@/components/ui/SectionHeading'
 
 export function ServiceFeatures({ features, heading = 'What We Offer' }) {
@@ -9,13 +10,28 @@ export function ServiceFeatures({ features, heading = 'What We Offer' }) {
           {features.map((f) => (
             <div
               key={f.title}
-              className="bg-blue-50 border border-blue-100 rounded-2xl p-7 hover:border-blue-200 hover:shadow-md transition-all"
+              className="bg-blue-50 border border-blue-100 rounded-2xl overflow-hidden hover:border-blue-200 hover:shadow-md transition-all"
             >
-              <div className="w-11 h-11 rounded-xl bg-white border border-blue-200 flex items-center justify-center mb-5 shadow-sm">
-                <f.Icon className="w-5 h-5 text-blue-600" />
+              {f.image ? (
+                <div className="relative w-full h-44">
+                  <Image
+                    src={f.image}
+                    alt={f.title}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+              ) : null}
+
+              <div className="p-7">
+                {f.Icon && (
+                  <div className="w-11 h-11 rounded-xl bg-white border border-blue-200 flex items-center justify-center mb-5 shadow-sm">
+                    <f.Icon className="w-5 h-5 text-blue-600" />
+                  </div>
+                )}
+                <h3 className="text-slate-900 font-semibold font-heading text-base mb-2">{f.title}</h3>
+                <p className="text-slate-600 text-sm leading-relaxed">{f.description}</p>
               </div>
-              <h3 className="text-slate-900 font-semibold font-heading text-base mb-2">{f.title}</h3>
-              <p className="text-slate-600 text-sm leading-relaxed">{f.description}</p>
             </div>
           ))}
         </div>
