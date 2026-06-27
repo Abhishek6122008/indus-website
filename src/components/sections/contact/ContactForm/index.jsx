@@ -3,6 +3,8 @@
 import { useState } from 'react'
 import { ArrowRight, CheckCircle } from 'lucide-react'
 
+const verticals = ['Logistics', 'Enterprise', 'Skill Development', 'Real Estate']
+
 export function ContactForm() {
   const [form, setForm] = useState({
     name: '',
@@ -10,6 +12,7 @@ export function ContactForm() {
     phone: '',
     message: '',
   })
+  const [vertical, setVertical] = useState('')
   const [submitted, setSubmitted] = useState(false)
 
   function handleChange(e) {
@@ -82,6 +85,31 @@ export function ContactForm() {
         <p className="mt-1.5 text-xs text-slate-400">
           Share your number and our team will call you back to talk it through.
         </p>
+      </div>
+
+      <div>
+        <label className="block text-xs text-slate-500 uppercase tracking-wide mb-2">
+          What can we help you with?
+        </label>
+        <div className="flex flex-wrap gap-2">
+          {verticals.map((v) => {
+            const active = v === vertical
+            return (
+              <button
+                key={v}
+                type="button"
+                onClick={() => setVertical(v)}
+                className={`px-4 py-2 rounded-full text-sm font-medium border transition-colors ${
+                  active
+                    ? 'bg-blue-600 border-blue-600 text-white'
+                    : 'bg-white border-slate-200 text-slate-600 hover:border-blue-400 hover:text-blue-600'
+                }`}
+              >
+                {v}
+              </button>
+            )
+          })}
+        </div>
       </div>
 
       <div>
