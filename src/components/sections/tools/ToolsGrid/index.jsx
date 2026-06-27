@@ -4,8 +4,7 @@ import { useState, useRef, useEffect } from 'react'
 import { Card } from '@/components/ui/Card'
 import { Badge } from '@/components/ui/Badge'
 import { FreightEstimator } from '../FreightEstimator'
-import { FranchiseCalculator } from '../FranchiseCalculator'
-import { Truck, Store, ArrowDown, FileSearch, Boxes, Leaf, ExternalLink } from 'lucide-react'
+import { Truck, ArrowDown, FileSearch, Boxes, Leaf, ExternalLink } from 'lucide-react'
 
 // External quick-access tools — open in a new tab.
 const QUICK_ACCESS_TOOLS = [
@@ -81,7 +80,7 @@ export function ToolsGrid() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+        <div className="grid grid-cols-1 gap-8 mb-12 max-w-xl">
           {/* Card 1: Freight Estimator */}
           <div
             role="button"
@@ -122,47 +121,6 @@ export function ToolsGrid() {
               </div>
             </Card>
           </div>
-
-          {/* Card 2: Franchise ROI Planner */}
-          <div
-            role="button"
-            tabIndex={0}
-            onClick={() => selectTool('franchise')}
-            onKeyDown={(e) => {
-              if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault()
-                selectTool('franchise')
-              }
-            }}
-            className="cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded-xl"
-          >
-            <Card
-              hover={true}
-              className={`h-full flex flex-col justify-between transition-all duration-300 ${activeTool === 'franchise'
-                ? 'border-blue-600 ring-2 ring-blue-100 shadow-md bg-blue-50/10'
-                : 'border-blue-100 hover:border-blue-200'
-                }`}
-            >
-              <div>
-                <div className="flex justify-between items-start mb-4">
-                  <div className={`p-3 rounded-xl transition-colors ${activeTool === 'franchise' ? 'bg-blue-600 text-white' : 'bg-blue-50 text-blue-600'}`}>
-                    <Store className="w-6 h-6" />
-                  </div>
-                  <Badge variant="blue">Food Chain</Badge>
-                </div>
-                <h3 className="font-heading font-bold text-lg text-slate-900 mb-2">
-                  Franchise ROI Planner
-                </h3>
-                <p className="text-sm text-slate-600 leading-relaxed">
-                  Estimate projected revenues, payback cycles, and annual ROI for prospective HBC franchise outlets.
-                </p>
-              </div>
-              <div className="mt-6 flex items-center gap-2 text-xs font-bold text-blue-600">
-                <span>{activeTool === 'franchise' ? 'Calculator Active' : 'Open Calculator'}</span>
-                <ArrowDown className={`w-3.5 h-3.5 transition-transform duration-300 ${activeTool === 'franchise' ? 'rotate-180' : ''}`} />
-              </div>
-            </Card>
-          </div>
         </div>
 
         {/* Selected Calculator Expansion Area */}
@@ -183,7 +141,6 @@ export function ToolsGrid() {
               </button>
             </div>
             {activeTool === 'freight' && <FreightEstimator />}
-            {activeTool === 'franchise' && <FranchiseCalculator />}
           </div>
         )}
       </div>

@@ -4,7 +4,7 @@ import { BusinessesGrid } from '@/components/sections/home/BusinessesGrid'
 export const metadata = {
   title: 'Our Businesses | The Indus Group of Co.',
   description:
-    'Explore the five business verticals of The Indus Group — Logistics, Enterprise Solutions, Skill Development, Real Estate, and HBC Franchise.',
+    'Explore the four business verticals of The Indus Group — Logistics, Enterprise Solutions, Skill Development, and Real Estate.',
 }
 
 export default function BusinessesPage() {
@@ -13,7 +13,7 @@ export default function BusinessesPage() {
       <PageHero
         label="What We Do"
         title="Our Businesses"
-        subtitle="Five focused verticals, each built to deliver lasting value for clients across industries."
+        subtitle="Four focused verticals, each built to deliver lasting value for clients across industries."
         breadcrumbs={[{ label: 'Businesses' }]}
       />
       <BusinessesGrid />

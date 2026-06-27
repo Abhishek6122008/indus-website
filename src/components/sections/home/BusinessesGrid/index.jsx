@@ -44,16 +44,6 @@ const businesses = [
     image: '/images/businesses/real-estate/real-estate-hero.png',
     flip: true,
   },
-  {
-    title: 'Franchise of HBC Brand',
-    tagline: 'A proven food chain franchise opportunity.',
-    description:
-      'The HBC Brand franchise offers a complete, ready-to-run food chain business model with full operational support. From site selection to training and supply chain, we walk with franchisees every step of the way.',
-    exploreLabel: 'Explore Franchise',
-    href: '/businesses/hbc-franchise',
-    image: '/images/businesses/hbc-franchise/hbc-hero.png',
-    flip: false,
-  },
 ]
 
 export function BusinessesGrid() {
@@ -63,8 +53,8 @@ export function BusinessesGrid() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             label="Our Businesses"
-            title="Five Verticals, One Vision"
-            subtitle="Focused excellence across five business domains, each designed to create lasting value."
+            title="Four Verticals, One Vision"
+            subtitle="Focused excellence across four business domains, each designed to create lasting value."
           />
         </div>
       </div>

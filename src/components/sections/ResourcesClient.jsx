@@ -76,10 +76,10 @@ const GUIDES = [
     image: '/images/resources/company-profile.png',
     category: 'PDF',
     file: '/files/indus-corporate-deck.pdf',
-    summary: 'An overview of The Indus Group of Co. covering the company\'s history, organizational structure, mission and vision, and the five business verticals: Logistics, Enterprise Solutions, Skill Development, Real Estate, and HBC Franchise. Includes the full company presentation deck.',
+    summary: 'An overview of The Indus Group of Co. covering the company\'s history, organizational structure, mission and vision, and the four business verticals: Logistics, Enterprise Solutions, Skill Development, and Real Estate. Includes the full company presentation deck.',
     highlights: [
       '14+ years of industry experience',
-      'Operations across Logistics, Enterprise Solutions, Skill Development, Real Estate, and Food Chain',
+      'Operations across Logistics, Enterprise Solutions, Skill Development, and Real Estate',
       'Mission: Delivering industry-leading solutions with reliability, innovation, and integrity',
       '1,000+ clients served across sectors',
       'MSME-focused approach to business empowerment',
