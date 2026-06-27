@@ -3,6 +3,7 @@ import { ServiceHero } from '@/components/sections/businesses/ServiceHero'
 import { ServiceIntro } from '@/components/sections/businesses/ServiceIntro'
 import { ServiceFeatures } from '@/components/sections/businesses/ServiceFeatures'
 import { RealEstatePartnersStrip } from '@/components/sections/businesses/RealEstatePartnersStrip'
+import { ProjectFocus } from '@/components/sections/businesses/ProjectFocus'
 import { ServiceCTA } from '@/components/sections/businesses/ServiceCTA'
 
 export const metadata = {
@@ -64,6 +65,7 @@ export default function RealEstatePage() {
       />
       <ServiceFeatures features={features} heading="Our Core Real Estate Services" />
       <RealEstatePartnersStrip />
+      <ProjectFocus />
       <ServiceCTA
         title="Discuss Your Real Estate Needs"
         description="Tell us about your property requirements and our team will get back to you with the right solution."
