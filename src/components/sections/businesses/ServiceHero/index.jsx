@@ -73,11 +73,13 @@ export function ServiceHero({ title, subtitle, slug, steps, team, customIntro = 
     )
   }
 
+export function ServiceHero({ title, subtitle, slug, backgroundImage }) {
   return (
     <PageHero
       label="Business Vertical"
       title={title}
       subtitle={subtitle}
+      backgroundImage={backgroundImage}
       breadcrumbs={[
         { label: 'Businesses', href: '/businesses' },
         { label: title },

@@ -19,10 +19,8 @@ export function MissionVision() {
             </div>
             <h3 className="text-xl font-bold font-heading text-slate-900 mb-3">Our Mission</h3>
             <p className="text-slate-600 leading-relaxed">
-              To empower businesses — especially MSMEs and emerging enterprises — by delivering
-              reliable, innovative, and integrity-driven solutions across logistics, enterprise
-              consulting, skill development, real estate, and food franchise. We are committed to
-              being the partner that turns potential into performance.
+              We deliver unparalleled value through integrated, sustainable solutions, empowering
+              our workforce and enriching communities.
             </p>
           </div>
 
@@ -33,10 +31,7 @@ export function MissionVision() {
             </div>
             <h3 className="text-xl font-bold font-heading text-slate-900 mb-3">Our Vision</h3>
             <p className="text-slate-600 leading-relaxed">
-              To become India&apos;s most trusted multi-vertical business group — known not just
-              for the scale of our operations, but for the depth of our impact. We envision a
-              future where every business we touch grows stronger, every community we work in
-              thrives, and every team member we develop reaches their fullest potential.
+              To be recognized as &quot;Maximizing value through innovation, optimization, and adaptability.&quot;
             </p>
           </div>
 

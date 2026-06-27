@@ -18,14 +18,8 @@ export default function CareersPage() {
         subtitle="Be part of a team that's reshaping how businesses grow across India. We're always looking for passionate people."
         breadcrumbs={[{ label: 'Careers' }]}
       />
-
-      {/* Why Work With Us Section */}
       <WhyWorkWithUs />
-
-      {/* Open Positions Listings Section */}
       <OpenPositions />
-
-      {/* Closing Call to Action Section */}
       <CareersCTA />
     </>
   )

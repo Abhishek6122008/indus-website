@@ -91,7 +91,7 @@ public/
 | Phone | +91 7011332238 |
 | Email | info@theindusgroup.com / theindusgroup@outlook.com |
 | Social | Instagram, LinkedIn, X (Twitter), YouTube, WhatsApp |
-| Stats | 14+ years experience, 1,000+ clients, 100+ team, Global network, 24/7 support |
+| Stats | 14+ years excellence, 1,000+ clients, 100+ team, Global network, 24/7 support |
 | Footer legal links | Careers, Privacy Policy, Terms & Conditions |
 
 ---
