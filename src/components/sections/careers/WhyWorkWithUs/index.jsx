@@ -16,7 +16,7 @@ const benefits = [
   {
     icon: Target,
     title: 'Meaningful Impact',
-    description: 'Work on large-scale logistics, enterprise, infrastructure, and franchise projects that empower Indian MSMEs.',
+    description: 'Work on large-scale logistics, enterprise, skill development, and infrastructure projects that empower Indian MSMEs.',
   },
   {
     icon: BookOpen,

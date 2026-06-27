@@ -3,8 +3,7 @@
 import { useState } from 'react'
 import { ArrowRight, CheckCircle } from 'lucide-react'
 
-// Vertical-specific options. HBC food franchise is intentionally excluded —
-// franchise enquiries are handled on the HBC business detail page.
+// Vertical-specific options for the contact form.
 const verticals = [
   {
     id: 'logistics',

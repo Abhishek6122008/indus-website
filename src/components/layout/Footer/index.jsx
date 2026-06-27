@@ -30,7 +30,6 @@ const businesses = [
   { label: 'Enterprise Solutions', href: '/businesses/enterprise-solutions' },
   { label: 'Skill Development', href: '/businesses/skill-development' },
   { label: 'Real Estate & Infra', href: '/businesses/real-estate' },
-  { label: 'HBC Brand Franchise', href: '/businesses/hbc-franchise' },
 ]
 
 // ── SocialMenu ────────────────────────────────────────────────────────────────
