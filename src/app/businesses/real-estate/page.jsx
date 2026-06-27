@@ -63,8 +63,8 @@ export default function RealEstatePage() {
       />
       <ServiceFeatures features={features} heading="Our Core Real Estate Services" />
       <ServiceCTA
-        title="Explore a Real Estate Opportunity"
-        description="Connect with our real estate team to discuss development projects, investment, or property advisory."
+        title="Discuss Your Real Estate Needs"
+        description="Tell us about your property requirements and our team will get back to you with the right solution."
       />
     </>
   )
