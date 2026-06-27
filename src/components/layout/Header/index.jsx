@@ -32,16 +32,32 @@ export function Header() {
       <div className="px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
 
-          {/* Logo */}
-          <Link href="/" className="flex items-center shrink-0">
-            <Image
-              src="/images/indus-logo.jpeg"
-              alt="The Indus Group of Co."
-              width={140}
-              height={56}
-              className="h-12 w-auto object-contain"
-              priority
-            />
+          {/* Logo Container Block */}
+          <Link href="/" className="flex items-center gap-1.5 shrink-0 group">
+
+            <div className="relative h-12 w-40 md:h-16 md:w-48 flex items-center mix-blend-multiply transition-all">
+              <Image
+                src="/images/indus-logo.jpeg"
+                alt="The Indus Group Logo"
+                fill
+                sizes="(max-w-768px) 160px, 192px"
+                className="object-contain"
+                priority
+              />
+            </div>
+
+            <div className="h-10 w-[1px] bg-slate-200 hidden sm:block" />
+
+            <div className="relative w-12 h-12 md:w-14 md:h-14 flex items-center justify-center bg-white border border-slate-100 rounded-full overflow-hidden shadow-sm shrink-0 p-1">
+              <Image
+                src="/images/iso-certified.jpeg"
+                alt="ISO 9001:2015 Certified"
+                width={56}
+                height={56}
+                className="object-contain w-full h-full rounded-full"
+                priority
+              />
+            </div>
           </Link>
 
           {/* Desktop Nav */}
@@ -157,7 +173,7 @@ export function Header() {
                   className="block px-3 py-2 text-sm font-medium text-slate-600 hover:text-blue-600 rounded-md hover:bg-blue-50 transition-colors"
                   onClick={() => setMobileOpen(false)}
                 >
-                  {link.label}
+                  {item.label}
                 </Link>
               )
             )}
