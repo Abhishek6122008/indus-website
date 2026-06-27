@@ -1,5 +1,4 @@
 import Image from 'next/image'
-import { Card } from '@/components/ui/Card'
 
 const corporateTeam = [
   {
@@ -71,34 +70,33 @@ export function MeetOurTeam() {
         </div>
 
         {/* Responsive Grid Structure */}
-        <div className="grid grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {corporateTeam.map((member) => (
-            <Card 
-              key={member.name} 
-              hover 
-              className="bg-white border border-slate-100 shadow-sm p-6 flex flex-col items-center text-center rounded-xl"
+            <div
+              key={member.name}
+              className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col h-full border border-slate-100"
             >
-              {/* Perfectly sized circular image wrapper */}
-              <div className="relative w-32 h-32 rounded-full overflow-hidden mb-5 border-2 border-slate-100 bg-slate-100 shadow-sm shrink-0">
+              {/* Photo at the top (edge-to-edge) */}
+              <div className="relative aspect-[4/3] w-full overflow-hidden bg-slate-100">
                 <Image
                   src={member.image}
-                  alt={`${member.name} — ${member.role}`}
+                  alt={member.name}
                   fill
-                  sizes="128px"
-                  className="object-cover"
+                  className="object-cover object-top"
+                  sizes="(max-width: 768px) 100vw, 350px"
                 />
               </div>
 
-              {/* Meta Content */}
-              <div>
-                <h3 className="font-bold text-slate-900 text-base font-heading tracking-tight">
+              {/* Text details at the bottom */}
+              <div className="p-6 text-center flex-grow flex flex-col justify-center">
+                <h3 className="text-lg font-bold text-slate-800 mb-1.5 font-heading">
                   {member.name}
                 </h3>
-                <p className="text-xs font-semibold text-blue-600 mt-1 uppercase tracking-wider">
+                <p className="text-sm font-semibold text-blue-600 px-2 leading-relaxed">
                   {member.role}
                 </p>
               </div>
-            </Card>
+            </div>
           ))}
         </div>
 
