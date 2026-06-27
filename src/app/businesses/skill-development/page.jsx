@@ -1,7 +1,3 @@
-import {
-  Truck, ShieldCheck, Megaphone, BarChart3, UsersRound, Ship,
-  ShoppingCart, FileText, FileSpreadsheet, TrendingUp, Globe, Boxes,
-} from 'lucide-react'
 import { ServiceHero } from '@/components/sections/businesses/ServiceHero'
 import { ServiceFeatures } from '@/components/sections/businesses/ServiceFeatures'
 import { ServiceCTA } from '@/components/sections/businesses/ServiceCTA'
@@ -12,76 +8,78 @@ export const metadata = {
     'My Skills Academy — expert-designed certificate courses empowering students and professionals with future-ready skills for global leadership.',
 }
 
+const IMG = '/images/businesses/skill-development'
+
 // Certificate courses offered through My Skills Academy — theindusgroup.com/skills.html
 const features = [
   {
-    Icon: Truck,
+    image: `${IMG}/logistics.jpeg`,
     title: 'Logistics & Supply Chain Management',
     description:
       'Build expertise in modern logistics and supply chain operations for domestic and global trade.',
   },
   {
-    Icon: ShieldCheck,
+    image: `${IMG}/hacking.jpeg`,
     title: 'Ethical Hacking and Cyber Security',
     description:
       'Hands-on training in ethical hacking, network defence, and cyber security fundamentals.',
   },
   {
-    Icon: Megaphone,
+    image: `${IMG}/genai.jpeg`,
     title: 'GenAI Digital Marketing',
     description:
       'Master modern digital marketing powered by generative AI tools and strategies.',
   },
   {
-    Icon: BarChart3,
+    image: `${IMG}/datascience.jpeg`,
     title: 'Data Science and Analytics',
     description:
       'Learn data analysis, visualisation, and analytics to drive data-informed decisions.',
   },
   {
-    Icon: UsersRound,
+    image: `${IMG}/posh.jpeg`,
     title: 'POSH Training',
     description:
       'Prevention of Sexual Harassment training for safe, compliant, and respectful workplaces.',
   },
   {
-    Icon: Ship,
+    image: `${IMG}/s.courses5.webp`,
     title: 'Basic Freight Forwarding',
     description:
       'Foundational knowledge of freight forwarding, shipping, and cargo movement.',
   },
   {
-    Icon: ShoppingCart,
+    image: `${IMG}/s.courses6.jpeg`,
     title: 'Certified E-commerce Professionals',
     description:
       'Become a certified e-commerce professional ready for the digital retail economy.',
   },
   {
-    Icon: FileText,
+    image: `${IMG}/inco.jpeg`,
     title: 'Masterclass On INCOTERMS',
     description:
       'In-depth masterclass on INCOTERMS and their application in international trade.',
   },
   {
-    Icon: FileSpreadsheet,
+    image: `${IMG}/s.courses9.png`,
     title: 'EXIM Documentations & Procedures',
     description:
       'Practical training on export-import documentation and trade procedures.',
   },
   {
-    Icon: TrendingUp,
+    image: `${IMG}/sales.jpeg`,
     title: 'Training on Sales and Marketing',
     description:
       'Develop core sales and marketing skills to grow businesses and careers.',
   },
   {
-    Icon: Globe,
+    image: `${IMG}/start.jpeg`,
     title: 'Start-Up & Scale-Up in International Trade',
     description:
       'Guidance for starting and scaling ventures in the international trade space.',
   },
   {
-    Icon: Boxes,
+    image: `${IMG}/s.courses13.jpeg`,
     title: 'WMS & Inventory Management',
     description:
       'Learn warehouse management systems and effective inventory control practices.',
