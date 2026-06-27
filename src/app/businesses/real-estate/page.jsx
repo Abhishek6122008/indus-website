@@ -1,5 +1,6 @@
 import { Home, Building2, Factory, HardHat, BarChart3, Layers } from 'lucide-react'
 import { ServiceHero } from '@/components/sections/businesses/ServiceHero'
+import { ServiceIntro } from '@/components/sections/businesses/ServiceIntro'
 import { ServiceFeatures } from '@/components/sections/businesses/ServiceFeatures'
 import { ServiceCTA } from '@/components/sections/businesses/ServiceCTA'
 
@@ -52,9 +53,13 @@ export default function RealEstatePage() {
   return (
     <>
       <ServiceHero
-        title="Real Estate & Infra Projects"
-        subtitle="Developing high-value property and infrastructure assets — built to perform and built to last."
+        title="Real Estate Solutions"
+        subtitle="Specializing in Affordable Housing, Luxury Properties, and Industrial Warehouses"
         slug="real-estate"
+      />
+      <ServiceIntro
+        heading="Your Partner in Property Growth"
+        description="At The Indus Group, we focus on key growth sectors within the real estate market. We specialize in developing and managing a diverse portfolio of affordable and luxury residential projects, alongside state-of-the-art industrial warehouses. Our expert team helps clients navigate opportunities in these high-demand segments, from initial investment to final delivery, ensuring every project meets our standards of quality and value."
       />
       <ServiceFeatures features={features} heading="Real Estate & Infrastructure Services" />
       <ServiceCTA
