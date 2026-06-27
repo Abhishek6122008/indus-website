@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { SectionHeading } from '@/components/ui/SectionHeading'
 
 export function CompanyStory() {
@@ -8,13 +9,21 @@ export function CompanyStory() {
 
           {/* Image */}
           <div className="relative">
-            <div className="aspect-[4/3] bg-blue-50 rounded-2xl border border-blue-100 flex items-center justify-center">
-              {/* TODO: Replace with actual image — public/images/about/company-story.jpg */}
-              <span className="text-blue-300 text-sm">[ Company Story Image ]</span>
+            <div className="aspect-[4/3] rounded-2xl overflow-hidden">
+              <Image
+                src="/images/about/company-team.jpg"
+                alt="The Indus Group company story"
+                width={800}
+                height={600}
+                className="w-full h-full object-cover"
+              />
             </div>
+
             <div className="absolute -top-5 -right-5 bg-blue-600 rounded-xl p-5 shadow-xl">
               <div className="text-3xl font-bold font-heading text-white">2010</div>
-              <div className="text-xs font-semibold text-blue-100 mt-0.5 uppercase tracking-wide">Founded</div>
+              <div className="text-xs font-semibold text-blue-100 mt-0.5 uppercase tracking-wide">
+                Founded
+              </div>
             </div>
           </div>
 
@@ -26,18 +35,14 @@ export function CompanyStory() {
               align="left"
             />
             <p className="text-slate-600 leading-relaxed mb-5">
-              The Indus Group of Co. was founded with one clear purpose: to bridge the gap between
-              opportunity and execution for Indian businesses. Starting as a focused logistics and
-              trade support firm, we quickly recognised that our clients needed more — broader
-              expertise, deeper relationships, and a partner who understood the full journey of
-              business growth.
+              We empower MSMEs and Trade Support Organizations with tailored global-local solutions,
+              helping them thrive in a dynamic market. Our passionate team drives growth through
+              customized strategies and specialized expertise.
             </p>
             <p className="text-slate-600 leading-relaxed">
-              Today, we operate across five distinct business verticals, each serving a specific
-              need in the market. From supply chain management to skill development, from real
-              estate to food franchise — the Indus Group is where ambition meets execution. We
-              have grown with our clients, and their success is our most enduring measure of
-              achievement.
+              As a forward-thinking conglomerate, we innovate in logistics, enterprise solutions, and
+              skill development. Committed to sustainable progress, we deliver real impact for businesses
+              and communities. Together, we build a brighter, more resilient future.
             </p>
           </div>
 

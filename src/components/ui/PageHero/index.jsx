@@ -1,8 +1,9 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { ChevronRight } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
-export function PageHero({ label, title, subtitle, breadcrumbs, className }) {
+export function PageHero({ label, title, subtitle, breadcrumbs, backgroundImage, className }) {
   return (
     <section
       className={cn(
@@ -11,6 +12,19 @@ export function PageHero({ label, title, subtitle, breadcrumbs, className }) {
         className,
       )}
     >
+      {backgroundImage && (
+        <>
+          <Image
+            src={backgroundImage}
+            alt=""
+            fill
+            priority
+            className="object-cover object-[center_16%] opacity-90"
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-[#0b1f5c]/25 via-[#1e40af]/15 to-blue-600/10" />
+        </>
+      )}
+
       {/* Subtle dot grid */}
       <div
         className="absolute inset-0 opacity-[0.05]"

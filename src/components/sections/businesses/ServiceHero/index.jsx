@@ -2,7 +2,7 @@ import { PageHero } from '@/components/ui/PageHero'
 import { Card } from '@/components/ui/Card'
 import { Button } from '@/components/ui/Button'
 
-export function ServiceHero({ title, subtitle, slug, steps, team, customIntro = false }) {
+export function ServiceHero({ title, subtitle, slug, steps, team, backgroundImage, customIntro = false }) {
   if (customIntro) {
     return (
       <>
@@ -78,6 +78,7 @@ export function ServiceHero({ title, subtitle, slug, steps, team, customIntro = 
       label="Business Vertical"
       title={title}
       subtitle={subtitle}
+      backgroundImage={backgroundImage}
       breadcrumbs={[
         { label: 'Businesses', href: '/businesses' },
         { label: title },

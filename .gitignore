@@ -36,3 +36,6 @@ Thumbs.db
 .cache/
 .eslintcache
 .stylelintcache
+
+# Local History (VS Code extension) — never commit editor snapshots
+.history/
