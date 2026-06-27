@@ -2,30 +2,29 @@ import { SectionHeading } from '@/components/ui/SectionHeading'
 import { Card } from '@/components/ui/Card'
 import { Badge } from '@/components/ui/Badge'
 import { Button } from '@/components/ui/Button'
-import { MapPin, Clock, ArrowRight } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 
 const jobs = [
   {
-    title: 'Logistics Operations Manager',
-    department: 'Operations & Logistics',
-    location: 'New Delhi, Delhi',
-    type: 'Full-time',
-    description: 'Lead supply chain coordination, dispatch oversight, and logistics resource optimization.',
+    title: 'Telecallers',
+    department: 'Sales',
+    description: 'Grow client relations, manage incoming inquiries, and coordinate sales pipelines over the phone.',
   },
   {
-    title: 'Enterprise Sales Executive',
+    title: 'Freelancers',
+    department: 'Operations',
+    description: 'Support cross-vertical operational strategies and manage variable client requirements.',
+  },
+  {
+    title: 'Sales and Marketing',
+    department: 'Marketing',
+    description: 'Execute campaigns, capture local markets, and build brand awareness for enterprise products.',
+  },
+  {
+    title: 'Channel Partners',
     department: 'Business Development',
-    location: 'Mumbai, Maharashtra',
-    type: 'Full-time',
-    description: 'Grow client base, secure partnerships, and expand market share for business solutions.',
-  },
-  {
-    title: 'Frontend Developer (Next.js)',
-    department: 'Technology',
-    location: 'Remote',
-    type: 'Full-time',
-    description: 'Build responsive, pixel-perfect user interfaces and manage client-facing web application development.',
-  },
+    description: 'Establish strategic market channels, expand corporate networking, and secure regional growth.',
+  }
 ]
 
 export function OpenPositions() {
@@ -37,16 +36,12 @@ export function OpenPositions() {
           title="Open Positions"
           subtitle="Explore our current openings and find where you can make a difference."
         />
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 max-w-5xl mx-auto">
           {jobs.map((job) => (
-            <Card key={job.title} hover className="flex flex-col h-full bg-white justify-between">
+            <Card key={job.title} hover className="flex flex-col h-full bg-white justify-between p-6">
               <div>
-                <div className="flex justify-between items-start mb-4 gap-2">
+                <div className="flex justify-between items-start mb-4">
                   <Badge variant="blue">{job.department}</Badge>
-                  <span className="text-xs font-semibold text-slate-500 uppercase tracking-wider flex items-center gap-1">
-                    <Clock className="w-3.5 h-3.5" />
-                    {job.type}
-                  </span>
                 </div>
                 <h3 className="text-xl font-bold font-heading text-slate-900 mb-3">
                   {job.title}
@@ -56,16 +51,10 @@ export function OpenPositions() {
                 </p>
               </div>
               <div>
-                <div className="flex items-center gap-4 text-slate-500 text-sm mb-6 border-t border-slate-100 pt-4">
-                  <span className="flex items-center gap-1.5">
-                    <MapPin className="w-4 h-4 text-blue-600" />
-                    {job.location}
-                  </span>
-                </div>
                 <Button
-                  href={`mailto:info@theindusgroup.com?subject=Application for ${job.title}`}
+                  href={`mailto:info@theindusgroup.com?subject=Application for ${encodeURIComponent(job.title)}`}
                   variant="outline"
-                  className="w-full text-center group"
+                  className="w-full text-center group flex items-center justify-center gap-2"
                 >
                   Apply Now
                   <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
