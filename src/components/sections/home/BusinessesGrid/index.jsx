@@ -74,13 +74,13 @@ export function BusinessesGrid() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               <div className={b.flip ? 'lg:order-2' : 'lg:order-1'}>
-                <div className="aspect-[4/3] rounded-2xl overflow-hidden border border-blue-100 shadow-sm">
+                <div className="aspect-[4/3] rounded-2xl border border-blue-100 shadow-sm overflow-hidden relative">
                   <Image
                     src={b.image}
                     alt={b.title}
-                    width={800}
-                    height={600}
-                    className="w-full h-full object-cover"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 50vw"
                   />
                 </div>
               </div>
