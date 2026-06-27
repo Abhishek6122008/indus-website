@@ -1,4 +1,4 @@
-import { Phone, Mail, MessageCircle } from 'lucide-react'
+import { Phone, Mail } from 'lucide-react'
 
 const channels = [
   {
@@ -21,13 +21,6 @@ const channels = [
     value: 'theindusgroup@outlook.com',
     href: 'mailto:theindusgroup@outlook.com',
     description: 'For document submissions',
-  },
-  {
-    Icon: MessageCircle,
-    label: 'WhatsApp',
-    value: 'Chat with us',
-    href: 'https://wa.me/917011332238',
-    description: 'Quick queries and follow-ups',
   },
 ]
 
