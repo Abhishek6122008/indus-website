@@ -170,7 +170,7 @@ export function Header() {
                   className="block px-3 py-2 text-sm font-medium text-slate-600 hover:text-blue-600 rounded-md hover:bg-blue-50 transition-colors"
                   onClick={() => setMobileOpen(false)}
                 >
-                  {item.label}
+                  {link.label}
                 </Link>
               )
             )}
