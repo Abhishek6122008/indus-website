@@ -48,12 +48,12 @@ export function Header() {
 
             <div className="h-10 w-[1px] bg-slate-200 hidden sm:block" />
 
-            <div className="relative w-12 h-12 md:w-14 md:h-14 flex items-center justify-center bg-white border border-slate-100 rounded-full overflow-hidden shadow-sm shrink-0 p-1">
+            <div className="relative w-14 h-14 md:w-16 md:h-16 flex items-center justify-center bg-white border border-slate-100 rounded-full overflow-hidden shadow-sm shrink-0 p-1">
               <Image
                 src="/images/iso-certified.jpeg"
                 alt="ISO 9001:2015 Certified"
-                width={56}
-                height={56}
+                width={64}
+                height={64}
                 className="object-contain w-full h-full rounded-full"
                 priority
               />
