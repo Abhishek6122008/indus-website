@@ -6,7 +6,7 @@ import { useState, useRef, useEffect } from 'react'
 import { Phone, Mail, Instagram, Linkedin, Youtube, Twitter, ChevronDown, X, Send, Bot, Loader2 } from 'lucide-react'
 
 
-const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxSw3BZISMjJewXt6BPZnjimBPb05Pr_qupObTvQBz0IdARAZ8XR8N-mYaC6OhOdz8p/exec"
+const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyBWgT0BxNF9b0tlGaqaM2ql9xJkEjYd4ArqZA66RKiVl_M3ZHpFqdpE98iAtWkG7B7/exec"
 
 
 const quickLinks = [
@@ -308,37 +308,7 @@ const FAQS = [
   }
 ]
 
-function extractLead(text) {
 
-  const email =
-    text.match(/[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}/i)?.[0] || ""
-
-  const phone =
-    text.match(/\b\d{10}\b/)?.[0] || ""
-
-  let cleaned = text
-
-  if (email)
-    cleaned = cleaned.replace(email, "")
-
-  if (phone)
-    cleaned = cleaned.replace(phone, "")
-
-  cleaned = cleaned.trim()
-
-  const parts = cleaned.split(/\s+/)
-
-  const company = parts.pop() || ""
-
-  const name = parts.join(" ")
-
-  return {
-    name,
-    email,
-    phone,
-    company
-  }
-}
 
 
 
@@ -358,17 +328,12 @@ function ChatbotWidget() {
 
     return "I can help with information about The Indus Group's businesses, services, resources and contact details."
   }
-  const [messages, setMessages] = useState([
-    {
-      role: 'assistant',
-      content:
-        "Hi 👋 Welcome to The Indus Group.\n\nBefore we begin, please enter:\n\nName, Email, Phone Number, Company Name",
-    },
-  ])
+
   const [input, setInput] = useState('')
   const [loading, setLoading] = useState(false)
-
+  const [messages, setMessages] = useState([])
   const [leadCaptured, setLeadCaptured] = useState(false)
+  const [submittingLead, setSubmittingLead] = useState(false);
 
   const [leadStep, setLeadStep] = useState("name")
 
@@ -376,7 +341,8 @@ function ChatbotWidget() {
     name: "",
     email: "",
     phone: "",
-    company: ""
+    services: "",
+    brief: ""
   })
   const bottomRef = useRef(null)
   const inputRef = useRef(null)
@@ -397,7 +363,8 @@ function ChatbotWidget() {
     formData.append("name", lead.name)
     formData.append("email", lead.email)
     formData.append("phone", lead.phone)
-    formData.append("company", lead.company)
+    formData.append("services", lead.services)
+    formData.append("brief", lead.brief)
 
     await fetch(GOOGLE_SCRIPT_URL, {
       method: "POST",
@@ -410,88 +377,33 @@ function ChatbotWidget() {
 
   const send = async () => {
     const text = input.trim()
+
     if (!text || loading) return
-    if (!leadCaptured) {
 
-      const lead = extractLead(text)
-
-      if (!lead.email) {
-        setMessages(prev => [
-          ...prev,
-          {
-            role: "assistant",
-            content:
-              "Please provide a valid email address."
-          }
-        ])
-
-        setLoading(false)
-        return
+    setMessages(prev => [
+      ...prev,
+      {
+        role: "user",
+        content: text
       }
+    ])
 
-      if (!lead.phone) {
-        setMessages(prev => [
-          ...prev,
-          {
-            role: "assistant",
-            content:
-              "Please provide a valid 10-digit phone number."
-          }
-        ])
-
-        setLoading(false)
-        return
-      }
-
-      if (!lead.name) {
-        setMessages(prev => [
-          ...prev,
-          {
-            role: "assistant",
-            content:
-              "Please provide your name."
-          }
-        ])
-
-        setLoading(false)
-        return
-      }
-
-
-      await saveLead(lead)
-
-      setLeadCaptured(true)
-
-      setMessages(prev => [
-        ...prev,
-        { role: "user", content: text },
-        {
-          role: "assistant",
-          content: "Thank you. Your details have been recorded. How can I help you today?"
-        }
-      ])
-
-      setInput("")
-      return
-    }
-
-
-    setMessages((prev) => [...prev, { role: 'user', content: text }])
-    setInput('')
+    setInput("")
     setLoading(true)
 
     const reply = getFaqReply(text)
 
-    setMessages((prev) => [
-      ...prev,
-      {
-        role: 'assistant',
-        content: reply
-      }
-    ])
+    setTimeout(() => {
+      setMessages(prev => [
+        ...prev,
+        {
+          role: "assistant",
+          content: reply
+        }
+      ])
 
-
-    setLoading(false)
+      setLoading(false)
+    }, 400)
   }
   const handleKey = (e) => {
     if (e.key === 'Enter' && !e.shiftKey) {
@@ -524,43 +436,175 @@ function ChatbotWidget() {
           </div>
 
           {/* Messages */}
-          <div className="overflow-y-auto px-4 py-4 space-y-3 max-h-[360px]">
-            {messages.map((msg, i) => (
-              <Message key={i} msg={msg} />
-            ))}
-            {loading && (
-              <div className="flex items-start gap-2">
-                <div className="w-7 h-7 rounded-full bg-[#0b1f5c] flex items-center justify-center shrink-0">
-                  <Bot className="w-4 h-4 text-white" />
+          {!leadCaptured ? (
+
+            <div className="p-4 space-y-3">
+
+              <h3 className="font-semibold text-lg">
+                Welcome 👋
+              </h3>
+
+              <p className="text-sm text-gray-500">
+                Tell us about yourself before we begin.
+              </p>
+
+              <input
+                placeholder="Full Name"
+                value={lead.name}
+                onChange={(e) =>
+                  setLead({ ...lead, name: e.target.value })
+                }
+                className="w-full border rounded-lg p-2"
+              />
+
+              <input
+                placeholder="Email"
+                type="email"
+                value={lead.email}
+                onChange={(e) =>
+                  setLead({ ...lead, email: e.target.value })
+                }
+                className="w-full border rounded-lg p-2"
+              />
+
+              <input
+                placeholder="Phone"
+                value={lead.phone}
+                onChange={(e) =>
+                  setLead({ ...lead, phone: e.target.value })
+                }
+                className="w-full border rounded-lg p-2"
+              />
+
+              <select
+                value={lead.services}
+                onChange={(e) =>
+                  setLead({ ...lead, services: e.target.value })
+                }
+                className="w-full border rounded-lg p-2"
+              >
+                <option value="">Select Service</option>
+                <option>Logistics</option>
+                <option>Enterprise</option>
+                <option>Skill Development</option>
+                <option>Real Estate</option>
+              </select>
+
+              <textarea
+                rows={3}
+                placeholder="Brief Requirement"
+                value={lead.brief}
+                onChange={(e) =>
+                  setLead({ ...lead, brief: e.target.value })
+                }
+                className="w-full border rounded-lg p-2"
+              />
+
+              <button
+                disabled={submittingLead}
+                className="w-full bg-[#0b1f5c] text-white rounded-lg py-2 disabled:opacity-50 disabled:cursor-not-allowed"
+
+                onClick={async () => {
+
+                  if (submittingLead) return;
+
+                  if (
+                    !lead.name ||
+                    !lead.email ||
+                    !lead.phone ||
+                    !lead.services
+                  ) {
+                    alert("Please complete all required fields.");
+                    return;
+                  }
+
+                  try {
+                    setSubmittingLead(true);
+
+                    await saveLead(lead);
+
+                    setLeadCaptured(true);
+
+                    setMessages([
+                      {
+                        role: "assistant",
+                        content: `Thanks ${lead.name}! How can I help you today?`
+                      }
+                    ]);
+
+                  } catch (err) {
+                    console.error(err);
+                    alert("Failed to submit. Please try again.");
+                  } finally {
+                    setSubmittingLead(false);
+                  }
+                }}
+
+              >
+                {submittingLead ? (
+                  <span className="flex items-center justify-center gap-2">
+                    <Loader2 className="w-4 h-4 animate-spin" />
+                    Submitting...
+                  </span>
+                ) : (
+                  "Continue"
+                )}
+              </button>
+
+            </div>
+
+          ) : (
+
+            <>
+              {messages.map((msg, i) => (
+                <Message key={i} msg={msg} />
+              ))}
+
+              {loading && (
+                <div className="flex items-start gap-2">
+                  <div className="w-7 h-7 rounded-full bg-[#0b1f5c] flex items-center justify-center shrink-0">
+                    <Bot className="w-4 h-4 text-white" />
+                  </div>
+
+                  <div className="bg-gray-100 rounded-2xl rounded-tl-sm">
+                    <TypingDots />
+                  </div>
                 </div>
-                <div className="bg-gray-100 rounded-2xl rounded-tl-sm">
-                  <TypingDots />
-                </div>
-              </div>
-            )}
-            <div ref={bottomRef} />
-          </div>
+              )}
+
+              <div ref={bottomRef} />
+            </>
+
+          )}
 
           {/* Input */}
-          <div className="flex items-center gap-2 px-3 py-3 border-t border-gray-100">
-            <input
-              ref={inputRef}
-              value={input}
-              onChange={(e) => setInput(e.target.value)}
-              onKeyDown={handleKey}
-              placeholder="Ask something…"
-              disabled={loading}
-              className="flex-1 text-sm px-3 py-2 rounded-xl border border-gray-200 focus:outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-100 transition"
-            />
-            <button
-              onClick={send}
-              disabled={!input.trim() || loading}
-              className="w-9 h-9 rounded-xl bg-[#0b1f5c] flex items-center justify-center text-white disabled:opacity-40 hover:bg-blue-800 transition shrink-0"
-              aria-label="Send"
-            >
-              {loading ? <Loader2 className="w-4 h-4 animate-spin" /> : <Send className="w-4 h-4" />}
-            </button>
-          </div>
+          {/* Input */}
+          {leadCaptured && (
+            <div className="flex items-center gap-2 px-3 py-3 border-t border-gray-100">
+              <input
+                ref={inputRef}
+                value={input}
+                onChange={(e) => setInput(e.target.value)}
+                onKeyDown={handleKey}
+                placeholder="Ask something..."
+                disabled={loading}
+                className="flex-1 text-sm px-3 py-2 rounded-xl border border-gray-200 focus:outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-100 transition"
+              />
+
+              <button
+                onClick={send}
+                disabled={!input.trim() || loading}
+                className="w-9 h-9 rounded-xl bg-[#0b1f5c] flex items-center justify-center text-white disabled:opacity-40 hover:bg-blue-800 transition"
+                aria-label="Send"
+              >
+                {loading ? (
+                  <Loader2 className="w-4 h-4 animate-spin" />
+                ) : (
+                  <Send className="w-4 h-4" />
+                )}
+              </button>
+            </div>
+          )}
         </div>
       )}
 
@@ -592,9 +636,9 @@ export function Footer() {
             {/* Brand */}
             <div className="lg:col-span-2">
               <div className="mb-4">
-                  <h3 className="text-white font-bold text-3xl font-heading">
-                    The Indus Group of Co.
-                  </h3>
+                <h3 className="text-white font-bold text-3xl font-heading">
+                  The Indus Group of Co.
+                </h3>
               </div>
               <p className="text-sm leading-relaxed mb-6 max-w-sm text-blue-200/80">
                 Delivering industry-leading solutions across verticals with reliability, innovation, and integrity.
@@ -692,9 +736,9 @@ export function Footer() {
         <div className="border-t border-white/10">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 mb-20 md:mb-0 flex flex-col md:flex-row items-center justify-between gap-4">
 
-          <p className="text-xs text-blue-200/50">
-            © 2025 The Indus Group. All rights reserved.
-          </p>
+            <p className="text-xs text-blue-200/50">
+              © 2025 The Indus Group. All rights reserved.
+            </p>
             {/* Legal */}
             <div className="flex flex-wrap items-center justify-center gap-6 text-xs text-blue-200/80">
               <Link href="/careers" className="hover:text-white transition-colors">Careers</Link>
