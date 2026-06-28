@@ -17,7 +17,7 @@ const teamData = [
   { name: 'Abhishek Chaudhary', role: 'Team Lead - Tech', image: '/images/businesses/enterprise/team/abhishek.png' },
   { name: 'Moazzam Ahmed Siddiqui', role: 'Team Lead - AI & ML', image: '/images/businesses/enterprise/team/moazzam.png' },
   { name: 'Ananya Singh', role: 'Team Lead-Legal', image: '/images/businesses/enterprise/team/ananya.png' },
-  { name: 'Ujjwal Rawat', role: 'Full Stack Developer', image: '/images/businesses/enterprise/team/ujjwal.png' },
+  { name: 'Ujjwal Rawat', role: 'Team Lead - Full Stack', image: '/images/businesses/enterprise/team/ujjwal.png' },
   { name: 'Ayushi Upadhyay', role: 'Full Stack Developer', image: '/images/businesses/enterprise/team/ayushi.png' }
 ]
 

@@ -693,17 +693,14 @@ export function Footer() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 mb-20 md:mb-0 flex flex-col md:flex-row items-center justify-between gap-4">
 
           <p className="text-xs text-blue-200/50">
-            © 2026 The Indus Group. All rights reserved.            </p>
+            © 2025 The Indus Group. All rights reserved.
+          </p>
             {/* Legal */}
             <div className="flex flex-wrap items-center justify-center gap-6 text-xs text-blue-200/80">
               <Link href="/careers" className="hover:text-white transition-colors">Careers</Link>
               <Link href="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
               <Link href="/terms" className="hover:text-white transition-colors">Terms & Conditions</Link>
             </div>
-
-            <p className="text-xs text-blue-200/50">
-              © {new Date().getFullYear()} The Indus Group of Co.
-            </p>
 
           </div>
         </div>
