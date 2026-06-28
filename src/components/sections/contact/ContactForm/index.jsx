@@ -1,4 +1,5 @@
 'use client'
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyBWgT0BxNF9b0tlGaqaM2ql9xJkEjYd4ArqZA66RKiVl_M3ZHpFqdpE98iAtWkG7B7/exec"
 
 import { useState } from 'react'
 import { ArrowRight, CheckCircle } from 'lucide-react'
@@ -10,19 +11,60 @@ export function ContactForm() {
     name: '',
     email: '',
     phone: '',
-    message: '',
+    services: '',
+    brief: '',
   })
-  const [vertical, setVertical] = useState('')
+
   const [submitted, setSubmitted] = useState(false)
 
   function handleChange(e) {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }))
   }
 
-  function handleSubmit(e) {
-    e.preventDefault()
-    // TODO: Wire up to an actual form endpoint (e.g. Formspree, Resend, or a Next.js server action)
-    setSubmitted(true)
+  async function handleSubmit(e) {
+    e.preventDefault();
+
+    try {
+
+      const body = new URLSearchParams({
+        name: form.name,
+        email: form.email,
+        phone: form.phone,
+        services: form.services,
+        brief: form.brief,
+      });
+
+      const response = await fetch(SCRIPT_URL, {
+        method: "POST",
+        body,
+      });
+
+      const text = await response.text();
+
+      if (text === "SUCCESS") {
+
+        setSubmitted(true);
+
+        setForm({
+          name: "",
+          email: "",
+          phone: "",
+          services: "",
+          brief: "",
+        });
+
+      } else {
+
+        alert(text);
+
+      }
+
+    } catch (err) {
+
+      console.error(err);
+      alert("Failed to submit.");
+
+    }
   }
 
   const inputClass =
@@ -93,17 +135,21 @@ export function ContactForm() {
         </label>
         <div className="flex flex-wrap gap-2">
           {verticals.map((v) => {
-            const active = v === vertical
+            const active = v === form.services
             return (
               <button
                 key={v}
                 type="button"
-                onClick={() => setVertical(v)}
-                className={`px-4 py-2 rounded-full text-sm font-medium border transition-colors ${
-                  active
-                    ? 'bg-blue-600 border-blue-600 text-white'
-                    : 'bg-white border-slate-200 text-slate-600 hover:border-blue-400 hover:text-blue-600'
-                }`}
+                onClick={() =>
+                  setForm((prev) => ({
+                    ...prev,
+                    services: v,
+                  }))
+                }
+                className={`px-4 py-2 rounded-full text-sm font-medium border transition-colors ${active
+                  ? 'bg-blue-600 border-blue-600 text-white'
+                  : 'bg-white border-slate-200 text-slate-600 hover:border-blue-400 hover:text-blue-600'
+                  }`}
               >
                 {v}
               </button>
@@ -117,10 +163,10 @@ export function ContactForm() {
           How can we help? *
         </label>
         <textarea
-          name="message"
+          name="brief"
           required
           rows={5}
-          value={form.message}
+          value={form.brief}
           onChange={handleChange}
           placeholder="Tell us a bit about what you need..."
           className={`${inputClass} resize-y`}
