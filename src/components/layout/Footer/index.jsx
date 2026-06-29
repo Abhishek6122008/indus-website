@@ -607,7 +607,7 @@ export function Footer() {
               <div className="mb-4">
                 <Image
                   src="/images/indus-logo.jpeg"
-                  alt="The Indus Group of Co."
+                  alt="The Indus Group Co."
                   width={160}
                   height={64}
                   className="h-14 w-auto object-contain"
@@ -717,7 +717,7 @@ export function Footer() {
             </div>
 
             <p className="text-xs text-blue-200/50">
-              © {new Date().getFullYear()} The Indus Group of Co.
+              © {new Date().getFullYear()} The Indus Group Co.
             </p>
 
           </div>
