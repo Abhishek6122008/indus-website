@@ -1,10 +1,40 @@
+'use client' 
+
 import Link from 'next/link'
 import { ArrowRight, Phone } from 'lucide-react'
 
 export function ServiceCTA({
   title = 'Ready to Get Started?',
   description = 'Talk to our team and find out how this service can work for your business.',
+  hasForm = false
 }) {
+
+  const handleFormSubmit = (e) => {
+    e.preventDefault()
+  }
+
+  if (hasForm) {
+    return (
+      <section className="py-16 bg-slate-50 text-center">
+        <div className="max-w-md mx-auto px-4">
+          <div className="bg-slate-800 rounded-xl p-8 shadow-xl text-white">
+            <h3 className="text-lg font-bold mb-6 tracking-wide font-heading">{title}</h3>
+            <form className="space-y-4" onSubmit={handleFormSubmit}>
+              <input type="text" placeholder="Your Name" className="w-full bg-slate-700/60 border border-slate-600 rounded p-2.5 text-xs text-white placeholder-slate-400 focus:outline-none focus:border-blue-500" />
+              <input type="text" placeholder="Phone Number" className="w-full bg-slate-700/60 border border-slate-600 rounded p-2.5 text-xs text-white placeholder-slate-400 focus:outline-none focus:border-blue-500" />
+              <input type="email" placeholder="Email Address" className="w-full bg-slate-700/60 border border-slate-600 rounded p-2.5 text-xs text-white placeholder-slate-400 focus:outline-none focus:border-blue-500" />
+              <input type="text" placeholder="Your Address" className="w-full bg-slate-700/60 border border-slate-600 rounded p-2.5 text-xs text-white placeholder-slate-400 focus:outline-none focus:border-blue-500" />
+              <textarea placeholder="Your Message" rows={3} className="w-full bg-slate-700/60 border border-slate-600 rounded p-2.5 text-xs text-white placeholder-slate-400 focus:outline-none focus:border-blue-500 resize-none" />
+              <button type="submit" className="w-full bg-red-600 hover:bg-red-700 text-white text-xs font-bold uppercase tracking-wider py-3 rounded transition-colors mt-2">
+                Submit
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+    )
+  }
+
   return (
     <section className="section-padding bg-blue-600">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

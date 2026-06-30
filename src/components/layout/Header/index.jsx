@@ -11,7 +11,6 @@ const businessVerticals = [
   { label: 'Enterprise Solutions', href: '/businesses/enterprise-solutions' },
   { label: 'Skill Development', href: '/businesses/skill-development' },
   { label: 'Real Estate & Infra', href: '/businesses/real-estate' },
-  { label: 'HBC Brand Franchise', href: '/businesses/hbc-franchise' },
 ]
 
 const navLinks = [
@@ -32,16 +31,30 @@ export function Header() {
       <div className="px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
 
-          {/* Logo */}
-          <Link href="/" className="flex items-center shrink-0">
-            <Image
-              src="/images/indus-logo.jpeg"
-              alt="The Indus Group of Co."
-              width={140}
-              height={56}
-              className="h-12 w-auto object-contain"
-              priority
-            />
+          {/* Logo Container Block */}
+          <Link href="/" className="flex items-center gap-1.5 shrink-0 group">
+
+            <div className="relative h-12 w-40 md:h-16 md:w-48 flex items-center mix-blend-multiply transition-all">
+              <Image
+                src="/images/indus-logo.jpeg"
+                alt="The Indus Group Logo"
+                fill
+                sizes="(max-w-768px) 160px, 192px"
+                className="object-contain"
+                priority
+              />
+            </div>
+
+            <div className="relative w-12 h-12 md:w-14 md:h-14 flex items-center justify-center bg-white border border-slate-100 rounded-full overflow-hidden shadow-sm shrink-0 p-1">
+              <Image
+                src="/images/iso-certified.jpeg"
+                alt="ISO 9001:2015 Certified"
+                width={56}
+                height={56}
+                className="object-contain w-full h-full rounded-full"
+                priority
+              />
+            </div>
           </Link>
 
           {/* Desktop Nav */}
@@ -89,13 +102,24 @@ export function Header() {
           </nav>
 
           {/* Phone CTA */}
-          <a
-            href="tel:+917011332238"
-            className="hidden lg:flex items-center gap-2 bg-blue-600 text-white px-4 py-2.5 rounded-lg text-sm font-semibold hover:bg-blue-700 transition-colors"
-          >
-            <Phone className="w-4 h-4" />
-            +91 7011 332 238
-          </a>
+          <div className="hidden lg:flex items-center gap-2">
+  <a
+    href="tel:+917011332238"
+    className="flex items-center gap-2 bg-blue-600 text-white px-4 py-2.5 rounded-lg text-sm font-semibold hover:bg-blue-700 transition-colors"
+  >
+    <Phone className="w-4 h-4" />
+    +91 7011 332 238
+  </a>
+
+  <a
+    href="https://wa.me/917011332238"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="flex items-center gap-2 bg-green-500 text-white px-4 py-2.5 rounded-lg text-sm font-semibold hover:bg-green-600 transition-colors"
+  >
+    WhatsApp
+  </a>
+</div>
 
           {/* Mobile toggle */}
           <button
@@ -151,13 +175,14 @@ export function Header() {
               )
             )}
             <div className="pt-2 border-t border-slate-100">
-              <a
-                href="tel:+917011332238"
-                className="flex items-center gap-2 px-3 py-2 text-sm font-bold text-blue-600"
-              >
-                <Phone className="w-4 h-4" />
-                +91 7011 332 238
-              </a>
+              {/* Desktop CTA Buttons */}
+<a
+  href="tel:+917011332238"
+  className="flex items-center gap-2 px-3 py-2 text-sm font-bold text-blue-600"
+>
+  <Phone className="w-4 h-4" />
+  +91 7011 332 238
+</a>
             </div>
           </div>
         </div>

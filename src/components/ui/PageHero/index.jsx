@@ -1,16 +1,30 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { ChevronRight } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
-export function PageHero({ label, title, subtitle, breadcrumbs, className }) {
+export function PageHero({ label, title, subtitle, breadcrumbs, backgroundImage, imagePosition = 'object-center', className }) {
   return (
     <section
       className={cn(
-        'pt-20 pb-16 relative overflow-hidden',
+        'pt-28 pb-24 min-h-[420px] lg:min-h-[560px] xl:min-h-[640px] flex items-center relative overflow-hidden',
         'bg-gradient-to-br from-[#0b1f5c] via-[#1e40af] to-blue-600',
         className,
       )}
     >
+      {backgroundImage && (
+        <>
+          <Image
+            src={backgroundImage}
+            alt=""
+            fill
+            priority
+            className={cn('object-cover', imagePosition)}
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-[#0b1f5c]/40 via-[#1e40af]/35 to-blue-600/25 mix-blend-multiply" />
+        </>
+      )}
+
       {/* Subtle dot grid */}
       <div
         className="absolute inset-0 opacity-[0.05]"

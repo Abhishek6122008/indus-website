@@ -4,7 +4,7 @@ import KnowledgeCenterClient from '@/components/sections/knowledge-center/Knowle
 export const metadata = {
   title: 'Knowledge Center | The Indus Group of Co.',
   description:
-    'Articles, guides, and industry insights from The Indus Group across logistics, enterprise, skill development, real estate, and franchise growth.',
+    'Articles, guides, and industry insights from The Indus Group across logistics, enterprise, skill development, and real estate.',
 }
 
 export default function KnowledgeCenterPage() {
