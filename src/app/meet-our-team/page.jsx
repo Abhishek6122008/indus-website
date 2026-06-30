@@ -14,6 +14,8 @@ export default function MeetOurTeamPage() {
         title="Meet Our Team"
         subtitle="The passionate individuals behind The Indus Group of Co."
         breadcrumbs={[{ label: 'Meet Our Team' }]}
+        backgroundImage="/images/team/interns-2026-grid.png"
+        imagePosition="object-center"
       />
       <TeamGrid />
     </>

@@ -3,7 +3,6 @@ import { CompanyStory } from '@/components/sections/about/CompanyStory'
 import { MeetOurTeam } from '@/components/sections/about/MeetOurTeam'
 import { MissionVision } from '@/components/sections/about/MissionVision'
 import { OurApproach } from '@/components/sections/about/OurApproach'
-import { KeyStats } from '@/components/sections/about/KeyStats'
 
 export const metadata = {
   title: 'Who We Are | The Indus Group of Co.',
@@ -21,10 +20,9 @@ export default function AboutPage() {
         breadcrumbs={[{ label: 'Who We Are' }]}
       />
       <CompanyStory />
-      <MeetOurTeam />
       <MissionVision />
+      <MeetOurTeam />
       <OurApproach />
-      <KeyStats />
     </>
   )
 }

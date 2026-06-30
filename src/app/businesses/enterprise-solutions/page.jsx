@@ -13,14 +13,6 @@ const stepsData = [
   { num: '03 Step', text: 'We get together and draft a working plan to take your startup to new heights.' }
 ]
 
-const teamData = [
-  { name: 'Abhishek Chaudhary', role: 'Team Lead - Tech', image: '/images/businesses/enterprise/team/abhishek.png' },
-  { name: 'Moazzam Ahmed Siddiqui', role: 'Team Lead - AI & ML', image: '/images/businesses/enterprise/team/moazzam.png' },
-  { name: 'Ananya Singh', role: 'Team Lead-Legal', image: '/images/businesses/enterprise/team/ananya.png' },
-  { name: 'Ujjwal Rawat', role: 'Team Lead - Full Stack', image: '/images/businesses/enterprise/team/ujjwal.png' },
-  { name: 'Ayushi Upadhyay', role: 'Full Stack Developer', image: '/images/businesses/enterprise/team/ayushi.png' }
-]
-
 const servicesTableData = [
   { id: '1. Incorporation of Start-up', desc: 'Guidance on starting a business under the Start up India initiative, including strategic consulting for both new and growing start-ups.' },
   { id: '2. Corporate Compliances', desc: 'Ensuring that the company adheres to statutory regulations and requirements. This includes filing annual returns, maintaining statutory registers, and complying with corporate laws.' },
@@ -64,7 +56,7 @@ export default function EnterpriseSolutionsPage() {
         imagePosition="object-bottom"
       />
 
-      <EnterpriseIntro steps={stepsData} team={teamData} />
+      <EnterpriseIntro steps={stepsData} />
 
       <ServiceFeatures 
         heading="Our Products and Services" 

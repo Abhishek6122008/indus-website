@@ -12,19 +12,9 @@ const corporateTeam = [
     image: '/images/about/team/pk-singh.jpeg'
   },
   {
-    name: 'Adv. Gaurav Bhardwaj',
-    role: 'Board Advisor, Legal – Indus Group (Adv. Supreme Court of India)',
-    image: '/images/about/team/gaurav-bhardwaj.jpeg'
-  },
-  {
     name: 'Debdutta Ghosh',
     role: 'Group CHRO',
     image: '/images/about/team/debdutta-ghosh.jpeg'
-  },
-  {
-    name: 'Dr.Vijay Prakash Sharma',
-    role: 'Group Advisor- Business Strategy',
-    image: '/images/about/team/vijay-sharma.jpeg'
   },
   {
     name: 'Shruti Singh',
@@ -32,19 +22,30 @@ const corporateTeam = [
     image: '/images/about/team/shruti-singh.jpeg'
   },
   {
-    name: 'Dr. Tannu',
-    role: 'Advisor',
-    image: '/images/about/team/tannu.jpeg'
-  },
-  {
-    name: 'Dr. K.R. Madhar',
-    role: 'Strategic Advisor - Board',
+    name: 'Dr. K.R. Madhar (I.R.S. Retd.)',
+    role: 'Advocate, High Court, Delhi; Former Additional Commissioner of Customs and GST',
     image: '/images/about/team/kr-madhar.jpeg'
   },
   {
     name: 'Mr. Kailash Chand',
-    role: 'Strategic Board- Advisor',
+    role: 'Advocate, Former Assistant Commissioner of Customs & GST (retd.)',
     image: '/images/about/team/kailash-chand.jpeg'
+  },
+  {
+    name: 'Adv. Gaurav Bhardwaj',
+    role: 'Board Advisor, Legal (Adv. Supreme Court of India)',
+    image: '/images/about/team/gaurav-bhardwaj.jpeg'
+  },
+  {
+    name: 'Dr.Vijay Prakash Sharma',
+    role: 'Group Advisor- Business Strategy',
+    image: '/images/about/team/vijay-sharma.jpeg'
+  },
+  {
+    name: 'Dr. Tanu Manocha',
+    role: 'Strategic Board Advisor, Operations',
+    image: '/images/about/team/tannu.jpeg',
+    objectPosition: 'object-center'
   }
 ]
 
@@ -58,19 +59,19 @@ export function MeetOurTeam() {
           <div className="flex items-center justify-center gap-3 mb-4">
             <div className="w-6 h-[2px] bg-blue-600" />
             <span className="text-blue-600 text-xs font-bold tracking-[0.2em] uppercase font-heading">
-              Our Experts
+              Leadership
             </span>
           </div>
           <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl font-heading">
-            Meet Our Team
+            Our Leadership
           </h2>
           <p className="mt-3 text-base text-slate-600 leading-relaxed">
             The dedicated experts driving operational excellence, design strategy, and market analysis across our divisions.
           </p>
         </div>
 
-        {/* Responsive Grid Structure */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Grid Structure */}
+        <div className="grid grid-cols-4 gap-8">
           {corporateTeam.map((member) => (
             <div
               key={member.name}
@@ -82,7 +83,7 @@ export function MeetOurTeam() {
                   src={member.image}
                   alt={member.name}
                   fill
-                  className="object-cover object-top"
+                  className={`object-cover ${member.objectPosition || 'object-top'}`}
                   sizes="(max-width: 768px) 100vw, 350px"
                 />
               </div>
@@ -92,11 +93,14 @@ export function MeetOurTeam() {
                 <h3 className="text-lg font-bold text-slate-800 mb-1.5 font-heading">
                   {member.name}
                 </h3>
-                <p className="text-sm font-semibold text-blue-600 px-2 leading-relaxed">
+                <p className="text-sm font-semibold text-blue-600 px-2 leading-relaxed text-center whitespace-pre-line">
                   {member.role}
                 </p>
               </div>
             </div>
+          ))}
+          {Array.from({ length: (4 - (corporateTeam.length % 4)) % 4 }).map((_, i) => (
+            <div key={`empty-${i}`} className="rounded-2xl border border-slate-100 bg-white" />
           ))}
         </div>
 

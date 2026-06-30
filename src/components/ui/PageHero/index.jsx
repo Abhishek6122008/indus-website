@@ -3,7 +3,7 @@ import Image from 'next/image'
 import { ChevronRight } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
-export function PageHero({ label, title, subtitle, breadcrumbs, backgroundImage, imagePosition = 'object-center', className }) {
+export function PageHero({ label, title, subtitle, breadcrumbs, backgroundImage, imagePosition = 'object-center', imageFit = 'object-cover', className }) {
   return (
     <section
       className={cn(
@@ -19,7 +19,7 @@ export function PageHero({ label, title, subtitle, breadcrumbs, backgroundImage,
             alt=""
             fill
             priority
-            className={cn('object-cover', imagePosition)}
+            className={cn(imageFit, imagePosition)}
           />
           <div className="absolute inset-0 bg-gradient-to-br from-[#0b1f5c]/40 via-[#1e40af]/35 to-blue-600/25 mix-blend-multiply" />
         </>
