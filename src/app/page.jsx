@@ -14,10 +14,10 @@ export default function HomePage() {
       <HeroSection />
       <WhoWeAreSection />
       <PartnersStrip />
-      <TrustedByStrip />
       <BusinessesGrid />
       <StatsBar />
       <WhyChooseUs />
+      <TrustedByStrip />
       <Testimonials />
       <ContactCTA />
     </>
