@@ -28,8 +28,15 @@ export function HeroSection() {
       <div className="absolute -bottom-32 -left-20 w-[500px] h-[500px] bg-blue-400 rounded-full opacity-10 blur-[120px] pointer-events-none" />
       <div className="absolute -top-16 right-0 w-80 h-80 bg-white rounded-full opacity-5 blur-3xl pointer-events-none" />
 
-      <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-4 relative z-20 py-28">
-        <div className="max-w-4xl ml-auto text-right">
+      <div className="max-w-screen-2xl mx-auto px-2 sm:px-12 lg:pl-20 lg:pr-0 relative z-20 py-28">
+        <div className="max-w-5xl lg:max-w-5xl ml-auto text-right">
+
+          <div className="flex items-center justify-end gap-3 mb-7">
+            <span className="text-blue-200 text-xs font-semibold tracking-[0.2em] uppercase">
+              The Indus Group of Co.
+            </span>
+            <div className="w-8 h-[2px] bg-blue-300" />
+          </div>
 
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold font-heading text-white leading-[1.1] mb-6">
             Delivering{' '}
