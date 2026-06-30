@@ -23,12 +23,12 @@ export function TeamGrid() {
         </div>
       </section>
 
-      {/* Interns */}
+      {/* Team */}
       <section className="section-padding bg-blue-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             label="2026 Batch"
-            title="Our Interns"
+            title="Our Team"
           />
           <div className="flex justify-center">
             <Image
