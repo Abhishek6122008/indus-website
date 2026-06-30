@@ -6,7 +6,7 @@ import { useState, useRef, useEffect } from 'react'
 import { Phone, Mail, Instagram, Linkedin, Youtube, Twitter, ChevronDown, X, Send, Bot, Loader2 } from 'lucide-react'
 
 
-const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxSw3BZISMjJewXt6BPZnjimBPb05Pr_qupObTvQBz0IdARAZ8XR8N-mYaC6OhOdz8p/exec"
+const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyBWgT0BxNF9b0tlGaqaM2ql9xJkEjYd4ArqZA66RKiVl_M3ZHpFqdpE98iAtWkG7B7/exec"
 
 
 const quickLinks = [
@@ -16,6 +16,7 @@ const quickLinks = [
   { label: 'Resources', href: '/resources' },
   { label: 'Tools', href: '/tools' },
   { label: 'Contact', href: '/contact' },
+  { label: 'Meet Our Team', href: '/meet-our-team' },
 ]
 
 const resourceLinks = [
@@ -29,7 +30,6 @@ const businesses = [
   { label: 'Enterprise Solutions', href: '/businesses/enterprise-solutions' },
   { label: 'Skill Development', href: '/businesses/skill-development' },
   { label: 'Real Estate & Infra', href: '/businesses/real-estate' },
-  { label: 'HBC Brand Franchise', href: '/businesses/hbc-franchise' },
 ]
 
 // ── SocialMenu ────────────────────────────────────────────────────────────────
@@ -308,37 +308,7 @@ const FAQS = [
   }
 ]
 
-function extractLead(text) {
 
-  const email =
-    text.match(/[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}/i)?.[0] || ""
-
-  const phone =
-    text.match(/\b\d{10}\b/)?.[0] || ""
-
-  let cleaned = text
-
-  if (email)
-    cleaned = cleaned.replace(email, "")
-
-  if (phone)
-    cleaned = cleaned.replace(phone, "")
-
-  cleaned = cleaned.trim()
-
-  const parts = cleaned.split(/\s+/)
-
-  const company = parts.pop() || ""
-
-  const name = parts.join(" ")
-
-  return {
-    name,
-    email,
-    phone,
-    company
-  }
-}
 
 
 
@@ -358,17 +328,12 @@ function ChatbotWidget() {
 
     return "I can help with information about The Indus Group's businesses, services, resources and contact details."
   }
-  const [messages, setMessages] = useState([
-    {
-      role: 'assistant',
-      content:
-        "Hi 👋 Welcome to The Indus Group.\n\nBefore we begin, please enter:\n\nName, Email, Phone Number, Company Name",
-    },
-  ])
+
   const [input, setInput] = useState('')
   const [loading, setLoading] = useState(false)
-
+  const [messages, setMessages] = useState([])
   const [leadCaptured, setLeadCaptured] = useState(false)
+  const [submittingLead, setSubmittingLead] = useState(false);
 
   const [leadStep, setLeadStep] = useState("name")
 
@@ -376,7 +341,8 @@ function ChatbotWidget() {
     name: "",
     email: "",
     phone: "",
-    company: ""
+    services: "",
+    brief: ""
   })
   const bottomRef = useRef(null)
   const inputRef = useRef(null)
@@ -397,7 +363,8 @@ function ChatbotWidget() {
     formData.append("name", lead.name)
     formData.append("email", lead.email)
     formData.append("phone", lead.phone)
-    formData.append("company", lead.company)
+    formData.append("services", lead.services)
+    formData.append("brief", lead.brief)
 
     await fetch(GOOGLE_SCRIPT_URL, {
       method: "POST",
@@ -410,88 +377,33 @@ function ChatbotWidget() {
 
   const send = async () => {
     const text = input.trim()
+
     if (!text || loading) return
-    if (!leadCaptured) {
 
-      const lead = extractLead(text)
-
-      if (!lead.email) {
-        setMessages(prev => [
-          ...prev,
-          {
-            role: "assistant",
-            content:
-              "Please provide a valid email address."
-          }
-        ])
-
-        setLoading(false)
-        return
+    setMessages(prev => [
+      ...prev,
+      {
+        role: "user",
+        content: text
       }
+    ])
 
-      if (!lead.phone) {
-        setMessages(prev => [
-          ...prev,
-          {
-            role: "assistant",
-            content:
-              "Please provide a valid 10-digit phone number."
-          }
-        ])
-
-        setLoading(false)
-        return
-      }
-
-      if (!lead.name) {
-        setMessages(prev => [
-          ...prev,
-          {
-            role: "assistant",
-            content:
-              "Please provide your name."
-          }
-        ])
-
-        setLoading(false)
-        return
-      }
-
-
-      await saveLead(lead)
-
-      setLeadCaptured(true)
-
-      setMessages(prev => [
-        ...prev,
-        { role: "user", content: text },
-        {
-          role: "assistant",
-          content: "Thank you. Your details have been recorded. How can I help you today?"
-        }
-      ])
-
-      setInput("")
-      return
-    }
-
-
-    setMessages((prev) => [...prev, { role: 'user', content: text }])
-    setInput('')
+    setInput("")
     setLoading(true)
 
     const reply = getFaqReply(text)
 
-    setMessages((prev) => [
-      ...prev,
-      {
-        role: 'assistant',
-        content: reply
-      }
-    ])
+    setTimeout(() => {
+      setMessages(prev => [
+        ...prev,
+        {
+          role: "assistant",
+          content: reply
+        }
+      ])
 
-
-    setLoading(false)
+      setLoading(false)
+    }, 400)
   }
   const handleKey = (e) => {
     if (e.key === 'Enter' && !e.shiftKey) {
@@ -524,43 +436,175 @@ function ChatbotWidget() {
           </div>
 
           {/* Messages */}
-          <div className="overflow-y-auto px-4 py-4 space-y-3 max-h-[360px]">
-            {messages.map((msg, i) => (
-              <Message key={i} msg={msg} />
-            ))}
-            {loading && (
-              <div className="flex items-start gap-2">
-                <div className="w-7 h-7 rounded-full bg-[#0b1f5c] flex items-center justify-center shrink-0">
-                  <Bot className="w-4 h-4 text-white" />
+          {!leadCaptured ? (
+
+            <div className="p-4 space-y-3">
+
+              <h3 className="font-semibold text-lg">
+                Welcome 👋
+              </h3>
+
+              <p className="text-sm text-gray-500">
+                Tell us about yourself before we begin.
+              </p>
+
+              <input
+                placeholder="Full Name"
+                value={lead.name}
+                onChange={(e) =>
+                  setLead({ ...lead, name: e.target.value })
+                }
+                className="w-full border rounded-lg p-2"
+              />
+
+              <input
+                placeholder="Email"
+                type="email"
+                value={lead.email}
+                onChange={(e) =>
+                  setLead({ ...lead, email: e.target.value })
+                }
+                className="w-full border rounded-lg p-2"
+              />
+
+              <input
+                placeholder="Phone"
+                value={lead.phone}
+                onChange={(e) =>
+                  setLead({ ...lead, phone: e.target.value })
+                }
+                className="w-full border rounded-lg p-2"
+              />
+
+              <select
+                value={lead.services}
+                onChange={(e) =>
+                  setLead({ ...lead, services: e.target.value })
+                }
+                className="w-full border rounded-lg p-2"
+              >
+                <option value="">Select Service</option>
+                <option>Logistics</option>
+                <option>Enterprise</option>
+                <option>Skill Development</option>
+                <option>Real Estate</option>
+              </select>
+
+              <textarea
+                rows={3}
+                placeholder="Brief Requirement"
+                value={lead.brief}
+                onChange={(e) =>
+                  setLead({ ...lead, brief: e.target.value })
+                }
+                className="w-full border rounded-lg p-2"
+              />
+
+              <button
+                disabled={submittingLead}
+                className="w-full bg-[#0b1f5c] text-white rounded-lg py-2 disabled:opacity-50 disabled:cursor-not-allowed"
+
+                onClick={async () => {
+
+                  if (submittingLead) return;
+
+                  if (
+                    !lead.name ||
+                    !lead.email ||
+                    !lead.phone ||
+                    !lead.services
+                  ) {
+                    alert("Please complete all required fields.");
+                    return;
+                  }
+
+                  try {
+                    setSubmittingLead(true);
+
+                    await saveLead(lead);
+
+                    setLeadCaptured(true);
+
+                    setMessages([
+                      {
+                        role: "assistant",
+                        content: `Thanks ${lead.name}! How can I help you today?`
+                      }
+                    ]);
+
+                  } catch (err) {
+                    console.error(err);
+                    alert("Failed to submit. Please try again.");
+                  } finally {
+                    setSubmittingLead(false);
+                  }
+                }}
+
+              >
+                {submittingLead ? (
+                  <span className="flex items-center justify-center gap-2">
+                    <Loader2 className="w-4 h-4 animate-spin" />
+                    Submitting...
+                  </span>
+                ) : (
+                  "Continue"
+                )}
+              </button>
+
+            </div>
+
+          ) : (
+
+            <>
+              {messages.map((msg, i) => (
+                <Message key={i} msg={msg} />
+              ))}
+
+              {loading && (
+                <div className="flex items-start gap-2">
+                  <div className="w-7 h-7 rounded-full bg-[#0b1f5c] flex items-center justify-center shrink-0">
+                    <Bot className="w-4 h-4 text-white" />
+                  </div>
+
+                  <div className="bg-gray-100 rounded-2xl rounded-tl-sm">
+                    <TypingDots />
+                  </div>
                 </div>
-                <div className="bg-gray-100 rounded-2xl rounded-tl-sm">
-                  <TypingDots />
-                </div>
-              </div>
-            )}
-            <div ref={bottomRef} />
-          </div>
+              )}
+
+              <div ref={bottomRef} />
+            </>
+
+          )}
 
           {/* Input */}
-          <div className="flex items-center gap-2 px-3 py-3 border-t border-gray-100">
-            <input
-              ref={inputRef}
-              value={input}
-              onChange={(e) => setInput(e.target.value)}
-              onKeyDown={handleKey}
-              placeholder="Ask something…"
-              disabled={loading}
-              className="flex-1 text-sm px-3 py-2 rounded-xl border border-gray-200 focus:outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-100 transition"
-            />
-            <button
-              onClick={send}
-              disabled={!input.trim() || loading}
-              className="w-9 h-9 rounded-xl bg-[#0b1f5c] flex items-center justify-center text-white disabled:opacity-40 hover:bg-blue-800 transition shrink-0"
-              aria-label="Send"
-            >
-              {loading ? <Loader2 className="w-4 h-4 animate-spin" /> : <Send className="w-4 h-4" />}
-            </button>
-          </div>
+          {/* Input */}
+          {leadCaptured && (
+            <div className="flex items-center gap-2 px-3 py-3 border-t border-gray-100">
+              <input
+                ref={inputRef}
+                value={input}
+                onChange={(e) => setInput(e.target.value)}
+                onKeyDown={handleKey}
+                placeholder="Ask something..."
+                disabled={loading}
+                className="flex-1 text-sm px-3 py-2 rounded-xl border border-gray-200 focus:outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-100 transition"
+              />
+
+              <button
+                onClick={send}
+                disabled={!input.trim() || loading}
+                className="w-9 h-9 rounded-xl bg-[#0b1f5c] flex items-center justify-center text-white disabled:opacity-40 hover:bg-blue-800 transition"
+                aria-label="Send"
+              >
+                {loading ? (
+                  <Loader2 className="w-4 h-4 animate-spin" />
+                ) : (
+                  <Send className="w-4 h-4" />
+                )}
+              </button>
+            </div>
+          )}
         </div>
       )}
 
@@ -573,19 +617,6 @@ function ChatbotWidget() {
         {open ? <X className="w-6 h-6 text-white" /> : <Bot className="w-6 h-6 text-white" />}
       </button>
 
-      {/* WhatsApp button */}
-      <a
-        href="https://wa.me/917011332238"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="w-14 h-14 rounded-full bg-[#25D366] shadow-lg flex items-center justify-center hover:bg-[#1ebe5b] transition-all hover:scale-105 active:scale-95"
-        aria-label="Chat on WhatsApp"
-      >
-        <svg viewBox="0 0 24 24" className="w-7 h-7 fill-white">
-          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.149-.15.347-.392.521-.589.174-.197.232-.297.347-.495.116-.198.018-.495-.058-.694-.075-.198-.522-1.297-.715-1.781-.193-.484-.39-.418-.521-.426-.13-.008-.27-.001-.42-.001-.149 0-.388.05-.595.225-.198.174-.74.604-.92.85-.181.247-.396.692-.396.692s-.082 1.21.59 2.39c.671 1.18 1.34 2.094 1.34 2.094s.083.12.158.22c.075.099.198.123.297.123.099 0 .198-.005.297-.025.099-.02.198-.045.297-.07.792-.198 1.617-.396 2.39-.099.793.297 2.586 1.255 2.685 1.305.099.05.198.075.198.246s-.02.42-.05.594c-.198.396-.694.768-1.19.917-.495.149-1.04.149-1.535.05-.347-.07-.793-.198-1.337-.396-2.586-.99-4.275-3.624-4.4-3.797-.124-.173-1.014-1.354-1.014-2.58 0-1.227.643-1.83.867-2.078.223-.247.495-.31.66-.31.166 0 .331 0 .476.008.149.008.347-.057.546.42.198.475.683 1.667.743 1.79.06.123.099.27.02.42z" />
-          <path d="M12.04 2C6.578 2 2.13 6.448 2.13 11.91c0 1.965.578 3.788 1.578 5.314L2 22l4.91-1.29A9.866 9.866 0 0 0 12.04 21.82c5.462 0 9.91-4.448 9.91-9.91S17.502 2 12.04 2zm0 18.014a8.04 8.04 0 0 1-4.328-1.252l-.31-.198-3.226.847.86-3.146-.21-.323a8.052 8.052 0 0 1-1.246-4.32c0-4.46 3.633-8.09 8.094-8.09 4.46 0 8.09 3.63 8.09 8.09 0 4.46-3.63 8.092-8.09 8.092z" />
-        </svg>
-      </a>
     </div>
   )
 }
@@ -605,9 +636,9 @@ export function Footer() {
             {/* Brand */}
             <div className="lg:col-span-2">
               <div className="mb-4">
-                  <h3 className="text-white font-bold text-3xl font-heading">
-                    The Indus Group of Co.
-                  </h3>
+                <h3 className="text-white font-bold text-3xl font-heading">
+                  The Indus Group of Co.
+                </h3>
               </div>
               <p className="text-sm leading-relaxed mb-6 max-w-sm text-blue-200/80">
                 Delivering industry-leading solutions across verticals with reliability, innovation, and integrity.
@@ -705,18 +736,15 @@ export function Footer() {
         <div className="border-t border-white/10">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 mb-20 md:mb-0 flex flex-col md:flex-row items-center justify-between gap-4">
 
-          <p className="text-xs text-blue-200/50">
-            © 2026 The Indus Group. All rights reserved.            </p>
+            <p className="text-xs text-blue-200/50">
+              © 2025 The Indus Group. All rights reserved.
+            </p>
             {/* Legal */}
             <div className="flex flex-wrap items-center justify-center gap-6 text-xs text-blue-200/80">
               <Link href="/careers" className="hover:text-white transition-colors">Careers</Link>
               <Link href="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
               <Link href="/terms" className="hover:text-white transition-colors">Terms & Conditions</Link>
             </div>
-
-            <p className="text-xs text-blue-200/50">
-              © {new Date().getFullYear()} The Indus Group of Co.
-            </p>
 
           </div>
         </div>

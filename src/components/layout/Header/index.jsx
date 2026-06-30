@@ -11,7 +11,6 @@ const businessVerticals = [
   { label: 'Enterprise Solutions', href: '/businesses/enterprise-solutions' },
   { label: 'Skill Development', href: '/businesses/skill-development' },
   { label: 'Real Estate & Infra', href: '/businesses/real-estate' },
-  { label: 'HBC Brand Franchise', href: '/businesses/hbc-franchise' },
 ]
 
 const navLinks = [
@@ -105,13 +104,24 @@ export function Header() {
           </nav>
 
           {/* Phone CTA */}
-          <a
-            href="tel:+917011332238"
-            className="hidden lg:flex items-center gap-2 bg-blue-600 text-white px-4 py-2.5 rounded-lg text-sm font-semibold hover:bg-blue-700 transition-colors"
-          >
-            <Phone className="w-4 h-4" />
-            +91 7011 332 238
-          </a>
+          <div className="hidden lg:flex items-center gap-2">
+  <a
+    href="tel:+917011332238"
+    className="flex items-center gap-2 bg-blue-600 text-white px-4 py-2.5 rounded-lg text-sm font-semibold hover:bg-blue-700 transition-colors"
+  >
+    <Phone className="w-4 h-4" />
+    +91 7011 332 238
+  </a>
+
+  <a
+    href="https://wa.me/917011332238"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="flex items-center gap-2 bg-green-500 text-white px-4 py-2.5 rounded-lg text-sm font-semibold hover:bg-green-600 transition-colors"
+  >
+    WhatsApp
+  </a>
+</div>
 
           {/* Mobile toggle */}
           <button
@@ -162,18 +172,19 @@ export function Header() {
                   className="block px-3 py-2 text-sm font-medium text-slate-600 hover:text-blue-600 rounded-md hover:bg-blue-50 transition-colors"
                   onClick={() => setMobileOpen(false)}
                 >
-                  {item.label}
+                  {link.label}
                 </Link>
               )
             )}
             <div className="pt-2 border-t border-slate-100">
-              <a
-                href="tel:+917011332238"
-                className="flex items-center gap-2 px-3 py-2 text-sm font-bold text-blue-600"
-              >
-                <Phone className="w-4 h-4" />
-                +91 7011 332 238
-              </a>
+              {/* Desktop CTA Buttons */}
+<a
+  href="tel:+917011332238"
+  className="flex items-center gap-2 px-3 py-2 text-sm font-bold text-blue-600"
+>
+  <Phone className="w-4 h-4" />
+  +91 7011 332 238
+</a>
             </div>
           </div>
         </div>

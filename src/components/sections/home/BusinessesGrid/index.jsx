@@ -11,7 +11,7 @@ const businesses = [
       'We provide comprehensive, end-to-end logistics and supply chain solutions for domestic and international trade. From freight management to last-mile delivery, our expertise ensures your goods move efficiently, reliably, and on time.',
     exploreLabel: 'Explore Logistics',
     href: '/businesses/logistics',
-    image: '/images/businesses/logistics/logistics-hero.png',
+    image: '/images/businesses/logistics/integrated-logistics.jpeg',
     flip: false,
   },
   {
@@ -44,16 +44,6 @@ const businesses = [
     image: '/images/businesses/real-estate/real-estate-hero.png',
     flip: true,
   },
-  {
-    title: 'Franchise of HBC Brand',
-    tagline: 'A proven food chain franchise opportunity.',
-    description:
-      'The HBC Brand franchise offers a complete, ready-to-run food chain business model with full operational support. From site selection to training and supply chain, we walk with franchisees every step of the way.',
-    exploreLabel: 'Explore Franchise',
-    href: '/businesses/hbc-franchise',
-    image: '/images/businesses/hbc-franchise/hbc-hero.png',
-    flip: false,
-  },
 ]
 
 export function BusinessesGrid() {
@@ -63,8 +53,8 @@ export function BusinessesGrid() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             label="Our Businesses"
-            title="Five Verticals, One Vision"
-            subtitle="Focused excellence across five business domains, each designed to create lasting value."
+            title="Four Verticals, One Vision"
+            subtitle="Focused excellence across four business domains, each designed to create lasting value."
           />
         </div>
       </div>
@@ -74,13 +64,13 @@ export function BusinessesGrid() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               <div className={b.flip ? 'lg:order-2' : 'lg:order-1'}>
-                <div className="aspect-[4/3] rounded-2xl overflow-hidden border border-blue-100 shadow-sm">
+                <div className="aspect-[4/3] rounded-2xl border border-blue-100 shadow-sm overflow-hidden relative">
                   <Image
                     src={b.image}
                     alt={b.title}
-                    width={800}
-                    height={600}
-                    className="w-full h-full object-cover"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 50vw"
                   />
                 </div>
               </div>
@@ -103,7 +93,7 @@ export function BusinessesGrid() {
                 <div className="flex flex-wrap gap-4">
                   <Link
                     href={b.href}
-                    className="inline-flex items-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold text-sm hover:bg-blue-700 transition-colors"
+                    className="inline-flex items-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold text-sm hover:bg-blue-700 hover:-translate-y-0.5 transition-all"
                   >
                     {b.exploreLabel}
                     <ArrowRight className="w-4 h-4" />
@@ -111,7 +101,7 @@ export function BusinessesGrid() {
 
                   <Link
                     href="/contact"
-                    className="inline-flex items-center gap-2 border-2 border-blue-200 text-blue-700 px-6 py-3 rounded-lg font-semibold text-sm hover:bg-blue-50 transition-colors"
+                    className="inline-flex items-center gap-2 border-2 border-blue-200 text-blue-700 px-6 py-3 rounded-lg font-semibold text-sm hover:bg-blue-50 hover:-translate-y-0.5 transition-all"
                   >
                     Know More
                   </Link>

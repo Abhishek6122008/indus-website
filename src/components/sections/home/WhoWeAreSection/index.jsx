@@ -46,13 +46,14 @@ export function WhoWeAreSection() {
 
           {/* Visual */}
           <div className="relative">
-            <div className="aspect-[4/3] rounded-2xl overflow-hidden">
+            <div className="aspect-[4/3] rounded-2xl overflow-hidden border border-blue-100 shadow-sm relative">
               <Image
-                src="/images/about/company-team.jpg"
-                alt="The Indus Group team"
-                width={800}
-                height={600}
-                className="w-full h-full object-cover"
+                src="/images/about/who-we-are-hero.png"
+                alt="The Indus Group logistics and supply chain operations"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 50vw"
+                priority
               />
             </div>
 

@@ -28,13 +28,6 @@ const articles = [
     readTime: '5 min read',
   },
   {
-    title: 'Franchise Growth: Building a Scalable Food Business',
-    category: 'Franchise',
-    description:
-      'Franchise models support brand expansion, operations, and customer reach.',
-    readTime: '4 min read',
-  },
-  {
     title: 'Integrated Business Support Across Verticals',
     category: 'Enterprise',
     description:

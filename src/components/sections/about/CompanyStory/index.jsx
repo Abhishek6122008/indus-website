@@ -9,13 +9,13 @@ export function CompanyStory() {
 
           {/* Image */}
           <div className="relative">
-            <div className="aspect-[4/3] rounded-2xl overflow-hidden">
+            <div className="aspect-[4/3] rounded-2xl overflow-hidden border border-blue-100 shadow-sm relative">
               <Image
-                src="/images/about/company-team.jpg"
-                alt="The Indus Group company story"
-                width={800}
-                height={600}
-                className="w-full h-full object-cover"
+                src="/images/about/company-story.png"
+                alt="The Indus Group team collaborating"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 50vw"
               />
             </div>
 

@@ -9,7 +9,6 @@ const categories = [
   'Enterprise',
   'Skill Development',
   'Real Estate',
-  'Franchise',
 ]
 
 export function CategoryFilter() {
