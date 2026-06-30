@@ -52,7 +52,7 @@ export function BusinessesGrid() {
       <div className="bg-blue-50 section-padding pb-0">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
-            label="Our Businesses"
+            label="Businesses Verticals"
             title="Four Verticals, One Vision"
             subtitle="Focused excellence across four business domains, each designed to create lasting value."
           />
