@@ -3,8 +3,8 @@ import { Award, Users, Globe, HeadphonesIcon, Briefcase } from 'lucide-react'
 const reasons = [
   {
     icon: Award,
-    stat: '14+',
-    label: 'Years of Experience',
+    stat: '200+',
+    label: 'Satisfied Customers',
     desc: 'Over a decade of proven expertise across multiple industry verticals.',
   },
   {
