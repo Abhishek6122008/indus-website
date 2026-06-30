@@ -1556,6 +1556,10 @@ export function Footer() {
                   <Mail className="w-4 h-4 text-blue-400 shrink-0" />
                   info@theindusgroup.com
                 </a>
+                <a href="mailto:theindusgroup@outlook.com" className="flex items-center gap-2.5 text-sm hover:text-white transition-colors">
+                  <Mail className="w-4 h-4 text-blue-400 shrink-0" />
+                  theindusgroup@outlook.com
+                </a>
               </div>
             </div>
 
