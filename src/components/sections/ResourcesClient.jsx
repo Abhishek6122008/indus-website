@@ -78,10 +78,10 @@ const GUIDES = [
     file: '/files/indus-corporate-deck.pdf',
     summary: 'An overview of The Indus Group of Co. covering the company\'s history, organizational structure, mission and vision, and the four business verticals: Logistics, Enterprise Solutions, Skill Development, and Real Estate. Includes the full company presentation deck.',
     highlights: [
-      '14+ years of industry experience',
+      '200+ overall years of experience',
       'Operations across Logistics, Enterprise Solutions, Skill Development, and Real Estate',
       'Mission: Delivering industry-leading solutions with reliability, innovation, and integrity',
-      '1,000+ clients served across sectors',
+      '5,000+ trusted clients across sectors',
       'MSME-focused approach to business empowerment',
     ],
   },
@@ -117,7 +117,7 @@ const GUIDES = [
     summary: 'The official Indus Group client brochure designed for partnership introductions, business meetings, and tender submissions. Covers all five verticals with key service highlights and contact information.',
     highlights: [
       'Professional overview of all five business verticals',
-      'Key statistics: 14+ years, 1,000+ clients, 100+ team members',
+      'Key statistics: 200+ overall years of experience, 5,000+ trusted clients, 1,000+ team members',
       'Service capabilities and USPs per vertical',
       'Contact details and social channels',
     ],

@@ -4,18 +4,18 @@ const reasons = [
   {
     icon: Award,
     stat: '200+',
-    label: 'Satisfied Customers',
+    label: 'Overall Years of Experience',
     desc: 'Over a decade of proven expertise across multiple industry verticals.',
   },
   {
     icon: Users,
-    stat: '1,000+',
+    stat: '5,000+',
     label: 'Trusted Clients',
     desc: 'Businesses across India and globally rely on us for critical solutions.',
   },
   {
     icon: Briefcase,
-    stat: '100+',
+    stat: '1,000+',
     label: 'Team Members',
     desc: 'A professional, multi-disciplinary team dedicated to your success.',
   },
@@ -35,10 +35,10 @@ const reasons = [
 
 export function WhyChooseUs() {
   return (
-    <section className="section-padding bg-white">
+    <section className="section-padding bg-white border-t border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold font-heading text-[#c00]">
+          <h2 className="text-3xl md:text-4xl font-bold font-heading text-[#0b1f5c]">
             Why Choose Us?
           </h2>
         </div>
