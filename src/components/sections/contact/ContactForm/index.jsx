@@ -1,5 +1,5 @@
 'use client'
-const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyBWgT0BxNF9b0tlGaqaM2ql9xJkEjYd4ArqZA66RKiVl_M3ZHpFqdpE98iAtWkG7B7/exec"
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxDsrUW0biQ8S3Yhw0acSQuxLnCp041StvnBxCdjWasOaBu-k8z_IDflYjxMm1wKYUq/exec"
 
 import { useState } from 'react'
 import { ArrowRight, CheckCircle } from 'lucide-react'
