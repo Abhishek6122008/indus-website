@@ -2,6 +2,10 @@ import Image from 'next/image'
 import { Linkedin } from 'lucide-react'
 
 export function TeamMemberCard({ member }) {
+  if (member.placeholder) {
+    return <div className="rounded-2xl border border-blue-100 bg-white" />
+  }
+
   return (
     <div className="flex flex-col items-center text-center border border-blue-100 rounded-2xl shadow-sm hover:shadow-md transition-shadow p-6 bg-white">
 
@@ -20,6 +24,13 @@ export function TeamMemberCard({ member }) {
       <h3 className="font-heading font-semibold text-slate-900 text-base mb-1">
         {member.name}
       </h3>
+
+      {/* Name suffix (e.g. court) */}
+      {member.nameSuffix && (
+        <p className="text-slate-900 text-sm font-medium mb-1">
+          {member.nameSuffix}
+        </p>
+      )}
 
       {/* Role */}
       <p className="text-blue-600 text-sm mb-3">

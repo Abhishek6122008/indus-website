@@ -22,30 +22,34 @@ const corporateTeam = [
     image: '/images/about/team/shruti-singh.jpeg'
   },
   {
-    name: 'Dr. K.R. Madhar (I.R.S. Retd.)',
-    role: 'Advocate, High Court, Delhi; Former Additional Commissioner of Customs and GST',
+    name: 'Adv. Dr. K.R. Madhar (I.R.S. Retd.)',
+    role: 'Delhi High Court',
     image: '/images/about/team/kr-madhar.jpeg'
   },
   {
-    name: 'Mr. Kailash Chand',
-    role: 'Advocate, Former Assistant Commissioner of Customs & GST (retd.)',
+    name: 'Adv. Kailash Chand',
+    role: 'Former Assistant Commissioner of Customs & GST (retd.)',
     image: '/images/about/team/kailash-chand.jpeg'
   },
   {
     name: 'Adv. Gaurav Bhardwaj',
-    role: 'Board Advisor, Legal (Adv. Supreme Court of India)',
+    nameSuffix: '(Supreme Court of India)',
+    role: 'Head of Board Advisor, Legal',
     image: '/images/about/team/gaurav-bhardwaj.jpeg'
   },
   {
-    name: 'Dr.Vijay Prakash Sharma',
-    role: 'Group Advisor- Business Strategy',
-    image: '/images/about/team/vijay-sharma.jpeg'
+    placeholder: true
   },
   {
     name: 'Dr. Tanu Manocha',
     role: 'Strategic Board Advisor, Operations',
     image: '/images/about/team/tannu.jpeg',
     objectPosition: 'object-center'
+  },
+  {
+    name: 'Dr.Vijay Prakash Sharma',
+    role: 'Group Advisor- Business Strategy',
+    image: '/images/about/team/vijay-sharma.jpeg'
   }
 ]
 
@@ -72,33 +76,42 @@ export function MeetOurTeam() {
 
         {/* Grid Structure */}
         <div className="grid grid-cols-4 gap-8">
-          {corporateTeam.map((member) => (
-            <div
-              key={member.name}
-              className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col h-full border border-slate-100"
-            >
-              {/* Photo at the top (edge-to-edge) */}
-              <div className="relative aspect-[4/3] w-full overflow-hidden bg-slate-100">
-                <Image
-                  src={member.image}
-                  alt={member.name}
-                  fill
-                  className={`object-cover ${member.objectPosition || 'object-top'}`}
-                  sizes="(max-width: 768px) 100vw, 350px"
-                />
-              </div>
+          {corporateTeam.map((member, idx) =>
+            member.placeholder ? (
+              <div key={`placeholder-${idx}`} className="rounded-2xl border border-slate-100 bg-white" />
+            ) : (
+              <div
+                key={member.name}
+                className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col h-full border border-slate-100"
+              >
+                {/* Photo at the top (edge-to-edge) */}
+                <div className="relative aspect-[4/3] w-full overflow-hidden bg-slate-100">
+                  <Image
+                    src={member.image}
+                    alt={member.name}
+                    fill
+                    className={`object-cover ${member.objectPosition || 'object-top'}`}
+                    sizes="(max-width: 768px) 100vw, 350px"
+                  />
+                </div>
 
-              {/* Text details at the bottom */}
-              <div className="p-6 text-center flex-grow flex flex-col justify-center">
-                <h3 className="text-lg font-bold text-slate-800 mb-1.5 font-heading">
-                  {member.name}
-                </h3>
-                <p className="text-sm font-semibold text-blue-600 px-2 leading-relaxed text-center whitespace-pre-line">
-                  {member.role}
-                </p>
+                {/* Text details at the bottom */}
+                <div className="p-6 text-center flex-grow flex flex-col justify-center">
+                  <h3 className="text-lg font-bold text-slate-800 mb-1.5 font-heading">
+                    {member.name}
+                  </h3>
+                  {member.nameSuffix && (
+                    <p className="text-sm font-medium text-slate-900 mb-1.5">
+                      {member.nameSuffix}
+                    </p>
+                  )}
+                  <p className="text-sm font-semibold text-blue-600 px-2 leading-relaxed text-center whitespace-pre-line">
+                    {member.role}
+                  </p>
+                </div>
               </div>
-            </div>
-          ))}
+            )
+          )}
           {Array.from({ length: (4 - (corporateTeam.length % 4)) % 4 }).map((_, i) => (
             <div key={`empty-${i}`} className="rounded-2xl border border-slate-100 bg-white" />
           ))}

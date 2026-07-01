@@ -12,7 +12,7 @@ const jobs = [
   },
   {
     title: 'Freelancers',
-    department: 'Operations',
+    department: 'Growth',
     description: 'Support cross-vertical operational strategies and manage variable client requirements.',
   },
   {
