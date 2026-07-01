@@ -15,6 +15,7 @@ export default function KnowledgeCenterPage() {
         title="Knowledge Center"
         subtitle="Industry insights, practical guides, and expert perspectives from across The Indus Group."
         breadcrumbs={[{ label: 'Knowledge Center' }]}
+        backgroundImage="/images/knowledge-center/knowledge-center-hero.png"
       />
 
       <KnowledgeCenterClient />
