@@ -15,7 +15,6 @@ export default function ToolsPage() {
         title="Tools"
         subtitle="Calculators and planning tools for better business decisions."
         breadcrumbs={[{ label: 'Tools' }]}
-        backgroundImage="/images/tools/tools-hero.png"
       />
       <ToolsGrid />
     </>
