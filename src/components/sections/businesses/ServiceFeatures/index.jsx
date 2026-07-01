@@ -74,7 +74,7 @@ export function ServiceFeatures({
                   src="/images/businesses/enterprise/target-market.png"
                   alt="Target market breakdown"
                   fill
-                  className="object-cover"
+                  className="object-contain"
                   sizes="(max-width: 1024px) 100vw, 50vw"
                 />
               </div>
