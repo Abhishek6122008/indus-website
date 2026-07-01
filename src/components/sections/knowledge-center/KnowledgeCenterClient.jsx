@@ -21,6 +21,12 @@ const BLOGS = [
     image: '/images/blog/future-proofing.png',
     file: '/files/future-proofing.pdf',
   },
+  {
+    title: 'Cold Chain Supply Chain Management: The Invisible Backbone of Modern Commerce',
+    desc: 'Discover how cold chain ensures safe storage, transport, and delivery of temperature-sensitive goods.',
+    image: '/images/blog/cold-chain-scm.png',
+    file: '/files/cold-chain-scm.pdf',
+  }
 ]
 
 const NEWS = [
