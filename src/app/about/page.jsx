@@ -7,14 +7,14 @@ import { OurApproach } from '@/components/sections/about/OurApproach'
 export const metadata = {
   title: 'Who We Are | The Indus Group Co.',
   description:
-    'Learn about The Indus Group of Co.— our story, mission, vision, and the approach that drives everything we do.',
+    'Learn about The Indus Group Co.— our story, mission, vision, and the approach that drives everything we do.',
 }
 
 export default function AboutPage() {
   return (
     <>
       <PageHero
-        label="The Indus Group of Co."
+        label="The Indus Group Co."
         title="Who We Are"
         subtitle="A multi-vertical enterprise built on reliability, innovation, and integrity — empowering businesses across India."
         breadcrumbs={[{ label: 'Who We Are' }]}

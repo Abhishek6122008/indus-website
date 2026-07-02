@@ -6,7 +6,7 @@ const pillars = [
     Icon: Users,
     title: 'Equal Opportunity',
     description:
-      'At INDUS Group of Co. , we prioritize equality, diversity, and inclusion across all our global operations. We are deeply committed to cultivating an inclusive workplace where every individual feels valued and respected. By fostering an environment where diverse talents and perspectives thrive, we empower our teams to collaborate effectively, driving collective innovation and success.',
+      'At INDUS Group Co. , we prioritize equality, diversity, and inclusion across all our global operations. We are deeply committed to cultivating an inclusive workplace where every individual feels valued and respected. By fostering an environment where diverse talents and perspectives thrive, we empower our teams to collaborate effectively, driving collective innovation and success.',
   },
   {
     Icon: RotateCw,
@@ -29,7 +29,7 @@ export function OurApproach() {
         <SectionHeading
           label="Our Values"
           title="Equal Opportunity & ESG"
-          subtitle="The commitments and sustainable practices at the core of everything The Indus Group of Co. does."
+          subtitle="The commitments and sustainable practices at the core of everything The Indus Group Co. does."
         />
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
           {pillars.map((p, i) => (

@@ -2,7 +2,7 @@
 
 # The Indus Group — Website Redesign
 
-**Redesigning the web presence of The Indus Group of Co.**
+**Redesigning the web presence of The Indus Group Co.**
 
 ![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen?style=flat-square)
 ![Contributions](https://img.shields.io/badge/contributions-intern%20friendly-blue?style=flat-square)

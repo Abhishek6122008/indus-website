@@ -15,7 +15,7 @@ export default function CareersPage() {
     <>
       <PageHero
         label="Join Our Team"
-        title="Build a career at The Indus Group"
+        title="Build a career at The Indus Group Co."
         subtitle="Join a growing team shaping the future of logistics, enterprise, skill development, and infrastructure across India."
         breadcrumbs={[{ label: 'Careers' }]}
         backgroundImage="/images/about/careers-hero.png"

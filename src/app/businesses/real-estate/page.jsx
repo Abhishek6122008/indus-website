@@ -62,7 +62,7 @@ export default function RealEstatePage() {
       />
       <ServiceIntro
         heading="Your Partner in Property Growth"
-        description="At The Indus Group of Co. , we focus on key growth sectors within the real estate market. We specialize in developing and managing a diverse portfolio of affordable and luxury residential projects, alongside state-of-the-art industrial warehouses. Our expert team helps clients navigate opportunities in these high-demand segments, from initial investment to final delivery, ensuring every project meets our standards of quality and value."
+        description="At The Indus Group Co. , we focus on key growth sectors within the real estate market. We specialize in developing and managing a diverse portfolio of affordable and luxury residential projects, alongside state-of-the-art industrial warehouses. Our expert team helps clients navigate opportunities in these high-demand segments, from initial investment to final delivery, ensuring every project meets our standards of quality and value."
       />
       <ServiceFeatures features={features} heading="Our Core Real Estate Services" />
       <RealEstatePartnersStrip />

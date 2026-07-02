@@ -6,7 +6,7 @@ Read this file fully before generating any code for this project.
 
 ## Project Overview
 
-Redesign of The Indus Group of Co. website.
+Redesign of The Indus Group Co. website.
 
 - **Source content:** theindusgroup.com
 - **Design reference:** axoncsipl.com (layout/structure only — all content is INDUS)
@@ -87,7 +87,7 @@ public/
 
 | Field | Value |
 |-------|-------|
-| Company name | The Indus Group of Co. |
+| Company name | The Indus Group Co. |
 | Phone | +91 7011332238 |
 | Email | info@theindusgroup.com / theindusgroup@outlook.com |
 | Social | Instagram, LinkedIn, X (Twitter), YouTube, WhatsApp |

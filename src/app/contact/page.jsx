@@ -5,7 +5,7 @@ import { ContactForm } from '@/components/sections/contact/ContactForm'
 export const metadata = {
   title: 'Contact Us | The Indus Group Co.',
   description:
-    'Get in touch with The Indus Group of Co. Call, email, or send us a message — we are always ready to help.',
+    'Get in touch with The Indus Group Co. Call, email, or send us a message — we are always ready to help.',
 }
 
 export default function ContactPage() {
