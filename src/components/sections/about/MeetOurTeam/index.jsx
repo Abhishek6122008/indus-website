@@ -63,7 +63,7 @@ const corporateTeam = [
   {
     name: 'Nihar Parida',
     role: 'Head of Advisory Board, LSCM',
-    image: '/images/team/nihar-parida.jpg',
+    image: '/images/team/nihar-parida.jpeg',
     group: 'Core Team',
   }
 ]
