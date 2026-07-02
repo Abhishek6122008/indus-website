@@ -33,9 +33,9 @@ export function TeamGrid() {
             label="2026 Batch"
             title="Our Team"
           />
-          <div className="grid grid-cols-3 gap-8">
-            {enterpriseTeam.map((member) => (
-              <TeamMemberCard key={member.name} member={member} />
+          <div className="grid grid-cols-4 gap-8">
+            {enterpriseTeam.map((member, i) => (
+              <TeamMemberCard key={`${member.name}-${i}`} member={member} />
             ))}
           </div>
         </div>

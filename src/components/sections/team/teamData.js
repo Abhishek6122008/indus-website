@@ -77,6 +77,12 @@ export const teamMembers = [
     group: 'Enterprise Team',
   },
   {
+    name: 'Ananya Singh',
+    role: 'Strategist, Legal',
+    image: '/images/businesses/enterprise/team/ananya.png',
+    group: 'Enterprise Team',
+  },
+  {
     name: 'Ujjwal Rawat',
     role: 'Team Lead - Full Stack',
     image: '/images/businesses/enterprise/team/ujjwal.png',
