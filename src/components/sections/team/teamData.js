@@ -66,6 +66,18 @@ export const teamMembers = [
     image: '/images/businesses/enterprise/team/anushka.jpeg',
     group: 'Core Team',
   },
+  {
+    name: 'Dr. Archana Pandey',
+    role: 'Director - L&D',
+    image: '/images/team/archana-pandey-.jpeg',
+    group: 'Core Team',
+  },
+  {
+    name: 'Nihar Parida',
+    role: 'Head of Advisory Board, LSCM',
+    image: '/images/team/nihar-parida.jpeg',
+    group: 'Core Team',
+  },
   // Enterprise Team — Tech row
   {
     name: 'Abhishek Chaudhary',
