@@ -105,7 +105,7 @@ export const teamMembers = [
     group: 'Enterprise Team',
   },
   {
-    name: 'Jhanak',
+    name: 'Jhanak Yadav',
     role: 'Team Lead - Legal Operations',
     image: '/images/businesses/enterprise/team/jhanak.png',
     group: 'Enterprise Team',
