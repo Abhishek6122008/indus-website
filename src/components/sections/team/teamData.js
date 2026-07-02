@@ -24,21 +24,35 @@ export const teamMembers = [
     group: 'Core Team',
   },
   {
+<<<<<<< HEAD
+    name: 'Dr. K.R. Madhar (I.R.S. Retd.)',
+    role: 'Adv., High Court, Delhi; Former Additional Commissioner of Customs and GST',
+=======
     name: 'Adv. Dr. K.R. Madhar (I.R.S. Retd.)',
     role: 'Delhi High Court',
+>>>>>>> 4c5c852e5792940c3dfee7d12c6a7b06f29693fb
     image: '/images/team/kr-madhar.jpg',
     group: 'Core Team',
   },
   {
+<<<<<<< HEAD
+    name: 'Mr. Kailash Chand',
+    role: 'Adv., Former Assistant Commissioner of Customs & GST (retd.)',
+=======
     name: 'Adv. Kailash Chand',
     role: 'Former Assistant Commissioner of Customs & GST (retd.)',
+>>>>>>> 4c5c852e5792940c3dfee7d12c6a7b06f29693fb
     image: '/images/team/kailash-chand.jpg',
     group: 'Core Team',
   },
   {
     name: 'Adv. Gaurav Bhardwaj',
+<<<<<<< HEAD
+    role: 'Head Board Advisor/Legal (Adv. Supreme Court of India)',
+=======
     nameSuffix: '(Supreme Court of India)',
     role: 'Head of Board Advisor, Legal',
+>>>>>>> 4c5c852e5792940c3dfee7d12c6a7b06f29693fb
     image: '/images/team/gaurav-bhardwaj.jpg',
     group: 'Core Team',
   },

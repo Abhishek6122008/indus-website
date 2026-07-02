@@ -49,7 +49,7 @@ export function WhoWeAreSection() {
             <div className="aspect-[4/3] rounded-2xl overflow-hidden border border-blue-100 shadow-sm relative">
               <Image
                 src="/images/about/who-we-are-hero.png"
-                alt="The Indus Group logistics and supply chain operations"
+                alt="The Indus Group  logistics and supply chain operations"
                 fill
                 className="object-cover"
                 sizes="(max-width: 768px) 100vw, 50vw"

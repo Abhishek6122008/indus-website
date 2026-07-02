@@ -4,7 +4,7 @@ import ResourcesClient from "@/components/sections/ResourcesClient";
 export const metadata = {
   title: "Resources | The Indus Group Co.",
   description:
-    "Downloadable resources, templates, and documents from The Indus Group.",
+    "Downloadable resources, templates, and documents from The Indus Group of Co.",
 };
 
 export default function ResourcesPage() {

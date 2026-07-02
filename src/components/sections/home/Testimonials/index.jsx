@@ -3,13 +3,13 @@ import { SectionHeading } from '@/components/ui/SectionHeading'
 
 const testimonials = [
   {
-    quote: 'Indus Group brought exceptional innovation and leadership to our international EXIM projects.',
+    quote: 'Indus Group of Co. brought exceptional innovation and leadership to our international EXIM projects.',
     name: 'Saji Thomas',
     role: 'C.E.O., Fidelis Etairos International',
     initials: 'ST',
   },
   {
-    quote: 'A committed team with deep industry insights. Indus Group is a long-term partner for our strategic energy initiatives.',
+    quote: 'A committed team with deep industry insights. Indus Group of Co. is a long-term partner for our strategic energy initiatives.',
     name: 'Anuradha Singh',
     role: 'M.D., AMM Pvt. Ltd',
     initials: 'AS',
