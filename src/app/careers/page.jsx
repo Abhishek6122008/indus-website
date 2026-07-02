@@ -2,6 +2,7 @@ import { PageHero } from '@/components/ui/PageHero'
 import { CareerHighlights } from '@/components/sections/careers/CareerHighlights'
 import { WhyWorkWithUs } from '@/components/sections/careers/WhyWorkWithUs'
 import { JoinUs } from '@/components/sections/careers/JoinUs'
+import { PerksBenefits } from '@/components/sections/careers/PerksBenefits'
 import { CareersCTA } from '@/components/sections/careers/CareersCTA'
 
 export const metadata = {
@@ -24,6 +25,7 @@ export default function CareersPage() {
       <CareerHighlights />
       <WhyWorkWithUs />
       <JoinUs />
+      <PerksBenefits />
       <CareersCTA />
     </>
   )
