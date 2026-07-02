@@ -63,9 +63,9 @@ const corporateTeam = [
   {
     name: 'Nihar Parida',
     role: 'Head of Advisory Board, LSCM',
-    image: '/images/team/nihar-parida.jpeg',
+    image: '/images/team/nihar-parida.jpg',
     group: 'Core Team',
-  },
+  }
 ]
 
 export function MeetOurTeam() {
