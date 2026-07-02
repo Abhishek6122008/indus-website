@@ -69,7 +69,7 @@ const featureRows = [
     heading: 'Industries Served',
     body:
       'We deliver specialized logistics solutions across diverse industries, from retail to pharmaceuticals. Our tailored services and extensive expertise ensure your supply chain runs seamlessly. Beyond transport, we provide comprehensive warehousing and end-to-end logistics. Our dedicated team is committed to exceeding your expectations in both domestic and international markets.',
-    image: '/images/businesses/logistics/industries-served.jpeg',
+    image: '/images/businesses/logistics/industry-served.jpeg',
     imageRight: false,
   },
   {
