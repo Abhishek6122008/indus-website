@@ -1,4 +1,6 @@
 import Image from 'next/image'
+import Link from 'next/link'
+import { ArrowUpRight } from 'lucide-react'
 
 export function JoinUs() {
   return (
@@ -6,37 +8,35 @@ export function JoinUs() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
-          {/* Text */}
-          <div>
-            <h2 className="text-3xl md:text-4xl font-bold font-heading text-[#0b1f5c] mb-2 inline-block border-b-4 border-blue-600 pb-2">
-              Join Us
-            </h2>
-            <div className="mt-6 space-y-5 text-slate-600 leading-relaxed">
-              <p>
-                The Indus Group Co. is a multi-vertical enterprise delivering industry-leading
-                solutions across Logistics, Enterprise Solutions, Skill Development, and Real Estate.
-              </p>
-              <p>
-                We move fast, operate under pressure, and solve real business problems for MSMEs and
-                enterprises across India.
-              </p>
-              <p>
-                Our aim is to attract the highest quality of talent and provide them opportunities for
-                leadership and professional growth in a diverse and inclusive environment.
-              </p>
-            </div>
-          </div>
-
           {/* Image */}
-          <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-lg">
-            {/* TODO(image): swap for a real Indus office/facility photo when provided. */}
+          <div className="relative aspect-[16/10] rounded-2xl overflow-hidden shadow-lg">
             <Image
-              src="/images/hero/hero-background.jpg"
-              alt="The Indus Group workplace"
+              src="/images/careers/join-our-team.png"
+              alt="Join our team at The Indus Group"
               fill
               className="object-cover"
               sizes="(max-width: 1024px) 100vw, 50vw"
             />
+          </div>
+
+          {/* Content */}
+          <div>
+            <p className="text-slate-600 leading-relaxed mb-4">
+              Embark on a fulfilling journey with The Indus Group, where passion meets purpose.
+            </p>
+            <p className="text-slate-600 leading-relaxed mb-8">
+              Join a team that values innovation, collaboration, and a commitment to excellence.
+              We’re on the lookout for dynamic individuals who share our vision for transforming
+              logistics, enterprise, skill development, and infrastructure across India. If you’re
+              ready to be a part of something big, explore our career opportunities today.
+            </p>
+            <Link
+              href="mailto:info@theindusgroup.com?subject=General Application - Careers"
+              className="inline-flex items-center gap-2 bg-[#0b1f5c] text-white px-8 py-4 rounded-lg font-bold text-base hover:bg-blue-800 transition-colors shadow-lg"
+            >
+              Join Us
+              <ArrowUpRight className="w-5 h-5" />
+            </Link>
           </div>
 
         </div>

@@ -34,7 +34,7 @@ const corporateTeam = [
   {
     name: 'Adv. Gaurav Bhardwaj',
     nameSuffix: '(Supreme Court of India)',
-    role: 'Head of Board Advisor, Legal',
+    role: 'Head Advisory Board, Legal',
     image: '/images/about/team/gaurav-bhardwaj.jpeg'
   },
   {

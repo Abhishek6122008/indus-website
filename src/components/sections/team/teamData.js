@@ -38,7 +38,7 @@ export const teamMembers = [
   {
     name: 'Adv. Gaurav Bhardwaj',
     nameSuffix: '(Supreme Court of India)',
-    role: 'Head of Board Advisor, Legal',
+    role: 'Head Advisory Board, Legal',
     image: '/images/team/gaurav-bhardwaj.jpg',
     group: 'Core Team',
   },

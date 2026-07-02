@@ -1,21 +1,20 @@
 import Image from 'next/image'
 
-// TODO(image): swap these placeholders for the real perk photos when provided.
 const perks = [
   {
     title: 'Employee Assistance Program',
     desc: 'Access resources to support your mental health and well-being.',
-    image: '/images/careers/trainer.png',
+    image: '/images/careers/perk-assistance.png',
   },
   {
     title: 'Generous Leave Policies',
     desc: 'Flexible leave for personal and family needs.',
-    image: '/images/careers/sales.png',
+    image: '/images/careers/perk-leave.png',
   },
   {
     title: 'Recognition and Rewards',
     desc: 'Your efforts don’t go unnoticed — monthly recognition & rewards.',
-    image: '/images/careers/channel.png',
+    image: '/images/careers/perk-recognition.png',
   },
 ]
 
