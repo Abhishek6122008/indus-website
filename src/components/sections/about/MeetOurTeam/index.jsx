@@ -38,7 +38,9 @@ const corporateTeam = [
     image: '/images/about/team/gaurav-bhardwaj.jpeg'
   },
   {
-    placeholder: true
+    name: 'Ananya Singh',
+    role: 'Strategist, Legal',
+    image: '/images/about/team/ananya-singh.jpeg'
   },
   {
     name: 'Dr. Tanu Manocha',

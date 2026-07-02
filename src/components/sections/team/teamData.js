@@ -43,7 +43,9 @@ export const teamMembers = [
     group: 'Core Team',
   },
   {
-    placeholder: true,
+    name: 'Ananya Singh',
+    role: 'Strategist, Legal',
+    image: '/images/team/ananya-singh.jpeg',
     group: 'Core Team',
   },
   {
@@ -68,18 +70,6 @@ export const teamMembers = [
     name: 'Moazzam Ahmed Siddiqui',
     role: 'Team Lead - AI & ML',
     image: '/images/businesses/enterprise/team/moazzam.png',
-    group: 'Enterprise Team',
-  },
-  {
-    name: 'Ananya Singh',
-    role: 'Team Lead - Legal',
-    image: '/images/businesses/enterprise/team/ananya.png',
-    group: 'Enterprise Team',
-  },
-  {
-    name: 'Ananya Singh',
-    role: 'Strategist, Legal',
-    image: '/images/businesses/enterprise/team/ananya.png',
     group: 'Enterprise Team',
   },
   {
