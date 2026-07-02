@@ -1,5 +1,5 @@
 const stats = [
-  { value: '200+', label: 'Overall Years of Experience', detail: 'Combined across our leadership' },
+  { value: '200+', label: 'Years of Overall Experience', detail: 'Combined across our leadership' },
   { value: '5,000+', label: 'Trusted Clients', detail: 'Across industries nationwide' },
   { value: '1,000+', label: 'Team Members', detail: 'Experts across all verticals' },
   { value: 'Global', label: 'Network Reach', detail: 'International trade connections' },
