@@ -53,7 +53,19 @@ const corporateTeam = [
     name: 'Dr.Vijay Prakash Sharma',
     role: 'Group Advisor- Business Strategy',
     image: '/images/about/team/vijay-sharma.jpeg'
-  }
+  },
+  {
+    name: 'Dr. Archana Pandey',
+    role: 'Director - L&D',
+    image: '/images/team/archana-pandey-.jpeg',
+    group: 'Core Team',
+  },
+  {
+    name: 'Nihar Parida',
+    role: 'Head of Advisory Board, LSCM',
+    image: '/images/team/nihar-parida.jpeg',
+    group: 'Core Team',
+  },
 ]
 
 export function MeetOurTeam() {
