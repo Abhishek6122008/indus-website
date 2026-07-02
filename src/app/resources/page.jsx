@@ -14,6 +14,7 @@ export default function ResourcesPage() {
         label="Downloads"
         title="Resources"
         subtitle="Useful documents, templates, and reference materials for clients and partners."
+        backgroundImage="/images/resources/resources-hero.png"
         breadcrumbs={[{ label: "Resources" }]}
       />
       <ResourcesClient />

@@ -1,6 +1,42 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { ArrowRight, ChevronDown } from 'lucide-react'
+import {
+  ArrowRight,
+  ChevronDown,
+  Truck,
+  Building2,
+  GraduationCap,
+  Home as HomeIcon,
+  UtensilsCrossed,
+} from 'lucide-react'
+
+const businessVerticals = [
+  {
+    name: 'Logistics & Supply Chain',
+    slug: 'logistics',
+    icon: Truck,
+  },
+  {
+    name: 'Enterprise Solutions',
+    slug: 'enterprise-solutions',
+    icon: Building2,
+  },
+  {
+    name: 'Skill Development',
+    slug: 'skill-development',
+    icon: GraduationCap,
+  },
+  {
+    name: 'Real Estate & Infra',
+    slug: 'real-estate',
+    icon: HomeIcon,
+  },
+  {
+    name: 'HBC Brand Franchise',
+    slug: 'hbc-franchise',
+    icon: UtensilsCrossed,
+  },
+]
 
 export function HeroSection() {
   return (
@@ -69,7 +105,27 @@ export function HeroSection() {
         </div>
       </div>
 
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/40 animate-bounce z-20">
+      {/* Axon-style business verticals overlay */}
+      <div className="absolute bottom-20 left-0 right-0 z-20">
+        <div className="max-w-screen-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-wrap lg:flex-nowrap justify-center gap-4">
+            {businessVerticals.map((vertical) => (
+              <Link
+                key={vertical.slug}
+                href={`/businesses/${vertical.slug}`}
+                className="group flex items-center gap-3 bg-white/15 backdrop-blur-xl border border-white/25 rounded-2xl px-5 py-4 shadow-xl hover:bg-white/25 transition-all duration-300 hover:-translate-y-1"
+              >
+                <vertical.icon className="w-6 h-6 text-blue-200 flex-shrink-0 group-hover:text-white transition-colors" />
+
+                <span className="text-white text-sm font-medium leading-tight">
+                  {vertical.name}
+                </span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </div>
+      <div className="absolute bottom-3 left-1/2 -translate-x-1/2 text-white/40 animate-bounce z-20">
         <ChevronDown className="w-6 h-6" />
       </div>
 
