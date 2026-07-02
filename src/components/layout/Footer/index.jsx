@@ -1541,7 +1541,7 @@ export function Footer() {
             <div className="lg:col-span-2">
               <div className="mb-4">
                 <h3 className="text-white font-bold text-3xl font-heading">
-                  The Indus Group of Co.
+                  The Indus Group Co.
                 </h3>
               </div>
               <p className="text-sm leading-relaxed mb-6 max-w-sm text-blue-200/80">

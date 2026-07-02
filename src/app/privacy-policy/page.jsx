@@ -17,9 +17,9 @@ import {
 } from 'lucide-react'
 
 export const metadata = {
-  title: 'Privacy Policy | The Indus Group of Co.',
+  title: 'Privacy Policy | The Indus Group Co.',
   description:
-    'Learn how The Indus Group of Co. collects, uses, and protects your personal information.',
+    'Learn how The Indus Group Co. collects, uses, and protects your personal information.',
 }
 
 const sections = [
@@ -31,7 +31,7 @@ const sections = [
     content: (
       <>
         <p>
-          The Indus Group of Co. (&quot;we&quot;, &quot;us&quot;, or &quot;our&quot;) is committed to protecting
+          The Indus Group Co. (&quot;we&quot;, &quot;us&quot;, or &quot;our&quot;) is committed to protecting
           your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard
           your information when you visit our website at theindusgroup.com or interact with our
           services.

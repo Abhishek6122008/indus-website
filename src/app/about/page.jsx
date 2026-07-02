@@ -5,7 +5,7 @@ import { MissionVision } from '@/components/sections/about/MissionVision'
 import { OurApproach } from '@/components/sections/about/OurApproach'
 
 export const metadata = {
-  title: 'Who We Are | The Indus Group of Co.',
+  title: 'Who We Are | The Indus Group Co.',
   description:
     'Learn about The Indus Group — our story, mission, vision, and the approach that drives everything we do.',
 }

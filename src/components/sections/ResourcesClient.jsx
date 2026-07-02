@@ -76,7 +76,7 @@ const GUIDES = [
     image: '/images/resources/company-profile.png',
     category: 'PDF',
     file: '/files/indus-corporate-deck.pdf',
-    summary: 'An overview of The Indus Group of Co. covering the company\'s history, organizational structure, mission and vision, and the four business verticals: Logistics, Enterprise Solutions, Skill Development, and Real Estate. Includes the full company presentation deck.',
+    summary: 'An overview of The Indus Group Co. covering the company\'s history, organizational structure, mission and vision, and the four business verticals: Logistics, Enterprise Solutions, Skill Development, and Real Estate. Includes the full company presentation deck.',
     highlights: [
       '200+ overall years of experience',
       'Operations across Logistics, Enterprise Solutions, Skill Development, and Real Estate',

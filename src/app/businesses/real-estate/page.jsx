@@ -7,7 +7,7 @@ import { ProjectFocus } from '@/components/sections/businesses/ProjectFocus'
 import { ServiceCTA } from '@/components/sections/businesses/ServiceCTA'
 
 export const metadata = {
-  title: 'Real Estate & Infra Projects | The Indus Group of Co.',
+  title: 'Real Estate & Infra Projects | The Indus Group Co.',
   description:
     'Property development and infrastructure project expertise — residential, commercial, industrial, and civic.',
 }

@@ -3,7 +3,7 @@ import { EnterpriseIntro } from '@/components/sections/businesses/EnterpriseIntr
 import { ServiceFeatures } from '@/components/sections/businesses/ServiceFeatures'
 
 export const metadata = {
-  title: 'Enterprise Solutions | The Indus Group of Co.',
+  title: 'Enterprise Solutions | The Indus Group Co.',
   description: 'Comprehensive solutions from startup to scale-up, designed to fuel your success.',
 }
 

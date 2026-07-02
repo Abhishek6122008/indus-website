@@ -4,7 +4,7 @@ import { ServiceFeatures } from '@/components/sections/businesses/ServiceFeature
 import { ServiceCTA } from '@/components/sections/businesses/ServiceCTA'
 
 export const metadata = {
-  title: 'Skill Development Solutions | The Indus Group of Co.',
+  title: 'Skill Development Solutions | The Indus Group Co.',
   description:
     'My Skills Academy — expert-designed certificate courses empowering students and professionals with future-ready skills for global leadership.',
 }

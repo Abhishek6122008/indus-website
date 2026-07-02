@@ -33,7 +33,7 @@ export function HeroSection() {
 
           <div className="flex items-center justify-end gap-3 mb-7">
             <span className="text-blue-200 text-xs font-semibold tracking-[0.2em] uppercase">
-              The Indus Group of Co.
+              The Indus Group Co.
             </span>
             <div className="w-8 h-[2px] bg-blue-300" />
           </div>

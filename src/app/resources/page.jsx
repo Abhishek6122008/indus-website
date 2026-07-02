@@ -2,7 +2,7 @@ import { PageHero } from "@/components/ui/PageHero";
 import ResourcesClient from "@/components/sections/ResourcesClient";
 
 export const metadata = {
-  title: "Resources | The Indus Group of Co.",
+  title: "Resources | The Indus Group Co.",
   description:
     "Downloadable resources, templates, and documents from The Indus Group.",
 };

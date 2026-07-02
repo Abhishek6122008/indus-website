@@ -5,7 +5,7 @@ import { ServiceFeatures } from '@/components/sections/businesses/ServiceFeature
 import { ServiceCTA } from '@/components/sections/businesses/ServiceCTA'
 
 export const metadata = {
-  title: 'Logistics & Supply Chain | The Indus Group of Co.',
+  title: 'Logistics & Supply Chain | The Indus Group Co.',
   description:
     'End-to-end logistics and supply chain management for domestic and international trade — freight, last-mile delivery, warehousing, and more.',
 }

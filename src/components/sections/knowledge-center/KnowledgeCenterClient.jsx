@@ -81,7 +81,7 @@ export default function KnowledgeCenterClient() {
           <h2 className="text-2xl md:text-3xl font-bold font-heading text-slate-900 text-center mb-10">
             Latest Blogs &amp; Articles
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {BLOGS.map((blog) => (
               <div
                 key={blog.title}

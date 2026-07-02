@@ -2,7 +2,7 @@ import { PageHero } from '@/components/ui/PageHero'
 import KnowledgeCenterClient from '@/components/sections/knowledge-center/KnowledgeCenterClient'
 
 export const metadata = {
-  title: 'Knowledge Center | The Indus Group of Co.',
+  title: 'Knowledge Center | The Indus Group Co.',
   description:
     'Articles, guides, and industry insights from The Indus Group across logistics, enterprise, skill development, and real estate.',
 }

@@ -16,9 +16,9 @@ import {
 } from 'lucide-react'
 
 export const metadata = {
-  title: 'Terms & Conditions | The Indus Group of Co.',
+  title: 'Terms & Conditions | The Indus Group Co.',
   description:
-    'Read the Terms & Conditions governing your use of The Indus Group of Co. website and services.',
+    'Read the Terms & Conditions governing your use of The Indus Group Co. website and services.',
 }
 
 const sections = [
@@ -29,7 +29,7 @@ const sections = [
     title: 'Acceptance of Terms',
     content: (
       <p>
-        By accessing or using the website of The Indus Group of Co. (&quot;the Company&quot;,
+        By accessing or using the website of The Indus Group Co. (&quot;the Company&quot;,
         &quot;we&quot;, &quot;us&quot;, or &quot;our&quot;) at theindusgroup.com, you agree to be bound by these
         Terms &amp; Conditions. If you do not agree to all the terms stated here, please do not use
         our website or services.
@@ -72,12 +72,12 @@ const sections = [
       <>
         <p>
           All content on this website — including but not limited to text, graphics, logos, icons,
-          images, and software — is the property of The Indus Group of Co. or its content suppliers
+          images, and software — is the property of The Indus Group Co. or its content suppliers
           and is protected by applicable intellectual property laws.
         </p>
         <p>
           You may not reproduce, duplicate, copy, sell, or exploit any portion of this website
-          without the express written permission of The Indus Group of Co.
+          without the express written permission of The Indus Group Co.
         </p>
       </>
     ),
@@ -92,7 +92,7 @@ const sections = [
         <p>
           Information on this website regarding our services, pricing, and business verticals is
           provided for general informational purposes only. It is subject to change without notice.
-          The Indus Group of Co. makes no warranty that the information is accurate, complete, or
+          The Indus Group Co. makes no warranty that the information is accurate, complete, or
           current.
         </p>
         <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 mt-4">
@@ -125,7 +125,7 @@ const sections = [
     title: 'Limitation of Liability',
     content: (
       <p>
-        To the fullest extent permitted by law, The Indus Group of Co. shall not be liable for any
+        To the fullest extent permitted by law, The Indus Group Co. shall not be liable for any
         direct, indirect, incidental, consequential, or punitive damages arising from your use of,
         or inability to use, this website or any information contained herein.
       </p>
