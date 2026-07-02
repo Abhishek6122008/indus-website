@@ -90,4 +90,10 @@ export const teamMembers = [
     image: '/images/businesses/enterprise/team/adarsh.jpeg',
     group: 'Enterprise Team',
   },
+  {
+    name: 'Pushti',
+    role: 'Full Stack Web Dev',
+    image: '/images/businesses/enterprise/team/pushti.jpeg',
+    group: 'Enterprise Team',
+  },
 ]
