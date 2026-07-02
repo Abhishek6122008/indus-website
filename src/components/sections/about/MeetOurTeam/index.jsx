@@ -40,7 +40,8 @@ const corporateTeam = [
   {
     name: 'Ananya Singh',
     role: 'Strategist, Legal',
-    image: '/images/about/team/ananya-singh.jpeg'
+    image: '/images/about/team/ananya-singh.jpeg',
+    objectPosition: 'object-[center_20%]'
   },
   {
     name: 'Dr. Tanu Manocha',

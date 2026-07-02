@@ -1717,6 +1717,7 @@ export function Footer() {
               <Link href="/careers" className="hover:text-white transition-colors">Careers</Link>
               <Link href="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
               <Link href="/terms" className="hover:text-white transition-colors">Terms & Conditions</Link>
+              <Link href="/fraud-disclaimer" className="hover:text-white transition-colors">Fraud Disclaimer</Link>
             </div>
 
           </div>

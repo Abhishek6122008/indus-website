@@ -1,6 +1,6 @@
 'use client'
 
-import { ArrowRight, ExternalLink, FileText, Download } from 'lucide-react'
+import { ArrowRight, ExternalLink, FileText } from 'lucide-react'
 
 const BLOGS = [
   {
@@ -108,11 +108,12 @@ export default function KnowledgeCenterClient() {
                   <div className="mt-auto pt-1">
                     <a
                       href={blog.file}
-                      download
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="inline-flex items-center gap-1.5 bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold px-3 py-2 rounded-lg transition-colors"
                     >
-                      <Download className="w-3.5 h-3.5" />
-                      Download
+                      Read More
+                      <ArrowRight className="w-3.5 h-3.5" />
                     </a>
                   </div>
                 </div>

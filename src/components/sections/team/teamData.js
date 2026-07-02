@@ -61,6 +61,13 @@ export const teamMembers = [
     group: 'Core Team',
   },
   {
+    name: 'Anushka Nautiyal',
+    role: 'Head Talent Acquisition / Trainings',
+    image: '/images/businesses/enterprise/team/anushka.jpeg',
+    group: 'Core Team',
+  },
+  // Enterprise Team — Tech row
+  {
     name: 'Abhishek Chaudhary',
     role: 'Team Lead - Tech',
     image: '/images/businesses/enterprise/team/abhishek.png',
@@ -79,21 +86,41 @@ export const teamMembers = [
     group: 'Enterprise Team',
   },
   {
+    name: 'Pushti Verma',
+    role: 'Full Stack Web Dev',
+    image: '/images/businesses/enterprise/team/pushti.jpeg',
+    group: 'Enterprise Team',
+  },
+  // Enterprise Team — Legal row
+  {
+    name: 'Aashi Choudhary',
+    role: 'Team Lead - Enterprise Solutions',
+    image: '/images/businesses/enterprise/team/aashi.jpeg',
+    group: 'Enterprise Team',
+  },
+  {
+    name: 'Diksha Attri',
+    role: 'Legal & Compliance Executive',
+    image: '/images/businesses/enterprise/team/diksha.jpeg',
+    group: 'Enterprise Team',
+  },
+  {
+    name: 'Jhanak',
+    role: 'Team Lead - Legal Operations',
+    image: '/images/businesses/enterprise/team/jhanak.png',
+    group: 'Enterprise Team',
+  },
+  {
     name: 'Ishu Dagar',
     role: 'Team Lead - Digital Marketing',
     image: '/images/businesses/enterprise/team/ishu.png',
     group: 'Enterprise Team',
   },
+  // Enterprise Team — HR row
   {
     name: 'Adarsh Kumar Singh',
     role: 'Team Lead - HR',
     image: '/images/businesses/enterprise/team/adarsh.jpeg',
-    group: 'Enterprise Team',
-  },
-  {
-    name: 'Pushti',
-    role: 'Full Stack Web Dev',
-    image: '/images/businesses/enterprise/team/pushti.jpeg',
     group: 'Enterprise Team',
   },
 ]
