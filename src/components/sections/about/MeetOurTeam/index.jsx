@@ -65,7 +65,7 @@ const corporateTeam = [
     role: 'Head of Advisory Board, LSCM',
     image: '/images/team/nihar-parida.jpeg',
     group: 'Core Team',
-  }
+    }
 
 ]
 
