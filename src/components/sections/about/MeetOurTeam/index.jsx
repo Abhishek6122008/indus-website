@@ -65,13 +65,7 @@ const corporateTeam = [
     role: 'Head of Advisory Board, LSCM',
     image: '/images/team/nihar-parida.jpeg',
     group: 'Core Team',
-  },
-  {
-      name: 'Anushka Nautiyal',
-      role: 'Head Talent Acquisition / Trainings',
-      image: '/images/businesses/enterprise/team/anushka.jpeg',
-      group: 'Core Team',
-  }
+    }
 
 ]
 
