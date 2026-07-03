@@ -57,7 +57,7 @@ const corporateTeam = [
   {
     name: 'Dr. Archana Pandey',
     role: 'Director - L&D',
-    image: '/images/team/archana-pandey-.jpeg',
+    image: '/images/team/archana-pandey.jpeg',
     group: 'Core Team',
   },
   {
@@ -65,7 +65,14 @@ const corporateTeam = [
     role: 'Head of Advisory Board, LSCM',
     image: '/images/team/nihar-parida.jpeg',
     group: 'Core Team',
+  },
+  {
+      name: 'Anushka Nautiyal',
+      role: 'Head Talent Acquisition / Trainings',
+      image: '/images/businesses/enterprise/team/anushka.jpeg',
+      group: 'Core Team',
   }
+
 ]
 
 export function MeetOurTeam() {
