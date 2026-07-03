@@ -129,24 +129,40 @@ export default function KnowledgeCenterClient() {
           <h2 className="text-2xl md:text-3xl font-bold font-heading text-slate-900 text-center mb-10">
             News &amp; Updates
           </h2>
-          <div className="max-w-3xl mx-auto space-y-4">
-            {NEWS.map((item) => (
-              <a
-                key={item.title}
-                href={item.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6 bg-white border border-slate-200 rounded-xl px-6 py-5 hover:border-blue-200 hover:shadow-sm transition-all"
-              >
-                <span className="text-sm font-bold text-blue-600 shrink-0">{item.date}</span>
-                <span className="text-sm font-semibold text-slate-900">{item.title}</span>
-                <span className="text-sm text-slate-500 flex-1">{item.desc}</span>
-                <span className="inline-flex items-center gap-1.5 text-sm font-bold text-blue-600 shrink-0 group-hover:gap-2.5 transition-all">
-                  Read News Here <ArrowRight className="w-4 h-4" />
-                </span>
-              </a>
-            ))}
-          </div>
+         <div className="max-w-5xl mx-auto flex flex-wrap justify-center items-center gap-4">
+
+  <a
+    href="https://YOUR-LOGISTICS-LINK"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="px-8 py-4 bg-white border border-slate-300 rounded-lg font-semibold text-slate-800 hover:bg-blue-600 hover:text-white transition"
+  >
+    Logistics News
+  </a>
+
+  <span className="text-slate-400 text-2xl">•</span>
+
+  <a
+    href="https://YOUR-EXPORT-LINK"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="px-8 py-4 bg-white border border-slate-300 rounded-lg font-semibold text-slate-800 hover:bg-blue-600 hover:text-white transition"
+  >
+    Export News
+  </a>
+
+  <span className="text-slate-400 text-2xl">•</span>
+
+  <a
+    href="https://YOUR-IMPORT-LINK"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="px-8 py-4 bg-white border border-slate-300 rounded-lg font-semibold text-slate-800 hover:bg-blue-600 hover:text-white transition"
+  >
+    Import News
+  </a>
+
+</div>
         </div>
       </section>
 
