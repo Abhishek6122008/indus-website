@@ -129,7 +129,7 @@ export default function KnowledgeCenterClient() {
           <h2 className="text-2xl md:text-3xl font-bold font-heading text-slate-900 text-center mb-10">
             News &amp; Updates
           </h2>
-         <div className="max-w-5xl mx-auto flex flex-wrap justify-center items-center gap-4">
+           <div className="max-w-5xl mx-auto flex flex-wrap justify-center items-center gap-4">
 
   <a
     href="https://YOUR-LOGISTICS-LINK"
@@ -186,6 +186,18 @@ export default function KnowledgeCenterClient() {
                     </li>
                   ))}
                 </ul>
+                <a
+                 href={
+                   group.heading === "Airlines Terms"
+                      ? "https://www.iata.org/en/publications/newsletters/iata-knowledge-hub/air-cargo-tariffs-and-rules-what-you-need-to-know/"
+                      : "https://www.maersk.com/support/glossaries/shipping-terms"
+                 }
+                 target="_blank"
+                 rel="noopener noreferrer"
+                 className="inline-block mt-6 px-5 py-2.5 bg-red-600 text-white font-semibold rounded-lg hover:bg-red-700 transition-colors duration-300"
+                >
+                  Know More
+                </a>
               </div>
             ))}
           </div>
