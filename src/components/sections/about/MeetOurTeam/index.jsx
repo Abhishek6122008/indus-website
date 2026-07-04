@@ -65,13 +65,13 @@ const corporateTeam = [
     role: 'Head of Advisory Board, LSCM',
     image: '/images/team/nihar-parida.jpeg',
     group: 'Core Team',
-    }
-    {
+  },
+  {
     name: 'Pawan kumar Sharma',
     role: 'SBU Head- EXIM & Customs',
     image: '/images/team/pawan-kumar-sharma',
     group: 'Core Team',
-    }
+  }
 
 ]
 
