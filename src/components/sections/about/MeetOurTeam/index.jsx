@@ -18,7 +18,7 @@ const corporateTeam = [
   },
   {
     name: 'Samir Joshi',
-    role: 'Group CTO - Indus Group',
+    role: 'Group CTO ',
     image: '/images/team/samir-joshi.jpeg'
   },
   {
@@ -63,7 +63,7 @@ const corporateTeam = [
   {
     name: 'Pawan kumar Sharma',
     role: 'SBU Head- EXIM & Customs',
-    image: '/images/team/pawan-new.jpeg',
+    image: '/images/team/pawan-new-image.jpeg',
     group: 'Core Team',
   }
 

@@ -26,7 +26,7 @@ export const teamMembers = [
   // Enterprise Team — Legal row
   {
     name: 'Aashi Choudhary',
-    role: 'Team Lead - Enterprise Solutions',
+    role: 'Lead - Enterprise Solutions',
     image: '/images/businesses/enterprise/team/aashi.jpeg',
     group: 'Enterprise Team',
   },
@@ -37,9 +37,9 @@ export const teamMembers = [
     group: 'Enterprise Team',
   },
   {
-    name: 'Jhanak Yadav',
-    role: 'Team Lead - Legal Operations',
-    image: '/images/businesses/enterprise/team/jhanak.png',
+    name: 'Mohit Dhoundiyal',
+    role: 'Team Lead - DevOps',
+    image: '/images/businesses/enterprise/team/mohit-image.jpeg',
     group: 'Enterprise Team',
   },
   {
@@ -58,13 +58,13 @@ export const teamMembers = [
   {
     name: 'Rohan A Sathe',
     role: 'Team Lead - Logistics & SCM',
-    image: '/images/businesses/enterprise/team/Rohan-A-Sathe.jpeg',
+    image: '/images/businesses/enterprise/team/rohan-new-image.jpeg',
     group: 'Enterprise Team',
   },
   {
     name: 'Aryan Vats',
     role: 'Team Lead - EXIM',
-    image: '/images/businesses/enterprise/team/aryan-vats.jpeg',
+    image: '/images/businesses/enterprise/team/aryan-new-image.jpeg',
     group: 'Enterprise Team',
   },
   {
