@@ -62,7 +62,7 @@ const featureRows = [
     heading: 'Integrated Logistics Solutions',
     body:
       'The digital era has reshaped industries worldwide, and logistics is no exception. Now, logistics is embracing this digital revolution, reshaping its approach and future. The Indus Group drives this change with advanced, integrated logistics solutions for manufacturers and traders. Leveraging technology, we deliver smarter, faster, and more efficient supply chain services. From domestic shipping to global freight and warehousing, we provide end-to-end logistics support. Trust us for seamless, reliable solutions that keep your business moving forward.',
-    image: '/images/businesses/logistics/integrated-logi-solution.jpeg',
+    image: '/images/businesses/logistics/integrated-logistics-image.jpeg',
     imageRight: true,
   },
   {
