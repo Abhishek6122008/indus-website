@@ -14,11 +14,12 @@ export default function AboutPage() {
   return (
     <>
       <PageHero
-        label="The Indus Group"
-        title="Who We Are"
-        subtitle="A multi-vertical enterprise built on reliability, innovation, and integrity — empowering businesses across India."
-        breadcrumbs={[{ label: 'Who We Are' }]}
-      />
+  label="The Indus Group"
+  title="Who We Are"
+  subtitle="A multi-vertical enterprise built on reliability, innovation, and integrity — empowering businesses across India."
+  backgroundImage="/images/who-we-are-hero-image.jpeg"
+  breadcrumbs={[{ label: "Who We Are" }]}
+/>
       <CompanyStory />
       <MissionVision />
       <MeetOurTeam />
