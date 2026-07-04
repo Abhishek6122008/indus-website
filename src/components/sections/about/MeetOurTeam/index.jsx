@@ -18,7 +18,7 @@ const corporateTeam = [
   },
   {
     name: 'Samir Joshi',
-    role: 'CTO - Indus Group',
+    role: 'Group CTO - Indus Group',
     image: '/images/team/samir-joshi.jpeg'
   },
   {
