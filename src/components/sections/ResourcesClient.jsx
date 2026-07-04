@@ -25,6 +25,13 @@ const QUICK_LINKS = [
     bg: 'from-indigo-700 to-indigo-950',
     href: 'https://2go.iccwbo.org/incoterms-2020-practical-free-wallchart-fr.html',
   },
+  {
+  title: 'Import Duty Calculator',
+  desc: 'Calculate import duties and taxes for international shipments.',
+  icon: DollarSign, // or Calculator if imported
+  bg: 'from-green-700 to-green-900',
+  href: 'https://www.simplyduty.com/import-calculator/',
+},
 ]
 
 const GUIDES = [

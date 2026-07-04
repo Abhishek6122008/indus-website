@@ -28,7 +28,7 @@ const corporateTeam = [
   },
   {
     name: 'Adv. Kailash Chand',
-    role: 'Former Assistant Commissioner of Customs & GST (retd.)',
+    role: 'Assistant Commissioner of Customs & GST (Retd.)',
     image: '/images/about/team/kailash-chand.jpeg'
   },
   {
@@ -50,8 +50,8 @@ const corporateTeam = [
     objectPosition: 'object-center'
   },
   {
-    name: 'Dr.Vijay Prakash Sharma',
-    role: 'Group Advisor- Business Strategy',
+    name: 'Dr.Vijay P. Sharma',
+    role: 'Chair, Board of Advisors',
     image: '/images/team/vijay-prakah-sharma.jpeg'
   },
   {

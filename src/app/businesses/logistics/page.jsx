@@ -87,7 +87,7 @@ export default function LogisticsPage() {
       <ServiceHero
         title="Integrated Logistics Solutions"
         subtitle="Your global logistics partner for seamless supply chains. Streamlining operations with efficiency, reliability, and global reach."
-        backgroundImage="/images/businesses/logistics/logistics-hero.png"
+        backgroundImage="/images/businesses/logistics/logistics-hero-image.jpeg"
       />
 
       {/* Why Choose Us — centered intro, no image */}
