@@ -17,8 +17,8 @@ const corporateTeam = [
     image: '/images/about/team/debdutta-ghosh.jpeg'
   },
   {
-    name: 'Shruti Singh',
-    role: 'Board Advisor - LSCM',
+    name: 'Samir Joshi',
+    role: 'CTO - Indus Group',
     image: '/images/team/shruti-singh.jpeg'
   },
   {
@@ -61,15 +61,9 @@ const corporateTeam = [
     group: 'Core Team',
   },
   {
-    name: 'Nihar Parida',
-    role: 'Head of Advisory Board, LSCM',
-    image: '/images/team/nihar-parida.jpeg',
-    group: 'Core Team',
-  },
-  {
     name: 'Pawan kumar Sharma',
     role: 'SBU Head- EXIM & Customs',
-    image: '/images/team/pawan-kumar-sharma.jpeg',
+    image: '/images/team/pawan-new.jpeg',
     group: 'Core Team',
   }
 

@@ -14,7 +14,7 @@ export const teamMembers = [
   {
     name: 'Ujjwal Rawat',
     role: 'Team Lead - Full Stack',
-    image: '/images/businesses/enterprise/team/ujjwal.png',
+    image: '/images/businesses/enterprise/team/ujjwal.jpeg',
     group: 'Enterprise Team',
   },
   {
@@ -55,4 +55,23 @@ export const teamMembers = [
     image: '/images/businesses/enterprise/team/adarsh.jpeg',
     group: 'Enterprise Team',
   },
+  {
+    name: 'Rohan A Sathe',
+    role: 'Team Lead - Logistics & SCM',
+    image: '/images/businesses/enterprise/team/Rohan-A-Sathe.jpeg',
+    group: 'Enterprise Team',
+  },
+  {
+    name: 'Aryan Vats',
+    role: 'Team Lead - EXIM',
+    image: '/images/businesses/enterprise/team/aryan-vats.jpeg',
+    group: 'Enterprise Team',
+  },
+  {
+    name: 'Gunnar',
+    role: 'Team Lead - Growth',
+    image: '/images/businesses/enterprise/team/munnar.jpeg',
+    group: 'Enterprise Team',
+  },
+  
 ]
