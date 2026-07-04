@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { useState, useRef, useEffect } from 'react'
-import { Phone, Mail, Instagram, Linkedin, Youtube, Twitter, ChevronDown, X, Send, Sparkles, Loader2, ArrowLeft, Briefcase, Wrench, Building2, User, FileText, AlertCircle, CheckCircle2, Globe } from 'lucide-react'
+import { Phone, Mail, Instagram, Linkedin, Youtube, Twitter, ChevronDown, X, Facebook, Send, Sparkles, Loader2, ArrowLeft, Briefcase, Wrench, Building2, User, FileText, AlertCircle, CheckCircle2, Globe } from 'lucide-react'
 
 
 const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxDsrUW0biQ8S3Yhw0acSQuxLnCp041StvnBxCdjWasOaBu-k8z_IDflYjxMm1wKYUq/exec"
@@ -466,6 +466,15 @@ function SocialMenu() {
           <Twitter className="w-5 h-5 text-[#000000]" />
           X (Twitter)
         </a>
+        <a
+  href="https://www.facebook.com/theindusgroup"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="flex items-center gap-3 px-4 py-3 text-gray-700 hover:bg-gray-100"
+>
+  <Facebook className="w-5 h-5 text-[#1877F2]" />
+  Facebook
+</a>
       </div>
     </div>
   )
@@ -1683,6 +1692,11 @@ export function Footer() {
                 <li>
                   <a href="https://twitter.com/theindusgroup" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-blue-200/70 hover:text-white transition-colors">
                     <X className="w-4 h-4 text-white" /> Twitter / X
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.facebook.com/theindusgroup" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-blue-200/70 hover:text-white transition-colors">
+                    <Facebook className="w-4 h-4 text-[#1877F2]" />Facebook
                   </a>
                 </li>
               </ul>
