@@ -19,7 +19,7 @@ const corporateTeam = [
   {
     name: 'Shruti Singh',
     role: 'Board Advisor - LSCM',
-    image: '/images/about/team/shruti-singh.jpeg'
+    image: '/images/team/shruti-singh.jpeg'
   },
   {
     name: 'Adv. Dr. K.R. Madhar (I.R.S. Retd.)',
@@ -40,19 +40,19 @@ const corporateTeam = [
   {
     name: 'Ananya Singh',
     role: 'Strategist, Legal',
-    image: '/images/about/team/ananya-singh.jpeg',
+    image: '/images/team/ananya-singh.jpeg',
     objectPosition: 'object-[center_20%]'
   },
   {
     name: 'Dr. Tanu Manocha',
     role: 'Strategic Board Advisor, Operations',
-    image: '/images/about/team/tannu.jpeg',
+    image: '/images/team/tanu-manocha.jpeg',
     objectPosition: 'object-center'
   },
   {
     name: 'Dr.Vijay Prakash Sharma',
     role: 'Group Advisor- Business Strategy',
-    image: '/images/about/team/vijay-sharma.jpeg'
+    image: '/images/team/vijay-prakah-sharma.jpeg'
   },
   {
     name: 'Dr. Archana Pandey',
@@ -65,7 +65,13 @@ const corporateTeam = [
     role: 'Head of Advisory Board, LSCM',
     image: '/images/team/nihar-parida.jpeg',
     group: 'Core Team',
-    }
+  },
+  {
+    name: 'Pawan kumar Sharma',
+    role: 'SBU Head- EXIM & Customs',
+    image: '/images/team/pawan-kumar-sharma.jpeg',
+    group: 'Core Team',
+  }
 
 ]
 
