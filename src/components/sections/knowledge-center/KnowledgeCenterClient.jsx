@@ -143,7 +143,7 @@ export default function KnowledgeCenterClient() {
   <span className="text-slate-400 text-2xl">•</span>
 
   <a
-    href="https://trade.einnews.com/"
+    href="https://indiantradeportal.in/news.jsp?lang=0"
     target="_blank"
     rel="noopener noreferrer"
     className="px-8 py-4 bg-white border border-slate-300 rounded-lg font-semibold text-slate-800 hover:bg-blue-600 hover:text-white transition"
