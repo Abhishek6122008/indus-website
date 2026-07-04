@@ -11,7 +11,7 @@ const businesses = [
       'We provide comprehensive, end-to-end logistics and supply chain solutions for domestic and international trade. From freight management to last-mile delivery, our expertise ensures your goods move efficiently, reliably, and on time.',
     exploreLabel: 'Explore Logistics',
     href: '/businesses/logistics',
-    image: '/images/businesses/logistics/integrated-logistics.jpeg',
+    image: '/images/businesses/logistics/integrated-logistics-image.jpeg',
     flip: false,
   },
   {
