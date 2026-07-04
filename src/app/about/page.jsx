@@ -17,7 +17,7 @@ export default function AboutPage() {
   label="The Indus Group"
   title="Who We Are"
   subtitle="A multi-vertical enterprise built on reliability, innovation, and integrity — empowering businesses across India."
-  backgroundImage="/images/who-we-are-hero-image.jpeg"
+  backgroundImage="/images/whoweare-image.jpeg"
   breadcrumbs={[{ label: "Who We Are" }]}
 />
       <CompanyStory />
