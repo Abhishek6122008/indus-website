@@ -19,7 +19,7 @@ const corporateTeam = [
   {
     name: 'Shruti Singh',
     role: 'Board Advisor - LSCM',
-    image: '/images/about/team/shruti-singh.jpeg'
+    image: '/images/team/shruti-singh.jpeg'
   },
   {
     name: 'Adv. Dr. K.R. Madhar (I.R.S. Retd.)',
@@ -69,7 +69,7 @@ const corporateTeam = [
   {
     name: 'Pawan kumar Sharma',
     role: 'SBU Head- EXIM & Customs',
-    image: '/image/team/pawan-kumar-sharma',
+    image: '/image/team/pawan-kumar-sharma.jpeg',
     group: 'Core Team',
   }
 
