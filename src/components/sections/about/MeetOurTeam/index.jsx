@@ -69,7 +69,7 @@ const corporateTeam = [
   {
     name: 'Pawan kumar Sharma',
     role: 'SBU Head- EXIM & Customs',
-    image: '/image/team/pawan-kumar-sharma.jpeg',
+    image: '/images/team/pawan-kumar-sharma.jpeg',
     group: 'Core Team',
   }
 
