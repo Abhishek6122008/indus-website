@@ -19,7 +19,7 @@ const corporateTeam = [
   {
     name: 'Samir Joshi',
     role: 'CTO - Indus Group',
-    image: '/images/team/shruti-singh.jpeg'
+    image: '/images/team/samir-joshi.jpeg'
   },
   {
     name: 'Adv. Dr. K.R. Madhar (I.R.S. Retd.)',

@@ -132,7 +132,7 @@ export default function KnowledgeCenterClient() {
            <div className="max-w-5xl mx-auto flex flex-wrap justify-center items-center gap-4">
 
   <a
-    href="https://YOUR-LOGISTICS-LINK"
+    href="https://dst.news/"
     target="_blank"
     rel="noopener noreferrer"
     className="px-8 py-4 bg-white border border-slate-300 rounded-lg font-semibold text-slate-800 hover:bg-blue-600 hover:text-white transition"
@@ -143,18 +143,18 @@ export default function KnowledgeCenterClient() {
   <span className="text-slate-400 text-2xl">•</span>
 
   <a
-    href="https://YOUR-EXPORT-LINK"
+    href="https://trade.einnews.com/"
     target="_blank"
     rel="noopener noreferrer"
     className="px-8 py-4 bg-white border border-slate-300 rounded-lg font-semibold text-slate-800 hover:bg-blue-600 hover:text-white transition"
   >
-    Export News
+    Trade News
   </a>
 
   <span className="text-slate-400 text-2xl">•</span>
 
   <a
-    href="https://YOUR-IMPORT-LINK"
+    href="https://eximin.net/eximnews"
     target="_blank"
     rel="noopener noreferrer"
     className="px-8 py-4 bg-white border border-slate-300 rounded-lg font-semibold text-slate-800 hover:bg-blue-600 hover:text-white transition"
