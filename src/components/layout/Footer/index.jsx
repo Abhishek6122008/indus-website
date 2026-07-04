@@ -467,14 +467,14 @@ function SocialMenu() {
           X (Twitter)
         </a>
         <a
-          href="https://www.facebook.com/theindusgroup"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center gap-2 hover:text-white transition-colors"
-        >
-        <Facebook className="w-5 h-5 text-[#1877F2]" />
-        Facebook
-        </a>
+  href="https://www.facebook.com/theindusgroup"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="flex items-center gap-3 px-4 py-3 text-gray-700 hover:bg-gray-100"
+>
+  <Facebook className="w-5 h-5 text-[#1877F2]" />
+  Facebook
+</a>
       </div>
     </div>
   )
