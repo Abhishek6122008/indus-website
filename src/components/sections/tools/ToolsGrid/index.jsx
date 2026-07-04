@@ -20,6 +20,13 @@ const QUICK_ACCESS_TOOLS = [
     icon: Leaf,
     href: 'https://www.ecotransit.org/en/',
   },
+  {
+  title: 'Import Duty Calculator',
+  desc: 'Calculate import duties and taxes for international shipments.',
+  icon: DollarSign,
+  bg: 'from-green-700 to-green-900',
+  href: 'https://www.simplyduty.com/import-calculator/',
+},
 ]
 
 export function ToolsGrid() {
