@@ -45,7 +45,7 @@ const corporateTeam = [
   },
   {
     name: 'Dr. Tanu Manocha',
-    role: 'Strategic Board Advisor, Operations',
+    role: 'Board Advisor, Operations',
     image: '/images/team/tanu-manocha.jpeg',
     objectPosition: 'object-center'
   },
