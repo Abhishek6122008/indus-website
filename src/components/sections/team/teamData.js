@@ -33,7 +33,7 @@ export const teamMembers = [
   {
     name: 'Diksha Attri',
     role: 'Legal & Compliance Executive',
-    image: '/images/businesses/enterprise/team/diksha.jpeg',
+    image: '/images/businesses/enterprise/team/diksha-new.jpeg',
     group: 'Enterprise Team',
   },
   {
@@ -45,14 +45,14 @@ export const teamMembers = [
   {
     name: 'Ishu Dagar',
     role: 'Team Lead - Digital Marketing',
-    image: '/images/businesses/enterprise/team/ishu.png',
+    image: '/images/businesses/enterprise/team/ishu-new.png',
     group: 'Enterprise Team',
   },
   // Enterprise Team — HR row
   {
     name: 'Adarsh Kumar Singh',
     role: 'Team Lead - HR',
-    image: '/images/businesses/enterprise/team/adarsh.jpeg',
+    image: '/images/businesses/enterprise/team/adarsh-new.jpeg',
     group: 'Enterprise Team',
   },
   {
