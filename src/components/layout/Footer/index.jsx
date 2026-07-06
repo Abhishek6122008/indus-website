@@ -3,11 +3,14 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { useState, useRef, useEffect } from 'react'
-<<<<<<< Updated upstream
+
 import { Phone, Mail, Instagram, Linkedin, Youtube, Twitter, ChevronDown, X, Send, Sparkles, Loader2, ArrowLeft, Briefcase, Wrench, Building2, User, FileText, AlertCircle, CheckCircle2, Globe } from 'lucide-react'
-=======
+
 import { Phone, Mail, Instagram, Linkedin, Youtube, Twitter, ChevronDown, X, Send, Sparkles, Loader2, ArrowLeft, Briefcase, Wrench, Building2, User, FileText, AlertCircle, CheckCircle2, Globe, RotateCcw } from 'lucide-react'
->>>>>>> Stashed changes
+
+
+import { Phone, Mail, Instagram, Linkedin, Youtube, Twitter, ChevronDown, X, Facebook, Send, Sparkles, Loader2, ArrowLeft, Briefcase, Wrench, Building2, User, FileText, AlertCircle, CheckCircle2, Globe } from 'lucide-react'
+
 
 
 const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxDsrUW0biQ8S3Yhw0acSQuxLnCp041StvnBxCdjWasOaBu-k8z_IDflYjxMm1wKYUq/exec"
@@ -478,6 +481,15 @@ function SocialMenu() {
           <Twitter className="w-5 h-5 text-[#000000]" />
           X (Twitter)
         </a>
+        <a
+  href="https://www.facebook.com/theindusgroup"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="flex items-center gap-3 px-4 py-3 text-gray-700 hover:bg-gray-100"
+>
+  <Facebook className="w-5 h-5 text-[#1877F2]" />
+  Facebook
+</a>
       </div>
     </div>
   )
@@ -1686,7 +1698,7 @@ export function Footer() {
             <div className="lg:col-span-2">
               <div className="mb-4">
                 <h3 className="text-white font-bold text-3xl font-heading">
-                  The Indus Group of Co.
+                  The Indus Group Co.
                 </h3>
               </div>
               <p className="text-sm leading-relaxed mb-6 max-w-sm text-blue-200/80">
@@ -1700,6 +1712,10 @@ export function Footer() {
                 <a href="mailto:info@theindusgroup.com" className="flex items-center gap-2.5 text-sm hover:text-white transition-colors">
                   <Mail className="w-4 h-4 text-blue-400 shrink-0" />
                   info@theindusgroup.com
+                </a>
+                <a href="mailto:theindusgroup@outlook.com" className="flex items-center gap-2.5 text-sm hover:text-white transition-colors">
+                  <Mail className="w-4 h-4 text-blue-400 shrink-0" />
+                  theindusgroup@outlook.com
                 </a>
               </div>
             </div>
@@ -1761,6 +1777,11 @@ export function Footer() {
                     <X className="w-4 h-4 text-white" /> Twitter / X
                   </a>
                 </li>
+                <li>
+                  <a href="https://www.facebook.com/theindusgroup" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-blue-200/70 hover:text-white transition-colors">
+                    <Facebook className="w-4 h-4 text-[#1877F2]" />Facebook
+                  </a>
+                </li>
               </ul>
             </div>
 
@@ -1793,6 +1814,7 @@ export function Footer() {
               <Link href="/careers" className="hover:text-white transition-colors">Careers</Link>
               <Link href="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
               <Link href="/terms" className="hover:text-white transition-colors">Terms & Conditions</Link>
+              <Link href="/fraud-disclaimer" className="hover:text-white transition-colors">Fraud Disclaimer</Link>
             </div>
 
           </div>

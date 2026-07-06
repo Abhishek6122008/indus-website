@@ -48,7 +48,7 @@ export function WhoWeAreSection() {
           <div className="relative">
             <div className="aspect-[4/3] rounded-2xl overflow-hidden border border-blue-100 shadow-sm relative">
               <Image
-                src="/images/about/who-we-are-hero.png"
+                src="/images/about/who-we-are-hero-image.jpeg"
                 alt="The Indus Group logistics and supply chain operations"
                 fill
                 className="object-cover"
@@ -58,9 +58,9 @@ export function WhoWeAreSection() {
             </div>
 
             <div className="absolute -bottom-5 -left-5 bg-blue-600 rounded-xl p-5 shadow-xl">
-              <div className="text-3xl font-bold font-heading text-white">14+</div>
+              <div className="text-3xl font-bold font-heading text-white">200+</div>
               <div className="text-xs font-semibold text-blue-100 mt-0.5 uppercase tracking-wide">
-                Years Excellence
+                Years of Overall Experience
               </div>
             </div>
           </div>

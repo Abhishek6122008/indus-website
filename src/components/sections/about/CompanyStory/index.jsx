@@ -11,7 +11,7 @@ export function CompanyStory() {
           <div className="relative">
             <div className="aspect-[4/3] rounded-2xl overflow-hidden border border-blue-100 shadow-sm relative">
               <Image
-                src="/images/about/company-story.png"
+                src="/images/about/indus-image.jpeg"
                 alt="The Indus Group team collaborating"
                 fill
                 className="object-cover"
@@ -20,7 +20,7 @@ export function CompanyStory() {
             </div>
 
             <div className="absolute -top-5 -right-5 bg-blue-600 rounded-xl p-5 shadow-xl">
-              <div className="text-3xl font-bold font-heading text-white">2010</div>
+              <div className="text-3xl font-bold font-heading text-white">2011</div>
               <div className="text-xs font-semibold text-blue-100 mt-0.5 uppercase tracking-wide">
                 Founded
               </div>

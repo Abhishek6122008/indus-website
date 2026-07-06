@@ -5,7 +5,7 @@ import { ServiceFeatures } from '@/components/sections/businesses/ServiceFeature
 import { ServiceCTA } from '@/components/sections/businesses/ServiceCTA'
 
 export const metadata = {
-  title: 'Logistics & Supply Chain | The Indus Group of Co.',
+  title: 'Logistics & Supply Chain | The Indus Group Co.',
   description:
     'End-to-end logistics and supply chain management for domestic and international trade — freight, last-mile delivery, warehousing, and more.',
 }
@@ -62,14 +62,14 @@ const featureRows = [
     heading: 'Integrated Logistics Solutions',
     body:
       'The digital era has reshaped industries worldwide, and logistics is no exception. Now, logistics is embracing this digital revolution, reshaping its approach and future. The Indus Group drives this change with advanced, integrated logistics solutions for manufacturers and traders. Leveraging technology, we deliver smarter, faster, and more efficient supply chain services. From domestic shipping to global freight and warehousing, we provide end-to-end logistics support. Trust us for seamless, reliable solutions that keep your business moving forward.',
-    image: '/images/businesses/logistics/integrated-logistics.jpeg',
+    image: '/images/businesses/logistics/integrated-logistics-image.jpeg',
     imageRight: true,
   },
   {
     heading: 'Industries Served',
     body:
       'We deliver specialized logistics solutions across diverse industries, from retail to pharmaceuticals. Our tailored services and extensive expertise ensure your supply chain runs seamlessly. Beyond transport, we provide comprehensive warehousing and end-to-end logistics. Our dedicated team is committed to exceeding your expectations in both domestic and international markets.',
-    image: '/images/businesses/logistics/industries-served.jpeg',
+    image: '/images/businesses/logistics/industry-served.jpeg',
     imageRight: false,
   },
   {
@@ -87,7 +87,7 @@ export default function LogisticsPage() {
       <ServiceHero
         title="Integrated Logistics Solutions"
         subtitle="Your global logistics partner for seamless supply chains. Streamlining operations with efficiency, reliability, and global reach."
-        backgroundImage="/images/businesses/logistics/logistics-hero.png"
+        backgroundImage="/images/businesses/logistics/logistics-hero-image.jpeg"
       />
 
       {/* Why Choose Us — centered intro, no image */}

@@ -25,6 +25,13 @@ const QUICK_LINKS = [
     bg: 'from-indigo-700 to-indigo-950',
     href: 'https://2go.iccwbo.org/incoterms-2020-practical-free-wallchart-fr.html',
   },
+  {
+  title: 'Import Duty Calculator',
+  desc: 'Calculate import duties and taxes for international shipments.',
+  icon: DollarSign, // or Calculator if imported
+  bg: 'from-green-700 to-green-900',
+  href: 'https://www.simplyduty.com/import-calculator/',
+},
 ]
 
 const GUIDES = [
@@ -76,12 +83,12 @@ const GUIDES = [
     image: '/images/resources/company-profile.png',
     category: 'PDF',
     file: '/files/indus-corporate-deck.pdf',
-    summary: 'An overview of The Indus Group of Co. covering the company\'s history, organizational structure, mission and vision, and the four business verticals: Logistics, Enterprise Solutions, Skill Development, and Real Estate. Includes the full company presentation deck.',
+    summary: 'An overview of The Indus Group Co. covering the company\'s history, organizational structure, mission and vision, and the four business verticals: Logistics, Enterprise Solutions, Skill Development, and Real Estate. Includes the full company presentation deck.',
     highlights: [
-      '14+ years of industry experience',
+      '200+ years of overall experience',
       'Operations across Logistics, Enterprise Solutions, Skill Development, and Real Estate',
       'Mission: Delivering industry-leading solutions with reliability, innovation, and integrity',
-      '1,000+ clients served across sectors',
+      '5,000+ trusted clients across sectors',
       'MSME-focused approach to business empowerment',
     ],
   },
@@ -117,7 +124,7 @@ const GUIDES = [
     summary: 'The official Indus Group client brochure designed for partnership introductions, business meetings, and tender submissions. Covers all five verticals with key service highlights and contact information.',
     highlights: [
       'Professional overview of all five business verticals',
-      'Key statistics: 14+ years, 1,000+ clients, 100+ team members',
+      'Key statistics: 200+ years of overall experience, 5,000+ trusted clients, 1,000+ team members',
       'Service capabilities and USPs per vertical',
       'Contact details and social channels',
     ],

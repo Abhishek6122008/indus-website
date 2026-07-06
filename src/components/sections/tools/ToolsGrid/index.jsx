@@ -1,4 +1,4 @@
-import { FileSearch, Boxes, Leaf, ExternalLink } from 'lucide-react'
+import { FileSearch, Boxes, Leaf, DollarSign, ExternalLink } from 'lucide-react'
 
 // External quick-access tools — open in a new tab.
 const QUICK_ACCESS_TOOLS = [
@@ -20,18 +20,25 @@ const QUICK_ACCESS_TOOLS = [
     icon: Leaf,
     href: 'https://www.ecotransit.org/en/',
   },
+  {
+  title: 'Import Duty Calculator',
+  desc: 'Calculate import duties and taxes for international shipments.',
+  icon: DollarSign,
+  bg: 'from-green-700 to-green-900',
+  href: 'https://www.simplyduty.com/import-calculator/',
+},
 ]
 
 export function ToolsGrid() {
   return (
     <section className="section-padding bg-slate-50">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Quick Access (external) tools */}
         <div>
           <h2 className="text-2xl font-bold font-heading text-slate-900 text-center mb-8">
             Quick Access Tools
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {QUICK_ACCESS_TOOLS.map((tool) => {
               const Icon = tool.icon
               return (

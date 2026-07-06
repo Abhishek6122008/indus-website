@@ -11,7 +11,7 @@ const businesses = [
       'We provide comprehensive, end-to-end logistics and supply chain solutions for domestic and international trade. From freight management to last-mile delivery, our expertise ensures your goods move efficiently, reliably, and on time.',
     exploreLabel: 'Explore Logistics',
     href: '/businesses/logistics',
-    image: '/images/businesses/logistics/integrated-logistics.jpeg',
+    image: '/images/businesses/logistics/integrated-logistics-image.jpeg',
     flip: false,
   },
   {
@@ -52,7 +52,7 @@ export function BusinessesGrid() {
       <div className="bg-blue-50 section-padding pb-0">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
-            label="Our Businesses"
+            label="Businesses Verticals"
             title="Four Verticals, One Vision"
             subtitle="Focused excellence across four business domains, each designed to create lasting value."
           />

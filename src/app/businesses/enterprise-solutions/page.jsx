@@ -3,7 +3,7 @@ import { EnterpriseIntro } from '@/components/sections/businesses/EnterpriseIntr
 import { ServiceFeatures } from '@/components/sections/businesses/ServiceFeatures'
 
 export const metadata = {
-  title: 'Enterprise Solutions | The Indus Group of Co.',
+  title: 'Enterprise Solutions | The Indus Group Co.',
   description: 'Comprehensive solutions from startup to scale-up, designed to fuel your success.',
 }
 
@@ -11,14 +11,6 @@ const stepsData = [
   { num: '01 Step', text: 'You reach out to us with your product idea or project and we discuss your requirements.' },
   { num: '02 Step', text: 'We analyze everything and offer customized solutions to power your product.' },
   { num: '03 Step', text: 'We get together and draft a working plan to take your startup to new heights.' }
-]
-
-const teamData = [
-  { name: 'Abhishek Chaudhary', role: 'Team Lead - Tech', image: '/images/businesses/enterprise/team/abhishek.png' },
-  { name: 'Moazzam Ahmed Siddiqui', role: 'Team Lead - AI & ML', image: '/images/businesses/enterprise/team/moazzam.png' },
-  { name: 'Ananya Singh', role: 'Team Lead-Legal', image: '/images/businesses/enterprise/team/ananya.png' },
-  { name: 'Ujjwal Rawat', role: 'Team Lead - Full Stack', image: '/images/businesses/enterprise/team/ujjwal.png' },
-  { name: 'Ayushi Upadhyay', role: 'Full Stack Developer', image: '/images/businesses/enterprise/team/ayushi.png' }
 ]
 
 const servicesTableData = [
@@ -64,7 +56,7 @@ export default function EnterpriseSolutionsPage() {
         imagePosition="object-bottom"
       />
 
-      <EnterpriseIntro steps={stepsData} team={teamData} />
+      <EnterpriseIntro steps={stepsData} />
 
       <ServiceFeatures 
         heading="Our Products and Services" 
