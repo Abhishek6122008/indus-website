@@ -9,7 +9,7 @@ const corporateTeam = [
   {
     name: 'Dr. P.K. Singh',
     role: 'Group C.E.O.',
-    image: '/images/about/team/pk-singh.jpeg'
+    image: '/images/team/piyush-sir-new.jpeg'
   },
   {
     name: 'Debdutta Ghosh',
