@@ -38,7 +38,7 @@ export const teamMembers = [
   },
   {
     name: 'Mohit Dhoundiyal',
-    role: 'Team Lead - DevOps',
+    role: 'Team Lead - Software',
     image: '/images/businesses/enterprise/team/mohit-image.jpeg',
     group: 'Enterprise Team',
   },
