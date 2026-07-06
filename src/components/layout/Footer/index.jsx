@@ -3,7 +3,11 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { useState, useRef, useEffect } from 'react'
+<<<<<<< Updated upstream
 import { Phone, Mail, Instagram, Linkedin, Youtube, Twitter, ChevronDown, X, Send, Sparkles, Loader2, ArrowLeft, Briefcase, Wrench, Building2, User, FileText, AlertCircle, CheckCircle2, Globe } from 'lucide-react'
+=======
+import { Phone, Mail, Instagram, Linkedin, Youtube, Twitter, ChevronDown, X, Send, Sparkles, Loader2, ArrowLeft, Briefcase, Wrench, Building2, User, FileText, AlertCircle, CheckCircle2, Globe, RotateCcw } from 'lucide-react'
+>>>>>>> Stashed changes
 
 
 const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxDsrUW0biQ8S3Yhw0acSQuxLnCp041StvnBxCdjWasOaBu-k8z_IDflYjxMm1wKYUq/exec"
@@ -134,6 +138,7 @@ const UI = {
     errBrief: (n) => `Please describe your requirement in at least 20 words (currently ${n}).`,
     failedSubmit: "Failed to submit. Please try again.",
     chooseLanguage: "Language",
+    resetChat: "Reset chat",
   },
   hi: {
     greeting: "नमस्ते 👋 आज मैं आपकी कैसे मदद कर सकता हूँ? नीचे दिए गए विकल्प चुनें या अपना सवाल टाइप करें।",
@@ -170,6 +175,7 @@ const UI = {
     errBrief: (n) => `कृपया कम से कम 20 शब्दों में अपनी आवश्यकता बताएं (अभी ${n})।`,
     failedSubmit: "सबमिट करने में विफल। कृपया पुनः प्रयास करें।",
     chooseLanguage: "भाषा",
+    resetChat: "चैट रीसेट करें",
   },
   ur: {
     greeting: "السلام علیکم 👋 آج میں آپ کی کس طرح مدد کر سکتا ہوں؟ نیچے دیے گئے آپشنز میں سے کوئی منتخب کریں یا اپنا سوال ٹائپ کریں۔",
@@ -206,6 +212,7 @@ const UI = {
     errBrief: (n) => `براہ کرم کم از کم 20 الفاظ میں اپنی ضرورت بیان کریں (ابھی ${n})۔`,
     failedSubmit: "جمع کرانے میں ناکامی۔ براہ کرم دوبارہ کوشش کریں۔",
     chooseLanguage: "زبان",
+    resetChat: "چیٹ ری سیٹ کریں",
   },
   ar: {
     greeting: "مرحباً 👋 كيف يمكنني مساعدتك اليوم؟ اختر أحد الخيارات أدناه أو اكتب سؤالك مباشرة.",
@@ -242,6 +249,7 @@ const UI = {
     errBrief: (n) => `يرجى وصف طلبك في 20 كلمة على الأقل (حالياً ${n}).`,
     failedSubmit: "فشل الإرسال. يرجى المحاولة مرة أخرى.",
     chooseLanguage: "اللغة",
+    resetChat: "إعادة تعيين المحادثة",
   },
   zh: {
     greeting: "您好 👋 今天我能为您提供什么帮助？请选择下方选项或直接输入您的问题。",
@@ -278,6 +286,7 @@ const UI = {
     errBrief: (n) => `请用至少20个字描述您的需求（目前${n}个字）。`,
     failedSubmit: "提交失败，请重试。",
     chooseLanguage: "语言",
+    resetChat: "重置聊天",
   },
   pt: {
     greeting: "Olá 👋 Como posso ajudá-lo hoje? Escolha uma opção abaixo ou digite sua pergunta.",
@@ -314,6 +323,7 @@ const UI = {
     errBrief: (n) => `Descreva sua necessidade em pelo menos 20 palavras (atualmente ${n}).`,
     failedSubmit: "Falha ao enviar. Tente novamente.",
     chooseLanguage: "Idioma",
+    resetChat: "Reiniciar conversa",
   },
   fr: {
     greeting: "Bonjour 👋 Comment puis-je vous aider aujourd'hui ? Choisissez une option ci-dessous ou tapez votre question.",
@@ -350,6 +360,7 @@ const UI = {
     errBrief: (n) => `Décrivez votre besoin en au moins 20 mots (actuellement ${n}).`,
     failedSubmit: "Échec de l'envoi. Veuillez réessayer.",
     chooseLanguage: "Langue",
+    resetChat: "Réinitialiser le chat",
   },
   es: {
     greeting: "¡Hola! 👋 ¿Cómo puedo ayudarte hoy? Elige una opción abajo o escribe tu pregunta.",
@@ -386,6 +397,7 @@ const UI = {
     errBrief: (n) => `Describe tu requerimiento en al menos 20 palabras (actualmente ${n}).`,
     failedSubmit: "Error al enviar. Inténtalo de nuevo.",
     chooseLanguage: "Idioma",
+    resetChat: "Reiniciar chat",
   },
 }
 
@@ -947,10 +959,24 @@ function ChatbotWidget() {
   const [showCountryList, setShowCountryList] = useState(false)
   const [formErrors, setFormErrors] = useState({})
   const [touched, setTouched] = useState({})
+  // Tracks the real available viewport height so the chat window can grow
+  // and shrink dynamically instead of relying on a fixed vh value — this
+  // also reacts correctly when the on-screen keyboard opens on mobile.
+  const [viewportHeight, setViewportHeight] = useState(() =>
+    typeof window !== 'undefined' ? window.innerHeight : 800
+  )
   const bottomRef = useRef(null)
   const inputRef = useRef(null)
 
   const isRTL = RTL_LANGS.includes(language)
+
+  // Dynamic max height for the whole widget. Recalculated whenever the
+  // viewport changes (resize, orientation change, or the mobile keyboard
+  // opening/closing) so the window uses as much space as it comfortably
+  // can, up to a sensible cap on large screens, and never gets clipped or
+  // pushed off-screen on small ones. 150px is reserved for the bottom
+  // offset, the toggle button, and breathing room around the widget.
+  const chatMaxHeight = Math.max(320, Math.min(640, viewportHeight - 150))
 
   const mainMenuOptions = mainMenuOptionsBase.map((o) => ({ ...o, label: t(language, 'menu')[o.id] }))
   const businessOptions = businessOptionsBase.map((o) => ({ ...o, label: t(language, 'biz')[o.id] }))
@@ -958,6 +984,27 @@ function ChatbotWidget() {
   useEffect(() => {
     if (open && view === 'chat') setTimeout(() => inputRef.current?.focus(), 100)
   }, [open, view])
+
+  // Keep the widget's available height in sync with the real viewport.
+  // window.visualViewport reflects the space left once the mobile
+  // on-screen keyboard opens (window.innerHeight does not), while the
+  // resize/orientationchange listeners cover desktop resizing and device
+  // rotation.
+  useEffect(() => {
+    const updateHeight = () => {
+      const vh = window.visualViewport ? window.visualViewport.height : window.innerHeight
+      setViewportHeight(vh)
+    }
+    updateHeight()
+    window.addEventListener('resize', updateHeight)
+    window.addEventListener('orientationchange', updateHeight)
+    window.visualViewport?.addEventListener('resize', updateHeight)
+    return () => {
+      window.removeEventListener('resize', updateHeight)
+      window.removeEventListener('orientationchange', updateHeight)
+      window.visualViewport?.removeEventListener('resize', updateHeight)
+    }
+  }, [])
 
   // On first open, greet the visitor. If the previous action inside the
   // chatbot was a redirect (Careers / Tools / Businesses / a business sub-page),
@@ -1076,6 +1123,28 @@ function ChatbotWidget() {
 
   const pushUserMessage = (content) => {
     setMessages((prev) => [...prev, { role: 'user', content }])
+  }
+
+  // Fully resets the chatbot to a clean slate — clears the conversation,
+  // closes any open suggestion rows, clears the lead form, and takes the
+  // visitor back to the default form screen with a fresh greeting. Works
+  // from either the form view or the chat view since it's wired to a
+  // header button that's always rendered.
+  const resetChat = () => {
+    setMessages([])
+    setShowBusinessOptions(false)
+    setSuggestionsDismissed(false)
+    setInput('')
+    setLead({ name: "", email: "", phone: "", services: "", brief: "" })
+    setTouched({})
+    setFormErrors({})
+    setView('form')
+    welcomeSentRef.current = false
+
+    setTimeout(() => {
+      pushBotMessage(t(language, 'formGreeting'))
+      welcomeSentRef.current = true
+    }, 50)
   }
 
   // Centralized navigation helper. Since this triggers a full page reload,
@@ -1231,7 +1300,8 @@ function ChatbotWidget() {
       {open && (
         <div
           dir={isRTL ? 'rtl' : 'ltr'}
-          className="w-[calc(100vw-2rem)] max-w-[380px] sm:w-[380px] flex flex-col rounded-2xl shadow-2xl border border-gray-200 bg-white overflow-hidden max-h-[80vh]"
+          className="w-[calc(100vw-2rem)] max-w-[380px] sm:w-[380px] flex flex-col rounded-2xl shadow-2xl border border-gray-200 bg-white overflow-hidden transition-[max-height] duration-200"
+          style={{ maxHeight: `${chatMaxHeight}px` }}
         >
           {/* Header */}
           <div className="flex items-center gap-3 px-4 py-3.5 bg-[#0b1f5c]">
@@ -1278,6 +1348,16 @@ function ChatbotWidget() {
               )}
             </div>
 
+            {/* Reset chat — clears the conversation and lead form, returns to the default screen. Always visible, in both form and chat views. */}
+            <button
+              onClick={resetChat}
+              className="text-white/80 hover:text-white transition-transform duration-500 hover:-rotate-180 p-1.5 rounded-full hover:bg-white/10"
+              aria-label={t(language, 'resetChat')}
+              title={t(language, 'resetChat')}
+            >
+              <RotateCcw className="w-5 h-5" />
+            </button>
+
             {view === 'chat' && (
               <button
                 onClick={() => setView('form')}
@@ -1298,7 +1378,7 @@ function ChatbotWidget() {
 
           {/* ── Lead capture form (default screen) ── */}
           {view === 'form' && (
-            <div className="bg-gradient-to-b from-blue-50/60 to-white overflow-y-auto max-h-[65vh]">
+            <div className="bg-gradient-to-b from-blue-50/60 to-white overflow-y-auto flex-1 min-h-0">
               {/* Bot greeting bubble(s) asking the visitor to fill the form */}
               <div className="px-4 pt-4 pb-1 space-y-3">
                 {messages.map((msg, i) => (
@@ -1514,7 +1594,7 @@ function ChatbotWidget() {
           {/* ── Chat screen ── */}
           {view === 'chat' && (
             <>
-              <div className="flex-1 overflow-y-auto px-4 py-4 space-y-3 min-h-[260px] max-h-[50vh]">
+              <div className="flex-1 overflow-y-auto px-4 py-4 space-y-3 min-h-[260px]">
                 {messages.map((msg, i) => (
                   <Message key={i} msg={msg} onContactClick={() => setView('form')} language={language} />
                 ))}
