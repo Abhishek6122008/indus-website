@@ -12,6 +12,7 @@ const businesses = [
     exploreLabel: 'Explore Logistics',
     href: '/businesses/logistics',
     image: '/images/businesses/logistics/logistic-supply-chain.jpeg',
+    aspect: 'aspect-[3/2]',
     flip: false,
   },
   {
