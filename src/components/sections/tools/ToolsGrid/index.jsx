@@ -88,7 +88,7 @@ export function ToolsGrid() {
             })}
           </div>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
             {ADDITIONAL_TOOLS.map((tool) => {
               const Icon = tool.icon
               return (
