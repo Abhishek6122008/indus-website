@@ -88,10 +88,6 @@ export function ToolsGrid() {
             })}
           </div>
         </div>
-        <h2 className="text-2xl font-bold font-heading text-slate-900 text-center mt-12 mb-8">
-             Quick Access Tools
-        </h2>
-
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {ADDITIONAL_TOOLS.map((tool) => {
               const Icon = tool.icon
