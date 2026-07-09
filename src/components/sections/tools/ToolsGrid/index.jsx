@@ -1,4 +1,5 @@
 import { FileSearch, Boxes, Leaf, DollarSign, Truck, Globe, Wrench, ExternalLink } from 'lucide-react'
+import DownloadableGuides from '../DownloadableGuides'
 // External quick-access tools — open in a new tab.
 const QUICK_ACCESS_TOOLS = [
   {
@@ -53,6 +54,7 @@ const ADDITIONAL_TOOLS = [
     href: '#',
   },
 ]
+
 export function ToolsGrid() {
   return (
     <section className="section-padding bg-slate-50">
@@ -113,6 +115,9 @@ export function ToolsGrid() {
               )
             })}
           </div>
+          <div className="mt-16">
+           <DownloadableGuides />
+        </div>
       </div>
     </section>
   )
