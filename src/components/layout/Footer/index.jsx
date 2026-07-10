@@ -431,7 +431,7 @@ function SocialMenu() {
 
       <div className="absolute bottom-full left-0 mb-3 w-56 rounded-xl bg-white shadow-2xl overflow-hidden opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
         <a
-          href="https://www.instagram.com/indusgroupcompany"
+          href="https://www.instagram.com/the_indusgroup"
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center gap-3 px-4 py-3 text-gray-700 hover:bg-gray-100"
@@ -440,7 +440,7 @@ function SocialMenu() {
           Instagram
         </a>
         <a
-          href="https://www.linkedin.com/in/indus-group-b25808412/"
+          href="https://www.linkedin.com/company/the-indus-group-co/posts/?feedView=all"
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center gap-3 px-4 py-3 text-gray-700 hover:bg-gray-100"
@@ -458,7 +458,7 @@ function SocialMenu() {
           YouTube
         </a>
         <a
-          href="https://x.com/IndusGroupCo"
+          href="https://x.com/theindusgroup"
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center gap-3 px-4 py-3 text-gray-700 hover:bg-gray-100"
@@ -467,14 +467,14 @@ function SocialMenu() {
           X (Twitter)
         </a>
         <a
-          href="https://www.facebook.com/share/18tiWA8mxc/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center gap-3 px-4 py-3 text-gray-700 hover:bg-gray-100"
-        >
-          <Facebook className="w-5 h-5 text-[#1877F2]" />
-          Facebook
-        </a>
+  href="https://www.facebook.com/theindusgroup"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="flex items-center gap-3 px-4 py-3 text-gray-700 hover:bg-gray-100"
+>
+  <Facebook className="w-5 h-5 text-[#1877F2]" />
+  Facebook
+</a>
       </div>
     </div>
   )
@@ -1675,12 +1675,12 @@ export function Footer() {
               <h4 className="text-white font-semibold font-heading mb-5 text-xs uppercase tracking-widest">Connect With Us</h4>
               <ul className="space-y-2.5">
                 <li>
-                  <a href="https://www.instagram.com/indusgroupcompany" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-blue-200/70 hover:text-white transition-colors">
+                  <a href="https://www.instagram.com/the_indusgroup" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-blue-200/70 hover:text-white transition-colors">
                     <Instagram className="w-4 h-4 text-[#E1306C]" /> Instagram
                   </a>
                 </li>
                 <li>
-                  <a href="https://www.linkedin.com/in/indus-group-b25808412" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-blue-200/70 hover:text-white transition-colors">
+                  <a href="https://www.linkedin.com/company/the-indus-group-co" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-blue-200/70 hover:text-white transition-colors">
                     <Linkedin className="w-4 h-4 text-[#0077B5]" /> LinkedIn
                   </a>
                 </li>
@@ -1690,12 +1690,12 @@ export function Footer() {
                   </a>
                 </li>
                 <li>
-                  <a href="https://x.com/IndusGroupCo" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-blue-200/70 hover:text-white transition-colors">
+                  <a href="https://twitter.com/theindusgroup" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-blue-200/70 hover:text-white transition-colors">
                     <X className="w-4 h-4 text-white" /> Twitter / X
                   </a>
                 </li>
                 <li>
-                  <a href="https://www.facebook.com/share/18tiWA8mxc/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-blue-200/70 hover:text-white transition-colors">
+                  <a href="https://www.facebook.com/theindusgroup" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-blue-200/70 hover:text-white transition-colors">
                     <Facebook className="w-4 h-4 text-[#1877F2]" />Facebook
                   </a>
                 </li>
