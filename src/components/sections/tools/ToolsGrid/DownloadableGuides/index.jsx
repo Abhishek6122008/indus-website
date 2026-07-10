@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import {  Download, BookOpen, Briefcase, Map, X, ChevronRight } from 'lucide-react'
+import { Download, BookOpen, Briefcase, Map, X, ChevronRight } from 'lucide-react'
 
 
 
@@ -86,7 +86,7 @@ const GUIDES = [
   },
 ]
 
-export default function DownloadableGuides()  {
+export default function DownloadableGuides() {
   const [activeGuide, setActiveGuide] = useState(null)
 
   function toggleGuide(id) {
@@ -113,11 +113,10 @@ export default function DownloadableGuides()  {
                 <button
                   key={guide.id}
                   onClick={() => toggleGuide(guide.id)}
-                  className={`group text-left bg-white border rounded-2xl overflow-hidden transition-all duration-300 w-full sm:w-[calc(50%-0.75rem)] lg:w-[calc(25%-1.125rem)] ${
-                    isActive
+                  className={`group text-left bg-white border rounded-2xl overflow-hidden transition-all duration-300 w-full sm:w-[calc(50%-0.75rem)] lg:w-[calc(25%-1.125rem)] ${isActive
                       ? 'border-blue-500 ring-2 ring-blue-100 shadow-md'
                       : 'border-slate-200 hover:shadow-lg hover:border-blue-200'
-                  }`}
+                    }`}
                 >
                   {/* Thumbnail */}
                   <div className={`relative h-36 flex items-center justify-center overflow-hidden transition-colors ${isActive ? 'bg-blue-600' : 'bg-gradient-to-br from-blue-50 to-blue-100 group-hover:from-blue-100 group-hover:to-blue-200'}`}>
@@ -141,20 +140,18 @@ export default function DownloadableGuides()  {
                     <h3 className="font-semibold text-slate-900 mt-2 mb-1">{guide.title}</h3>
                     <p className="text-sm text-slate-500 leading-relaxed">{guide.desc}</p>
                     <div
-  className={`mt-auto flex items-center gap-1 text-xs font-bold transition-colors ${
-    isActive
-      ? 'text-blue-600'
-      : 'text-slate-400 group-hover:text-blue-500'
-  }`}
->
-  {isActive ? 'Hide summary' : 'View summary'}
+                      className={`mt-auto flex items-center gap-1 text-xs font-bold transition-colors ${isActive
+                          ? 'text-blue-600'
+                          : 'text-slate-400 group-hover:text-blue-500'
+                        }`}
+                    >
+                      {isActive ? 'Hide summary' : 'View summary'}
 
-  <ChevronRight
-    className={`w-3.5 h-3.5 transition-transform ${
-      isActive ? 'rotate-90' : ''
-    }`}
-  />
-</div>
+                      <ChevronRight
+                        className={`w-3.5 h-3.5 transition-transform ${isActive ? 'rotate-90' : ''
+                          }`}
+                      />
+                    </div>
                   </div>
                 </button>
               )
@@ -191,14 +188,26 @@ export default function DownloadableGuides()  {
               </ul>
 
               {expanded.file ? (
-                <a
-                  href={expanded.file}
-                  download
-                  className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold px-5 py-2.5 rounded-lg transition-colors"
-                >
-                  <Download className="w-4 h-4" />
-                  Download PDF
-                </a>
+                expanded.id === "world-ports" ? (
+                  <a
+                    href={expanded.file}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold px-5 py-2.5 rounded-lg transition-colors"
+                  >
+                    <BookOpen className="w-4 h-4" />
+                    Open PDF
+                  </a>
+                ) : (
+                  <a
+                    href={expanded.file}
+                    download
+                    className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold px-5 py-2.5 rounded-lg transition-colors"
+                  >
+                    <Download className="w-4 h-4" />
+                    Download PDF
+                  </a>
+                )
               ) : (
                 <button
                   disabled
