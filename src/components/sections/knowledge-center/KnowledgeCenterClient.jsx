@@ -58,7 +58,7 @@ const GLOSSARY = [
 ]
 
 const IMPORTANT_WEBSITES = [
-  { label: 'Indian Trade Portal', href: 'https://www.indiantradeportal.in/' },
+  { label: 'Indian Trade Portal', href: 'https://fieo.org/' },
   { label: 'Ministry of Commerce & Industry', href: 'https://commerce.gov.in/' },
   { label: 'Federation of Indian Export Organisations (FIEO)', href: 'https://www.fieo.org/' },
   { label: 'World Trade Organization (WTO)', href: 'https://www.wto.org/' },
@@ -70,6 +70,8 @@ const IMPORTANT_WEBSITES = [
   { label: 'International Air Transport Association (IATA)', href: 'https://www.iata.org/' },
   { label: 'Directorate General of Foreign Trade (DGFT)', href: 'https://www.dgft.gov.in/' },
   { label: 'Department of Commerce - Trade Statistics', href: 'https://tradestat.commerce.gov.in/' },
+  { label: 'PHD Chamber of Commerce and Industry', href: 'https://www.phdcci.in/' },
+  { label: 'ASSOCHAM', href: 'https://www.assocham.org/' },
 ]
 
 export default function KnowledgeCenterClient() {
@@ -162,7 +164,19 @@ export default function KnowledgeCenterClient() {
     Export-Import News
   </a>
 
-</div>
+  <span className="text-slate-400 text-2xl">•</span>
+
+  <a
+    href="/files/insurance.pdf"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="px-8 py-4 bg-white border border-slate-300 rounded-lg font-semibold text-slate-800 hover:bg-blue-600 hover:text-white transition"
+  >
+   Trade Advisory
+  </a>
+
+
+  </div>
         </div>
       </section>
 
