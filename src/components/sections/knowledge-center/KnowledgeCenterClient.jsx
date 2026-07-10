@@ -58,7 +58,7 @@ const GLOSSARY = [
 ]
 
 const IMPORTANT_WEBSITES = [
-  { label: 'Indian Trade Portal', href: 'https://ficci.in/' },
+  { label: 'Federation of indian Chambers of Commerce', href: 'https://ficci.in/' },
   { label: 'Ministry of Commerce & Industry', href: 'https://commerce.gov.in/' },
   { label: 'Federation of Indian Export Organisations (FIEO)', href: 'https://www.fieo.org/' },
   { label: 'World Trade Organization (WTO)', href: 'https://www.wto.org/' },
