@@ -19,14 +19,14 @@ export function ServiceFeatures({
           <div className="max-w-5xl mx-auto px-4">
             <h2 className="text-center text-xl font-bold text-blue-600 mb-8 font-heading">{heading}</h2>
             <div className="border border-slate-200 rounded-xl overflow-hidden bg-white shadow-sm">
-              <div className="grid grid-cols-3 bg-slate-50 border-b border-slate-200 p-4 font-semibold text-slate-700 text-sm">
+              <div className="hidden sm:grid grid-cols-3 bg-slate-50 border-b border-slate-200 p-4 font-semibold text-slate-700 text-sm">
                 <div className="col-span-1">Product/Service</div>
                 <div className="col-span-2 pl-4">Description</div>
               </div>
               {servicesTable?.map((row, idx) => (
-                <div key={idx} className={`grid grid-cols-3 p-5 text-sm items-start border-b last:border-0 border-slate-100 ${idx % 2 === 0 ? 'bg-slate-50/50' : 'bg-white'}`}>
+                <div key={idx} className={`grid grid-cols-1 sm:grid-cols-3 gap-1 sm:gap-0 p-5 text-sm items-start border-b last:border-0 border-slate-100 ${idx % 2 === 0 ? 'bg-slate-50/50' : 'bg-white'}`}>
                   <div className="col-span-1 font-medium text-slate-900 pr-2">{row.id}</div>
-                  <div className="col-span-2 text-slate-600 leading-relaxed text-xs pl-4">{row.desc}</div>
+                  <div className="sm:col-span-2 text-slate-600 leading-relaxed text-xs sm:pl-4">{row.desc}</div>
                 </div>
               ))}
             </div>

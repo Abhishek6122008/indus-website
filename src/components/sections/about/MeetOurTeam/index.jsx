@@ -91,11 +91,8 @@ export function MeetOurTeam() {
         </div>
 
         {/* Grid Structure */}
-        <div className="grid grid-cols-4 gap-8">
-          {corporateTeam.map((member, idx) =>
-            member.placeholder ? (
-              <div key={`placeholder-${idx}`} className="rounded-2xl border border-slate-100 bg-white" />
-            ) : (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+          {corporateTeam.map((member) => (
               <div
                 key={member.name}
                 className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col h-full border border-slate-100"
@@ -126,10 +123,6 @@ export function MeetOurTeam() {
                   </p>
                 </div>
               </div>
-            )
-          )}
-          {Array.from({ length: (4 - (corporateTeam.length % 4)) % 4 }).map((_, i) => (
-            <div key={`empty-${i}`} className="rounded-2xl border border-slate-100 bg-white" />
           ))}
         </div>
 
