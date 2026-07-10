@@ -13,7 +13,7 @@ const GUIDES = [
     icon: Briefcase,
     image: '/images/resources/container-types.png',
     category: 'Guide',
-    file: '/files/types-of-shipping.pdf',
+    file: '/files/types-of-shipping',
     summary: 'A comprehensive reference document covering 9 standard container types used in international shipping. Each type includes internal dimensions (mm and ft), door opening measurements, max gross weight, tare weight, max payload, and cubic capacity.',
     highlights: [
       'Standard Container — 20\', 40\', and 40\' High-Cube versions for general dry cargo',
