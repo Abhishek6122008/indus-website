@@ -96,18 +96,153 @@ export default function SkillDevelopmentPage() {
         backgroundImage="/images/businesses/skill-development/skill-dev-hero-bg.png"
       />
 
-      {/* Problem Statement / Eclectic Learning-Courses banner */}
-      <section className="section-padding bg-slate-50">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="rounded-xl overflow-hidden shadow-sm border border-slate-100">
-            <Image
-              src="/images/businesses/skill-development/s.intro2.jpeg"
-              alt="My Skills Academy — Eclectic Learning Courses"
-              width={1000}
-              height={560}
-              className="w-full h-auto"
-            />
+     <section className="section-padding bg-white">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+{/* ================= Section 1 ================= */}
+          <div className="grid lg:grid-cols-2 gap-16 items-center py-16">
+
+            {/* Content */}
+            <div>
+              <h2 className="text-4xl font-bold text-slate-900 mb-6">
+                  Transforming Learning into Real-World Impact
+              </h2>
+              <p className="text-lg text-slate-600 leading-8">
+                  Founded by Learning & Development (L&D) thought leaders, academicians, and seasoned practitioners, we bring over <strong>35 years of hands-on, real-world experience</strong> to the table. We don't just teach theory—we've lived it.
+              </p>
+
+              <p className="mt-6 text-lg text-slate-600 leading-8">
+  Today, we serve as a premier corporate training, skill development, and consulting ecosystem, delivering comprehensive growth solutions for individuals, teams, and enterprises under one roof.
+              </p>
+            </div>
+
+            {/* Image */}
+            <div className="flex justify-center">
+              <Image
+                src="/images/businesses/skill-development/image.png"
+                alt="Problem Statement"
+                width={650}
+                height={450}
+                className="w-full max-w-xl rounded-2xl shadow-xl object-cover"
+              />
+            </div>
+
           </div>
+
+          {/* ================= Section 2 ================= */}
+          <div className="grid lg:grid-cols-2 gap-16 items-center py-16">
+
+            {/* Image */}
+            <div className="flex justify-center">
+  <Image
+    src="/images/businesses/skill-development/image2.png"
+    alt="Our Core Training Expertise"
+    width={650}
+    height={450}
+    className="w-full max-w-xl rounded-2xl shadow-xl object-cover"
+  />
+</div>
+
+            {/* Content */}
+            <div>
+              <h2 className="text-4xl font-bold text-slate-900 mb-6">
+  Our Core Training Expertise
+</h2>
+
+<p className="text-lg text-slate-600 leading-8 mb-8">
+  We design and deliver high-impact training programs engineered to produce
+  immediate benefits and sustainable, long-term organizational growth.
+</p>
+
+<ul className="space-y-4 text-lg text-slate-600">
+  <li>
+    <strong className="text-slate-900">Leadership Development:</strong> Nurturing
+    the next generation of visionary leaders and executives.
+  </li>
+
+  <li>
+    <strong className="text-slate-900">Sales Excellence:</strong> Empowering
+    revenue teams with modern negotiation, closing, and relationship-building
+    strategies.
+  </li>
+
+  <li>
+    <strong className="text-slate-900">
+      Soft Skills & Behavioural Training:
+    </strong>{" "}
+    Enhancing emotional intelligence, communication, and workplace
+    collaboration.
+  </li>
+
+  <li>
+    <strong className="text-slate-900">
+      Functional & Technical Training:
+    </strong>{" "}
+    Upskilling your workforce with precise, role-specific tools they need to
+    excel.
+  </li>
+
+  <li>
+    <strong className="text-slate-900">
+      Outbound Experiential Learning:
+    </strong>{" "}
+    Building elite team cohesion and resilience through dynamic, immersive
+    experiences.
+  </li>
+</ul>
+            </div>
+
+          </div>
+
+          {/* ================= Section 3 ================= */}
+          <div className="grid lg:grid-cols-2 gap-16 items-center py-16">
+
+            {/* Content */}
+            <div>
+              <h2 className="text-4xl font-bold text-slate-900 mb-6">
+  Why Partner With Us
+</h2>
+
+<p className="text-lg text-slate-600 leading-8 mb-8">
+  We are more than just a training agency—we are your dedicated partners in
+  sustainable transformation. Backed by a global network of catalyst trainers,
+  consultants, and industry leaders, we accelerate your growth journey while
+  building lasting, long-term capabilities.
+</p>
+
+<ul className="space-y-4 text-lg text-slate-600">
+  <li>
+    <strong className="text-slate-900">Tailored Solutions:</strong> Our Subject
+    Matter Experts design and deploy customized capacity-building programs
+    aligned with your unique business goals.
+  </li>
+
+  <li>
+    <strong className="text-slate-900">Global Expertise:</strong> We blend
+    international best practices with local market insights to deliver
+    high-impact learning experiences.
+  </li>
+
+  <li>
+    <strong className="text-slate-900">Result-Driven Approach:</strong> We
+    empower your teams with actionable strategies that inspire immediate
+    performance improvements and foster a culture of winning.
+  </li>
+</ul>
+            </div>
+
+            {/* Image */}
+            <div>
+              <Image
+                src="/images/businesses/skill-development/image3.png"
+                alt="Why Partner"
+                width={600}
+                height={500}
+                className="w-full rounded-2xl"
+              />
+            </div>
+
+          </div>
+
         </div>
       </section>
 
