@@ -92,7 +92,7 @@ export default function SkillDevelopmentPage() {
     <>
       <ServiceHero
         title="Unlock Your Potential with My Skills Academy"
-        subtitle="Empowering students and professionals with future-ready skills for global leadership through expert-designed courses."
+        subtitle="From Classroom to Boardroom: Equipping Talents with the Global Leadership Skills That Fuel Enterprise Growth"
         backgroundImage="/images/businesses/skill-development/skill-dev-hero-bg.png"
       />
 
@@ -101,7 +101,7 @@ export default function SkillDevelopmentPage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="rounded-xl overflow-hidden shadow-sm border border-slate-100">
             <Image
-              src="/images/businesses/skill-development/s.intro2.jpeg"
+              src="/images/businesses/skill-development/intro-image.jpeg"
               alt="My Skills Academy — Eclectic Learning Courses"
               width={1000}
               height={560}
@@ -111,7 +111,7 @@ export default function SkillDevelopmentPage() {
         </div>
       </section>
 
-      <ServiceFeatures features={features} heading="Certificate Courses Offered" />
+      <ServiceFeatures features={features} heading="Certificates Courses & Traning Programs Offered" />
       <ServiceCTA
         title="Invest in Your Future"
         description="Speak to our team about enrolling in a course or building a custom training programme for your organisation."
