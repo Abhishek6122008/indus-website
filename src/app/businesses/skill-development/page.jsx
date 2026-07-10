@@ -2,6 +2,8 @@ import Image from 'next/image'
 import { ServiceHero } from '@/components/sections/businesses/ServiceHero'
 import { ServiceFeatures } from '@/components/sections/businesses/ServiceFeatures'
 import { ServiceCTA } from '@/components/sections/businesses/ServiceCTA'
+import { GraduationCap, Building2, BriefcaseBusiness, Factory, Users } from 'lucide-react'
+import { SectionHeading } from '@/components/ui/SectionHeading'
 
 export const metadata = {
   title: 'Skill Development Solutions | The Indus Group Co.',
@@ -87,6 +89,39 @@ const features = [
   },
 ]
 
+const impactStats = [
+  {
+    icon: GraduationCap,
+    stat: '300K+',
+    title: 'Professionals Trained',
+    description: 'Empowering professionals with industry-relevant skills through expert-led learning programs.',
+  },
+  {
+    icon: Building2,
+    stat: '286+',
+    title: 'Corporate Clients',
+    description: 'Trusted by organizations across India for workforce development and training solutions.',
+  },
+  {
+    icon: BriefcaseBusiness,
+    stat: '100+',
+    title: 'Businesses Consulted',
+    description: 'Supporting businesses with strategic consulting and workforce capability development.',
+  },
+  {
+    icon: Factory,
+    stat: '20+',
+    title: 'Industries Served',
+    description: 'Delivering customized learning and consulting solutions across diverse industries.',
+  },
+  {
+    icon: Users,
+    stat: '1,000+',
+    title: 'Expert Trainers & Consultants',
+    description: 'A nationwide network of experienced trainers and industry consultants.',
+  },
+]
+
 export default function SkillDevelopmentPage() {
   return (
     <>
@@ -112,6 +147,35 @@ export default function SkillDevelopmentPage() {
       </section>
 
       <ServiceFeatures features={features} heading="Certificates Courses & Traning Programs Offered" />
+
+      {/* Our Impact in Numbers Section */}
+      <section className="section-padding bg-slate-50 border-y border-slate-200/60">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionHeading
+            title="Our Impact in Numbers"
+            subtitle="Our numbers reflect the trust, expertise, and impact we've built through industry-focused training and consulting."
+          />
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+            {impactStats.map((item) => {
+              const Icon = item.icon
+              return (
+                <div
+                  key={item.title}
+                  className="flex flex-col items-center text-center bg-white border border-slate-200 rounded-2xl p-6 hover:shadow-md hover:border-blue-200 transition-all duration-300 h-full"
+                >
+                  <div className="w-14 h-14 rounded-full bg-blue-50 flex items-center justify-center mb-4 shrink-0">
+                    <Icon className="w-7 h-7 text-blue-600" />
+                  </div>
+                  <div className="text-2xl font-bold font-heading text-slate-900 mb-0.5">{item.stat}</div>
+                  <div className="text-sm font-semibold text-slate-700 mb-2">{item.title}</div>
+                  <p className="text-xs text-slate-500 leading-relaxed">{item.description}</p>
+                </div>
+              )
+            })}
+          </div>
+        </div>
+      </section>
+
       <ServiceCTA
         title="Invest in Your Future"
         description="Speak to our team about enrolling in a course or building a custom training programme for your organisation."
