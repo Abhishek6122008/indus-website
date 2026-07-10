@@ -3,6 +3,8 @@ import Image from 'next/image'
 import { ServiceHero } from '@/components/sections/businesses/ServiceHero'
 import { ServiceFeatures } from '@/components/sections/businesses/ServiceFeatures'
 import { ServiceCTA } from '@/components/sections/businesses/ServiceCTA'
+import { GraduationCap, Building2, BriefcaseBusiness, Factory, Users } from 'lucide-react'
+import { SectionHeading } from '@/components/ui/SectionHeading'
 
 export const metadata = {
   title: 'Skill Development Solutions | The Indus Group Co.',
@@ -84,6 +86,39 @@ const features = [
     title: 'WMS & Inventory Management',
     description:
       'Learn warehouse management systems and effective inventory control practices.',
+  },
+]
+
+const impactStats = [
+  {
+    icon: GraduationCap,
+    stat: '300K+',
+    title: 'Professionals Trained',
+    description: 'Empowering professionals with industry-relevant skills through expert-led learning programs.',
+  },
+  {
+    icon: Building2,
+    stat: '286+',
+    title: 'Corporate Clients',
+    description: 'Trusted by organizations across India for workforce development and training solutions.',
+  },
+  {
+    icon: BriefcaseBusiness,
+    stat: '100+',
+    title: 'Businesses Consulted',
+    description: 'Supporting businesses with strategic consulting and workforce capability development.',
+  },
+  {
+    icon: Factory,
+    stat: '20+',
+    title: 'Industries Served',
+    description: 'Delivering customized learning and consulting solutions across diverse industries.',
+  },
+  {
+    icon: Users,
+    stat: '1,000+',
+    title: 'Expert Trainers & Consultants',
+    description: 'A nationwide network of experienced trainers and industry consultants.',
   },
 ]
 
