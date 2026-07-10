@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { useState, useRef, useEffect } from 'react'
-import { Phone, Mail, Instagram, Linkedin, Youtube, Twitter, ChevronDown, X, Send, Sparkles, Loader2, ArrowLeft, Briefcase, Wrench, Building2, User, FileText, AlertCircle, CheckCircle2, Globe } from 'lucide-react'
+import { Phone, Mail, Instagram, Linkedin, Youtube, Twitter, ChevronDown, X, Facebook, Send, Sparkles, Loader2, ArrowLeft, Briefcase, Wrench, Building2, User, FileText, AlertCircle, CheckCircle2, Globe } from 'lucide-react'
 
 
 const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxDsrUW0biQ8S3Yhw0acSQuxLnCp041StvnBxCdjWasOaBu-k8z_IDflYjxMm1wKYUq/exec"
@@ -101,6 +101,8 @@ function countWords(text) {
 const UI = {
   en: {
     greeting: "Hi there 👋 How can I help you today? Choose an option below or just type your question.",
+    formGreeting: "Hi there 👋 To get you connected with the right team, please fill in your details below. Or feel free to type a question instead.",
+    redirectedGreeting: "Hi again 👋 We've taken you to the page you asked for — hope it's exactly what you needed! If there's anything else I can help with, just ask here, or leave your details below and our team will reach out to you.",
     helloAgain: (n) => `Hi ${n}! How can I help you today?`,
     inputPlaceholder: "Ask a question...",
     poweredBy: "Powered by The Indus Group",
@@ -135,6 +137,8 @@ const UI = {
   },
   hi: {
     greeting: "नमस्ते 👋 आज मैं आपकी कैसे मदद कर सकता हूँ? नीचे दिए गए विकल्प चुनें या अपना सवाल टाइप करें।",
+    formGreeting: "नमस्ते 👋 सही टीम से आपको जोड़ने के लिए, कृपया नीचे अपनी जानकारी भरें। या आप सीधे अपना सवाल भी टाइप कर सकते हैं।",
+    redirectedGreeting: "नमस्ते 👋 हमने आपको वह पेज दिखा दिया है जो आपने माँगा था — उम्मीद है यह आपके लिए मददगार रहा! अगर कुछ और चाहिए तो यहाँ पूछें, या नीचे अपनी जानकारी दें और हमारी टीम आपसे संपर्क करेगी।",
     helloAgain: (n) => `नमस्ते ${n}! आज मैं आपकी कैसे मदद करूँ?`,
     inputPlaceholder: "अपना सवाल लिखें...",
     poweredBy: "द इंडस ग्रुप द्वारा संचालित",
@@ -169,6 +173,8 @@ const UI = {
   },
   ur: {
     greeting: "السلام علیکم 👋 آج میں آپ کی کس طرح مدد کر سکتا ہوں؟ نیچے دیے گئے آپشنز میں سے کوئی منتخب کریں یا اپنا سوال ٹائپ کریں۔",
+    formGreeting: "السلام علیکم 👋 صحیح ٹیم سے رابطہ کرانے کے لیے، براہ کرم نیچے اپنی تفصیلات درج کریں۔ یا آپ سیدھا اپنا سوال بھی ٹائپ کر سکتے ہیں۔",
+    redirectedGreeting: "السلام علیکم 👋 ہم نے آپ کو وہ صفحہ دکھا دیا ہے جو آپ نے مانگا تھا — امید ہے یہ آپ کے لیے مددگار رہا! اگر مزید کچھ درکار ہو تو یہاں پوچھیں، یا نیچے اپنی تفصیلات دیں، ہماری ٹیم آپ سے رابطہ کرے گی۔",
     helloAgain: (n) => `السلام علیکم ${n}! آج میں آپ کی کیسے مدد کروں؟`,
     inputPlaceholder: "اپنا سوال لکھیں...",
     poweredBy: "دی انڈس گروپ کی جانب سے",
@@ -203,6 +209,8 @@ const UI = {
   },
   ar: {
     greeting: "مرحباً 👋 كيف يمكنني مساعدتك اليوم؟ اختر أحد الخيارات أدناه أو اكتب سؤالك مباشرة.",
+    formGreeting: "مرحباً 👋 لتوصيلك بالفريق المناسب، يرجى تعبئة بياناتك أدناه. أو يمكنك كتابة سؤالك مباشرة.",
+    redirectedGreeting: "مرحباً مجدداً 👋 لقد نقلناك إلى الصفحة التي طلبتها — نأمل أن تكون هي ما كنت تبحث عنه بالضبط! إذا احتجت إلى أي شيء آخر، تحدث معي هنا، أو اترك بياناتك أدناه وسيتواصل فريقنا معك.",
     helloAgain: (n) => `مرحباً ${n}! كيف يمكنني مساعدتك اليوم؟`,
     inputPlaceholder: "اكتب سؤالك...",
     poweredBy: "بدعم من مجموعة إندس",
@@ -237,6 +245,8 @@ const UI = {
   },
   zh: {
     greeting: "您好 👋 今天我能为您提供什么帮助？请选择下方选项或直接输入您的问题。",
+    formGreeting: "您好 👋 为了让合适的团队与您联系，请在下方填写您的信息。您也可以直接输入您的问题。",
+    redirectedGreeting: "您好，欢迎回来 👋 已经为您跳转到所需的页面，希望正是您需要的内容！如果还有其他需要帮助的，请在这里继续提问，或留下您的信息，我们的团队会尽快与您联系。",
     helloAgain: (n) => `您好 ${n}！今天我能为您做些什么？`,
     inputPlaceholder: "请输入您的问题...",
     poweredBy: "由 The Indus Group 提供支持",
@@ -271,6 +281,8 @@ const UI = {
   },
   pt: {
     greeting: "Olá 👋 Como posso ajudá-lo hoje? Escolha uma opção abaixo ou digite sua pergunta.",
+    formGreeting: "Olá 👋 Para conectá-lo com a equipe certa, preencha seus dados abaixo. Ou, se preferir, digite sua pergunta diretamente.",
+    redirectedGreeting: "Olá novamente 👋 Levamos você à página que pediu — espero que seja exatamente o que precisava! Se precisar de mais alguma coisa, é só falar comigo aqui, ou deixe seus dados abaixo e nossa equipe entrará em contato.",
     helloAgain: (n) => `Olá ${n}! Como posso ajudá-lo hoje?`,
     inputPlaceholder: "Digite sua pergunta...",
     poweredBy: "Desenvolvido por The Indus Group",
@@ -305,6 +317,8 @@ const UI = {
   },
   fr: {
     greeting: "Bonjour 👋 Comment puis-je vous aider aujourd'hui ? Choisissez une option ci-dessous ou tapez votre question.",
+    formGreeting: "Bonjour 👋 Pour vous mettre en relation avec la bonne équipe, veuillez remplir vos informations ci-dessous. Ou tapez directement votre question.",
+    redirectedGreeting: "Bonjour à nouveau 👋 Nous vous avons emmené vers la page demandée — j'espère qu'elle correspond exactement à ce que vous cherchiez ! Pour toute autre question, discutez avec moi ici, ou laissez vos coordonnées ci-dessous et notre équipe vous contactera.",
     helloAgain: (n) => `Bonjour ${n} ! Comment puis-je vous aider aujourd'hui ?`,
     inputPlaceholder: "Posez votre question...",
     poweredBy: "Propulsé par The Indus Group",
@@ -339,6 +353,8 @@ const UI = {
   },
   es: {
     greeting: "¡Hola! 👋 ¿Cómo puedo ayudarte hoy? Elige una opción abajo o escribe tu pregunta.",
+    formGreeting: "¡Hola! 👋 Para conectarte con el equipo adecuado, completa tus datos abajo. O si prefieres, escribe tu pregunta directamente.",
+    redirectedGreeting: "¡Hola de nuevo! 👋 Te llevamos a la página que pediste — ¡espero que sea justo lo que necesitabas! Si necesitas algo más, escríbeme aquí, o deja tus datos abajo y nuestro equipo se pondrá en contacto contigo.",
     helloAgain: (n) => `¡Hola ${n}! ¿Cómo puedo ayudarte hoy?`,
     inputPlaceholder: "Escribe tu pregunta...",
     poweredBy: "Desarrollado por The Indus Group",
@@ -415,7 +431,7 @@ function SocialMenu() {
 
       <div className="absolute bottom-full left-0 mb-3 w-56 rounded-xl bg-white shadow-2xl overflow-hidden opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
         <a
-          href="https://www.instagram.com/the_indusgroup"
+          href="https://www.instagram.com/indusgroupcompany"
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center gap-3 px-4 py-3 text-gray-700 hover:bg-gray-100"
@@ -424,7 +440,7 @@ function SocialMenu() {
           Instagram
         </a>
         <a
-          href="https://www.linkedin.com/company/the-indus-group-co/posts/?feedView=all"
+          href="https://www.linkedin.com/in/indus-group-b25808412/"
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center gap-3 px-4 py-3 text-gray-700 hover:bg-gray-100"
@@ -442,13 +458,22 @@ function SocialMenu() {
           YouTube
         </a>
         <a
-          href="https://x.com/theindusgroup"
+          href="https://x.com/IndusGroupCo"
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center gap-3 px-4 py-3 text-gray-700 hover:bg-gray-100"
         >
           <Twitter className="w-5 h-5 text-[#000000]" />
           X (Twitter)
+        </a>
+        <a
+          href="https://www.facebook.com/share/18tiWA8mxc/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-3 px-4 py-3 text-gray-700 hover:bg-gray-100"
+        >
+          <Facebook className="w-5 h-5 text-[#1877F2]" />
+          Facebook
         </a>
       </div>
     </div>
@@ -891,8 +916,8 @@ const FAQS = [
 function ChatbotWidget() {
   const [open, setOpen] = useState(true)
 
-  // 'form' = lead capture | 'chat' = conversational view (default open screen)
-  const [view, setView] = useState('chat')
+  // 'form' = lead capture (default open screen) | 'chat' = conversational view
+  const [view, setView] = useState('form')
   const [language, setLanguage] = useState('en')
   const [showLangMenu, setShowLangMenu] = useState(false)
 
@@ -943,11 +968,39 @@ function ChatbotWidget() {
     if (open && view === 'chat') setTimeout(() => inputRef.current?.focus(), 100)
   }, [open, view])
 
+  // On first open, greet the visitor. If the previous action inside the
+  // chatbot was a redirect (Careers / Tools / Businesses / a business sub-page),
+  // show a "welcome back, hope that helped" message with the quick-action
+  // chips instead of the normal form greeting — since navigateTo() causes a
+  // full page reload (window.location.href), we recover that context from
+  // localStorage, which is the only thing that survives the reload.
   const welcomeSentRef = useRef(false)
   useEffect(() => {
     if (open && !welcomeSentRef.current) {
       welcomeSentRef.current = true
-      pushBotMessage(t(language, 'greeting'))
+
+      let redirected = false
+      let storedLang = language
+      try {
+        redirected = window.localStorage.getItem('indus_chat_redirected') === 'true'
+        storedLang = window.localStorage.getItem('indus_chat_redirected_lang') || language
+        if (redirected) {
+          window.localStorage.removeItem('indus_chat_redirected')
+          window.localStorage.removeItem('indus_chat_redirected_lang')
+        }
+      } catch (e) {
+        // localStorage unavailable — fall back to the normal greeting below
+      }
+
+      if (redirected) {
+        if (storedLang !== language) setLanguage(storedLang)
+        setView('chat')
+        setShowBusinessOptions(false)
+        setSuggestionsDismissed(false)
+        pushBotMessage(t(storedLang, 'redirectedGreeting'))
+      } else {
+        pushBotMessage(t(language, 'formGreeting'))
+      }
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [open])
@@ -1034,7 +1087,19 @@ function ChatbotWidget() {
     setMessages((prev) => [...prev, { role: 'user', content }])
   }
 
+  // Centralized navigation helper. Since this triggers a full page reload,
+  // we stash a flag (+ the current language) in localStorage right before
+  // navigating away, so the widget can detect on the next page load that it
+  // just redirected the visitor and greet them accordingly instead of
+  // showing the generic first-time greeting.
   const navigateTo = (href) => {
+    try {
+      window.localStorage.setItem('indus_chat_redirected', 'true')
+      window.localStorage.setItem('indus_chat_redirected_lang', language)
+    } catch (e) {
+      // localStorage unavailable — navigation still proceeds, just without the
+      // "welcome back" follow-up message on the next page.
+    }
     window.location.href = href
   }
 
@@ -1240,10 +1305,17 @@ function ChatbotWidget() {
             </button>
           </div>
 
-          {/* ── Lead capture form ── */}
+          {/* ── Lead capture form (default screen) ── */}
           {view === 'form' && (
-            <div className="bg-gradient-to-b from-blue-50/60 to-white overflow-y-auto">
-              <div className="px-5 pt-5 pb-3">
+            <div className="bg-gradient-to-b from-blue-50/60 to-white overflow-y-auto max-h-[65vh]">
+              {/* Bot greeting bubble(s) asking the visitor to fill the form */}
+              <div className="px-4 pt-4 pb-1 space-y-3">
+                {messages.map((msg, i) => (
+                  <Message key={i} msg={msg} onContactClick={() => { }} language={language} />
+                ))}
+              </div>
+
+              <div className="px-5 pt-2 pb-3">
                 <h3 className="font-semibold text-lg text-gray-900">
                   {t(language, 'formTitle')}
                 </h3>
@@ -1411,6 +1483,8 @@ function ChatbotWidget() {
                       await saveLead(lead)
                       setLeadCaptured(true)
                       setView('chat')
+                      setShowBusinessOptions(false)
+                      setSuggestionsDismissed(false)
                       setMessages((prev) => [
                         ...prev,
                         {
@@ -1541,7 +1615,7 @@ export function Footer() {
             <div className="lg:col-span-2">
               <div className="mb-4">
                 <h3 className="text-white font-bold text-3xl font-heading">
-                  The Indus Group of Co.
+                  The Indus Group Co.
                 </h3>
               </div>
               <p className="text-sm leading-relaxed mb-6 max-w-sm text-blue-200/80">
@@ -1601,12 +1675,12 @@ export function Footer() {
               <h4 className="text-white font-semibold font-heading mb-5 text-xs uppercase tracking-widest">Connect With Us</h4>
               <ul className="space-y-2.5">
                 <li>
-                  <a href="https://www.instagram.com/the_indusgroup" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-blue-200/70 hover:text-white transition-colors">
+                  <a href="https://www.instagram.com/indusgroupcompany" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-blue-200/70 hover:text-white transition-colors">
                     <Instagram className="w-4 h-4 text-[#E1306C]" /> Instagram
                   </a>
                 </li>
                 <li>
-                  <a href="https://www.linkedin.com/company/the-indus-group-co" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-blue-200/70 hover:text-white transition-colors">
+                  <a href="https://www.linkedin.com/in/indus-group-b25808412" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-blue-200/70 hover:text-white transition-colors">
                     <Linkedin className="w-4 h-4 text-[#0077B5]" /> LinkedIn
                   </a>
                 </li>
@@ -1616,8 +1690,13 @@ export function Footer() {
                   </a>
                 </li>
                 <li>
-                  <a href="https://twitter.com/theindusgroup" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-blue-200/70 hover:text-white transition-colors">
+                  <a href="https://x.com/IndusGroupCo" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-blue-200/70 hover:text-white transition-colors">
                     <X className="w-4 h-4 text-white" /> Twitter / X
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.facebook.com/share/18tiWA8mxc/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-blue-200/70 hover:text-white transition-colors">
+                    <Facebook className="w-4 h-4 text-[#1877F2]" />Facebook
                   </a>
                 </li>
               </ul>
@@ -1652,6 +1731,7 @@ export function Footer() {
               <Link href="/careers" className="hover:text-white transition-colors">Careers</Link>
               <Link href="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
               <Link href="/terms" className="hover:text-white transition-colors">Terms & Conditions</Link>
+              <Link href="/fraud-disclaimer" className="hover:text-white transition-colors">Fraud Disclaimer</Link>
             </div>
 
           </div>

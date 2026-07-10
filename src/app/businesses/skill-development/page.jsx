@@ -4,7 +4,7 @@ import { ServiceFeatures } from '@/components/sections/businesses/ServiceFeature
 import { ServiceCTA } from '@/components/sections/businesses/ServiceCTA'
 
 export const metadata = {
-  title: 'Skill Development Solutions | The Indus Group of Co.',
+  title: 'Skill Development Solutions | The Indus Group Co.',
   description:
     'My Skills Academy — expert-designed certificate courses empowering students and professionals with future-ready skills for global leadership.',
 }
@@ -92,7 +92,7 @@ export default function SkillDevelopmentPage() {
     <>
       <ServiceHero
         title="Unlock Your Potential with My Skills Academy"
-        subtitle="Empowering students and professionals with future-ready skills for global leadership through expert-designed courses."
+        subtitle="From Classroom to Boardroom: Equipping Talents with the Global Leadership Skills That Fuel Enterprise Growth"
         backgroundImage="/images/businesses/skill-development/skill-dev-hero-bg.png"
       />
 
@@ -246,7 +246,7 @@ export default function SkillDevelopmentPage() {
         </div>
       </section>
 
-      <ServiceFeatures features={features} heading="Certificate Courses Offered" />
+      <ServiceFeatures features={features} heading="Certificates Courses & Traning Programs Offered" />
       <ServiceCTA
         title="Invest in Your Future"
         description="Speak to our team about enrolling in a course or building a custom training programme for your organisation."

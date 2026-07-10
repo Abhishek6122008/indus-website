@@ -3,7 +3,7 @@ import { ContactDetails } from '@/components/sections/contact/ContactDetails'
 import { ContactForm } from '@/components/sections/contact/ContactForm'
 
 export const metadata = {
-  title: 'Contact Us | The Indus Group of Co.',
+  title: 'Contact Us | The Indus Group Co.',
   description:
     'Get in touch with The Indus Group. Call, email, or send us a message — we are always ready to help.',
 }

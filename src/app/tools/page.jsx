@@ -2,7 +2,7 @@ import { PageHero } from '@/components/ui/PageHero'
 import { ToolsGrid } from '@/components/sections/tools/ToolsGrid'
 
 export const metadata = {
-  title: 'Interactive Tools & Calculators | The Indus Group of Co.',
+  title: 'Interactive Tools & Calculators | The Indus Group Co.',
   description:
     'Use our interactive freight estimator to make smarter, data-driven planning decisions.',
 }
@@ -15,6 +15,7 @@ export default function ToolsPage() {
         title="Tools"
         subtitle="Calculators and planning tools for better business decisions."
         breadcrumbs={[{ label: 'Tools' }]}
+        backgroundImage="/images/tools/tools-hero-image.jpeg"
       />
       <ToolsGrid />
     </>

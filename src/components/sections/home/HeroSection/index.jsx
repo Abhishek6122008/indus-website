@@ -1,42 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import {
-  ArrowRight,
-  ChevronDown,
-  Truck,
-  Building2,
-  GraduationCap,
-  Home as HomeIcon,
-  UtensilsCrossed,
-} from 'lucide-react'
-
-const businessVerticals = [
-  {
-    name: 'Logistics & Supply Chain',
-    slug: 'logistics',
-    icon: Truck,
-  },
-  {
-    name: 'Enterprise Solutions',
-    slug: 'enterprise-solutions',
-    icon: Building2,
-  },
-  {
-    name: 'Skill Development',
-    slug: 'skill-development',
-    icon: GraduationCap,
-  },
-  {
-    name: 'Real Estate & Infra',
-    slug: 'real-estate',
-    icon: HomeIcon,
-  },
-  {
-    name: 'HBC Brand Franchise',
-    slug: 'hbc-franchise',
-    icon: UtensilsCrossed,
-  },
-]
+import { ArrowRight, ChevronDown } from 'lucide-react'
 
 export function HeroSection() {
   return (
@@ -64,8 +28,15 @@ export function HeroSection() {
       <div className="absolute -bottom-32 -left-20 w-[500px] h-[500px] bg-blue-400 rounded-full opacity-10 blur-[120px] pointer-events-none" />
       <div className="absolute -top-16 right-0 w-80 h-80 bg-white rounded-full opacity-5 blur-3xl pointer-events-none" />
 
-      <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-4 relative z-20 py-28">
-        <div className="max-w-4xl ml-auto text-right">
+      <div className="max-w-screen-2xl mx-auto px-2 sm:px-12 lg:pl-20 lg:pr-0 relative z-20 py-28">
+        <div className="max-w-5xl lg:max-w-5xl ml-auto text-right">
+
+          <div className="flex items-center justify-end gap-3 mb-7">
+            <span className="text-blue-200 text-xs font-semibold tracking-[0.2em] uppercase">
+              The Indus Group Co.
+            </span>
+            <div className="w-8 h-[2px] bg-blue-300" />
+          </div>
 
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold font-heading text-white leading-[1.1] mb-6">
             Delivering{' '}
@@ -98,26 +69,6 @@ export function HeroSection() {
         </div>
       </div>
 
-      {/* Axon-style business verticals overlay */}
-      <div className="absolute bottom-20 left-0 right-0 z-20">
-        <div className="max-w-screen-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-wrap lg:flex-nowrap justify-center gap-4">
-            {businessVerticals.map((vertical) => (
-              <Link
-                key={vertical.slug}
-                href={`/businesses/${vertical.slug}`}
-                className="group flex items-center gap-3 bg-white/15 backdrop-blur-xl border border-white/25 rounded-2xl px-5 py-4 shadow-xl hover:bg-white/25 transition-all duration-300 hover:-translate-y-1"
-              >
-                <vertical.icon className="w-6 h-6 text-blue-200 flex-shrink-0 group-hover:text-white transition-colors" />
-
-                <span className="text-white text-sm font-medium leading-tight">
-                  {vertical.name}
-                </span>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </div>
       <div className="absolute bottom-3 left-1/2 -translate-x-1/2 text-white/40 animate-bounce z-20">
         <ChevronDown className="w-6 h-6" />
       </div>

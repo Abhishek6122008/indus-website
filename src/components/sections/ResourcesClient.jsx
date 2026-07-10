@@ -3,29 +3,7 @@
 import { useState } from 'react'
 import { Truck, DollarSign, Globe, Download, ExternalLink, BookOpen, FileText, Briefcase, Map, X, ChevronRight } from 'lucide-react'
 
-const QUICK_LINKS = [
-  {
-    title: 'Cargo Tracking',
-    desc: 'Track your shipments globally in real-time.',
-    icon: Truck,
-    bg: 'from-slate-700 to-slate-900',
-    href: 'https://www.track-trace.com/',
-  },
-  {
-    title: 'Currency Converter',
-    desc: 'Check the latest international exchange rates.',
-    icon: DollarSign,
-    bg: 'from-blue-800 to-blue-950',
-    href: 'https://www.xe.com/',
-  },
-  {
-    title: 'Incoterms 2020',
-    desc: 'Understand international trade terms and conditions.',
-    icon: Globe,
-    bg: 'from-indigo-700 to-indigo-950',
-    href: 'https://2go.iccwbo.org/incoterms-2020-practical-free-wallchart-fr.html',
-  },
-]
+
 
 const GUIDES = [
   {
@@ -76,12 +54,12 @@ const GUIDES = [
     image: '/images/resources/company-profile.png',
     category: 'PDF',
     file: '/files/indus-corporate-deck.pdf',
-    summary: 'An overview of The Indus Group of Co. covering the company\'s history, organizational structure, mission and vision, and the four business verticals: Logistics, Enterprise Solutions, Skill Development, and Real Estate. Includes the full company presentation deck.',
+    summary: 'An overview of The Indus Group Co. covering the company\'s history, organizational structure, mission and vision, and the four business verticals: Logistics, Enterprise Solutions, Skill Development, and Real Estate. Includes the full company presentation deck.',
     highlights: [
-      '14+ years of industry experience',
+      '200+ years of overall experience',
       'Operations across Logistics, Enterprise Solutions, Skill Development, and Real Estate',
       'Mission: Delivering industry-leading solutions with reliability, innovation, and integrity',
-      '1,000+ clients served across sectors',
+      '5,000+ trusted clients across sectors',
       'MSME-focused approach to business empowerment',
     ],
   },
@@ -117,7 +95,7 @@ const GUIDES = [
     summary: 'The official Indus Group client brochure designed for partnership introductions, business meetings, and tender submissions. Covers all five verticals with key service highlights and contact information.',
     highlights: [
       'Professional overview of all five business verticals',
-      'Key statistics: 14+ years, 1,000+ clients, 100+ team members',
+      'Key statistics: 200+ years of overall experience, 5,000+ trusted clients, 1,000+ team members',
       'Service capabilities and USPs per vertical',
       'Contact details and social channels',
     ],
@@ -135,38 +113,6 @@ export default function ResourcesClient() {
 
   return (
     <div className="bg-white">
-
-      {/* Quick Links & Tools */}
-      <section className="py-16 border-b border-slate-100">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold font-heading text-slate-900 text-center mb-10">
-            Quick Links &amp; Tools
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-            {QUICK_LINKS.map((link) => {
-              const Icon = link.icon
-              return (
-                <a
-                  key={link.title}
-                  href={link.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`group relative bg-gradient-to-br ${link.bg} rounded-2xl overflow-hidden p-8 flex flex-col justify-end min-h-[200px] hover:scale-[1.02] transition-transform duration-300`}
-                >
-                  <div className="absolute top-6 right-6 opacity-20 group-hover:opacity-30 transition-opacity">
-                    <Icon className="w-16 h-16 text-white" />
-                  </div>
-                  <h3 className="text-lg font-bold text-white mb-1">{link.title}</h3>
-                  <p className="text-sm text-white/70">{link.desc}</p>
-                  <div className="mt-4 flex items-center gap-1 text-xs font-semibold text-white/80 group-hover:text-white transition-colors">
-                    Open <ExternalLink className="w-3 h-3" />
-                  </div>
-                </a>
-              )
-            })}
-          </div>
-        </div>
-      </section>
 
       {/* Downloadable Guides */}
       <section className="py-16">

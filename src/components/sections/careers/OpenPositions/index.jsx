@@ -6,13 +6,13 @@ import { ArrowRight } from 'lucide-react'
 
 const jobs = [
   {
-    title: 'Telecallers',
-    department: 'Sales',
-    description: 'Grow client relations, manage incoming inquiries, and coordinate sales pipelines over the phone.',
+    title: 'Trainer / Faculty',
+    department: 'Skill Development',
+    description: 'Deliver engaging training sessions, develop course material, and mentor learners across our skill development and certification programs.',
   },
   {
     title: 'Freelancers',
-    department: 'Operations',
+    department: 'Growth',
     description: 'Support cross-vertical operational strategies and manage variable client requirements.',
   },
   {

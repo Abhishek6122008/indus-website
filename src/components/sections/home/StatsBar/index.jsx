@@ -1,14 +1,14 @@
 const stats = [
-  { value: '200+', label: 'Satisfied Customers' },
-  { value: '1,000+', label: 'Satisfied Clients' },
-  { value: '100+', label: 'Team Members' },
+  { value: '200+', label: 'Years of Overall Experience' },
+  { value: '5,000+', label: 'Trusted Clients' },
+  { value: '1,000+', label: 'Team Members' },
   { value: 'Global', label: 'Network Presence' },
   { value: '24/7', label: 'Support Available' },
 ]
 
 export function StatsBar() {
   return (
-    <section className="bg-blue-600 py-14">
+    <section className="bg-[#0b1f5c] py-14">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 text-center">
           {stats.map((stat) => (

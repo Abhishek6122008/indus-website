@@ -1,6 +1,6 @@
 'use client'
 
-import { ArrowRight, ExternalLink, FileText, Download } from 'lucide-react'
+import { ArrowRight, ExternalLink, FileText } from 'lucide-react'
 
 const BLOGS = [
   {
@@ -21,6 +21,12 @@ const BLOGS = [
     image: '/images/blog/future-proofing.png',
     file: '/files/future-proofing.pdf',
   },
+  {
+    title: 'Cold Chain Supply Chain Management: The Invisible Backbone of Modern Commerce',
+    desc: 'Discover how cold chain ensures safe storage, transport, and delivery of temperature-sensitive goods.',
+    image: '/images/blog/cold-chain-scm.png',
+    file: '/files/cold-chain-scm.pdf',
+  }
 ]
 
 const NEWS = [
@@ -52,7 +58,7 @@ const GLOSSARY = [
 ]
 
 const IMPORTANT_WEBSITES = [
-  { label: 'Indian Trade Portal', href: 'https://www.indiantradeportal.in/' },
+  { label: 'Indian Trade Portal', href: 'https://fieo.org/' },
   { label: 'Ministry of Commerce & Industry', href: 'https://commerce.gov.in/' },
   { label: 'Federation of Indian Export Organisations (FIEO)', href: 'https://www.fieo.org/' },
   { label: 'World Trade Organization (WTO)', href: 'https://www.wto.org/' },
@@ -64,6 +70,8 @@ const IMPORTANT_WEBSITES = [
   { label: 'International Air Transport Association (IATA)', href: 'https://www.iata.org/' },
   { label: 'Directorate General of Foreign Trade (DGFT)', href: 'https://www.dgft.gov.in/' },
   { label: 'Department of Commerce - Trade Statistics', href: 'https://tradestat.commerce.gov.in/' },
+  { label: 'PHD Chamber of Commerce and Industry', href: 'https://www.phdcci.in/' },
+  { label: 'ASSOCHAM', href: 'https://www.assocham.org/' },
 ]
 
 export default function KnowledgeCenterClient() {
@@ -75,7 +83,7 @@ export default function KnowledgeCenterClient() {
           <h2 className="text-2xl md:text-3xl font-bold font-heading text-slate-900 text-center mb-10">
             Latest Blogs &amp; Articles
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {BLOGS.map((blog) => (
               <div
                 key={blog.title}
@@ -102,11 +110,12 @@ export default function KnowledgeCenterClient() {
                   <div className="mt-auto pt-1">
                     <a
                       href={blog.file}
-                      download
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="inline-flex items-center gap-1.5 bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold px-3 py-2 rounded-lg transition-colors"
                     >
-                      <Download className="w-3.5 h-3.5" />
-                      Download
+                      Read More
+                      <ArrowRight className="w-3.5 h-3.5" />
                     </a>
                   </div>
                 </div>
@@ -122,24 +131,52 @@ export default function KnowledgeCenterClient() {
           <h2 className="text-2xl md:text-3xl font-bold font-heading text-slate-900 text-center mb-10">
             News &amp; Updates
           </h2>
-          <div className="max-w-3xl mx-auto space-y-4">
-            {NEWS.map((item) => (
-              <a
-                key={item.title}
-                href={item.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6 bg-white border border-slate-200 rounded-xl px-6 py-5 hover:border-blue-200 hover:shadow-sm transition-all"
-              >
-                <span className="text-sm font-bold text-blue-600 shrink-0">{item.date}</span>
-                <span className="text-sm font-semibold text-slate-900">{item.title}</span>
-                <span className="text-sm text-slate-500 flex-1">{item.desc}</span>
-                <span className="inline-flex items-center gap-1.5 text-sm font-bold text-blue-600 shrink-0 group-hover:gap-2.5 transition-all">
-                  Read News Here <ArrowRight className="w-4 h-4" />
-                </span>
-              </a>
-            ))}
-          </div>
+           <div className="max-w-5xl mx-auto flex flex-wrap justify-center items-center gap-4">
+
+  <a
+    href="https://dst.news/"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="px-8 py-4 bg-white border border-slate-300 rounded-lg font-semibold text-slate-800 hover:bg-blue-600 hover:text-white transition"
+  >
+    Logistics News
+  </a>
+
+  <span className="text-slate-400 text-2xl">•</span>
+
+  <a
+    href="https://indiantradeportal.in/news.jsp?lang=0"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="px-8 py-4 bg-white border border-slate-300 rounded-lg font-semibold text-slate-800 hover:bg-blue-600 hover:text-white transition"
+  >
+    Trade News
+  </a>
+
+  <span className="text-slate-400 text-2xl">•</span>
+
+  <a
+    href="https://eximin.net/eximnews"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="px-8 py-4 bg-white border border-slate-300 rounded-lg font-semibold text-slate-800 hover:bg-blue-600 hover:text-white transition"
+  >
+    Export-Import News
+  </a>
+
+  <span className="text-slate-400 text-2xl">•</span>
+
+  <a
+    href="/files/insurance.pdf"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="px-8 py-4 bg-white border border-slate-300 rounded-lg font-semibold text-slate-800 hover:bg-blue-600 hover:text-white transition"
+  >
+   Trade Advisory
+  </a>
+
+
+  </div>
         </div>
       </section>
 
@@ -163,6 +200,18 @@ export default function KnowledgeCenterClient() {
                     </li>
                   ))}
                 </ul>
+                <a
+                 href={
+                   group.heading === "Airlines Terms"
+                      ? "https://www.iata.org/en/publications/newsletters/iata-knowledge-hub/air-cargo-tariffs-and-rules-what-you-need-to-know/"
+                      : "https://www.maersk.com/support/glossaries/shipping-terms"
+                 }
+                 target="_blank"
+                 rel="noopener noreferrer"
+                 className="inline-block mt-6 px-5 py-2.5 bg-red-600 text-white font-semibold rounded-lg hover:bg-red-700 transition-colors duration-300"
+                >
+                  Know More
+                </a>
               </div>
             ))}
           </div>

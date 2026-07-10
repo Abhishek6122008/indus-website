@@ -3,7 +3,7 @@ import Image from 'next/image'
 import { ChevronRight } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
-export function PageHero({ label, title, subtitle, breadcrumbs, backgroundImage, imagePosition = 'object-center', className }) {
+export function PageHero({ label, title, subtitle, breadcrumbs, backgroundImage, imagePosition = 'object-center', imageFit = 'object-cover', overlayClassName = 'bg-gradient-to-br from-[#0b1f5c]/40 via-[#1e40af]/35 to-blue-600/25 mix-blend-multiply', contentClassName, className }) {
   return (
     <section
       className={cn(
@@ -19,9 +19,9 @@ export function PageHero({ label, title, subtitle, breadcrumbs, backgroundImage,
             alt=""
             fill
             priority
-            className={cn('object-cover', imagePosition)}
+            className={cn(imageFit, imagePosition)}
           />
-          <div className="absolute inset-0 bg-gradient-to-br from-[#0b1f5c]/40 via-[#1e40af]/35 to-blue-600/25 mix-blend-multiply" />
+          <div className={cn('absolute inset-0', overlayClassName)} />
         </>
       )}
 
@@ -36,7 +36,7 @@ export function PageHero({ label, title, subtitle, breadcrumbs, backgroundImage,
       {/* Light glow */}
       <div className="absolute -bottom-16 right-0 w-96 h-96 bg-blue-400 rounded-full opacity-10 blur-3xl pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className={cn('max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10', contentClassName)}>
         {breadcrumbs && breadcrumbs.length > 0 && (
           <nav className="flex items-center gap-1.5 text-xs text-blue-200 mb-6 flex-wrap">
             <Link href="/" className="hover:text-white transition-colors">Home</Link>
