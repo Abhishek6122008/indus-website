@@ -4,8 +4,8 @@ const reasons = [
   {
     icon: Award,
     stat: '200+',
-    label: 'Years of Overall Experience',
-    desc: 'Over a decade of proven expertise across multiple industry verticals.',
+    label: 'Years of Collective Experience',
+    desc: 'Over a decade of success across multiple industry verticals.',
   },
   {
     icon: Users,

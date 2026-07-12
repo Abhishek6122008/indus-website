@@ -95,7 +95,7 @@ const GUIDES = [
     summary: 'The official Indus Group client brochure designed for partnership introductions, business meetings, and tender submissions. Covers all five verticals with key service highlights and contact information.',
     highlights: [
       'Professional overview of all five business verticals',
-      'Key statistics: 200+ years of overall experience, 5,000+ trusted clients, 1,000+ team members',
+      'Key statistics: 200+ years of collective experience, 5,000+ trusted clients, 1,000+ team members',
       'Service capabilities and USPs per vertical',
       'Contact details and social channels',
     ],
